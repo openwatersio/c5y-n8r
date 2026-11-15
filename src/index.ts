@@ -1,6 +1,6 @@
 import { ByteBuffer, Encoding } from 'flatbuffers';
 import { Assignment, Entity, Key, Registry } from './generated/country-spike.js';
-import { alpha2Slot, day, FORMAT_VERSION, keyFor, MAX_DAY, MIN_DAY, NAMESPACES, normalize, readerSupports, type Namespace } from './common.ts';
+import { alpha2Slot, day, FORMAT_VERSION, keyFor, MAX_ENTITY_ID_LENGTH, MAX_DAY, MIN_DAY, NAMESPACES, normalize, readerSupports, type Namespace } from './common.ts';
 import { verify } from './verify.ts';
 
 export interface Metadata {
@@ -14,7 +14,7 @@ export class CompatibilityError extends Error {
 }
 
 export class Candidate {
-  constructor(private readonly registry: Registry, private readonly assignment: Assignment, readonly applicability: 'active' | 'retired' | 'outside-date' | 'uncertain') {}
+  constructor(private readonly registry: Registry, private readonly assignment: Assignment, readonly applicability: 'active' | 'retired' | 'outside-date' | 'uncertain' | 'deprecated', readonly tentative = false) {}
   get id() { return this.entity.id()!; }
   get name() { return this.entity.name()!; }
   get continent() { return this.entity.continent()!; }
@@ -31,7 +31,7 @@ export class Candidate {
 export interface Result {
   preferred?: Candidate;
   candidates: Candidate[];
-  selection: 'at-date' | 'latest' | 'ambiguous' | 'none';
+  selection: 'at-date' | 'latest' | 'ambiguous' | 'uncertain' | 'none';
   temporalAmbiguity: boolean;
   coverage: 'partial' | 'outside-coverage';
   evidenceStatus: 'unreviewed-spike';
@@ -39,12 +39,13 @@ export interface Result {
 
 export class CountryRegistry {
   private readonly referenceDay: number;
+  private binaryDigest?: Promise<string>;
   private readonly coverageFrom: number;
   private readonly coverageThrough: number;
-  private constructor(private readonly root: Registry, private readonly info: Metadata) { this.referenceDay = day(info.referenceDate); this.coverageFrom = day(info.coverageFrom); this.coverageThrough = day(info.coverageThrough); }
+  private constructor(private readonly root: Registry, private readonly info: Metadata, private readonly bytes: Uint8Array) { this.referenceDay = day(info.referenceDate); this.coverageFrom = day(info.coverageFrom); this.coverageThrough = day(info.coverageThrough); }
 
   static open(bytes: Uint8Array): CountryRegistry {
-    verify(bytes);
+    verify(bytes, true);
     const root = Registry.getRootAsRegistry(new ByteBuffer(bytes)), m = root.metadata();
     if (!m) throw new Error('Missing metadata');
     const info: Metadata = { datasetVersion: m.datasetVersion(), formatVersion: m.formatVersion(), minimumReaderVersion: m.minimumReaderVersion()!, referenceDate: m.referenceDate()!, builtAt: m.builtAt()!, evidenceDigest: m.evidenceDigest()!, corpus: m.corpus()!, coverageFrom: m.coverageFrom()!, coverageThrough: m.coverageThrough()! };
@@ -53,17 +54,20 @@ export class CountryRegistry {
     if (day(info.coverageFrom) > day(info.coverageThrough)) throw new Error('Invalid coverage interval');
     if (!Number.isFinite(Date.parse(info.builtAt))) throw new Error('Invalid build time');
     if (info.formatVersion !== FORMAT_VERSION || !readerSupports(info.minimumReaderVersion)) throw new CompatibilityError('Database requires a different reader', info);
+    verify(bytes);
     if (root.alpha2Length() !== 676 || root.numericLength() !== 1000 || !root.entitiesLength()) throw new Error('Missing registry indexes');
     let previous = '';
     for (let i = 0; i < root.entitiesLength(); i++) {
       const e = root.entities(i)!;
-      if (!e.id() || !e.name() || e.id()! <= previous || e.fromDay() >= e.untilDay()) throw new Error('Invalid entity table');
-      previous = e.id()!;
+      const id = e.id();
+      if (!id || id.length > MAX_ENTITY_ID_LENGTH) throw new Error('Invalid entity identity');
+      if (!e.name() || id <= previous || e.fromDay() >= e.untilDay()) throw new Error('Invalid entity table');
+      previous = id;
       for (let j = 0; j < e.successorsLength(); j++) if (e.successors(j)! >= root.entitiesLength()) throw new Error('Invalid successor');
     }
     for (let i = 0; i < root.assignmentsLength(); i++) {
       const a = root.assignments(i)!, ns = a.namespace() as Namespace;
-      if (a.entity() >= root.entitiesLength() || !NAMESPACES.includes(ns) || !a.value() || !normalize(a.value()!, ns) || !a.status() || !a.evidenceLength() || a.fromDay() >= a.untilDay() || a.fromLatestDay() < a.fromDay() || a.untilEarliestDay() > a.untilDay() || a.fromLatestDay() > a.untilEarliestDay()) throw new Error('Invalid assignment');
+      if (a.entity() >= root.entitiesLength() || !NAMESPACES.includes(ns) || !a.value() || !normalize(a.value()!, ns) || !a.status() || !a.evidenceLength() || a.fromDay() >= a.untilDay() || a.fromLatestDay() < a.fromDay() || a.untilEarliestDay() > a.untilDay() || a.fromLatestDay() > a.untilDay() || a.untilEarliestDay() < a.fromDay()) throw new Error('Invalid assignment');
     }
     let previousBytes: Uint8Array = new Uint8Array();
     const seen = new Set<number>();
@@ -90,15 +94,21 @@ export class CountryRegistry {
       if (ns === 'iso-alpha2' && root.alpha2(alpha2Slot(value)) !== i) throw new Error('Missing alpha2 index');
       if (ns === 'iso-numeric' && root.numeric(Number(value)) !== i) throw new Error('Missing numeric index');
     }
-    return new CountryRegistry(root, Object.freeze(info));
+    return new CountryRegistry(root, Object.freeze(info), bytes);
   }
 
   metadata(): Readonly<Metadata> { return this.info; }
 
-  compareRelease(latest?: Metadata) {
+  async compareRelease(latest?: Metadata & { sha256?: string }) {
     if (!latest) return { freshness: 'unknown', compatible: true } as const;
     if (!Number.isSafeInteger(latest.datasetVersion) || latest.datasetVersion < 1) throw new Error('Invalid release version');
-    return { freshness: this.info.datasetVersion < latest.datasetVersion ? 'outdated' : this.info.datasetVersion === latest.datasetVersion ? 'current' : 'ahead', compatible: latest.formatVersion === FORMAT_VERSION && readerSupports(latest.minimumReaderVersion) };
+    if (latest.sha256 !== undefined && !/^[a-f0-9]{64}$/.test(latest.sha256)) throw new Error('Invalid release digest');
+    let sameMetadata = Object.entries(this.info).every(([key, value]) => latest[key as keyof Metadata] === value);
+    if (sameMetadata && latest.sha256) {
+      this.binaryDigest ??= crypto.subtle.digest('SHA-256', new Uint8Array(this.bytes)).then(hash => Array.from(new Uint8Array(hash), value => value.toString(16).padStart(2, '0')).join(''));
+      sameMetadata = await this.binaryDigest === latest.sha256;
+    }
+    return { freshness: this.info.datasetVersion < latest.datasetVersion ? 'outdated' : this.info.datasetVersion === latest.datasetVersion ? sameMetadata ? 'current' : 'different' : 'ahead', compatible: latest.formatVersion === FORMAT_VERSION && readerSupports(latest.minimumReaderVersion) };
   }
 
   entity(id: string): { id: string; name: string } | undefined {
@@ -127,17 +137,15 @@ export class CountryRegistry {
         if (seen.has(index)) continue; seen.add(index);
         const a = this.root.assignments(index)!, e = this.root.entities(a.entity())!;
         let applicability: Candidate['applicability'];
-        if (options.date === undefined) {
-          const unknownCodeBounds = namespace !== 'name' && namespace !== 'unofficial' && !a.temporalReviewed() && (a.fromDay() === MIN_DAY || a.untilDay() === MAX_DAY);
-          applicability = at >= a.untilDay() || at >= e.untilDay() ? 'retired' : at < a.fromDay() ? 'outside-date' : unknownCodeBounds ? 'uncertain' : 'active';
-        } else {
-          const name = namespace === 'name' || namespace === 'unofficial';
-          const from = name ? e.fromDay() : a.fromDay(), until = name ? e.untilDay() : a.untilDay();
-          if (at < from || at >= until) applicability = 'outside-date';
-          else if (name || (a.fromDay() === MIN_DAY && a.untilDay() === MAX_DAY) || at < a.fromLatestDay() || at >= a.untilEarliestDay()) applicability = 'uncertain';
-          else applicability = 'active';
-        }
-        candidates.push(new Candidate(this.root, a, applicability));
+        const name = namespace === 'name' || namespace === 'unofficial';
+        const from = Math.max(a.fromDay(), e.fromDay()), until = Math.min(a.untilDay(), e.untilDay());
+        const unknownCodeBounds = !name && !a.temporalReviewed() && (a.fromDay() === MIN_DAY || a.untilDay() === MAX_DAY);
+        const imprecise = at < a.fromLatestDay() || at >= a.untilEarliestDay();
+        if (a.status() === 'deprecated-claim') applicability = 'deprecated';
+        else if (at < from || at >= until) applicability = options.date === undefined && at >= until ? 'retired' : 'outside-date';
+        else if ((options.date !== undefined && name) || unknownCodeBounds || imprecise) applicability = 'uncertain';
+        else applicability = 'active';
+        candidates.push(new Candidate(this.root, a, applicability, unknownCodeBounds && !imprecise));
       }
     }
     let eligible = candidates.filter(c => c.applicability === 'active');
@@ -146,14 +154,15 @@ export class CountryRegistry {
       const ended = retired.map(c => c.retiredAtDay);
       const latestEnd = ended.length ? Math.max(...ended) : MIN_DAY;
       eligible = retired.filter((_, i) => ended[i] === latestEnd);
-      if (!eligible.length) eligible = candidates.filter(c => c.applicability === 'uncertain');
+      if (!eligible.length) eligible = candidates.filter(c => c.applicability === 'uncertain' && c.tentative);
     }
     const ids = new Set(eligible.map(c => c.id));
     const uncertainOther = candidates.some(c => c.applicability === 'uncertain' && !ids.has(c.id));
     const preferred = !outsideCoverage && ids.size === 1 && !uncertainOther ? eligible[0] : undefined;
     const differentEntities = new Set(candidates.map(c => c.id)).size > 1;
     const temporalAmbiguity = candidates.some(c => c.applicability === 'uncertain') || (differentEntities && candidates.some(c => c.applicability !== 'active'));
-    return { preferred, candidates, selection: preferred ? options.date === undefined ? 'latest' : 'at-date' : ids.size > 1 || uncertainOther ? 'ambiguous' : 'none', temporalAmbiguity, coverage: outsideCoverage ? 'outside-coverage' : 'partial', evidenceStatus: 'unreviewed-spike' };
+    const plausibleIds = new Set(candidates.filter(c => c.applicability === 'active' || c.applicability === 'uncertain').map(c => c.id));
+    return { preferred, candidates, selection: preferred ? options.date === undefined ? 'latest' : 'at-date' : plausibleIds.size > 1 || ids.size > 1 || uncertainOther && ids.size > 0 ? 'ambiguous' : candidates.some(c => c.applicability === 'uncertain') ? 'uncertain' : 'none', temporalAmbiguity, coverage: outsideCoverage ? 'outside-coverage' : 'partial', evidenceStatus: 'unreviewed-spike' };
   }
 
   private findKey(namespace: Namespace, value: string): Key | undefined {

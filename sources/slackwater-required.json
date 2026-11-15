@@ -235,7 +235,7 @@
       "verificationStatus": "pending"
     },
     {
-      "input": "Saint Barthélemy",
+      "input": "Saint Barth\u00e9lemy",
       "records": 1,
       "baselineAlpha2": "BL",
       "verificationStatus": "pending"
@@ -463,7 +463,7 @@
       "verificationStatus": "pending"
     },
     {
-      "input": "Curaçao",
+      "input": "Cura\u00e7ao",
       "records": 3,
       "baselineAlpha2": "CW",
       "verificationStatus": "pending"
@@ -780,5 +780,11 @@
       "baselineAlpha2": "NA",
       "verificationStatus": "pending"
     }
-  ]
+  ],
+  "licenseInventory": {
+    "status": "recorded per-source at sources/slackwater-licenses.json",
+    "slackwaterRootLicenseScope": "MIT excludes data/; individual source files carry their own terms",
+    "baselinePackageLicense": "MIT; sources/licenses/country-code-lookup-MIT.txt",
+    "notice": "Consumer inventory retains source terms; see DATA_LICENSE.md and sources/slackwater-licenses.json"
+  }
 }

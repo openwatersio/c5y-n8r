@@ -1,14 +1,14 @@
 # Private spike findings
 
-This spike exercises one binary dataset and its TypeScript reader. It remains unpublished and has no production consumer. The corpus has eleven Wikidata entities, 119 indexed assignments, and 136 evidence requests. The binary is 28,256 bytes; the evidence companion is 48,012 bytes. Source snapshots are about 5 MB and stay outside the runtime lookup artifact.
+This spike exercises one binary dataset and its TypeScript reader. It remains unpublished and has no production consumer. The corpus has eleven Wikidata entities, 119 indexed assignments, and 136 evidence requests. The binary is 28,276 bytes; the evidence companion is 48,012 bytes. Source snapshots are about 5 MB and stay outside the runtime lookup artifact.
 
 ## Evidence
 
-The live pinned-and-current check reports 82 verified spelling assertions and 54 findings requiring review. It exits with status 1. No claim is certified merely because a Wikidata URL exists. The full per-assertion output is in [evidence.json](evidence.json).
+The live pinned-and-current check reports 81 spelling matches and 55 findings requiring review. It exits with status 1. No claim is certified merely because a Wikidata URL exists. The full per-assertion output is in [evidence.json](evidence.json).
 
 Many ISO claims have no references. The reused CS assignments carry year-precision qualifiers and deprecated ranks. A country existence date cannot fill in a missing ISO assignment date. Labels and accepted spellings have useful provenance without proving official-name history. The snapshot for Q43 labels the country Turkey in English and Türkiye in Turkish.
 
-The check prototype conservatively leaves statement interpretation and local-policy aliases unresolved. It has no automated primary-document passage extraction or maintainer-resolution mechanism. Runtime entity/assignment or metadata changes trigger a non-passing review finding. Code-only changes with unchanged facts report no new factual assertions. The CI workflow isolates trusted checker code from proposed artifacts; it is not configured as a required branch-protection rule.
+Spelling matches use `source-match` and cannot certify a verified dataset. Derived spellings remain local policy requiring review. The check prototype conservatively leaves statement interpretation and local-policy aliases unresolved. It has no automated primary-document passage extraction or maintainer-resolution mechanism. Runtime entity/assignment or metadata changes trigger a non-passing review finding. Code-only changes with unchanged facts report no new factual assertions. The CI workflow isolates trusted checker code from proposed artifacts; it is not configured as a required branch-protection rule.
 
 ## Lookup behavior
 
@@ -20,7 +20,7 @@ The coverage interval is embedded data. The entity set follows the compiled reco
 
 ## Measurements
 
-Measurements below use Node v24.20.0 on Apple M1 Ultra, darwin/arm64. Values are median batch means in nanoseconds per operation, with the full workload and batch distributions in [benchmark.json](benchmark.json).
+The recorded dataset-version-1 measurements below use Node v24.20.0 on Apple M1 Ultra, darwin/arm64. Values are median batch means in nanoseconds per operation, with the full workload and batch distributions in [benchmark.json](benchmark.json).
 
 | Operation | Median ns/op |
 | --- | ---: |
@@ -50,12 +50,12 @@ The harness also examined 8,728 Slackwater source records and 129 distinct count
 - Decide the maintainer-resolution mechanism for PR evidence findings and implement primary-source passage checks.
 - Specify dated preferred names and a continent convention; preserve unsupported claims as unverified rather than promoting them silently.
 - Measure full-scale data, individual lookup distributions, cold module/file loading, allocations, and retained memory before setting budgets.
-- Harden the handwritten structural verifier against a larger malformed corpus or select a supported verifier strategy. This spike validates the fields it reads; it is not a security certification for arbitrary future schemas.
+- Fuzz the handwritten structural verifier against a larger malformed corpus or select a supported verifier strategy; shared structures are memoized, expanded structural work is bounded, and indexed entity IDs are limited to 64 UTF-16 code units. This spike validates the fields it reads; it is not a security certification for arbitrary future schemas.
 - Complete release-manifest/evidence integrity checks, package installation fixtures, generated-binding regeneration checks, and the future binary-evolution contract.
-- Select the project name and license before any public release.
+- Keep the code MIT license and upstream data license inventory with distributions.
 
 ## Validation and review
 
-The local suite has 16 passing tests, covering temporal resolution, uncertain bounds, ambiguity, aliases, retirement pointers, embedded version compatibility, malformed files, evidence mismatches, unsupported dates, source outages, and a coverage-only PR-gate bypass regression. The same tests run on Node 24. Source compilation is deterministic from the pinned inputs.
+The local suite has 48 passing tests, covering temporal resolution, uncertain bounds, ambiguity, aliases, retirement pointers, embedded version compatibility, malformed files, evidence mismatches, unsupported dates, source outages, and a coverage-only PR-gate bypass regression. The suite includes a plain Node package-export check and source-refresh regressions. Source compilation is deterministic from the pinned inputs; a sync of unchanged revisions preserves those inputs. Format 2 rejects format 1 instead of reinterpreting its deprecated-claim statuses. Metadata remains readable before an incompatible body is inspected.
 
-An independent reviewer found the metadata-only evidence-gate bypass and the unknown-bound preference error. Both were reproduced with failing tests and corrected. A narrow re-review confirmed those fixes. Full production review and a complete audit of historical data are outside this private spike.
+The compatibility baseline pins all 119 imported input assignments with 235 namespaced, default and dated lookup expectations. The trusted checker flags fixture changes and its artifact comparison mode checks reader observations against base expectations in a fresh job that runs no proposed code. Source refreshes fail if a pinned mapping disappears, an alias points outside the corpus, or a supplied temporal value cannot be interpreted. Changed runtime artifacts require an increased dataset version in the PR evidence check. Full production review and a complete audit of historical data are outside this private spike.

@@ -3,23 +3,23 @@ import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { compile, type SourceData } from '../src/compile.ts';
 import { CountryRegistry, CompatibilityError } from '../src/index.ts';
-import { day } from '../src/common.ts';
+import { day, FORMAT_VERSION } from '../src/common.ts';
 
 const bytes = readFileSync('data/countries.crdb');
 const registry = CountryRegistry.open(bytes);
-const fixture = (): SourceData => ({ metadata: { datasetVersion: 1, formatVersion: 1, minimumReaderVersion: '0.0.1', referenceDate: '2026-11-15', builtAt: '2026-11-15T00:00:00Z', evidenceDigest: 'a'.repeat(64), corpus: 'synthetic test', coverageFrom: '1974-01-01', coverageThrough: '2026-11-15' }, entities: [{ id: 'A', name: 'First', successors: [] }, { id: 'B', name: 'Second', successors: [] }], assignments: [{ entity: 'A', namespace: 'iso-alpha2', value: 'ZZ', status: 'test', from: '1980-01-01', until: '1990-01-01', temporalReviewed: true, evidence: ['synthetic'] }, { entity: 'B', namespace: 'iso-alpha2', value: 'ZZ', status: 'test', from: '2000-01-01', until: '2010-01-01', temporalReviewed: true, evidence: ['synthetic'] }] });
+const fixture = (): SourceData => ({ metadata: { datasetVersion: 1, formatVersion: FORMAT_VERSION, minimumReaderVersion: '0.0.1', referenceDate: '2026-11-15', builtAt: '2026-11-15T00:00:00Z', evidenceDigest: 'a'.repeat(64), corpus: 'synthetic test', coverageFrom: '1974-01-01', coverageThrough: '2026-11-15' }, entities: [{ id: 'A', name: 'First', successors: [] }, { id: 'B', name: 'Second', successors: [] }], assignments: [{ entity: 'A', namespace: 'iso-alpha2', value: 'ZZ', status: 'test', from: '1980-01-01', until: '1990-01-01', temporalReviewed: true, evidence: ['synthetic'] }, { entity: 'B', namespace: 'iso-alpha2', value: 'ZZ', status: 'test', from: '2000-01-01', until: '2010-01-01', temporalReviewed: true, evidence: ['synthetic'] }] });
 
-test('reads versions from loaded bytes and distinguishes freshness from compatibility', () => {
+test('reads versions from loaded bytes and distinguishes freshness from compatibility', async () => {
   const m = registry.metadata();
-  assert.equal(m.datasetVersion, 1);
-  assert.equal(registry.compareRelease().freshness, 'unknown');
-  assert.equal(registry.compareRelease({ ...m, datasetVersion: 2 }).freshness, 'outdated');
-  assert.equal(registry.compareRelease({ ...m, datasetVersion: 1 }).freshness, 'current');
-  const data = fixture(); data.metadata.datasetVersion = 2;
+  assert.equal(m.datasetVersion, 2);
+  assert.equal((await registry.compareRelease()).freshness, 'unknown');
+  assert.equal((await registry.compareRelease({ ...m, datasetVersion: m.datasetVersion + 1 })).freshness, 'outdated');
+  assert.equal((await registry.compareRelease({ ...m, datasetVersion: m.datasetVersion })).freshness, 'current');
+  const data = fixture(); data.metadata.datasetVersion = m.datasetVersion + 1;
   const newer = CountryRegistry.open(compile(data));
-  assert.equal(newer.metadata().datasetVersion, 2);
-  assert.equal(newer.compareRelease(m).freshness, 'ahead');
-  assert.equal(registry.compareRelease({ ...m, minimumReaderVersion: '0.1.0' }).compatible, false);
+  assert.equal(newer.metadata().datasetVersion, m.datasetVersion + 1);
+  assert.equal((await newer.compareRelease(m)).freshness, 'ahead');
+  assert.equal((await registry.compareRelease({ ...m, minimumReaderVersion: '0.1.0' })).compatible, false);
   data.metadata.minimumReaderVersion = '0.1.0';
   assert.throws(() => CountryRegistry.open(compile(data)), CompatibilityError);
 });
@@ -39,7 +39,7 @@ test('keeps unofficial codes separate and reports ambiguous names', () => {
   assert.equal(registry.resolve('UK', { namespace: 'iso-alpha2' }).preferred, undefined);
   const result = registry.resolve('Congo');
   assert.equal(result.selection, 'ambiguous');
-  assert.equal(result.preferred, undefined);
+  assert.equal(result.preferred?.id, undefined);
   assert.equal(result.temporalAmbiguity, false);
   assert.deepEqual(new Set(result.candidates.map(c => c.id)), new Set(['Q971', 'Q974']));
 });
@@ -59,7 +59,8 @@ test('resolves reused codes by date and exposes alternatives without a date', ()
   assert.equal(latest.temporalAmbiguity, true);
   assert.equal(latest.candidates.length, 2);
   const boundary = registry.resolve('CS', { namespace: 'iso-alpha2', date: '2003-06-01' });
-  assert.equal(boundary.preferred, undefined);
+  assert.equal(boundary.preferred?.id, undefined);
+  assert.equal(boundary.selection, 'uncertain');
   assert.equal(boundary.candidates.some(c => c.applicability === 'uncertain'), true);
 });
 
@@ -114,4 +115,76 @@ test('rejects malformed, truncated, wrong-format, and missing-metadata binaries'
   const missing = Uint8Array.from(bytes), mv = new DataView(missing.buffer);
   mv.setUint16(rootVtable + 4, 0, true);
   assert.throws(() => CountryRegistry.open(missing));
+});
+
+test('dated answers retain uncertainty when either unreviewed bound is missing', () => {
+  for (const missing of ['from', 'until'] as const) {
+    const data = fixture(); data.assignments = [data.assignments[0]];
+    delete data.assignments[0][missing]; data.assignments[0].temporalReviewed = false;
+    const result = CountryRegistry.open(compile(data)).resolve('ZZ', { namespace: 'iso-alpha2', date: '1985-01-01' });
+    assert.equal(result.preferred?.id, undefined);
+    assert.equal(result.candidates[0].applicability, 'uncertain');
+    assert.equal(result.selection, 'uncertain');
+  }
+});
+
+test('codes respect entity lifetimes and uncertainty at the reference date', () => {
+  const data = fixture(); data.assignments = [data.assignments[0]];
+  data.entities[0].from = '1982-01-01'; data.entities[0].until = '1988-01-01';
+  const db = CountryRegistry.open(compile(data));
+  for (const date of ['1981-01-01', '1988-01-01']) assert.equal(db.resolve('ZZ', { namespace: 'iso-alpha2', date }).preferred?.id, undefined);
+  data.metadata.referenceDate = '1985-06-01'; data.assignments[0].untilEarliest = '1985-01-01';
+  const uncertain = CountryRegistry.open(compile(data)).resolve('ZZ', { namespace: 'iso-alpha2' });
+  assert.equal(uncertain.preferred, undefined);
+  assert.equal(uncertain.candidates[0].applicability, 'uncertain');
+});
+
+test('overlapping imprecise bounds retain candidates without inventing a definite interval', () => {
+  const data = fixture(); data.assignments = [data.assignments[0]];
+  Object.assign(data.assignments[0], { from: '1980-01-01', fromLatest: '1981-01-01', untilEarliest: '1980-01-01', until: '1981-01-01' });
+  const result = CountryRegistry.open(compile(data)).resolve('ZZ', { namespace: 'iso-alpha2', date: '1980-06-01' });
+  assert.equal(result.preferred?.id, undefined);
+  assert.equal(result.candidates[0].applicability, 'uncertain');
+});
+
+test('deprecated claims remain visible without becoming preferred answers', () => {
+  const data = fixture(); data.assignments = [data.assignments[0]];
+  data.assignments[0].status = 'deprecated-claim';
+  const db = CountryRegistry.open(compile(data));
+  for (const date of [undefined, '1985-01-01']) {
+    const result = db.resolve('ZZ', { namespace: 'iso-alpha2', date });
+    assert.equal(result.preferred?.id, undefined);
+    assert.equal(result.candidates[0].applicability, 'deprecated');
+  }
+});
+
+test('incompatible format metadata is readable before inspecting an unknown body', () => {
+  const changed = Uint8Array.from(bytes), v = new DataView(changed.buffer);
+  const root = v.getUint32(0, true), table = root - v.getInt32(root, true);
+  const field = root + v.getUint16(table + 4, true), metadata = field + v.getUint32(field, true);
+  const mt = metadata - v.getInt32(metadata, true);
+  v.setUint32(metadata + v.getUint16(mt + 6, true), 99, true);
+  const body = root + v.getUint16(table + 6, true); v.setUint32(body, 0xffffffff, true);
+  assert.throws(() => CountryRegistry.open(changed), (error: any) => error instanceof CompatibilityError && error.metadata.formatVersion === 99);
+});
+
+test('the reader rejects the legacy status contract instead of misreading it', () => {
+  const legacy = Uint8Array.from(bytes), view = new DataView(legacy.buffer);
+  const root = view.getUint32(0, true), table = root - view.getInt32(root, true);
+  const field = root + view.getUint16(table + 4, true), metadata = field + view.getUint32(field, true);
+  const mt = metadata - view.getInt32(metadata, true);
+  view.setUint32(metadata + view.getUint16(mt + 6, true), 1, true);
+  assert.throws(() => CountryRegistry.open(legacy), (error: any) => error instanceof CompatibilityError && error.metadata.formatVersion === 1);
+});
+
+test('reused dataset versions do not hide changed release identity', async () => {
+  const m = registry.metadata();
+  assert.equal((await registry.compareRelease({ ...m, evidenceDigest: '0'.repeat(64) })).freshness, 'different');
+  assert.equal((await registry.compareRelease({ ...m, referenceDate: '2026-11-14' })).freshness, 'different');
+});
+
+test('release freshness checks the supplied binary hash even when metadata is identical', async () => {
+  const release = JSON.parse(readFileSync('data/release.json', 'utf8'));
+  assert.equal((await registry.compareRelease(release)).freshness, 'current');
+  assert.equal((await registry.compareRelease({ ...release, sha256: '0'.repeat(64) })).freshness, 'different');
 });

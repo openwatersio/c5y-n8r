@@ -20,7 +20,7 @@ If the sources disagree or fewer than three additional independent sources can b
 4. Run `npm run source:fetch` to retrieve the updated Wikidata information, then `npm run build`. Commit the pinned snapshots, source manifest, binary, and evidence artifacts together. The library's imported assertions must come from the synced Wikidata revision; a local data patch cannot substitute for fixing upstream.
 5. Run `npm run check` and `npm run evidence`. Review every evidence result and include the report with the pull request. A missing source, inaccessible supporting passage, conflicting value, or unresolved review remains non-passing.
 
-Local matching rules, such as normalization and unofficial aliases, must be clearly identified as policy. They cannot establish a country fact or bypass source verification. Preserve accepted inputs and historical identities when preferred names or current codes change.
+Local matching rules, such as normalization and unofficial aliases, must be clearly identified as policy. They cannot establish a country fact or bypass source verification. The build checks `sources/accepted-inputs.json`; keep every pinned entity/input pair and its expected lookup behavior, and add compatibility fixtures for newly accepted inputs. Every input needs both namespaced and default lookup expectations. Changes to expected answers or fixture removal are flagged by the trusted-base checker and require explicit review against the base revision. The observation job runs proposed code, and a fresh verdict job compares only JSON results against protected base expectations, even when runtime data files are unchanged. Preserve accepted inputs and historical identities when preferred names or current codes change.
 
 ## What a data pull request must include
 
@@ -32,3 +32,7 @@ Local matching rules, such as normalization and unofficial aliases, must be clea
 - Applicable upstream data licenses and notices, following [DATA_LICENSE.md](DATA_LICENSE.md). The [MIT license](LICENSE) covers code and documentation.
 
 The evidence checker currently verifies supplied Wikidata pointers, values, and references, but does not interpret source passages or enforce independent corroboration automatically. Maintainers must check those requirements during review. A green build or a reference count alone cannot certify a dataset. The spike's existing corpus remains unreviewed until it satisfies this policy.
+
+## Review checks
+
+Check reader behavior against immutable base expectations, including code-only changes with byte-identical data. Changing the proposed fixture must not hide a changed answer. Require default lookup cases as well as namespaced cases for every input. Check shared-reference expansion in the binary verifier and in the semantic readers that consume its output; caching alone must not bypass the work bound. Keep proposed code out of the verdict job and require complete, unique observed cases. Include binary identity when checking equal-version freshness after rollback.

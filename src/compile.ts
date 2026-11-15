@@ -1,6 +1,6 @@
 import { Builder } from 'flatbuffers';
 import { AssignmentT, EntityT, KeyT, MetadataT, RegistryT } from './generated/country-spike.js';
-import { alpha2Slot, day, FORMAT_VERSION, keyFor, MAX_DAY, MIN_DAY, NAMESPACES, normalize, type Namespace, versionParts } from './common.ts';
+import { alpha2Slot, day, FORMAT_VERSION, keyFor, MAX_ENTITY_ID_LENGTH, MAX_DAY, MIN_DAY, NAMESPACES, normalize, type Namespace, versionParts } from './common.ts';
 
 export interface SourceEntity { id: string; name: string; continent?: string; from?: string; until?: string; successors: string[] }
 export interface SourceAssignment { entity: string; namespace: Namespace; value: string; status: string; from?: string; fromLatest?: string; until?: string; untilEarliest?: string; temporalReviewed: boolean; evidence: string[] }
@@ -21,7 +21,8 @@ export function compile(source: SourceData): Uint8Array {
   const indexes = new Map(entities.map((e, i) => [e.id, i]));
   if (indexes.size !== entities.length) throw new Error('Duplicate entity ID');
   const e = entities.map(entity => {
-    if (!entity.name || !entity.id) throw new Error('Missing entity identity');
+    if (typeof entity.id !== 'string' || !entity.id || entity.id.length > MAX_ENTITY_ID_LENGTH) throw new Error('Invalid entity identity');
+    if (!entity.name) throw new Error('Missing entity name');
     const from = entity.from ? day(entity.from) : MIN_DAY, until = entity.until ? day(entity.until) : MAX_DAY;
     if (from >= until) throw new Error('Invalid entity interval');
     return new EntityT(entity.id, entity.name, entity.continent ?? '', from, until, false, entity.successors.map(id => {
@@ -33,7 +34,7 @@ export function compile(source: SourceData): Uint8Array {
     if (entity === undefined || !NAMESPACES.includes(a.namespace) || !normalize(a.value, a.namespace) || !a.status || !a.evidence.length) throw new Error('Invalid assignment');
     const from = a.from ? day(a.from) : MIN_DAY, until = a.until ? day(a.until) : MAX_DAY;
     const fromLatest = a.fromLatest ? day(a.fromLatest) : from, untilEarliest = a.untilEarliest ? day(a.untilEarliest) : until;
-    if (from >= until || fromLatest < from || untilEarliest > until || fromLatest > untilEarliest) throw new Error('Invalid assignment interval');
+    if (from >= until || fromLatest < from || untilEarliest > until || fromLatest > until || untilEarliest < from) throw new Error('Invalid assignment interval');
     return new AssignmentT(entity, a.namespace, a.value, a.status, from, until, a.temporalReviewed, a.evidence, fromLatest, untilEarliest);
   });
   const groups = new Map<string, number[]>();

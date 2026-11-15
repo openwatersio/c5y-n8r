@@ -1,6 +1,6 @@
 {
   "name": "@openwaters/c5y-n8r",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "type": "module",
   "license": "MIT",
@@ -8,19 +8,24 @@
     "node": ">=24"
   },
   "exports": {
-    ".": "./src/index.ts",
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
     "./data": "./data/countries.crdb"
   },
   "scripts": {
     "generate": "flatc --ts --ts-flat-files --gen-object-api -o src/generated schema/countries.fbs",
     "source:fetch": "node --import tsx scripts/fetch-wikidata.ts",
-    "build": "node --import tsx scripts/build.ts",
-    "test": "node --import tsx --test test/*.test.ts",
+    "build": "npm run build:reader && node --import tsx scripts/build.ts",
+    "test": "npm run build:reader && node --import tsx --test test/*.test.ts",
     "typecheck": "tsc --noEmit",
     "demo": "node --import tsx scripts/demo.ts",
     "benchmark": "node --import tsx scripts/benchmark.ts",
     "evidence": "node --import tsx scripts/check-evidence.ts",
-    "check": "npm run typecheck && npm test"
+    "check": "npm run typecheck && npm test",
+    "build:reader": "tsc -p tsconfig.build.json",
+    "prepare": "npm run build:reader"
   },
   "dependencies": {
     "flatbuffers": "25.9.23"
@@ -33,5 +38,15 @@
     "i18n-iso-countries": "7.14.0",
     "tsx": "4.23.15",
     "typescript": "7.0.2"
-  }
+  },
+  "files": [
+    "dist",
+    "data",
+    "schema/countries.fbs",
+    "sources/manifest.json",
+    "DATA_LICENSE.md",
+    "LICENSE",
+    "README.md",
+    "sources/licenses/country-code-lookup-MIT.txt"
+  ]
 }

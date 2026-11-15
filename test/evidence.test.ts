@@ -7,8 +7,8 @@ const request = (): EvidenceRequest => ({ id: 'label', qid: 'Q1', revision: 12, 
 
 test('evidence check finds supplied spelling at pinned and current revisions', async () => {
   const result = await checkEvidence(request(), async () => entity());
-  assert.equal(result.status, 'verified');
-  assert.equal(passing([result]), true);
+  assert.equal(result.status, 'source-match');
+  assert.equal(passing([result]), false);
   assert.match(result.link, /oldid=12/);
 });
 test('evidence check rejects mismatched and missing supplied values', async () => {
@@ -29,4 +29,11 @@ test('source outages do not pass and upstream changes require review', async () 
   assert.equal(outage.status, 'infrastructure-error'); assert.equal(passing([outage]), false);
   const changed = await checkEvidence(request(), async (_, revision) => { const e = entity(); if (!revision) e.labels.en.value = 'Changed'; return e; });
   assert.equal(changed.status, 'needs-review');
+});
+
+test('derived spellings cannot be certified by matching a folded label', async () => {
+  const e = entity(); e.labels.en.value = 'Éxample';
+  const result = await checkEvidence({ ...request(), kind: 'ascii-label' }, async () => e);
+  assert.equal(result.status, 'needs-review');
+  assert.equal(passing([result]), false);
 });

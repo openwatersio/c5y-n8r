@@ -1,7 +1,7 @@
 import { readFile, writeFile, mkdir, readdir } from 'node:fs/promises';
 import { performance } from 'node:perf_hooks';
 import { cpus } from 'node:os';
-import { join } from 'node:path';
+import { join, dirname } from 'node:path';
 import lookup from 'country-code-lookup';
 import * as annexare from 'countries-list';
 import * as synergy from 'country-codes-list';
@@ -72,6 +72,7 @@ function codesByQid(qid: string) {
   }
 }
 const report = { recordedAt: new Date().toISOString(), node: process.version, platform: `${process.platform}/${process.arch}`, cpu: cpus()[0].model, bytes: bytes.length, evidenceBytes: (await readFile('data/evidence.json')).length, measured: performanceResults, compatibility, sink, limitations: ['Eleven entities in spike versus full catalogues in comparison libraries.', 'APIs do different work; i18n code measurement validates a code instead of returning a country record.', 'Some comparison names miss in some libraries; these are mixed hit/miss workload measurements.', 'Percentiles describe batch means, not individual lookup tail latency.', 'Open measurement uses warm file bytes; disk IO, first module import, retained-memory and allocation measurements are deferred.'] };
-await mkdir('reports', { recursive: true });
-await writeFile('reports/benchmark.json', JSON.stringify(report, null, 2) + '\n');
+const reportFile = sourceDir ? 'reports/benchmark.json' : 'reports/local/benchmark.json';
+await mkdir(dirname(reportFile), { recursive: true });
+await writeFile(reportFile, JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify({ ...report, compatibility: { ...compatibility, matches: undefined } }, null, 2));

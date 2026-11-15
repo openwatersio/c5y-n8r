@@ -5,13 +5,13 @@ export interface EvidenceRequest {
   qualifiers?: unknown; reason?: string;
 }
 export interface Finding {
-  id: string; status: 'verified' | 'needs-review' | 'mismatch' | 'infrastructure-error';
+  id: string; status: 'verified' | 'source-match' | 'needs-review' | 'mismatch' | 'infrastructure-error';
   link: string; message: string; references: string[];
 }
 export type WikiEntity = { id: string; lastrevid: number; labels: Record<string, { value: string }>; aliases?: Record<string, { value: string }[]>; claims: Record<string, any[]> };
 export type FetchEntity = (qid: string, revision?: number) => Promise<WikiEntity>;
 
-function canonical(value: any): string {
+export function canonical(value: any): string {
   if (Array.isArray(value)) return `[${value.map(canonical).join(',')}]`;
   if (value && typeof value === 'object') return `{${Object.keys(value).sort().map(k => `${JSON.stringify(k)}:${canonical(value[k])}`).join(',')}}`;
   return JSON.stringify(value);
@@ -54,7 +54,7 @@ export async function checkEvidence(request: EvidenceRequest, fetchEntity: Fetch
     }
     if (value === undefined || canonical(value) !== canonical(request.expected)) return finding('mismatch', 'Proposed value not found in supplied source');
     if (canonical(value) !== canonical(currentValue)) return finding('needs-review', 'Value changed or disappeared upstream', references);
-    return finding(needsReview ? 'needs-review' : 'verified', request.kind === 'statement' ? 'Statement found; primary references, rank, or date interpretation require review' : 'Spelling found; establishes an accepted input, not official-name history', references);
+    return finding(needsReview || request.kind === 'ascii-label' ? 'needs-review' : 'source-match', request.kind === 'statement' ? 'Statement found; primary references, rank, or date interpretation require review' : request.kind === 'ascii-label' ? 'Derived spelling is local policy and requires review' : 'Spelling matches Wikidata; independent source verification remains required', references);
   } catch (error) { return finding('infrastructure-error', error instanceof Error ? error.message : String(error)); }
 }
 

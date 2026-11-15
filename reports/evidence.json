@@ -1,10 +1,13 @@
 {
+  "datasetVersion": 2,
+  "binarySha256": "a384b15c6c5a0f2af8c37ee0e9693f6dd2d6cec37e9c224a4299fc9c9116eadb",
+  "evidenceDigest": "83ca5182c6c076c893544040284d1dae5420464add66660941906f54f3fc8fca",
   "mode": "live-pinned-and-current",
   "applicable": true,
   "passed": false,
   "counts": {
-    "needs-review": 54,
-    "verified": 82
+    "needs-review": 55,
+    "source-match": 81
   },
   "findings": [
     {
@@ -39,37 +42,37 @@
     },
     {
       "id": "Q43:label:en",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q43&oldid=2568776192",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
-      "id": "Q43:alias:en:Republic of T\u00fcrkiye",
-      "status": "verified",
+      "id": "Q43:alias:en:Republic of Türkiye",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q43&oldid=2568776192",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q43:alias:en:Republic of Turkey",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q43&oldid=2568776192",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
-      "id": "Q43:policy:name:T\u00fcrkiye",
-      "status": "verified",
+      "id": "Q43:policy:name:Türkiye",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q43&oldid=2568776192",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q43:policy:name:Turkiye",
-      "status": "verified",
+      "status": "needs-review",
       "link": "https://www.wikidata.org/w/index.php?title=Q43&oldid=2568776192",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Derived spelling is local policy and requires review",
       "references": []
     },
     {
@@ -104,23 +107,23 @@
     },
     {
       "id": "Q213:label:en",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q213&oldid=2565433432",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q213:alias:en:Czechia",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q213&oldid=2565433432",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q213:alias:en:the Czech Republic",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q213&oldid=2565433432",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
@@ -160,51 +163,51 @@
     },
     {
       "id": "Q33946:label:en",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q33946&oldid=2563146998",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q33946:alias:en:Czecho-Slovakia",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q33946&oldid=2563146998",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q33946:alias:en:cs",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q33946&oldid=2563146998",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q33946:alias:en:TCH",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q33946&oldid=2563146998",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
-      "id": "Q33946:alias:en:\u010ceskoslovensko",
-      "status": "verified",
+      "id": "Q33946:alias:en:Československo",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q33946&oldid=2563146998",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q33946:alias:en:Federation of Czechoslovakia",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q33946&oldid=2563146998",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q33946:alias:en:People's Republic of Czechoslovakia",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q33946&oldid=2563146998",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
@@ -250,23 +253,23 @@
     },
     {
       "id": "Q37024:label:en",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q37024&oldid=2559703250",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q37024:alias:en:Serbia-Montenegro",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q37024&oldid=2559703250",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q37024:alias:en:State Union of Serbia and Montenegro",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q37024&oldid=2559703250",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
@@ -340,114 +343,114 @@
     },
     {
       "id": "Q25227:label:en",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q25227:alias:en:AN",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q25227:alias:en:Dutch Antillean",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q25227:alias:en:Netherland Antilles",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q25227:alias:en:The Netherlands Antilles",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q25227:alias:en:Dutch Antilles/West Indies",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q25227:alias:en:Antillen",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q25227:alias:en:Netherland Antillies",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q25227:alias:en:N.W.I.",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q25227:alias:en:Netherlands-Antilles",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q25227:alias:en:Nederlandse Antillen",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q25227:alias:en:Dutch Antilles",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q25227:alias:en:Netherlands Antilleans",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q25227:alias:en:ISO 3166-1:AN",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q25227:alias:en:Netherlands Antillean",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q25227:alias:en:AHO",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
@@ -480,65 +483,65 @@
     },
     {
       "id": "Q25279:label:en",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
-      "id": "Q25279:alias:en:Island Territory of Cura\u00e7ao",
-      "status": "verified",
+      "id": "Q25279:alias:en:Island Territory of Curaçao",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q25279:alias:en:Curacau",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
-      "id": "Q25279:alias:en:Cura\u00e7oa",
-      "status": "verified",
+      "id": "Q25279:alias:en:Curaçoa",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
-      "id": "Q25279:alias:en:Cura\u03c2ao",
-      "status": "verified",
+      "id": "Q25279:alias:en:Curaςao",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q25279:alias:en:Curocao",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q25279:alias:en:ISO 3166-1:CW",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q25279:alias:en:Curazao",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
-      "id": "Q25279:alias:en:Country of Cura\u00e7ao",
-      "status": "verified",
+      "id": "Q25279:alias:en:Country of Curaçao",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
@@ -571,58 +574,58 @@
     },
     {
       "id": "Q26273:label:en",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q26273&oldid=2568809430",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q26273:alias:en:Saint Martin (Dutch part)",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q26273&oldid=2568809430",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q26273:alias:en:St Martin",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q26273&oldid=2568809430",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q26273:alias:en:NL-SX",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q26273&oldid=2568809430",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q26273:alias:en:Saint Martin",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q26273&oldid=2568809430",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q26273:alias:en:Sint Maarten (Dutch part)",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q26273&oldid=2568809430",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q26273:alias:en:sxm",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q26273&oldid=2568809430",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q26273:alias:en:Sint Martin",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q26273&oldid=2568809430",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
@@ -662,23 +665,23 @@
     },
     {
       "id": "Q27561:label:en",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q27561&oldid=2568773678",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q27561:alias:en:BES islands",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q27561&oldid=2568773678",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q27561:alias:en:Bonaire, Saint Eustatius and Saba",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q27561&oldid=2568773678",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
@@ -713,65 +716,65 @@
     },
     {
       "id": "Q145:label:en",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q145:alias:en:United Kingdom of Great Britain and Northern Ireland",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q145:alias:en:U K",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q145:alias:en:G B",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q145:alias:en:Great Britain",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q145:alias:en:Great Britain and Northern Ireland",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q145:alias:en:the United Kingdom of Great Britain and Northern Ireland",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q145:alias:en:the UK",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q145:alias:en:the United Kingdom",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
@@ -813,58 +816,58 @@
     },
     {
       "id": "Q971:label:en",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q971&oldid=2568810694",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q971:alias:en:Congo Republic",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q971&oldid=2568810694",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
-      "id": "Q971:alias:en:R\u00e9publique du Congo",
-      "status": "verified",
+      "id": "Q971:alias:en:République du Congo",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q971&oldid=2568810694",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q971:alias:en:Republic of Congo",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q971&oldid=2568810694",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q971:alias:en:cg",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q971&oldid=2568810694",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q971:alias:en:Rep. Congo",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q971&oldid=2568810694",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q971:alias:en:Republique du Congo",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q971&oldid=2568810694",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q971:alias:en:Congo (Brazzaville)",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q971&oldid=2568810694",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
@@ -906,79 +909,79 @@
     },
     {
       "id": "Q974:label:en",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q974:alias:en:DRC",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q974:alias:en:DR Congo",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q974:alias:en:Democratic Republic of Congo",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q974:alias:en:cd",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q974:alias:en:Dem. Republic of the Congo",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q974:alias:en:Dem. Republic of Congo",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q974:alias:en:Dem. Rep. Congo",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q974:alias:en:Congo (Kinshasa)",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q974:alias:en:COD",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {
       "id": "Q974:alias:en:D.R.C.",
-      "status": "verified",
+      "status": "source-match",
       "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
-      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "message": "Spelling matches Wikidata; independent source verification remains required",
       "references": []
     },
     {

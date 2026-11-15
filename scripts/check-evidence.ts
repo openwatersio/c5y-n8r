@@ -1,15 +1,17 @@
-import { readFile, mkdir, writeFile } from 'node:fs/promises';
+import { READER_VERSION } from '../src/common.ts';
+import { readFile, mkdir, writeFile, stat } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { createHash } from 'node:crypto';
 import { ByteBuffer } from 'flatbuffers';
 import { Registry } from '../src/generated/country-spike.js';
-import { CountryRegistry } from '../src/index.ts';
-import { checkEvidence, type EvidenceRequest, type WikiEntity, type Finding } from '../src/evidence.ts';
+import { CountryRegistry, CompatibilityError } from '../src/index.ts';
+import { canonical, checkEvidence, type EvidenceRequest, type WikiEntity, type Finding } from '../src/evidence.ts';
 
 const args = process.argv.slice(2);
 const option = (name: string) => { const i = args.indexOf(name); return i < 0 ? undefined : args[i + 1]; };
 const corpus = resolve(option('--corpus') ?? '.');
 const base = option('--base');
+const readerResults = option('--reader-results');
 const offline = args.includes('--offline');
 const reportDir = resolve(option('--output') ?? 'reports/local/evidence');
 const sha = (value: string | Uint8Array) => createHash('sha256').update(value).digest('hex');
@@ -37,22 +39,56 @@ async function load(dir: string) {
     facts.push(JSON.stringify([qid, a.unpack()]));
   }
   for (let i = 0; i < root.entitiesLength(); i++) facts.push(JSON.stringify(root.entities(i)!.unpack()));
-  return { requests, facts };
+  return { requests, facts, metadata: registry.metadata(), binarySha256: sha(bytes), bytes };
 }
 
+try {
+if (args.includes('--reader')) throw new Error('The verdict checker cannot load proposed reader code; supply --reader-results from an isolated job');
+if (readerResults && !base) throw new Error('--reader-results requires a trusted --base');
 const proposed = await load(corpus);
 let requests = proposed.requests;
 const preflight: Finding[] = [];
+let checkedLookups = 0;
 if (base) {
   const before = await load(resolve(base));
+  const beforeFixture = JSON.parse(await readFile(resolve(base, 'sources/accepted-inputs.json'), 'utf8'));
+  const proposedFixture = JSON.parse(await readFile(resolve(corpus, 'sources/accepted-inputs.json'), 'utf8'));
+  if (canonical(beforeFixture) !== canonical(proposedFixture)) preflight.push({ id: 'compatibility-fixture', status: 'needs-review', link: '', message: 'Compatibility expectations changed; review additions, removals and changed answers against the trusted base', references: [] });
+  if (readerResults) {
+    const file = resolve(readerResults);
+    if ((await stat(file)).size > 4 * 1024 * 1024) throw new Error('Oversized reader observations');
+    const observations = JSON.parse(await readFile(file, 'utf8'));
+    if (!observations || observations.schemaVersion !== 2 || Object.keys(observations).sort().join(',') !== 'cases,schemaVersion' || !Array.isArray(observations.cases)) throw new Error('Invalid reader observations');
+    if (!Array.isArray(beforeFixture.lookups) || !beforeFixture.lookups.length || observations.cases.length !== beforeFixture.lookups.length) throw new Error('Missing reader observation cases');
+    const key = (c: any) => canonical([c.input, c.namespace ?? null, c.date ?? null, c.dateTime ?? null]);
+    const observed = new Map<string, any>();
+    for (const result of observations.cases) {
+      if (!result || typeof result.input !== 'string' || result.input.length > 1024 || !result.result || typeof result.result !== 'object') throw new Error('Invalid reader observation case');
+      const id = key(result);
+      if (observed.has(id)) throw new Error('Duplicate reader observation case');
+      observed.set(id, result);
+    }
+    for (const expected of beforeFixture.lookups) {
+      const result = observed.get(key(expected));
+      if (!result) throw new Error('Missing trusted reader observation');
+      checkedLookups++;
+      if (canonical(result.result) !== canonical(expected.result)) {
+        const finding = { id: 'reader-lookup', status: 'mismatch' as const, link: '', message: 'Observed reader result violates the trusted lookup expectation', references: [], input: expected.input, namespace: expected.namespace, date: expected.date };
+        preflight.push(finding);
+      }
+    }
+    requests = [];
+  } else {
   const oldRequests = new Map(before.requests.map(r => [r.id, JSON.stringify(r)]));
   requests = proposed.requests.filter(r => oldRequests.get(r.id) !== JSON.stringify(r));
   const removed = before.requests.filter(r => !proposed.requests.some(n => n.id === r.id));
   for (const r of removed) preflight.push({ id: r.id, status: 'needs-review', link: `https://www.wikidata.org/wiki/${r.qid}`, message: 'Evidence or accepted meaning removed; requires explicit review', references: [] });
-  if (JSON.stringify(before.facts) !== JSON.stringify(proposed.facts)) {
+  if (before.binarySha256 !== proposed.binarySha256) {
+    if (proposed.metadata.datasetVersion <= before.metadata.datasetVersion) preflight.push({ id: 'dataset-version', status: 'mismatch', link: '', message: 'Changed runtime artifacts require an increased datasetVersion', references: [] });
     // The spike rechecks all claims when runtime facts change so omissions cannot hide behind unchanged requests.
     requests = proposed.requests;
     preflight.push({ id: 'binary-diff', status: 'needs-review', link: '', message: 'Runtime facts changed; inspect entity dates, relationships, and binary-to-source interpretation before approval', references: [] });
+  }
   }
 }
 await mkdir(reportDir, { recursive: true });
@@ -70,7 +106,7 @@ async function fetchEntity(qid: string, revision?: number): Promise<WikiEntity> 
     }
     const url = new URL(`https://www.wikidata.org/wiki/Special:EntityData/${qid}.json`);
     if (revision) url.searchParams.set('revision', String(revision));
-    const response = await fetch(url, { headers: { 'User-Agent': 'OpenWatersCountryRegistrySpike/0.0.1 (https://github.com/openwatersio/c5y-n8r)' }, signal: AbortSignal.timeout(30_000) });
+    const response = await fetch(url, { headers: { 'User-Agent': `OpenWatersCountryRegistrySpike/${READER_VERSION} (https://github.com/openwatersio/c5y-n8r)` }, signal: AbortSignal.timeout(30_000) });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const raw = await response.text();
     if (raw.length > 4 * 1024 * 1024) throw new Error('Oversized Wikidata response');
@@ -84,7 +120,17 @@ async function fetchEntity(qid: string, revision?: number): Promise<WikiEntity> 
 const findings = [...preflight];
 for (const request of requests) findings.push(await checkEvidence(request, fetchEntity));
 const counts = findings.reduce<Record<string, number>>((out, f) => { out[f.status] = (out[f.status] ?? 0) + 1; return out; }, {});
-const report = { mode: offline ? 'pinned-snapshots-only' : 'live-pinned-and-current', applicable: findings.length > 0, passed: !offline && findings.every(f => f.status === 'verified'), counts, findings, limitation: 'Prototype: reference passages and maintainer review resolutions are not automated. Findings requiring interpretation stay non-passing.' };
+const report = { datasetVersion: proposed.metadata.datasetVersion, binarySha256: proposed.binarySha256, evidenceDigest: proposed.metadata.evidenceDigest, mode: readerResults ? 'reader-compatibility' : offline ? 'pinned-snapshots-only' : 'live-pinned-and-current', checkedLookups, applicable: !!readerResults || findings.length > 0, passed: readerResults ? findings.length === 0 : !offline && findings.every(f => f.status === 'verified'), counts, findings, limitation: 'Prototype: reference passages and maintainer review resolutions are not automated. Findings requiring interpretation stay non-passing.' };
 await writeFile(resolve(reportDir, 'report.json'), JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify({ ...report, findings: undefined, report: resolve(reportDir, 'report.json') }, null, 2));
 process.exitCode = findings.length && !report.passed ? 1 : 0;
+
+} catch (error) {
+  const incompatible = error instanceof CompatibilityError;
+  const finding = { id: incompatible ? 'reader-compatibility' : 'corpus-error', status: incompatible ? 'needs-review' : 'infrastructure-error', link: '', message: error instanceof Error ? error.message : String(error), references: [], ...(incompatible ? { metadata: error.metadata } : {}) };
+  const report = { mode: readerResults ? 'reader-compatibility' : offline ? 'pinned-snapshots-only' : 'live-pinned-and-current', applicable: true, passed: false, counts: { [finding.status]: 1 }, findings: [finding] };
+  await mkdir(reportDir, { recursive: true });
+  await writeFile(resolve(reportDir, 'report.json'), JSON.stringify(report, null, 2) + '\n');
+  console.error(JSON.stringify(report, null, 2));
+  process.exitCode = 1;
+}

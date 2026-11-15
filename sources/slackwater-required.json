@@ -1,0 +1,784 @@
+{
+  "consumer": "https://github.com/openwatersio/slackwater-database",
+  "revision": "f9c3d42c066efe87e606f8c09673fb70cff2b2cf",
+  "inventorySource": "reports/benchmark.json",
+  "records": 8728,
+  "baseline": "country-code-lookup 0.2.1; expected codes are unverified migration baselines",
+  "verificationStatus": "pending",
+  "required": [
+    {
+      "input": "Denmark",
+      "records": 177,
+      "baselineAlpha2": "DK",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Faroe Islands",
+      "records": 11,
+      "baselineAlpha2": "FO",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Greenland",
+      "records": 86,
+      "baselineAlpha2": "GL",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Japan",
+      "records": 337,
+      "baselineAlpha2": "JP",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Norway",
+      "records": 99,
+      "baselineAlpha2": "NO",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "New Zealand",
+      "records": 101,
+      "baselineAlpha2": "NZ",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "United States",
+      "records": 5132,
+      "baselineAlpha2": "US",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Guam",
+      "records": 2,
+      "baselineAlpha2": "GU",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Northern Mariana Islands",
+      "records": 5,
+      "baselineAlpha2": "MP",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "French Polynesia",
+      "records": 8,
+      "baselineAlpha2": "PF",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "American Samoa",
+      "records": 8,
+      "baselineAlpha2": "AS",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Samoa",
+      "records": 6,
+      "baselineAlpha2": "WS",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Kiribati",
+      "records": 20,
+      "baselineAlpha2": "KI",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Marshall Islands",
+      "records": 24,
+      "baselineAlpha2": "MH",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Federated States of Micronesia",
+      "records": 24,
+      "baselineAlpha2": "FM",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Palau",
+      "records": 7,
+      "baselineAlpha2": "PW",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Fiji",
+      "records": 15,
+      "baselineAlpha2": "FJ",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "British Indian Ocean Territory",
+      "records": 1,
+      "baselineAlpha2": "IO",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Bermuda",
+      "records": 3,
+      "baselineAlpha2": "BM",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Indonesia",
+      "records": 37,
+      "baselineAlpha2": "ID",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Canada",
+      "records": 326,
+      "baselineAlpha2": "CA",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Mexico",
+      "records": 144,
+      "baselineAlpha2": "MX",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "El Salvador",
+      "records": 9,
+      "baselineAlpha2": "SV",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Honduras",
+      "records": 9,
+      "baselineAlpha2": "HN",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Nicaragua",
+      "records": 7,
+      "baselineAlpha2": "NI",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Costa Rica",
+      "records": 16,
+      "baselineAlpha2": "CR",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "The Bahamas",
+      "records": 20,
+      "baselineAlpha2": "BS",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Virgin Islands",
+      "records": 26,
+      "baselineAlpha2": "VI",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Puerto Rico",
+      "records": 45,
+      "baselineAlpha2": "PR",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Dominican Republic",
+      "records": 11,
+      "baselineAlpha2": "DO",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Antigua and Barbuda",
+      "records": 1,
+      "baselineAlpha2": "AG",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Panama",
+      "records": 26,
+      "baselineAlpha2": "PA",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Ecuador",
+      "records": 25,
+      "baselineAlpha2": "EC",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Cuba",
+      "records": 29,
+      "baselineAlpha2": "CU",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Turks and Caicos Islands",
+      "records": 1,
+      "baselineAlpha2": "TC",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Jamaica",
+      "records": 6,
+      "baselineAlpha2": "JM",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Cayman Islands",
+      "records": 1,
+      "baselineAlpha2": "KY",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Haiti",
+      "records": 5,
+      "baselineAlpha2": "HT",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Saint Barthélemy",
+      "records": 1,
+      "baselineAlpha2": "BL",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Guadeloupe",
+      "records": 1,
+      "baselineAlpha2": "GP",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Dominica",
+      "records": 2,
+      "baselineAlpha2": "DM",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Saint Lucia",
+      "records": 2,
+      "baselineAlpha2": "LC",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Belize",
+      "records": 3,
+      "baselineAlpha2": "BZ",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Guatemala",
+      "records": 7,
+      "baselineAlpha2": "GT",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Chile",
+      "records": 25,
+      "baselineAlpha2": "CL",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Cook Islands",
+      "records": 7,
+      "baselineAlpha2": "CK",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Tokelau",
+      "records": 1,
+      "baselineAlpha2": "TK",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Vanuatu",
+      "records": 5,
+      "baselineAlpha2": "VU",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Tonga",
+      "records": 5,
+      "baselineAlpha2": "TO",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Netherlands",
+      "records": 254,
+      "baselineAlpha2": "NL",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "United Kingdom",
+      "records": 151,
+      "baselineAlpha2": "GB",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Cote d'Ivoire",
+      "records": 1,
+      "baselineAlpha2": "CI",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Yemen",
+      "records": 2,
+      "baselineAlpha2": "YE",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Greece",
+      "records": 16,
+      "baselineAlpha2": "GR",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "France",
+      "records": 272,
+      "baselineAlpha2": "FR",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Myanmar (Burma)",
+      "records": 4,
+      "baselineAlpha2": "MM",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Australia",
+      "records": 165,
+      "baselineAlpha2": "AU",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Spain",
+      "records": 86,
+      "baselineAlpha2": "ES",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Egypt",
+      "records": 3,
+      "baselineAlpha2": "EG",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Niue",
+      "records": 2,
+      "baselineAlpha2": "NU",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Papua New Guinea",
+      "records": 12,
+      "baselineAlpha2": "PG",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Germany",
+      "records": 190,
+      "baselineAlpha2": "DE",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Italy",
+      "records": 75,
+      "baselineAlpha2": "IT",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Portugal",
+      "records": 20,
+      "baselineAlpha2": "PT",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Turkiye",
+      "records": 17,
+      "baselineAlpha2": "TR",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Ireland",
+      "records": 64,
+      "baselineAlpha2": "IE",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Sweden",
+      "records": 142,
+      "baselineAlpha2": "SE",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Croatia",
+      "records": 2,
+      "baselineAlpha2": "HR",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Bulgaria",
+      "records": 6,
+      "baselineAlpha2": "BG",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "China",
+      "records": 14,
+      "baselineAlpha2": "CN",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Brazil",
+      "records": 33,
+      "baselineAlpha2": "BR",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Malaysia",
+      "records": 18,
+      "baselineAlpha2": "MY",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Belgium",
+      "records": 6,
+      "baselineAlpha2": "BE",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Barbados",
+      "records": 4,
+      "baselineAlpha2": "BB",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Colombia",
+      "records": 8,
+      "baselineAlpha2": "CO",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Argentina",
+      "records": 15,
+      "baselineAlpha2": "AR",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Curaçao",
+      "records": 3,
+      "baselineAlpha2": "CW",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Peru",
+      "records": 17,
+      "baselineAlpha2": "PE",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "South Africa",
+      "records": 23,
+      "baselineAlpha2": "ZA",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Philippines",
+      "records": 16,
+      "baselineAlpha2": "PH",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Iran",
+      "records": 3,
+      "baselineAlpha2": "IR",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Bangladesh",
+      "records": 8,
+      "baselineAlpha2": "BD",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "India",
+      "records": 4,
+      "baselineAlpha2": "IN",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Sri Lanka",
+      "records": 4,
+      "baselineAlpha2": "LK",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Senegal",
+      "records": 4,
+      "baselineAlpha2": "SN",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Tanzania",
+      "records": 3,
+      "baselineAlpha2": "TZ",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Poland",
+      "records": 5,
+      "baselineAlpha2": "PL",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Latvia",
+      "records": 9,
+      "baselineAlpha2": "LV",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Finland",
+      "records": 28,
+      "baselineAlpha2": "FI",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Djibouti",
+      "records": 2,
+      "baselineAlpha2": "DJ",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Antarctica",
+      "records": 7,
+      "baselineAlpha2": "AQ",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Estonia",
+      "records": 21,
+      "baselineAlpha2": "EE",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Tuvalu",
+      "records": 4,
+      "baselineAlpha2": "TV",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Maldives",
+      "records": 8,
+      "baselineAlpha2": "MV",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Russia",
+      "records": 5,
+      "baselineAlpha2": "RU",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Vietnam",
+      "records": 7,
+      "baselineAlpha2": "VN",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Hong Kong",
+      "records": 3,
+      "baselineAlpha2": "HK",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Solomon Islands",
+      "records": 4,
+      "baselineAlpha2": "SB",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Mozambique",
+      "records": 6,
+      "baselineAlpha2": "MZ",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Romania",
+      "records": 2,
+      "baselineAlpha2": "RO",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Ukraine",
+      "records": 2,
+      "baselineAlpha2": "UA",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Taiwan",
+      "records": 2,
+      "baselineAlpha2": "TW",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Pakistan",
+      "records": 3,
+      "baselineAlpha2": "PK",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Singapore",
+      "records": 4,
+      "baselineAlpha2": "SG",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Saint Vincent and the Grenadines",
+      "records": 1,
+      "baselineAlpha2": "VC",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Lithuania",
+      "records": 1,
+      "baselineAlpha2": "LT",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Thailand",
+      "records": 4,
+      "baselineAlpha2": "TH",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Slovenia",
+      "records": 2,
+      "baselineAlpha2": "SI",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Venezuela",
+      "records": 1,
+      "baselineAlpha2": "VE",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Nigeria",
+      "records": 2,
+      "baselineAlpha2": "NG",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Kenya",
+      "records": 5,
+      "baselineAlpha2": "KE",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Angola",
+      "records": 3,
+      "baselineAlpha2": "AO",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Oman",
+      "records": 7,
+      "baselineAlpha2": "OM",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Bahrain",
+      "records": 1,
+      "baselineAlpha2": "BH",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Nauru",
+      "records": 4,
+      "baselineAlpha2": "NR",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Madagascar",
+      "records": 1,
+      "baselineAlpha2": "MG",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Mauritania",
+      "records": 2,
+      "baselineAlpha2": "MR",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Cabo Verde",
+      "records": 3,
+      "baselineAlpha2": "CV",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Trinidad and Tobago",
+      "records": 2,
+      "baselineAlpha2": "TT",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Republic of the Congo",
+      "records": 3,
+      "baselineAlpha2": "CG",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Mauritius",
+      "records": 6,
+      "baselineAlpha2": "MU",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Cameroon",
+      "records": 2,
+      "baselineAlpha2": "CM",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Seychelles",
+      "records": 5,
+      "baselineAlpha2": "SC",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Grenada",
+      "records": 2,
+      "baselineAlpha2": "GD",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Iceland",
+      "records": 3,
+      "baselineAlpha2": "IS",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Sao Tome and Principe",
+      "records": 2,
+      "baselineAlpha2": "ST",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Saint Helena",
+      "records": 3,
+      "baselineAlpha2": "SH",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Ghana",
+      "records": 3,
+      "baselineAlpha2": "GH",
+      "verificationStatus": "pending"
+    },
+    {
+      "input": "Namibia",
+      "records": 2,
+      "baselineAlpha2": "NA",
+      "verificationStatus": "pending"
+    }
+  ]
+}

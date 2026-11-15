@@ -2,7 +2,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 
 const ids = ['Q43', 'Q213', 'Q33946', 'Q37024', 'Q25227', 'Q25279', 'Q26273', 'Q27561', 'Q145', 'Q971', 'Q974'];
-const userAgent = 'OpenWatersCountryRegistrySpike/0.0.1 (https://github.com/openwatersio/country-registry-spike)';
+const userAgent = 'OpenWatersCountryRegistrySpike/0.0.1 (https://github.com/openwatersio/c5y-n8r)';
 await mkdir('sources/wikidata', { recursive: true });
 const manifest = [];
 for (const id of ids) {

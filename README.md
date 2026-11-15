@@ -1,4 +1,4 @@
-# Country registry spike
+# c5y-n8r — country-normalizer
 
 We don't want to own a country-code library. We didn't want to build one. Country-name changes in our dependency kept breaking Slackwater's database builds, and the alternatives we reviewed did not give us the compatibility contract we needed.
 
@@ -73,6 +73,16 @@ The PR evidence workflow runs the checker from the trusted base commit against t
 
 ## Ownership and scope
 
-The spike is private and unpublished. The code has no public license selected; `private: true` prevents accidental npm publication. Wikidata structured data is [CC0](https://www.wikidata.org/wiki/Wikidata:Data_access#Using_Wikidata's_data); referenced documents retain their own terms. We preserve source links and snapshots, and do not redistribute full referenced documents.
+The spike is private and unpublished. The code is [MIT licensed](LICENSE); `private: true` prevents accidental npm publication. Wikidata structured data is [CC0](https://www.wikidata.org/wiki/Wikidata:Data_access#Using_Wikidata's_data); referenced documents retain their own terms. We preserve source links and snapshots, and do not redistribute full referenced documents.
 
-There is no Slackwater migration, native reader, public API service, or production release in this spike. Keeping or expanding the implementation is a separate review decision.
+There is no Slackwater migration, native reader, public API service, or production release in this spike. The first milestone is verified coverage of the countries required by Slackwater, described below. Broader country and historical coverage can follow through reviewed contributions.
+
+## First milestone: Slackwater coverage
+
+The current benchmark inventory contains 129 distinct country inputs across 8,728 source records. Only four inputs currently resolve in this deliberately small corpus. These counts describe coverage, not verification. The comparison library's expected codes are migration baselines, not authoritative evidence.
+
+Before Slackwater adopts this library, every required input must resolve to its reviewed country identity and current ISO code, with explicit aliases for existing source spellings. Pin the Slackwater source revision in the coverage inventory, test every required input, and publish a report that separates verified, ambiguous, and unresolved entries. Historical fixtures remain useful tests; they do not establish complete historical coverage.
+
+For a missing Wikidata reference, find a reliable source that explicitly supports the assertion, add the reference to that statement in Wikidata, record the resulting revision link, and rerun the source sync and evidence check. A reference URL alone does not prove a claim. Check the source passage and distinguish current code evidence from evidence for historical assignment dates. Missing evidence must remain unresolved until this process is complete; local overrides must not turn it into a passing check.
+
+Code and data have separate licensing. See [data licensing and provenance](DATA_LICENSE.md).

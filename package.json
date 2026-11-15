@@ -1,9 +1,9 @@
 {
-  "name": "@openwaters/country-registry-spike",
+  "name": "@openwaters/c5y-n8r",
   "version": "0.0.1",
   "private": true,
   "type": "module",
-  "license": "UNLICENSED",
+  "license": "MIT",
   "engines": {
     "node": ">=24"
   },

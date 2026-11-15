@@ -70,7 +70,7 @@ async function fetchEntity(qid: string, revision?: number): Promise<WikiEntity> 
     }
     const url = new URL(`https://www.wikidata.org/wiki/Special:EntityData/${qid}.json`);
     if (revision) url.searchParams.set('revision', String(revision));
-    const response = await fetch(url, { headers: { 'User-Agent': 'OpenWatersCountryRegistrySpike/0.0.1 (https://github.com/openwatersio/country-registry-spike)' }, signal: AbortSignal.timeout(30_000) });
+    const response = await fetch(url, { headers: { 'User-Agent': 'OpenWatersCountryRegistrySpike/0.0.1 (https://github.com/openwatersio/c5y-n8r)' }, signal: AbortSignal.timeout(30_000) });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const raw = await response.text();
     if (raw.length > 4 * 1024 * 1024) throw new Error('Oversized Wikidata response');

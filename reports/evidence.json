@@ -1,0 +1,993 @@
+{
+  "mode": "live-pinned-and-current",
+  "applicable": true,
+  "passed": false,
+  "counts": {
+    "needs-review": 54,
+    "verified": 82
+  },
+  "findings": [
+    {
+      "id": "q43$05DBEBB8-5D18-40BB-9A4C-409073AA44F5",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q43&oldid=2568776192",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": [
+        "https://www.workwithdata.com/place/turkey"
+      ]
+    },
+    {
+      "id": "q43$8E2552E4-2A17-4D8C-9D77-CDF56CFBF263",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q43&oldid=2568776192",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "q43$9BB2620D-BD47-4973-AF4E-1C368C0DF3F4",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q43&oldid=2568776192",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "q43$A6680423-8D2A-49AD-B201-55448C7A975A",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q43&oldid=2568776192",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "Q43:label:en",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q43&oldid=2568776192",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q43:alias:en:Republic of T\u00fcrkiye",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q43&oldid=2568776192",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q43:alias:en:Republic of Turkey",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q43&oldid=2568776192",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q43:policy:name:T\u00fcrkiye",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q43&oldid=2568776192",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q43:policy:name:Turkiye",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q43&oldid=2568776192",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "q213$8EE50E79-C916-4C96-81FA-5EF346CAF415",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q213&oldid=2565433432",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": [
+        "https://www.workwithdata.com/place/czech-republic"
+      ]
+    },
+    {
+      "id": "q213$1327D12B-BCEF-4029-A5BE-3980DB037276",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q213&oldid=2565433432",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "q213$814EBB5F-32D7-4913-B559-BF357BEE881B",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q213&oldid=2565433432",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "q213$135A272C-BE76-467B-BD5B-2E547403C46E",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q213&oldid=2565433432",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "Q213:label:en",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q213&oldid=2565433432",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q213:alias:en:Czechia",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q213&oldid=2565433432",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q213:alias:en:the Czech Republic",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q213&oldid=2565433432",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "q33946$532fe5f3-472e-345c-fa74-a8f554f12396",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q33946&oldid=2563146998",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "Q33946$0e38ed27-4d56-9719-674d-2ae7ac43f355",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q33946&oldid=2563146998",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "Q33946$83d631a6-4dd9-1b66-e6cb-b4c33d4836ab",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q33946&oldid=2563146998",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "Q33946$c77605ef-41d9-a25e-8086-0a3fc46e7e15",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q33946&oldid=2563146998",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "Q33946$251080a5-46f1-6fb4-55e8-786b179cee29",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q33946&oldid=2563146998",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "Q33946:label:en",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q33946&oldid=2563146998",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q33946:alias:en:Czecho-Slovakia",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q33946&oldid=2563146998",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q33946:alias:en:cs",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q33946&oldid=2563146998",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q33946:alias:en:TCH",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q33946&oldid=2563146998",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q33946:alias:en:\u010ceskoslovensko",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q33946&oldid=2563146998",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q33946:alias:en:Federation of Czechoslovakia",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q33946&oldid=2563146998",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q33946:alias:en:People's Republic of Czechoslovakia",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q33946&oldid=2563146998",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q37024$b2c0418f-42a5-2ddd-be7f-e4c0b95bddc7",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q37024&oldid=2559703250",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "Q37024$50559283-9052-4902-B90D-AB55472E2386",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q37024&oldid=2559703250",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "Q37024$1E270954-8EF3-4C59-A2E5-544077150937",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q37024&oldid=2559703250",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": [
+        "https://www.iso.org/files/live/sites/isoorg/files/archive/pdf/en/iso_3166-3_newsletter_i-4.pdf"
+      ]
+    },
+    {
+      "id": "Q37024$4fb9a7e1-4463-b926-7a24-fd19b2d3b9b4",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q37024&oldid=2559703250",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": [
+        "https://www.iso.org/files/live/sites/isoorg/files/archive/pdf/en/iso_3166-3_newsletter_i-4.pdf"
+      ]
+    },
+    {
+      "id": "Q37024$d15997eb-4b67-f90b-4db9-f7e4598cb106",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q37024&oldid=2559703250",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": [
+        "https://www.iso.org/files/live/sites/isoorg/files/archive/pdf/en/iso_3166-3_newsletter_i-4.pdf"
+      ]
+    },
+    {
+      "id": "Q37024:label:en",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q37024&oldid=2559703250",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q37024:alias:en:Serbia-Montenegro",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q37024&oldid=2559703250",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q37024:alias:en:State Union of Serbia and Montenegro",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q37024&oldid=2559703250",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "q25227$E7F02C60-0147-4FF9-B90D-F194CC869B32",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "Q25227$60A8CF31-41E6-4215-9FC3-2A3E22BD4485",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "Q25227$9e597404-4781-5aea-359f-cd41fb36c50b",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "Q25227$7e1ee528-416d-1977-da58-277adcfaba91",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "Q25227$59e94266-4416-0233-74a5-9133e8dc8f60",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "Q25227$3E2A11CA-27E5-458E-A28B-07D47A78948D",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": [
+        "https://www.iso.org/files/live/sites/isoorg/files/archive/pdf/en/iso_3166-3_newsletter_i-6.pdf"
+      ]
+    },
+    {
+      "id": "Q25227$094621ff-4c27-b245-ab60-da8ab6517a23",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": [
+        "https://www.iso.org/files/live/sites/isoorg/files/archive/pdf/en/iso_3166-3_newsletter_i-6.pdf"
+      ]
+    },
+    {
+      "id": "Q25227$C7A77EF1-1AEF-47AE-81B3-4CF617077B18",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": [
+        "https://www.iso.org/files/live/sites/isoorg/files/archive/pdf/en/iso_3166-3_newsletter_i-6.pdf"
+      ]
+    },
+    {
+      "id": "Q25227$a6822db4-4092-a555-4b0a-27c8dc9590f7",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "Q25227:label:en",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q25227:alias:en:AN",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q25227:alias:en:Dutch Antillean",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q25227:alias:en:Netherland Antilles",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q25227:alias:en:The Netherlands Antilles",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q25227:alias:en:Dutch Antilles/West Indies",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q25227:alias:en:Antillen",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q25227:alias:en:Netherland Antillies",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q25227:alias:en:N.W.I.",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q25227:alias:en:Netherlands-Antilles",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q25227:alias:en:Nederlandse Antillen",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q25227:alias:en:Dutch Antilles",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q25227:alias:en:Netherlands Antilleans",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q25227:alias:en:ISO 3166-1:AN",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q25227:alias:en:Netherlands Antillean",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q25227:alias:en:AHO",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25227&oldid=2568717309",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "q25279$BD07AAB5-723B-4E09-9BCC-3B5EFBF1367A",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "q25279$34DAD74E-9FEA-4AC6-840E-4A8C84406C59",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "q25279$8FCA2256-773C-4912-8AF2-B210A3258DCB",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "q25279$DE345C0C-6EBA-4A62-AFD4-5949611D6E8B",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "Q25279:label:en",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q25279:alias:en:Island Territory of Cura\u00e7ao",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q25279:alias:en:Curacau",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q25279:alias:en:Cura\u00e7oa",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q25279:alias:en:Cura\u03c2ao",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q25279:alias:en:Curocao",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q25279:alias:en:ISO 3166-1:CW",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q25279:alias:en:Curazao",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q25279:alias:en:Country of Cura\u00e7ao",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "q26273$29C8D7EC-63E2-49D7-903F-4980CC3B3F35",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q26273&oldid=2568809430",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "q26273$B24C36E7-AFDA-44AA-9927-B745DCBB3782",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q26273&oldid=2568809430",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "q26273$6A1BFF61-4D52-4EBF-A223-5972EED79C91",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q26273&oldid=2568809430",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "q26273$87389F08-45E5-4218-B803-13A26735F2C0",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q26273&oldid=2568809430",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "Q26273:label:en",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q26273&oldid=2568809430",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q26273:alias:en:Saint Martin (Dutch part)",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q26273&oldid=2568809430",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q26273:alias:en:St Martin",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q26273&oldid=2568809430",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q26273:alias:en:NL-SX",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q26273&oldid=2568809430",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q26273:alias:en:Saint Martin",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q26273&oldid=2568809430",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q26273:alias:en:Sint Maarten (Dutch part)",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q26273&oldid=2568809430",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q26273:alias:en:sxm",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q26273&oldid=2568809430",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q26273:alias:en:Sint Martin",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q26273&oldid=2568809430",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "q27561$BFC5F46A-064B-4655-82F0-F7ABCF407A98",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q27561&oldid=2568773678",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "q27561$52BF99F4-0E85-4055-B808-1AA6374B8FED",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q27561&oldid=2568773678",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": [
+        "https://www.iso.org/files/live/sites/isoorg/files/archive/pdf/en/iso_3166-1_newsletter_vi-8_split_of_the_dutch_antilles_final-en.pdf",
+        "https://www.iso.org/files/live/sites/isoorg/files/archive/pdf/en/newsletter_vi-9_fiji-myanmar_and_other_minor_corrections-incl_bulgaria_corrected_2011-07-14_e_.pdf"
+      ]
+    },
+    {
+      "id": "q27561$77E42448-58A6-4B53-B949-F64A52488036",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q27561&oldid=2568773678",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": [
+        "https://www.iso.org/files/live/sites/isoorg/files/archive/pdf/en/iso_3166-1_newsletter_vi-8_split_of_the_dutch_antilles_final-en.pdf"
+      ]
+    },
+    {
+      "id": "q27561$FD30D8B9-B796-42EC-8826-F10758FACCF1",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q27561&oldid=2568773678",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": [
+        "https://www.iso.org/files/live/sites/isoorg/files/archive/pdf/en/iso_3166-1_newsletter_vi-8_split_of_the_dutch_antilles_final-en.pdf"
+      ]
+    },
+    {
+      "id": "Q27561:label:en",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q27561&oldid=2568773678",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q27561:alias:en:BES islands",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q27561&oldid=2568773678",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q27561:alias:en:Bonaire, Saint Eustatius and Saba",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q27561&oldid=2568773678",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "q145$39A86E04-9E11-4A28-99A4-85FADDAA3164",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": [
+        "https://www.workwithdata.com/place/united-kingdom"
+      ]
+    },
+    {
+      "id": "q145$638D9E2A-227E-4040-851C-457AFCEBFFF7",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "q145$665D9CB8-E08E-47C8-A5B9-8E3533928CE0",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "q145$0BB270C8-8DA7-4ACF-A388-6F87CF194A9A",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "Q145:label:en",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q145:alias:en:United Kingdom of Great Britain and Northern Ireland",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q145:alias:en:U K",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q145:alias:en:G B",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q145:alias:en:Great Britain",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q145:alias:en:Great Britain and Northern Ireland",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q145:alias:en:the United Kingdom of Great Britain and Northern Ireland",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q145:alias:en:the UK",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q145:alias:en:the United Kingdom",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q145:policy:unofficial:UK",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
+      "message": "Exercise a non-ISO code; needs independent code-system evidence before production.",
+      "references": []
+    },
+    {
+      "id": "q971$8F6DC291-5640-48F8-83B2-9E9F34DE151C",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q971&oldid=2568810694",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": [
+        "https://www.workwithdata.com/place/congo"
+      ]
+    },
+    {
+      "id": "q971$3B127E91-487A-4AF7-82B3-67C4B761DEF2",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q971&oldid=2568810694",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "q971$4B0B91D3-C9B6-406A-8694-3AEE95AEBE25",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q971&oldid=2568810694",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "q971$C5F847FF-CA38-450D-94C7-29B959DE3628",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q971&oldid=2568810694",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "Q971:label:en",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q971&oldid=2568810694",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q971:alias:en:Congo Republic",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q971&oldid=2568810694",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q971:alias:en:R\u00e9publique du Congo",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q971&oldid=2568810694",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q971:alias:en:Republic of Congo",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q971&oldid=2568810694",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q971:alias:en:cg",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q971&oldid=2568810694",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q971:alias:en:Rep. Congo",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q971&oldid=2568810694",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q971:alias:en:Republique du Congo",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q971&oldid=2568810694",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q971:alias:en:Congo (Brazzaville)",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q971&oldid=2568810694",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q971:policy:name:Congo",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q971&oldid=2568810694",
+      "message": "Exercise deliberately ambiguous shorthand; not a claim of an official name.",
+      "references": []
+    },
+    {
+      "id": "q974$F26DCE73-63EC-4EB1-86F8-3446C9EA87A3",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": [
+        "https://www.workwithdata.com/place/dem-rep-congo"
+      ]
+    },
+    {
+      "id": "q974$7029C629-44ED-4F26-92F9-EFCB20AFD6A0",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "q974$864FD52F-1282-4AB4-AA48-1B32B12D7D86",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "q974$6FC65A17-AB74-4BF2-8CB5-6D98339377F5",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
+      "message": "Statement found; primary references, rank, or date interpretation require review",
+      "references": []
+    },
+    {
+      "id": "Q974:label:en",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q974:alias:en:DRC",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q974:alias:en:DR Congo",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q974:alias:en:Democratic Republic of Congo",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q974:alias:en:cd",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q974:alias:en:Dem. Republic of the Congo",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q974:alias:en:Dem. Republic of Congo",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q974:alias:en:Dem. Rep. Congo",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q974:alias:en:Congo (Kinshasa)",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q974:alias:en:COD",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q974:alias:en:D.R.C.",
+      "status": "verified",
+      "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
+      "message": "Spelling found; establishes an accepted input, not official-name history",
+      "references": []
+    },
+    {
+      "id": "Q974:policy:name:Congo",
+      "status": "needs-review",
+      "link": "https://www.wikidata.org/w/index.php?title=Q974&oldid=2569319374",
+      "message": "Exercise deliberately ambiguous shorthand; not a claim of an official name.",
+      "references": []
+    }
+  ],
+  "limitation": "Prototype: reference passages and maintainer review resolutions are not automated. Findings requiring interpretation stay non-passing."
+}

@@ -1,0 +1,14 @@
+{
+  "datasetVersion": 1,
+  "referenceDate": "2026-11-15",
+  "coverageFrom": "1974-01-01",
+  "coverageThrough": "2026-11-15",
+  "coverage": "Partial eleven-entity demonstration, 1974-01-01 through referenceDate; no historical completeness asserted.",
+  "aliases": [
+    { "entity": "Q43", "value": "Türkiye", "namespace": "name", "language": "tr", "kind": "label" },
+    { "entity": "Q43", "value": "Turkiye", "namespace": "name", "language": "tr", "kind": "ascii-label" },
+    { "entity": "Q145", "value": "UK", "namespace": "unofficial", "kind": "local-policy", "reason": "Exercise a non-ISO code; needs independent code-system evidence before production." },
+    { "entity": "Q971", "value": "Congo", "namespace": "name", "kind": "local-policy", "reason": "Exercise deliberately ambiguous shorthand; not a claim of an official name." },
+    { "entity": "Q974", "value": "Congo", "namespace": "name", "kind": "local-policy", "reason": "Exercise deliberately ambiguous shorthand; not a claim of an official name." }
+  ]
+}

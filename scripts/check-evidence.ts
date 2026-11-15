@@ -1,0 +1,90 @@
+import { readFile, mkdir, writeFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
+import { createHash } from 'node:crypto';
+import { ByteBuffer } from 'flatbuffers';
+import { Registry } from '../src/generated/country-spike.js';
+import { CountryRegistry } from '../src/index.ts';
+import { checkEvidence, type EvidenceRequest, type WikiEntity, type Finding } from '../src/evidence.ts';
+
+const args = process.argv.slice(2);
+const option = (name: string) => { const i = args.indexOf(name); return i < 0 ? undefined : args[i + 1]; };
+const corpus = resolve(option('--corpus') ?? '.');
+const base = option('--base');
+const offline = args.includes('--offline');
+const reportDir = resolve(option('--output') ?? 'reports/local/evidence');
+const sha = (value: string | Uint8Array) => createHash('sha256').update(value).digest('hex');
+
+async function load(dir: string) {
+  const bytes = await readFile(resolve(dir, 'data/countries.crdb'));
+  const registry = CountryRegistry.open(bytes);
+  const text = await readFile(resolve(dir, 'data/evidence.json'), 'utf8');
+  if (sha(text) !== registry.metadata().evidenceDigest) throw new Error('Evidence companion digest mismatch');
+  const evidence = JSON.parse(text);
+  if (evidence.datasetVersion !== registry.metadata().datasetVersion || !Array.isArray(evidence.requests)) throw new Error('Evidence release mismatch');
+  const requests = evidence.requests as EvidenceRequest[];
+  const byId = new Map(requests.map(r => [r.id, r]));
+  if (byId.size !== requests.length) throw new Error('Duplicate evidence IDs');
+  const root = Registry.getRootAsRegistry(new ByteBuffer(bytes));
+  const facts: string[] = [JSON.stringify(registry.metadata())];
+  for (let i = 0; i < root.assignmentsLength(); i++) {
+    const a = root.assignments(i)!, qid = root.entities(a.entity())!.id()!;
+    for (let j = 0; j < a.evidenceLength(); j++) {
+      const request = byId.get(a.evidence(j)!);
+      if (!request || request.qid !== qid || request.expected !== a.value()) throw new Error('Binary assertion has missing or mismatched evidence');
+      const properties: Record<string, string> = { 'iso-alpha2': 'P297', 'iso-alpha3': 'P298', 'iso-numeric': 'P299' };
+      if (properties[a.namespace()!] && (request.property !== properties[a.namespace()!] || request.kind !== 'statement')) throw new Error('Code namespace differs from evidence');
+    }
+    facts.push(JSON.stringify([qid, a.unpack()]));
+  }
+  for (let i = 0; i < root.entitiesLength(); i++) facts.push(JSON.stringify(root.entities(i)!.unpack()));
+  return { requests, facts };
+}
+
+const proposed = await load(corpus);
+let requests = proposed.requests;
+const preflight: Finding[] = [];
+if (base) {
+  const before = await load(resolve(base));
+  const oldRequests = new Map(before.requests.map(r => [r.id, JSON.stringify(r)]));
+  requests = proposed.requests.filter(r => oldRequests.get(r.id) !== JSON.stringify(r));
+  const removed = before.requests.filter(r => !proposed.requests.some(n => n.id === r.id));
+  for (const r of removed) preflight.push({ id: r.id, status: 'needs-review', link: `https://www.wikidata.org/wiki/${r.qid}`, message: 'Evidence or accepted meaning removed; requires explicit review', references: [] });
+  if (JSON.stringify(before.facts) !== JSON.stringify(proposed.facts)) {
+    // The spike rechecks all claims when runtime facts change so omissions cannot hide behind unchanged requests.
+    requests = proposed.requests;
+    preflight.push({ id: 'binary-diff', status: 'needs-review', link: '', message: 'Runtime facts changed; inspect entity dates, relationships, and binary-to-source interpretation before approval', references: [] });
+  }
+}
+await mkdir(reportDir, { recursive: true });
+const cache = new Map<string, Promise<WikiEntity>>();
+async function fetchEntity(qid: string, revision?: number): Promise<WikiEntity> {
+  const key = `${qid}-${revision ?? 'current'}`;
+  if (!cache.has(key)) cache.set(key, (async () => {
+    if (offline) {
+      const manifest = JSON.parse(await readFile(resolve(corpus, 'sources/manifest.json'), 'utf8'));
+      const entry = manifest.find((m: any) => m.id === qid && (!revision || m.revision === revision));
+      if (!entry || !/^sources\/wikidata\/Q[1-9][0-9]*-[0-9]+\.json$/.test(entry.file)) throw new Error('Missing cached revision');
+      const raw = await readFile(resolve(corpus, entry.file), 'utf8');
+      if (sha(raw) !== entry.sha256) throw new Error('Snapshot digest mismatch');
+      return JSON.parse(raw).entities[qid];
+    }
+    const url = new URL(`https://www.wikidata.org/wiki/Special:EntityData/${qid}.json`);
+    if (revision) url.searchParams.set('revision', String(revision));
+    const response = await fetch(url, { headers: { 'User-Agent': 'OpenWatersCountryRegistrySpike/0.0.1 (https://github.com/openwatersio/country-registry-spike)' }, signal: AbortSignal.timeout(30_000) });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    const raw = await response.text();
+    if (raw.length > 4 * 1024 * 1024) throw new Error('Oversized Wikidata response');
+    await writeFile(resolve(reportDir, `${key}.json`), raw);
+    const entity = JSON.parse(raw).entities[qid];
+    if (!entity || entity.id !== qid) throw new Error('Missing Wikidata entity');
+    return entity;
+  })());
+  return cache.get(key)!;
+}
+const findings = [...preflight];
+for (const request of requests) findings.push(await checkEvidence(request, fetchEntity));
+const counts = findings.reduce<Record<string, number>>((out, f) => { out[f.status] = (out[f.status] ?? 0) + 1; return out; }, {});
+const report = { mode: offline ? 'pinned-snapshots-only' : 'live-pinned-and-current', applicable: findings.length > 0, passed: !offline && findings.every(f => f.status === 'verified'), counts, findings, limitation: 'Prototype: reference passages and maintainer review resolutions are not automated. Findings requiring interpretation stay non-passing.' };
+await writeFile(resolve(reportDir, 'report.json'), JSON.stringify(report, null, 2) + '\n');
+console.log(JSON.stringify({ ...report, findings: undefined, report: resolve(reportDir, 'report.json') }, null, 2));
+process.exitCode = findings.length && !report.passed ? 1 : 0;

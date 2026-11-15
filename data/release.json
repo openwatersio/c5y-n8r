@@ -1,0 +1,12 @@
+{
+  "datasetVersion": 1,
+  "formatVersion": 1,
+  "minimumReaderVersion": "0.0.1",
+  "referenceDate": "2026-11-15",
+  "builtAt": "2026-11-15T20:22:46.267Z",
+  "evidenceDigest": "3523c116d84bf42687ae3f5947350ad64fa7cb614e9c245940a680e12049bfb9",
+  "corpus": "Partial eleven-entity demonstration, 1974-01-01 through referenceDate; no historical completeness asserted.",
+  "coverageFrom": "1974-01-01",
+  "coverageThrough": "2026-11-15",
+  "sha256": "e1c7bf8a80ba43bf38a3290ca8bae2f0cd87a40678bcd1deb33cb0fb9755c7fe"
+}

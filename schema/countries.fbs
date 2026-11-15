@@ -1,0 +1,54 @@
+namespace CountrySpike;
+
+table Metadata {
+  dataset_version:uint;
+  format_version:uint;
+  minimum_reader_version:string (required);
+  reference_date:string (required);
+  built_at:string (required);
+  evidence_digest:string (required);
+  corpus:string (required);
+  coverage_from:string (required);
+  coverage_through:string (required);
+}
+
+table Entity {
+  id:string (required);
+  name:string (required);
+  continent:string;
+  from_day:int = -2147483648;
+  until_day:int = 2147483647;
+  temporal_reviewed:bool;
+  successors:[uint];
+}
+
+table Assignment {
+  entity:uint;
+  namespace:string (required);
+  value:string (required);
+  status:string (required);
+  from_day:int = -2147483648;
+  until_day:int = 2147483647;
+  temporal_reviewed:bool;
+  evidence:[string];
+  from_latest_day:int = -2147483648;
+  until_earliest_day:int = 2147483647;
+}
+
+table Key {
+  key:string (required);
+  assignments:[uint];
+}
+
+table Registry {
+  metadata:Metadata (required);
+  entities:[Entity] (required);
+  assignments:[Assignment] (required);
+  keys:[Key] (required);
+  alpha2:[int] (required);
+  numeric:[int] (required);
+}
+
+root_type Registry;
+file_identifier "CRDB";
+file_extension "crdb";

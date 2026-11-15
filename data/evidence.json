@@ -1,0 +1,1778 @@
+{
+  "datasetVersion": 1,
+  "snapshotManifestDigest": "f8f520b4d947894dc26277905ee32e5548f39a832082ab3df6d8d6fd25c4fbb7",
+  "requests": [
+    {
+      "id": "q43$05DBEBB8-5D18-40BB-9A4C-409073AA44F5",
+      "qid": "Q43",
+      "revision": 2568776192,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q43$05DBEBB8-5D18-40BB-9A4C-409073AA44F5",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 48,
+        "id": "Q48"
+      },
+      "qualifiers": {
+        "P518": [
+          {
+            "snaktype": "value",
+            "property": "P518",
+            "hash": "3f6e7bc07e2c67b25d3e6bef87e7e0549c37caa8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 51614,
+                "id": "Q51614"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          }
+        ],
+        "P1107": [
+          {
+            "snaktype": "value",
+            "property": "P1107",
+            "hash": "509637b293ad73aa116ab9c63fcfbd021e2f97dc",
+            "datavalue": {
+              "value": {
+                "amount": "+0.97",
+                "unit": "1"
+              },
+              "type": "quantity"
+            },
+            "datatype": "quantity"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q43$8E2552E4-2A17-4D8C-9D77-CDF56CFBF263",
+      "qid": "Q43",
+      "revision": 2568776192,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q43$8E2552E4-2A17-4D8C-9D77-CDF56CFBF263",
+      "expected": "TR",
+      "qualifiers": {}
+    },
+    {
+      "id": "q43$9BB2620D-BD47-4973-AF4E-1C368C0DF3F4",
+      "qid": "Q43",
+      "revision": 2568776192,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q43$9BB2620D-BD47-4973-AF4E-1C368C0DF3F4",
+      "expected": "TUR",
+      "qualifiers": {}
+    },
+    {
+      "id": "q43$A6680423-8D2A-49AD-B201-55448C7A975A",
+      "qid": "Q43",
+      "revision": 2568776192,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q43$A6680423-8D2A-49AD-B201-55448C7A975A",
+      "expected": "792",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q43:label:en",
+      "qid": "Q43",
+      "revision": 2568776192,
+      "kind": "label",
+      "language": "en",
+      "expected": "Turkey"
+    },
+    {
+      "id": "Q43:alias:en:Republic of Türkiye",
+      "qid": "Q43",
+      "revision": 2568776192,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Republic of Türkiye"
+    },
+    {
+      "id": "Q43:alias:en:Republic of Turkey",
+      "qid": "Q43",
+      "revision": 2568776192,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Republic of Turkey"
+    },
+    {
+      "id": "Q43:policy:name:Türkiye",
+      "qid": "Q43",
+      "revision": 2568776192,
+      "kind": "label",
+      "language": "tr",
+      "expected": "Türkiye"
+    },
+    {
+      "id": "Q43:policy:name:Turkiye",
+      "qid": "Q43",
+      "revision": 2568776192,
+      "kind": "ascii-label",
+      "language": "tr",
+      "expected": "Turkiye"
+    },
+    {
+      "id": "q213$8EE50E79-C916-4C96-81FA-5EF346CAF415",
+      "qid": "Q213",
+      "revision": 2565433432,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q213$8EE50E79-C916-4C96-81FA-5EF346CAF415",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q213$1327D12B-BCEF-4029-A5BE-3980DB037276",
+      "qid": "Q213",
+      "revision": 2565433432,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q213$1327D12B-BCEF-4029-A5BE-3980DB037276",
+      "expected": "CZ",
+      "qualifiers": {}
+    },
+    {
+      "id": "q213$814EBB5F-32D7-4913-B559-BF357BEE881B",
+      "qid": "Q213",
+      "revision": 2565433432,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q213$814EBB5F-32D7-4913-B559-BF357BEE881B",
+      "expected": "CZE",
+      "qualifiers": {}
+    },
+    {
+      "id": "q213$135A272C-BE76-467B-BD5B-2E547403C46E",
+      "qid": "Q213",
+      "revision": 2565433432,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q213$135A272C-BE76-467B-BD5B-2E547403C46E",
+      "expected": "203",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q213:label:en",
+      "qid": "Q213",
+      "revision": 2565433432,
+      "kind": "label",
+      "language": "en",
+      "expected": "Czech Republic"
+    },
+    {
+      "id": "Q213:alias:en:Czechia",
+      "qid": "Q213",
+      "revision": 2565433432,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Czechia"
+    },
+    {
+      "id": "Q213:alias:en:the Czech Republic",
+      "qid": "Q213",
+      "revision": 2565433432,
+      "kind": "alias",
+      "language": "en",
+      "expected": "the Czech Republic"
+    },
+    {
+      "id": "q33946$532fe5f3-472e-345c-fa74-a8f554f12396",
+      "qid": "Q33946",
+      "revision": 2563146998,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q33946$532fe5f3-472e-345c-fa74-a8f554f12396",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "Q33946$0e38ed27-4d56-9719-674d-2ae7ac43f355",
+      "qid": "Q33946",
+      "revision": 2563146998,
+      "kind": "statement",
+      "property": "P576",
+      "statementId": "Q33946$0e38ed27-4d56-9719-674d-2ae7ac43f355",
+      "expected": {
+        "time": "+1992-12-31T00:00:00Z",
+        "timezone": 0,
+        "before": 0,
+        "after": 0,
+        "precision": 11,
+        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "Q33946$83d631a6-4dd9-1b66-e6cb-b4c33d4836ab",
+      "qid": "Q33946",
+      "revision": 2563146998,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "Q33946$83d631a6-4dd9-1b66-e6cb-b4c33d4836ab",
+      "expected": "CS",
+      "qualifiers": {
+        "P580": [
+          {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "ec3fad5617d6ec89ebe0e606278f737d999b5450",
+            "datavalue": {
+              "value": {
+                "time": "+1974-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ],
+        "P582": [
+          {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "6f4cd978fcd9a6b8d3abc927003eb785a3030bf9",
+            "datavalue": {
+              "value": {
+                "time": "+1993-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ],
+        "P2241": [
+          {
+            "snaktype": "value",
+            "property": "P2241",
+            "hash": "042ec668133cc8f75c883546d81358bbd0d5d11d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 110770329,
+                "id": "Q110770329"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q33946$c77605ef-41d9-a25e-8086-0a3fc46e7e15",
+      "qid": "Q33946",
+      "revision": 2563146998,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "Q33946$c77605ef-41d9-a25e-8086-0a3fc46e7e15",
+      "expected": "CSK",
+      "qualifiers": {
+        "P580": [
+          {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "ec3fad5617d6ec89ebe0e606278f737d999b5450",
+            "datavalue": {
+              "value": {
+                "time": "+1974-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ],
+        "P582": [
+          {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "6f4cd978fcd9a6b8d3abc927003eb785a3030bf9",
+            "datavalue": {
+              "value": {
+                "time": "+1993-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q33946$251080a5-46f1-6fb4-55e8-786b179cee29",
+      "qid": "Q33946",
+      "revision": 2563146998,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "Q33946$251080a5-46f1-6fb4-55e8-786b179cee29",
+      "expected": "200",
+      "qualifiers": {
+        "P580": [
+          {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "ec3fad5617d6ec89ebe0e606278f737d999b5450",
+            "datavalue": {
+              "value": {
+                "time": "+1974-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ],
+        "P582": [
+          {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "6f4cd978fcd9a6b8d3abc927003eb785a3030bf9",
+            "datavalue": {
+              "value": {
+                "time": "+1993-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q33946:label:en",
+      "qid": "Q33946",
+      "revision": 2563146998,
+      "kind": "label",
+      "language": "en",
+      "expected": "Czechoslovakia"
+    },
+    {
+      "id": "Q33946:alias:en:Czecho-Slovakia",
+      "qid": "Q33946",
+      "revision": 2563146998,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Czecho-Slovakia"
+    },
+    {
+      "id": "Q33946:alias:en:cs",
+      "qid": "Q33946",
+      "revision": 2563146998,
+      "kind": "alias",
+      "language": "en",
+      "expected": "cs"
+    },
+    {
+      "id": "Q33946:alias:en:TCH",
+      "qid": "Q33946",
+      "revision": 2563146998,
+      "kind": "alias",
+      "language": "en",
+      "expected": "TCH"
+    },
+    {
+      "id": "Q33946:alias:en:Československo",
+      "qid": "Q33946",
+      "revision": 2563146998,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Československo"
+    },
+    {
+      "id": "Q33946:alias:en:Federation of Czechoslovakia",
+      "qid": "Q33946",
+      "revision": 2563146998,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Federation of Czechoslovakia"
+    },
+    {
+      "id": "Q33946:alias:en:People's Republic of Czechoslovakia",
+      "qid": "Q33946",
+      "revision": 2563146998,
+      "kind": "alias",
+      "language": "en",
+      "expected": "People's Republic of Czechoslovakia"
+    },
+    {
+      "id": "Q37024$b2c0418f-42a5-2ddd-be7f-e4c0b95bddc7",
+      "qid": "Q37024",
+      "revision": 2559703250,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "Q37024$b2c0418f-42a5-2ddd-be7f-e4c0b95bddc7",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "Q37024$50559283-9052-4902-B90D-AB55472E2386",
+      "qid": "Q37024",
+      "revision": 2559703250,
+      "kind": "statement",
+      "property": "P576",
+      "statementId": "Q37024$50559283-9052-4902-B90D-AB55472E2386",
+      "expected": {
+        "time": "+2006-06-04T00:00:00Z",
+        "timezone": 0,
+        "before": 0,
+        "after": 0,
+        "precision": 11,
+        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "Q37024$1E270954-8EF3-4C59-A2E5-544077150937",
+      "qid": "Q37024",
+      "revision": 2559703250,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "Q37024$1E270954-8EF3-4C59-A2E5-544077150937",
+      "expected": "CS",
+      "qualifiers": {
+        "P580": [
+          {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "05038d5d0fd23c067a48301252f21993a10ee995",
+            "datavalue": {
+              "value": {
+                "time": "+2003-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ],
+        "P582": [
+          {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "460b1b2fb2394fae690a345123b9cdc15bc1afa7",
+            "datavalue": {
+              "value": {
+                "time": "+2006-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ],
+        "P2241": [
+          {
+            "snaktype": "value",
+            "property": "P2241",
+            "hash": "042ec668133cc8f75c883546d81358bbd0d5d11d",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 110770329,
+                "id": "Q110770329"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q37024$4fb9a7e1-4463-b926-7a24-fd19b2d3b9b4",
+      "qid": "Q37024",
+      "revision": 2559703250,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "Q37024$4fb9a7e1-4463-b926-7a24-fd19b2d3b9b4",
+      "expected": "SCG",
+      "qualifiers": {
+        "P580": [
+          {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "05038d5d0fd23c067a48301252f21993a10ee995",
+            "datavalue": {
+              "value": {
+                "time": "+2003-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ],
+        "P582": [
+          {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "460b1b2fb2394fae690a345123b9cdc15bc1afa7",
+            "datavalue": {
+              "value": {
+                "time": "+2006-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q37024$d15997eb-4b67-f90b-4db9-f7e4598cb106",
+      "qid": "Q37024",
+      "revision": 2559703250,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "Q37024$d15997eb-4b67-f90b-4db9-f7e4598cb106",
+      "expected": "891",
+      "qualifiers": {
+        "P580": [
+          {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "05038d5d0fd23c067a48301252f21993a10ee995",
+            "datavalue": {
+              "value": {
+                "time": "+2003-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ],
+        "P582": [
+          {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "460b1b2fb2394fae690a345123b9cdc15bc1afa7",
+            "datavalue": {
+              "value": {
+                "time": "+2006-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q37024:label:en",
+      "qid": "Q37024",
+      "revision": 2559703250,
+      "kind": "label",
+      "language": "en",
+      "expected": "Serbia and Montenegro"
+    },
+    {
+      "id": "Q37024:alias:en:Serbia-Montenegro",
+      "qid": "Q37024",
+      "revision": 2559703250,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Serbia-Montenegro"
+    },
+    {
+      "id": "Q37024:alias:en:State Union of Serbia and Montenegro",
+      "qid": "Q37024",
+      "revision": 2559703250,
+      "kind": "alias",
+      "language": "en",
+      "expected": "State Union of Serbia and Montenegro"
+    },
+    {
+      "id": "q25227$E7F02C60-0147-4FF9-B90D-F194CC869B32",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q25227$E7F02C60-0147-4FF9-B90D-F194CC869B32",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "Q25227$60A8CF31-41E6-4215-9FC3-2A3E22BD4485",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "statement",
+      "property": "P576",
+      "statementId": "Q25227$60A8CF31-41E6-4215-9FC3-2A3E22BD4485",
+      "expected": {
+        "time": "+2010-10-10T00:00:00Z",
+        "timezone": 0,
+        "before": 0,
+        "after": 0,
+        "precision": 11,
+        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "Q25227$9e597404-4781-5aea-359f-cd41fb36c50b",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "statement",
+      "property": "P1366",
+      "statementId": "Q25227$9e597404-4781-5aea-359f-cd41fb36c50b",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 25279,
+        "id": "Q25279"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "Q25227$7e1ee528-416d-1977-da58-277adcfaba91",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "statement",
+      "property": "P1366",
+      "statementId": "Q25227$7e1ee528-416d-1977-da58-277adcfaba91",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 26273,
+        "id": "Q26273"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "Q25227$59e94266-4416-0233-74a5-9133e8dc8f60",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "statement",
+      "property": "P1366",
+      "statementId": "Q25227$59e94266-4416-0233-74a5-9133e8dc8f60",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 27561,
+        "id": "Q27561"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "Q25227$3E2A11CA-27E5-458E-A28B-07D47A78948D",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "Q25227$3E2A11CA-27E5-458E-A28B-07D47A78948D",
+      "expected": "AN",
+      "qualifiers": {
+        "P582": [
+          {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "6f4c37357db10714dc6c7a0ce30a4621b3ce0305",
+            "datavalue": {
+              "value": {
+                "time": "+2010-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q25227$094621ff-4c27-b245-ab60-da8ab6517a23",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "Q25227$094621ff-4c27-b245-ab60-da8ab6517a23",
+      "expected": "ANT",
+      "qualifiers": {
+        "P582": [
+          {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "6f4c37357db10714dc6c7a0ce30a4621b3ce0305",
+            "datavalue": {
+              "value": {
+                "time": "+2010-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q25227$C7A77EF1-1AEF-47AE-81B3-4CF617077B18",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "Q25227$C7A77EF1-1AEF-47AE-81B3-4CF617077B18",
+      "expected": "530",
+      "qualifiers": {
+        "P582": [
+          {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "6f4c37357db10714dc6c7a0ce30a4621b3ce0305",
+            "datavalue": {
+              "value": {
+                "time": "+2010-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ],
+        "P580": [
+          {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "46d5923b24f1d46c3a62df03db65f9ba657f9b62",
+            "datavalue": {
+              "value": {
+                "time": "+1986-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q25227$a6822db4-4092-a555-4b0a-27c8dc9590f7",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "Q25227$a6822db4-4092-a555-4b0a-27c8dc9590f7",
+      "expected": "532",
+      "qualifiers": {
+        "P582": [
+          {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "4fe93e512f1b1822c7296bc0661984c3557dec02",
+            "datavalue": {
+              "value": {
+                "time": "+1986-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q25227:label:en",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "label",
+      "language": "en",
+      "expected": "Netherlands Antilles"
+    },
+    {
+      "id": "Q25227:alias:en:AN",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "alias",
+      "language": "en",
+      "expected": "AN"
+    },
+    {
+      "id": "Q25227:alias:en:Dutch Antillean",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Dutch Antillean"
+    },
+    {
+      "id": "Q25227:alias:en:Netherland Antilles",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Netherland Antilles"
+    },
+    {
+      "id": "Q25227:alias:en:The Netherlands Antilles",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "alias",
+      "language": "en",
+      "expected": "The Netherlands Antilles"
+    },
+    {
+      "id": "Q25227:alias:en:Dutch Antilles/West Indies",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Dutch Antilles/West Indies"
+    },
+    {
+      "id": "Q25227:alias:en:Antillen",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Antillen"
+    },
+    {
+      "id": "Q25227:alias:en:Netherland Antillies",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Netherland Antillies"
+    },
+    {
+      "id": "Q25227:alias:en:N.W.I.",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "alias",
+      "language": "en",
+      "expected": "N.W.I."
+    },
+    {
+      "id": "Q25227:alias:en:Netherlands-Antilles",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Netherlands-Antilles"
+    },
+    {
+      "id": "Q25227:alias:en:Nederlandse Antillen",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Nederlandse Antillen"
+    },
+    {
+      "id": "Q25227:alias:en:Dutch Antilles",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Dutch Antilles"
+    },
+    {
+      "id": "Q25227:alias:en:Netherlands Antilleans",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Netherlands Antilleans"
+    },
+    {
+      "id": "Q25227:alias:en:ISO 3166-1:AN",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "alias",
+      "language": "en",
+      "expected": "ISO 3166-1:AN"
+    },
+    {
+      "id": "Q25227:alias:en:Netherlands Antillean",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Netherlands Antillean"
+    },
+    {
+      "id": "Q25227:alias:en:AHO",
+      "qid": "Q25227",
+      "revision": 2568717309,
+      "kind": "alias",
+      "language": "en",
+      "expected": "AHO"
+    },
+    {
+      "id": "q25279$BD07AAB5-723B-4E09-9BCC-3B5EFBF1367A",
+      "qid": "Q25279",
+      "revision": 2568773983,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q25279$BD07AAB5-723B-4E09-9BCC-3B5EFBF1367A",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q25279$34DAD74E-9FEA-4AC6-840E-4A8C84406C59",
+      "qid": "Q25279",
+      "revision": 2568773983,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q25279$34DAD74E-9FEA-4AC6-840E-4A8C84406C59",
+      "expected": "CW",
+      "qualifiers": {}
+    },
+    {
+      "id": "q25279$8FCA2256-773C-4912-8AF2-B210A3258DCB",
+      "qid": "Q25279",
+      "revision": 2568773983,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q25279$8FCA2256-773C-4912-8AF2-B210A3258DCB",
+      "expected": "CUW",
+      "qualifiers": {}
+    },
+    {
+      "id": "q25279$DE345C0C-6EBA-4A62-AFD4-5949611D6E8B",
+      "qid": "Q25279",
+      "revision": 2568773983,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q25279$DE345C0C-6EBA-4A62-AFD4-5949611D6E8B",
+      "expected": "531",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q25279:label:en",
+      "qid": "Q25279",
+      "revision": 2568773983,
+      "kind": "label",
+      "language": "en",
+      "expected": "Curaçao"
+    },
+    {
+      "id": "Q25279:alias:en:Island Territory of Curaçao",
+      "qid": "Q25279",
+      "revision": 2568773983,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Island Territory of Curaçao"
+    },
+    {
+      "id": "Q25279:alias:en:Curacau",
+      "qid": "Q25279",
+      "revision": 2568773983,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Curacau"
+    },
+    {
+      "id": "Q25279:alias:en:Curaçoa",
+      "qid": "Q25279",
+      "revision": 2568773983,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Curaçoa"
+    },
+    {
+      "id": "Q25279:alias:en:Curaςao",
+      "qid": "Q25279",
+      "revision": 2568773983,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Curaςao"
+    },
+    {
+      "id": "Q25279:alias:en:Curocao",
+      "qid": "Q25279",
+      "revision": 2568773983,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Curocao"
+    },
+    {
+      "id": "Q25279:alias:en:ISO 3166-1:CW",
+      "qid": "Q25279",
+      "revision": 2568773983,
+      "kind": "alias",
+      "language": "en",
+      "expected": "ISO 3166-1:CW"
+    },
+    {
+      "id": "Q25279:alias:en:Curazao",
+      "qid": "Q25279",
+      "revision": 2568773983,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Curazao"
+    },
+    {
+      "id": "Q25279:alias:en:Country of Curaçao",
+      "qid": "Q25279",
+      "revision": 2568773983,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Country of Curaçao"
+    },
+    {
+      "id": "q26273$29C8D7EC-63E2-49D7-903F-4980CC3B3F35",
+      "qid": "Q26273",
+      "revision": 2568809430,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q26273$29C8D7EC-63E2-49D7-903F-4980CC3B3F35",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q26273$B24C36E7-AFDA-44AA-9927-B745DCBB3782",
+      "qid": "Q26273",
+      "revision": 2568809430,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q26273$B24C36E7-AFDA-44AA-9927-B745DCBB3782",
+      "expected": "SX",
+      "qualifiers": {}
+    },
+    {
+      "id": "q26273$6A1BFF61-4D52-4EBF-A223-5972EED79C91",
+      "qid": "Q26273",
+      "revision": 2568809430,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q26273$6A1BFF61-4D52-4EBF-A223-5972EED79C91",
+      "expected": "SXM",
+      "qualifiers": {}
+    },
+    {
+      "id": "q26273$87389F08-45E5-4218-B803-13A26735F2C0",
+      "qid": "Q26273",
+      "revision": 2568809430,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q26273$87389F08-45E5-4218-B803-13A26735F2C0",
+      "expected": "534",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q26273:label:en",
+      "qid": "Q26273",
+      "revision": 2568809430,
+      "kind": "label",
+      "language": "en",
+      "expected": "Sint Maarten"
+    },
+    {
+      "id": "Q26273:alias:en:Saint Martin (Dutch part)",
+      "qid": "Q26273",
+      "revision": 2568809430,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Saint Martin (Dutch part)"
+    },
+    {
+      "id": "Q26273:alias:en:St Martin",
+      "qid": "Q26273",
+      "revision": 2568809430,
+      "kind": "alias",
+      "language": "en",
+      "expected": "St Martin"
+    },
+    {
+      "id": "Q26273:alias:en:NL-SX",
+      "qid": "Q26273",
+      "revision": 2568809430,
+      "kind": "alias",
+      "language": "en",
+      "expected": "NL-SX"
+    },
+    {
+      "id": "Q26273:alias:en:Saint Martin",
+      "qid": "Q26273",
+      "revision": 2568809430,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Saint Martin"
+    },
+    {
+      "id": "Q26273:alias:en:Sint Maarten (Dutch part)",
+      "qid": "Q26273",
+      "revision": 2568809430,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Sint Maarten (Dutch part)"
+    },
+    {
+      "id": "Q26273:alias:en:sxm",
+      "qid": "Q26273",
+      "revision": 2568809430,
+      "kind": "alias",
+      "language": "en",
+      "expected": "sxm"
+    },
+    {
+      "id": "Q26273:alias:en:Sint Martin",
+      "qid": "Q26273",
+      "revision": 2568809430,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Sint Martin"
+    },
+    {
+      "id": "q27561$BFC5F46A-064B-4655-82F0-F7ABCF407A98",
+      "qid": "Q27561",
+      "revision": 2568773678,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q27561$BFC5F46A-064B-4655-82F0-F7ABCF407A98",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q27561$52BF99F4-0E85-4055-B808-1AA6374B8FED",
+      "qid": "Q27561",
+      "revision": 2568773678,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q27561$52BF99F4-0E85-4055-B808-1AA6374B8FED",
+      "expected": "BQ",
+      "qualifiers": {
+        "P580": [
+          {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "f40f7a3b9b28e53e1034a3e8568f93a60b52188e",
+            "datavalue": {
+              "value": {
+                "time": "+2010-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ],
+        "P1810": [
+          {
+            "snaktype": "value",
+            "property": "P1810",
+            "hash": "5f79ded303b5146d5ba06d2ec65d4ad20f280434",
+            "datavalue": {
+              "value": "Bonaire, Sint Eustatius and Saba",
+              "type": "string"
+            },
+            "datatype": "string"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q27561$77E42448-58A6-4B53-B949-F64A52488036",
+      "qid": "Q27561",
+      "revision": 2568773678,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q27561$77E42448-58A6-4B53-B949-F64A52488036",
+      "expected": "BES",
+      "qualifiers": {
+        "P580": [
+          {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "f40f7a3b9b28e53e1034a3e8568f93a60b52188e",
+            "datavalue": {
+              "value": {
+                "time": "+2010-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q27561$FD30D8B9-B796-42EC-8826-F10758FACCF1",
+      "qid": "Q27561",
+      "revision": 2568773678,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q27561$FD30D8B9-B796-42EC-8826-F10758FACCF1",
+      "expected": "535",
+      "qualifiers": {
+        "P580": [
+          {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "f40f7a3b9b28e53e1034a3e8568f93a60b52188e",
+            "datavalue": {
+              "value": {
+                "time": "+2010-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q27561:label:en",
+      "qid": "Q27561",
+      "revision": 2568773678,
+      "kind": "label",
+      "language": "en",
+      "expected": "Caribbean Netherlands"
+    },
+    {
+      "id": "Q27561:alias:en:BES islands",
+      "qid": "Q27561",
+      "revision": 2568773678,
+      "kind": "alias",
+      "language": "en",
+      "expected": "BES islands"
+    },
+    {
+      "id": "Q27561:alias:en:Bonaire, Saint Eustatius and Saba",
+      "qid": "Q27561",
+      "revision": 2568773678,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Bonaire, Saint Eustatius and Saba"
+    },
+    {
+      "id": "q145$39A86E04-9E11-4A28-99A4-85FADDAA3164",
+      "qid": "Q145",
+      "revision": 2569133680,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q145$39A86E04-9E11-4A28-99A4-85FADDAA3164",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q145$638D9E2A-227E-4040-851C-457AFCEBFFF7",
+      "qid": "Q145",
+      "revision": 2569133680,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q145$638D9E2A-227E-4040-851C-457AFCEBFFF7",
+      "expected": "GB",
+      "qualifiers": {
+        "P580": [
+          {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "ec3fad5617d6ec89ebe0e606278f737d999b5450",
+            "datavalue": {
+              "value": {
+                "time": "+1974-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ],
+        "P805": [
+          {
+            "snaktype": "value",
+            "property": "P805",
+            "hash": "cd6155f02980d8a9f13ec668a53fe8ddc07d658e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 27818,
+                "id": "Q27818"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q145$665D9CB8-E08E-47C8-A5B9-8E3533928CE0",
+      "qid": "Q145",
+      "revision": 2569133680,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q145$665D9CB8-E08E-47C8-A5B9-8E3533928CE0",
+      "expected": "GBR",
+      "qualifiers": {}
+    },
+    {
+      "id": "q145$0BB270C8-8DA7-4ACF-A388-6F87CF194A9A",
+      "qid": "Q145",
+      "revision": 2569133680,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q145$0BB270C8-8DA7-4ACF-A388-6F87CF194A9A",
+      "expected": "826",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q145:label:en",
+      "qid": "Q145",
+      "revision": 2569133680,
+      "kind": "label",
+      "language": "en",
+      "expected": "United Kingdom"
+    },
+    {
+      "id": "Q145:alias:en:United Kingdom of Great Britain and Northern Ireland",
+      "qid": "Q145",
+      "revision": 2569133680,
+      "kind": "alias",
+      "language": "en",
+      "expected": "United Kingdom of Great Britain and Northern Ireland"
+    },
+    {
+      "id": "Q145:alias:en:U K",
+      "qid": "Q145",
+      "revision": 2569133680,
+      "kind": "alias",
+      "language": "en",
+      "expected": "U K"
+    },
+    {
+      "id": "Q145:alias:en:G B",
+      "qid": "Q145",
+      "revision": 2569133680,
+      "kind": "alias",
+      "language": "en",
+      "expected": "G B"
+    },
+    {
+      "id": "Q145:alias:en:Great Britain",
+      "qid": "Q145",
+      "revision": 2569133680,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Great Britain"
+    },
+    {
+      "id": "Q145:alias:en:Great Britain and Northern Ireland",
+      "qid": "Q145",
+      "revision": 2569133680,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Great Britain and Northern Ireland"
+    },
+    {
+      "id": "Q145:alias:en:the United Kingdom of Great Britain and Northern Ireland",
+      "qid": "Q145",
+      "revision": 2569133680,
+      "kind": "alias",
+      "language": "en",
+      "expected": "the United Kingdom of Great Britain and Northern Ireland"
+    },
+    {
+      "id": "Q145:alias:en:the UK",
+      "qid": "Q145",
+      "revision": 2569133680,
+      "kind": "alias",
+      "language": "en",
+      "expected": "the UK"
+    },
+    {
+      "id": "Q145:alias:en:the United Kingdom",
+      "qid": "Q145",
+      "revision": 2569133680,
+      "kind": "alias",
+      "language": "en",
+      "expected": "the United Kingdom"
+    },
+    {
+      "id": "Q145:policy:unofficial:UK",
+      "qid": "Q145",
+      "revision": 2569133680,
+      "kind": "local-policy",
+      "expected": "UK",
+      "reason": "Exercise a non-ISO code; needs independent code-system evidence before production."
+    },
+    {
+      "id": "q971$8F6DC291-5640-48F8-83B2-9E9F34DE151C",
+      "qid": "Q971",
+      "revision": 2568810694,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q971$8F6DC291-5640-48F8-83B2-9E9F34DE151C",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q971$3B127E91-487A-4AF7-82B3-67C4B761DEF2",
+      "qid": "Q971",
+      "revision": 2568810694,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q971$3B127E91-487A-4AF7-82B3-67C4B761DEF2",
+      "expected": "CG",
+      "qualifiers": {}
+    },
+    {
+      "id": "q971$4B0B91D3-C9B6-406A-8694-3AEE95AEBE25",
+      "qid": "Q971",
+      "revision": 2568810694,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q971$4B0B91D3-C9B6-406A-8694-3AEE95AEBE25",
+      "expected": "COG",
+      "qualifiers": {}
+    },
+    {
+      "id": "q971$C5F847FF-CA38-450D-94C7-29B959DE3628",
+      "qid": "Q971",
+      "revision": 2568810694,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q971$C5F847FF-CA38-450D-94C7-29B959DE3628",
+      "expected": "178",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q971:label:en",
+      "qid": "Q971",
+      "revision": 2568810694,
+      "kind": "label",
+      "language": "en",
+      "expected": "Republic of the Congo"
+    },
+    {
+      "id": "Q971:alias:en:Congo Republic",
+      "qid": "Q971",
+      "revision": 2568810694,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Congo Republic"
+    },
+    {
+      "id": "Q971:alias:en:République du Congo",
+      "qid": "Q971",
+      "revision": 2568810694,
+      "kind": "alias",
+      "language": "en",
+      "expected": "République du Congo"
+    },
+    {
+      "id": "Q971:alias:en:Republic of Congo",
+      "qid": "Q971",
+      "revision": 2568810694,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Republic of Congo"
+    },
+    {
+      "id": "Q971:alias:en:cg",
+      "qid": "Q971",
+      "revision": 2568810694,
+      "kind": "alias",
+      "language": "en",
+      "expected": "cg"
+    },
+    {
+      "id": "Q971:alias:en:Rep. Congo",
+      "qid": "Q971",
+      "revision": 2568810694,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Rep. Congo"
+    },
+    {
+      "id": "Q971:alias:en:Republique du Congo",
+      "qid": "Q971",
+      "revision": 2568810694,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Republique du Congo"
+    },
+    {
+      "id": "Q971:alias:en:Congo (Brazzaville)",
+      "qid": "Q971",
+      "revision": 2568810694,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Congo (Brazzaville)"
+    },
+    {
+      "id": "Q971:policy:name:Congo",
+      "qid": "Q971",
+      "revision": 2568810694,
+      "kind": "local-policy",
+      "expected": "Congo",
+      "reason": "Exercise deliberately ambiguous shorthand; not a claim of an official name."
+    },
+    {
+      "id": "q974$F26DCE73-63EC-4EB1-86F8-3446C9EA87A3",
+      "qid": "Q974",
+      "revision": 2569319374,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q974$F26DCE73-63EC-4EB1-86F8-3446C9EA87A3",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q974$7029C629-44ED-4F26-92F9-EFCB20AFD6A0",
+      "qid": "Q974",
+      "revision": 2569319374,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q974$7029C629-44ED-4F26-92F9-EFCB20AFD6A0",
+      "expected": "CD",
+      "qualifiers": {}
+    },
+    {
+      "id": "q974$864FD52F-1282-4AB4-AA48-1B32B12D7D86",
+      "qid": "Q974",
+      "revision": 2569319374,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q974$864FD52F-1282-4AB4-AA48-1B32B12D7D86",
+      "expected": "COD",
+      "qualifiers": {}
+    },
+    {
+      "id": "q974$6FC65A17-AB74-4BF2-8CB5-6D98339377F5",
+      "qid": "Q974",
+      "revision": 2569319374,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q974$6FC65A17-AB74-4BF2-8CB5-6D98339377F5",
+      "expected": "180",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q974:label:en",
+      "qid": "Q974",
+      "revision": 2569319374,
+      "kind": "label",
+      "language": "en",
+      "expected": "Democratic Republic of the Congo"
+    },
+    {
+      "id": "Q974:alias:en:DRC",
+      "qid": "Q974",
+      "revision": 2569319374,
+      "kind": "alias",
+      "language": "en",
+      "expected": "DRC"
+    },
+    {
+      "id": "Q974:alias:en:DR Congo",
+      "qid": "Q974",
+      "revision": 2569319374,
+      "kind": "alias",
+      "language": "en",
+      "expected": "DR Congo"
+    },
+    {
+      "id": "Q974:alias:en:Democratic Republic of Congo",
+      "qid": "Q974",
+      "revision": 2569319374,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Democratic Republic of Congo"
+    },
+    {
+      "id": "Q974:alias:en:cd",
+      "qid": "Q974",
+      "revision": 2569319374,
+      "kind": "alias",
+      "language": "en",
+      "expected": "cd"
+    },
+    {
+      "id": "Q974:alias:en:Dem. Republic of the Congo",
+      "qid": "Q974",
+      "revision": 2569319374,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Dem. Republic of the Congo"
+    },
+    {
+      "id": "Q974:alias:en:Dem. Republic of Congo",
+      "qid": "Q974",
+      "revision": 2569319374,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Dem. Republic of Congo"
+    },
+    {
+      "id": "Q974:alias:en:Dem. Rep. Congo",
+      "qid": "Q974",
+      "revision": 2569319374,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Dem. Rep. Congo"
+    },
+    {
+      "id": "Q974:alias:en:Congo (Kinshasa)",
+      "qid": "Q974",
+      "revision": 2569319374,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Congo (Kinshasa)"
+    },
+    {
+      "id": "Q974:alias:en:COD",
+      "qid": "Q974",
+      "revision": 2569319374,
+      "kind": "alias",
+      "language": "en",
+      "expected": "COD"
+    },
+    {
+      "id": "Q974:alias:en:D.R.C.",
+      "qid": "Q974",
+      "revision": 2569319374,
+      "kind": "alias",
+      "language": "en",
+      "expected": "D.R.C."
+    },
+    {
+      "id": "Q974:policy:name:Congo",
+      "qid": "Q974",
+      "revision": 2569319374,
+      "kind": "local-policy",
+      "expected": "Congo",
+      "reason": "Exercise deliberately ambiguous shorthand; not a claim of an official name."
+    }
+  ]
+}

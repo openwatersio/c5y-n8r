@@ -1,0 +1,1022 @@
+{
+  "recordedAt": "2026-11-15T20:40:00.591Z",
+  "node": "v24.20.0",
+  "platform": "darwin/arm64",
+  "cpu": "Apple M1 Ultra",
+  "bytes": 28256,
+  "evidenceBytes": 48012,
+  "measured": [
+    {
+      "label": "spike: alpha2, full resolver result",
+      "medianNsPerOperation": 1473,
+      "p95BatchMeanNsPerOperation": 3357,
+      "operations": 40000
+    },
+    {
+      "label": "country-code-lookup: alpha2",
+      "medianNsPerOperation": 846,
+      "p95BatchMeanNsPerOperation": 980,
+      "operations": 40000
+    },
+    {
+      "label": "countries-list: alpha2",
+      "medianNsPerOperation": 165,
+      "p95BatchMeanNsPerOperation": 184,
+      "operations": 40000
+    },
+    {
+      "label": "country-codes-list: alpha2",
+      "medianNsPerOperation": 346,
+      "p95BatchMeanNsPerOperation": 1443,
+      "operations": 40000
+    },
+    {
+      "label": "i18n-iso-countries: alpha2 validation",
+      "medianNsPerOperation": 35,
+      "p95BatchMeanNsPerOperation": 48,
+      "operations": 40000
+    },
+    {
+      "label": "spike: name, full resolver result",
+      "medianNsPerOperation": 1332,
+      "p95BatchMeanNsPerOperation": 1569,
+      "operations": 40000
+    },
+    {
+      "label": "country-code-lookup: name",
+      "medianNsPerOperation": 2210,
+      "p95BatchMeanNsPerOperation": 2385,
+      "operations": 40000
+    },
+    {
+      "label": "countries-list: name",
+      "medianNsPerOperation": 5180,
+      "p95BatchMeanNsPerOperation": 6548,
+      "operations": 40000
+    },
+    {
+      "label": "country-codes-list: name",
+      "medianNsPerOperation": 216,
+      "p95BatchMeanNsPerOperation": 1370,
+      "operations": 40000
+    },
+    {
+      "label": "i18n-iso-countries: name",
+      "medianNsPerOperation": 14015,
+      "p95BatchMeanNsPerOperation": 15107,
+      "operations": 40000
+    },
+    {
+      "label": "spike: reused code with date",
+      "medianNsPerOperation": 1948,
+      "p95BatchMeanNsPerOperation": 2554,
+      "operations": 40000
+    },
+    {
+      "label": "spike: miss",
+      "medianNsPerOperation": 1491,
+      "p95BatchMeanNsPerOperation": 1806,
+      "operations": 40000
+    },
+    {
+      "label": "spike: ambiguity",
+      "medianNsPerOperation": 2261,
+      "p95BatchMeanNsPerOperation": 2387,
+      "operations": 40000
+    },
+    {
+      "label": "spike: open plus structural/index validation",
+      "medianNsPerOperation": 451025,
+      "p95BatchMeanNsPerOperation": 515396,
+      "operations": 400
+    }
+  ],
+  "compatibility": {
+    "scope": "Slackwater source country values; partial spike coverage, not a migration validation",
+    "records": 8728,
+    "distinctCountries": 129,
+    "coveredCountryValues": 4,
+    "uncoveredRecords": 8554,
+    "matches": [
+      {
+        "name": "Denmark",
+        "count": 177,
+        "expected": "DK",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Faroe Islands",
+        "count": 11,
+        "expected": "FO",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Greenland",
+        "count": 86,
+        "expected": "GL",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Japan",
+        "count": 337,
+        "expected": "JP",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Norway",
+        "count": 99,
+        "expected": "NO",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "New Zealand",
+        "count": 101,
+        "expected": "NZ",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "United States",
+        "count": 5132,
+        "expected": "US",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Guam",
+        "count": 2,
+        "expected": "GU",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Northern Mariana Islands",
+        "count": 5,
+        "expected": "MP",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "French Polynesia",
+        "count": 8,
+        "expected": "PF",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "American Samoa",
+        "count": 8,
+        "expected": "AS",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Samoa",
+        "count": 6,
+        "expected": "WS",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Kiribati",
+        "count": 20,
+        "expected": "KI",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Marshall Islands",
+        "count": 24,
+        "expected": "MH",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Federated States of Micronesia",
+        "count": 24,
+        "expected": "FM",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Palau",
+        "count": 7,
+        "expected": "PW",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Fiji",
+        "count": 15,
+        "expected": "FJ",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "British Indian Ocean Territory",
+        "count": 1,
+        "expected": "IO",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Bermuda",
+        "count": 3,
+        "expected": "BM",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Indonesia",
+        "count": 37,
+        "expected": "ID",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Canada",
+        "count": 326,
+        "expected": "CA",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Mexico",
+        "count": 144,
+        "expected": "MX",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "El Salvador",
+        "count": 9,
+        "expected": "SV",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Honduras",
+        "count": 9,
+        "expected": "HN",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Nicaragua",
+        "count": 7,
+        "expected": "NI",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Costa Rica",
+        "count": 16,
+        "expected": "CR",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "The Bahamas",
+        "count": 20,
+        "expected": "BS",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Virgin Islands",
+        "count": 26,
+        "expected": "VI",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Puerto Rico",
+        "count": 45,
+        "expected": "PR",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Dominican Republic",
+        "count": 11,
+        "expected": "DO",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Antigua and Barbuda",
+        "count": 1,
+        "expected": "AG",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Panama",
+        "count": 26,
+        "expected": "PA",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Ecuador",
+        "count": 25,
+        "expected": "EC",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Cuba",
+        "count": 29,
+        "expected": "CU",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Turks and Caicos Islands",
+        "count": 1,
+        "expected": "TC",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Jamaica",
+        "count": 6,
+        "expected": "JM",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Cayman Islands",
+        "count": 1,
+        "expected": "KY",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Haiti",
+        "count": 5,
+        "expected": "HT",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Saint Barthélemy",
+        "count": 1,
+        "expected": "BL",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Guadeloupe",
+        "count": 1,
+        "expected": "GP",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Dominica",
+        "count": 2,
+        "expected": "DM",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Saint Lucia",
+        "count": 2,
+        "expected": "LC",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Belize",
+        "count": 3,
+        "expected": "BZ",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Guatemala",
+        "count": 7,
+        "expected": "GT",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Chile",
+        "count": 25,
+        "expected": "CL",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Cook Islands",
+        "count": 7,
+        "expected": "CK",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Tokelau",
+        "count": 1,
+        "expected": "TK",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Vanuatu",
+        "count": 5,
+        "expected": "VU",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Tonga",
+        "count": 5,
+        "expected": "TO",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Netherlands",
+        "count": 254,
+        "expected": "NL",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "United Kingdom",
+        "count": 151,
+        "expected": "GB",
+        "entity": "Q145",
+        "code": "GB",
+        "covered": true,
+        "mismatch": false
+      },
+      {
+        "name": "Cote d'Ivoire",
+        "count": 1,
+        "expected": "CI",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Yemen",
+        "count": 2,
+        "expected": "YE",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Greece",
+        "count": 16,
+        "expected": "GR",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "France",
+        "count": 272,
+        "expected": "FR",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Myanmar (Burma)",
+        "count": 4,
+        "expected": "MM",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Australia",
+        "count": 165,
+        "expected": "AU",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Spain",
+        "count": 86,
+        "expected": "ES",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Egypt",
+        "count": 3,
+        "expected": "EG",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Niue",
+        "count": 2,
+        "expected": "NU",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Papua New Guinea",
+        "count": 12,
+        "expected": "PG",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Germany",
+        "count": 190,
+        "expected": "DE",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Italy",
+        "count": 75,
+        "expected": "IT",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Portugal",
+        "count": 20,
+        "expected": "PT",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Turkiye",
+        "count": 17,
+        "expected": "TR",
+        "entity": "Q43",
+        "code": "TR",
+        "covered": true,
+        "mismatch": false
+      },
+      {
+        "name": "Ireland",
+        "count": 64,
+        "expected": "IE",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Sweden",
+        "count": 142,
+        "expected": "SE",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Croatia",
+        "count": 2,
+        "expected": "HR",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Bulgaria",
+        "count": 6,
+        "expected": "BG",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "China",
+        "count": 14,
+        "expected": "CN",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Brazil",
+        "count": 33,
+        "expected": "BR",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Malaysia",
+        "count": 18,
+        "expected": "MY",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Belgium",
+        "count": 6,
+        "expected": "BE",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Barbados",
+        "count": 4,
+        "expected": "BB",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Colombia",
+        "count": 8,
+        "expected": "CO",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Argentina",
+        "count": 15,
+        "expected": "AR",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Curaçao",
+        "count": 3,
+        "expected": "CW",
+        "entity": "Q25279",
+        "code": "CW",
+        "covered": true,
+        "mismatch": false
+      },
+      {
+        "name": "Peru",
+        "count": 17,
+        "expected": "PE",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "South Africa",
+        "count": 23,
+        "expected": "ZA",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Philippines",
+        "count": 16,
+        "expected": "PH",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Iran",
+        "count": 3,
+        "expected": "IR",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Bangladesh",
+        "count": 8,
+        "expected": "BD",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "India",
+        "count": 4,
+        "expected": "IN",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Sri Lanka",
+        "count": 4,
+        "expected": "LK",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Senegal",
+        "count": 4,
+        "expected": "SN",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Tanzania",
+        "count": 3,
+        "expected": "TZ",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Poland",
+        "count": 5,
+        "expected": "PL",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Latvia",
+        "count": 9,
+        "expected": "LV",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Finland",
+        "count": 28,
+        "expected": "FI",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Djibouti",
+        "count": 2,
+        "expected": "DJ",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Antarctica",
+        "count": 7,
+        "expected": "AQ",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Estonia",
+        "count": 21,
+        "expected": "EE",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Tuvalu",
+        "count": 4,
+        "expected": "TV",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Maldives",
+        "count": 8,
+        "expected": "MV",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Russia",
+        "count": 5,
+        "expected": "RU",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Vietnam",
+        "count": 7,
+        "expected": "VN",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Hong Kong",
+        "count": 3,
+        "expected": "HK",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Solomon Islands",
+        "count": 4,
+        "expected": "SB",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Mozambique",
+        "count": 6,
+        "expected": "MZ",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Romania",
+        "count": 2,
+        "expected": "RO",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Ukraine",
+        "count": 2,
+        "expected": "UA",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Taiwan",
+        "count": 2,
+        "expected": "TW",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Pakistan",
+        "count": 3,
+        "expected": "PK",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Singapore",
+        "count": 4,
+        "expected": "SG",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Saint Vincent and the Grenadines",
+        "count": 1,
+        "expected": "VC",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Lithuania",
+        "count": 1,
+        "expected": "LT",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Thailand",
+        "count": 4,
+        "expected": "TH",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Slovenia",
+        "count": 2,
+        "expected": "SI",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Venezuela",
+        "count": 1,
+        "expected": "VE",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Nigeria",
+        "count": 2,
+        "expected": "NG",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Kenya",
+        "count": 5,
+        "expected": "KE",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Angola",
+        "count": 3,
+        "expected": "AO",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Oman",
+        "count": 7,
+        "expected": "OM",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Bahrain",
+        "count": 1,
+        "expected": "BH",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Nauru",
+        "count": 4,
+        "expected": "NR",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Madagascar",
+        "count": 1,
+        "expected": "MG",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Mauritania",
+        "count": 2,
+        "expected": "MR",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Cabo Verde",
+        "count": 3,
+        "expected": "CV",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Trinidad and Tobago",
+        "count": 2,
+        "expected": "TT",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Republic of the Congo",
+        "count": 3,
+        "expected": "CG",
+        "entity": "Q971",
+        "code": "CG",
+        "covered": true,
+        "mismatch": false
+      },
+      {
+        "name": "Mauritius",
+        "count": 6,
+        "expected": "MU",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Cameroon",
+        "count": 2,
+        "expected": "CM",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Seychelles",
+        "count": 5,
+        "expected": "SC",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Grenada",
+        "count": 2,
+        "expected": "GD",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Iceland",
+        "count": 3,
+        "expected": "IS",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Sao Tome and Principe",
+        "count": 2,
+        "expected": "ST",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Saint Helena",
+        "count": 3,
+        "expected": "SH",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Ghana",
+        "count": 3,
+        "expected": "GH",
+        "covered": false,
+        "mismatch": false
+      },
+      {
+        "name": "Namibia",
+        "count": 2,
+        "expected": "NA",
+        "covered": false,
+        "mismatch": false
+      }
+    ]
+  },
+  "sink": 491400,
+  "limitations": [
+    "Eleven entities in spike versus full catalogues in comparison libraries.",
+    "APIs do different work; i18n code measurement validates a code instead of returning a country record.",
+    "Some comparison names miss in some libraries; these are mixed hit/miss workload measurements.",
+    "Percentiles describe batch means, not individual lookup tail latency.",
+    "Open measurement uses warm file bytes; disk IO, first module import, retained-memory and allocation measurements are deferred."
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "name": "@openwaters/country-registry-spike",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=24"
+  },
+  "exports": {
+    ".": "./src/index.ts",
+    "./data": "./data/countries.crdb"
+  },
+  "scripts": {
+    "generate": "flatc --ts --ts-flat-files --gen-object-api -o src/generated schema/countries.fbs",
+    "source:fetch": "node --import tsx scripts/fetch-wikidata.ts",
+    "build": "node --import tsx scripts/build.ts",
+    "test": "node --import tsx --test test/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "demo": "node --import tsx scripts/demo.ts",
+    "benchmark": "node --import tsx scripts/benchmark.ts",
+    "evidence": "node --import tsx scripts/check-evidence.ts",
+    "check": "npm run typecheck && npm test"
+  },
+  "dependencies": {
+    "flatbuffers": "25.9.23"
+  },
+  "devDependencies": {
+    "@types/node": "26.6.6",
+    "countries-list": "3.4.1",
+    "country-code-lookup": "0.2.1",
+    "country-codes-list": "3.2.0",
+    "i18n-iso-countries": "7.14.0",
+    "tsx": "4.23.15",
+    "typescript": "7.0.2"
+  }
+}

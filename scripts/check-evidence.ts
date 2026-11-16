@@ -6,6 +6,7 @@ import { ByteBuffer } from 'flatbuffers';
 import { Registry } from '../src/generated/country-spike.js';
 import { CountryRegistry, CompatibilityError } from '../src/index.ts';
 import { canonical, checkEvidence, type EvidenceRequest, type WikiEntity, type Finding } from '../src/evidence.ts';
+import { buildCorpus, readCorpusFile } from '../src/source.ts';
 
 const args = process.argv.slice(2);
 const option = (name: string) => { const i = args.indexOf(name); return i < 0 ? undefined : args[i + 1]; };
@@ -15,6 +16,15 @@ const readerResults = option('--reader-results');
 const offline = args.includes('--offline');
 const reportDir = resolve(option('--output') ?? 'reports/local/evidence');
 const sha = (value: string | Uint8Array) => createHash('sha256').update(value).digest('hex');
+const json = async (dir: string, file: string) => JSON.parse(await readCorpusFile(dir, file));
+async function approvals(dir: string): Promise<Record<string, string>> {
+  return json(dir, 'sources/review-approvals.json').catch(error => { if (error.code === 'ENOENT') return {}; throw error; });
+}
+async function selectedActivation(dir: string): Promise<boolean> {
+  const activation = await json(dir, 'sources/override-activation.json').catch(error => { if (error.code === 'ENOENT') return { active: [], retired: [] }; throw error; });
+  if (!activation || !Array.isArray(activation.active) || !Array.isArray(activation.retired)) throw new Error('Invalid review activation');
+  return activation.active.length > 0 || activation.retired.length > 0;
+}
 
 async function load(dir: string) {
   const bytes = await readFile(resolve(dir, 'data/countries.crdb'));
@@ -46,11 +56,22 @@ try {
 if (args.includes('--reader')) throw new Error('The verdict checker cannot load proposed reader code; supply --reader-results from an isolated job');
 if (readerResults && !base) throw new Error('--reader-results requires a trusted --base');
 const proposed = await load(corpus);
+const hasReviews = proposed.requests.some(r => r.review) || await selectedActivation(corpus);
+if (hasReviews && !base) throw new Error('Reviewed evidence requires a trusted --base');
+const approvedReviews = base ? await approvals(resolve(base)) : {};
+let generated: Awaited<ReturnType<typeof buildCorpus>> | undefined;
+if (hasReviews) {
+  generated = await buildCorpus(corpus, approvedReviews);
+  if (!Buffer.from(generated.bytes).equals(proposed.bytes) || generated.evidenceText !== await readFile(resolve(corpus, 'data/evidence.json'), 'utf8')) throw new Error('Reviewed artifacts differ from trusted source build');
+}
 let requests = proposed.requests;
 const preflight: Finding[] = [];
 let checkedLookups = 0;
+let unchangedArtifacts = false;
+const provenanceSnapshots: { id: string; revision: number; file: string }[] = [];
 if (base) {
   const before = await load(resolve(base));
+  unchangedArtifacts = before.binarySha256 === proposed.binarySha256;
   const beforeFixture = JSON.parse(await readFile(resolve(base, 'sources/accepted-inputs.json'), 'utf8'));
   const proposedFixture = JSON.parse(await readFile(resolve(corpus, 'sources/accepted-inputs.json'), 'utf8'));
   if (canonical(beforeFixture) !== canonical(proposedFixture)) preflight.push({ id: 'compatibility-fixture', status: 'needs-review', link: '', message: 'Compatibility expectations changed; review additions, removals and changed answers against the trusted base', references: [] });
@@ -79,15 +100,42 @@ if (base) {
     }
     requests = [];
   } else {
+  let reviewedTransition = false;
+  if (hasReviews || before.requests.some(r => r.review) || await selectedActivation(resolve(base))) {
+    generated ??= await buildCorpus(corpus, approvedReviews);
+    if (!Buffer.from(generated.bytes).equals(proposed.bytes) || generated.evidenceText !== await readFile(resolve(corpus, 'data/evidence.json'), 'utf8')) throw new Error('Reviewed artifacts differ from trusted source build');
+    const oldPolicy = await json(resolve(base), 'sources/policy.json'), newPolicy = await json(corpus, 'sources/policy.json');
+    delete oldPolicy.datasetVersion; delete newPolicy.datasetVersion;
+    const oldManifest = await json(resolve(base), 'sources/manifest.json'), newManifest = await json(corpus, 'sources/manifest.json');
+    const sameManifest = canonical(oldManifest) === canonical(newManifest);
+    const changedSnapshots = newManifest.filter((m: any) => canonical(oldManifest.find((o: any) => o.id === m.id)) !== canonical(m));
+    const reviewedEntities = new Set(generated.reviews.map(r => r.record.qid));
+    const beforeGenerated = sameManifest ? undefined : await buildCorpus(resolve(base), approvedReviews);
+    const sameFacts = beforeGenerated && canonical([beforeGenerated.source.entities, beforeGenerated.source.assignments]) === canonical([generated.source.entities, generated.source.assignments]);
+    const reviewedIds = new Set([...before.requests, ...proposed.requests].filter(r => r.review).map(r => r.id));
+    const assertions = (rs: EvidenceRequest[]) => rs.filter(r => !reviewedIds.has(r.id)).map(({ revision, ...r }) => r);
+    reviewedTransition = canonical(oldPolicy) === canonical(newPolicy) && (sameManifest || !!sameFacts && changedSnapshots.every((m: any) => reviewedEntities.has(m.id)) && canonical(assertions(before.requests)) === canonical(assertions(proposed.requests)));
+    if (reviewedTransition && !sameManifest) provenanceSnapshots.push(...changedSnapshots);
+  }
   const oldRequests = new Map(before.requests.map(r => [r.id, JSON.stringify(r)]));
-  requests = proposed.requests.filter(r => oldRequests.get(r.id) !== JSON.stringify(r));
+  requests = proposed.requests.filter(r => {
+    if (r.review) return true;
+    const old = before.requests.find(o => o.id === r.id);
+    if (reviewedTransition && old) {
+      const { revision: oldRevision, ...oldAssertion } = old, { revision, ...assertion } = r;
+      if (canonical(oldAssertion) === canonical(assertion)) return false;
+    }
+    return oldRequests.get(r.id) !== JSON.stringify(r);
+  });
   const removed = before.requests.filter(r => !proposed.requests.some(n => n.id === r.id));
   for (const r of removed) preflight.push({ id: r.id, status: 'needs-review', link: `https://www.wikidata.org/wiki/${r.qid}`, message: 'Evidence or accepted meaning removed; requires explicit review', references: [] });
   if (before.binarySha256 !== proposed.binarySha256) {
     if (proposed.metadata.datasetVersion <= before.metadata.datasetVersion) preflight.push({ id: 'dataset-version', status: 'mismatch', link: '', message: 'Changed runtime artifacts require an increased datasetVersion', references: [] });
     // The spike rechecks all claims when runtime facts change so omissions cannot hide behind unchanged requests.
-    requests = proposed.requests;
-    preflight.push({ id: 'binary-diff', status: 'needs-review', link: '', message: 'Runtime facts changed; inspect entity dates, relationships, and binary-to-source interpretation before approval', references: [] });
+    if (!reviewedTransition) {
+      requests = proposed.requests;
+      preflight.push({ id: 'binary-diff', status: 'needs-review', link: '', message: 'Runtime facts changed; inspect entity dates, relationships, and binary-to-source interpretation before approval', references: [] });
+    }
   }
   }
 }
@@ -118,12 +166,25 @@ async function fetchEntity(qid: string, revision?: number): Promise<WikiEntity> 
   return cache.get(key)!;
 }
 const findings = [...preflight];
-for (const request of requests) findings.push(await checkEvidence(request, fetchEntity));
+for (const snapshot of provenanceSnapshots) {
+  try {
+    const expected = JSON.parse(await readFile(resolve(corpus, snapshot.file), 'utf8')).entities[snapshot.id];
+    const actual = await fetchEntity(snapshot.id, snapshot.revision);
+    const matches = actual.id === snapshot.id && actual.lastrevid === snapshot.revision && canonical(actual) === canonical(expected);
+    findings.push({ id: `provenance:${snapshot.id}`, status: offline ? 'needs-review' : matches ? 'source-match' : 'mismatch', blocking: !matches || offline, link: `https://www.wikidata.org/w/index.php?title=${snapshot.id}&oldid=${snapshot.revision}`, message: offline ? 'Offline snapshots cannot authenticate a refreshed upstream revision' : matches ? 'Refreshed snapshot matches the live pinned revision; unchanged unreviewed assertions remain unverified' : 'Refreshed snapshot differs from its live pinned revision', references: [] });
+  } catch (error) { findings.push({ id: `provenance:${snapshot.id}`, status: 'infrastructure-error', link: '', message: String(error), references: [] }); }
+}
+for (const request of requests) {
+  const finding = await checkEvidence(request, fetchEntity, approvedReviews);
+  if (unchangedArtifacts && request.review && ['needs-review', 'infrastructure-error'].includes(finding.status)) finding.blocking = false;
+  findings.push(finding);
+}
 const counts = findings.reduce<Record<string, number>>((out, f) => { out[f.status] = (out[f.status] ?? 0) + 1; return out; }, {});
-const report = { datasetVersion: proposed.metadata.datasetVersion, binarySha256: proposed.binarySha256, evidenceDigest: proposed.metadata.evidenceDigest, mode: readerResults ? 'reader-compatibility' : offline ? 'pinned-snapshots-only' : 'live-pinned-and-current', checkedLookups, applicable: !!readerResults || findings.length > 0, passed: readerResults ? findings.length === 0 : !offline && findings.every(f => f.status === 'verified'), counts, findings, limitation: 'Prototype: reference passages and maintainer review resolutions are not automated. Findings requiring interpretation stay non-passing.' };
+const gatePassed = readerResults ? findings.length === 0 : !offline && findings.filter(f => f.blocking !== false).every(f => f.status === 'verified');
+const report = { gatePassed, datasetVersion: proposed.metadata.datasetVersion, binarySha256: proposed.binarySha256, evidenceDigest: proposed.metadata.evidenceDigest, mode: readerResults ? 'reader-compatibility' : offline ? 'pinned-snapshots-only' : 'live-pinned-and-current', checkedLookups, applicable: !!readerResults || findings.length > 0, passed: readerResults ? findings.length === 0 : !offline && findings.every(f => f.status === 'verified'), counts, findings, limitation: 'Reference passages are interpreted by maintainers. Reviewed findings require an approved exact record digest; offline checks cannot certify live upstream state. Unreviewed assertions stay non-passing.' };
 await writeFile(resolve(reportDir, 'report.json'), JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify({ ...report, findings: undefined, report: resolve(reportDir, 'report.json') }, null, 2));
-process.exitCode = findings.length && !report.passed ? 1 : 0;
+process.exitCode = findings.length && !gatePassed ? 1 : 0;
 
 } catch (error) {
   const incompatible = error instanceof CompatibilityError;

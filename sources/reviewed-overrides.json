@@ -1,0 +1,139 @@
+{
+  "schemaVersion": 1,
+  "records": [
+    {
+      "id": "turkey-asia-evidence-2026-11-16",
+      "qid": "Q43",
+      "property": "P30",
+      "statementId": "q43$05DBEBB8-5D18-40BB-9A4C-409073AA44F5",
+      "revision": 2568776192,
+      "baseline": {
+        "value": {
+          "entity-type": "item",
+          "numeric-id": 48,
+          "id": "Q48"
+        },
+        "qualifiers": {
+          "P518": [
+            {
+              "snaktype": "value",
+              "property": "P518",
+              "hash": "3f6e7bc07e2c67b25d3e6bef87e7e0549c37caa8",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 51614,
+                  "id": "Q51614"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            }
+          ],
+          "P1107": [
+            {
+              "snaktype": "value",
+              "property": "P1107",
+              "hash": "509637b293ad73aa116ab9c63fcfbd021e2f97dc",
+              "datavalue": {
+                "value": {
+                  "amount": "+0.97",
+                  "unit": "1"
+                },
+                "type": "quantity"
+              },
+              "datatype": "quantity"
+            }
+          ]
+        },
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "47949bed4408ffae7cf6f438eded82264570a559",
+            "snaks": {
+              "P854": [
+                {
+                  "snaktype": "value",
+                  "property": "P854",
+                  "hash": "998e5f3564177fdddbc5cce46ee4047a7fa260af",
+                  "datavalue": {
+                    "value": "https://www.workwithdata.com/place/turkey",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P813": [
+                {
+                  "snaktype": "value",
+                  "property": "P813",
+                  "hash": "f3f073fe5170fbd2b5073026dd9b1eb3d3fa9056",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2024-10-11T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P854",
+              "P813"
+            ]
+          }
+        ]
+      },
+      "baselineDigest": "d3d7373c27bc27032e9fe01dd2c9585f1a33ea4cd7fee8bba90a3ea3232339d0",
+      "mode": "evidence",
+      "scope": "The Republic of Turkey has territory in Asia; Anatolia means Asian Turkey here. The proportion 0.97 is a rounded area share, not population or an exact measurement. Publication dates do not establish an effective start date. Total-area figures differ among sources and are not combined to infer greater precision.",
+      "primary": {
+        "url": "https://digitallibrary.un.org/record/478573/files/HRI_CORE_1_Add.116-EN.pdf?ln=en",
+        "title": "Republic of Turkey: Core document forming part of the reports of States parties, HRI/CORE/1/Add.116",
+        "location": "Section I.A, Geography, paragraph 2",
+        "passage": "The report identifies 3 percent of the country as European Thrace and the remaining 97 percent as Anatolia on the Asian continent.",
+        "publicationDate": "2001-10-01",
+        "retrieved": "2026-11-16",
+        "readableCopy": "https://docstore.ohchr.org/SelfServices/FilesHandler.ashx?enc=I6QhIMfAvxMYwIBL7%2Fy1c9Hd292JKLCFOSVokjdpnUtXyg754kuKkz%2BVWsLGM7q4NmaUZhTqywCBFKk37sqZRTJJyQ8yuo9vJqL3qAT4nBc%3D"
+      },
+      "corroborating": [
+        {
+          "url": "https://www.fao.org/fishery/docs/CDrom/aquaculture/a0844t/docrep/009/T0377E/T0377E27.htm",
+          "title": "FAO, Inland fisheries of Europe: Turkey",
+          "location": "Section 3, Physical geography",
+          "passage": "Asiatic Turkey, called Anatolia or Asia Minor, is described as 97 percent of the country. The chapter includes 1990 population estimates; its publication date has not been established from the chapter page.",
+          "retrieved": "2026-11-16"
+        },
+        {
+          "url": "https://www.cbd.int/idb/image/2012/celebrations/idb-2012-tr-KuzeyDoga-magazine.pdf",
+          "title": "Şekercioğlu et al., Turkey’s globally important biodiversity in crisis, Biological Conservation 144 (2011), 2752–2769; DOI 10.1016/j.biocon.2011.06.025",
+          "location": "Page 2753, footnote 1",
+          "passage": "The paper describes 97 percent of the country’s land area as Anatolia in Asia Minor, separated from European Thrace by the Bosphorus and Dardanelles.",
+          "publicationDate": "2011-09-08",
+          "retrieved": "2026-11-16"
+        }
+      ],
+      "independence": "Separate Turkish-government, FAO and academic publications, not mirrors. The UN hosts Turkey’s own report and is not a fourth independent assessment. Independence of the underlying geographic measurements is not established. The maintainer accepts the agreement of these quality publications for this rounded geographic assertion, with that uncertainty recorded.",
+      "approval": {
+        "by": "clarkbw",
+        "date": "2026-11-16",
+        "issue": "https://github.com/openwatersio/c5y-n8r/issues/2#issuecomment-6905640378"
+      },
+      "upstream": {
+        "status": "blocked",
+        "reason": "Q43 is semi-protected for autoconfirmed users; the signed-in account exposes no edit controls. No edit was submitted.",
+        "url": "https://www.wikidata.org/w/index.php?title=Q43&action=info"
+      },
+      "acceptedReferenceUrls": [
+        "https://digitallibrary.un.org/record/478573/files/HRI_CORE_1_Add.116-EN.pdf",
+        "https://docstore.ohchr.org/SelfServices/FilesHandler.ashx?enc=I6QhIMfAvxMYwIBL7%2Fy1c9Hd292JKLCFOSVokjdpnUtXyg754kuKkz%2BVWsLGM7q4NmaUZhTqywCBFKk37sqZRTJJyQ8yuo9vJqL3qAT4nBc%3D"
+      ]
+    }
+  ]
+}

@@ -1,20 +1,24 @@
 import { observeLookup } from './compatibility.ts';
 import { canonical } from './evidence.ts';
-import { resolve } from 'node:path';
+import { isAbsolute, relative, resolve, sep } from 'node:path';
 import { applyReviews, selectedReviews, emptyReviews, emptyActivation, type ReviewBundle, type Activation } from './overrides.ts';
-import { readFile, lstat } from 'node:fs/promises';
+import { readFile, lstat, realpath } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { CountryRegistry } from './index.ts';
 import { compile, type SourceData, type SourceAssignment } from './compile.ts';
 import { day, FORMAT_VERSION } from './common.ts';
 import type { EvidenceRequest, WikiEntity } from './evidence.ts';
 
-export async function buildCorpus(corpus: string, trustedApprovals?: Record<string, string>) {
-const read = async (path: string) => {
-  const file = resolve(corpus, path), info = await lstat(file);
+export async function readCorpusFile(corpus: string, path: string): Promise<string> {
+  const root = await realpath(corpus), file = resolve(root, path), info = await lstat(file);
   if (!info.isFile() || info.size > 4 * 1024 * 1024) throw new Error(`Invalid or oversized corpus file: ${path}`);
+  const location = relative(root, await realpath(file));
+  if (location === '..' || location.startsWith(`..${sep}`) || isAbsolute(location)) throw new Error(`Invalid corpus file outside source directory: ${path}`);
   return readFile(file, 'utf8');
-};
+}
+
+export async function buildCorpus(corpus: string, trustedApprovals?: Record<string, string>) {
+const read = (path: string) => readCorpusFile(corpus, path);
 const optional = async (path: string, fallback: unknown) => JSON.parse(await read(path).catch(error => { if (error.code === 'ENOENT') return JSON.stringify(fallback); throw error; }));
 const reviews: ReviewBundle = await optional('sources/reviewed-overrides.json', emptyReviews);
 const activation: Activation = await optional('sources/override-activation.json', emptyActivation);

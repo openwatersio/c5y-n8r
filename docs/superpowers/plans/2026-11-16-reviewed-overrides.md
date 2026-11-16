@@ -36,3 +36,9 @@ PR fields cannot authenticate themselves; approved record contents cannot change
 - Ruling: unchanged-artifact maintenance PRs retain non-passing evidence findings as advisory, so a source-review repair can reach main. Activations still block on unresolved reviews; the cost is that a green maintenance gate does not certify live data.
 - Ruling: a retirement refresh must preserve effective facts and unreviewed assertions, be limited to reviewed entities, and authenticate complete changed snapshots against live pinned revisions. The cost is that unrelated source updates require broader review.
 - Open blocker: activation selected without regenerated review-carrying artifacts can skip the trusted rebuild. Reproduced after round 3; stop implementation and open the requested PR as a draft.
+
+- Maintainer authorized a fourth round. Resolved the stale-activation trigger with a failing regression followed by a passing test; both review models confirmed no remaining trigger skip path in the working-tree fix.
+- After model review, reproduced and fixed the low-severity symlink-input disclosure using a shared bounded corpus-file reader and a leaf/parent-directory symlink regression. No fifth model round is required for this low finding.
+- Compatibility-changing corrections and workflow-definition attestation remain explicit limits; this patch does not relax protected lookup expectations or modify CI workflows.
+
+- Final local verification for the fourth-round follow-up: 81 tests passed, no skips; `npm run build` reproduces data byte-for-byte. Push and hosted CI reconcile the prior HEAD/working-tree discrepancy.

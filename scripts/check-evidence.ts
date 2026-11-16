@@ -6,7 +6,7 @@ import { ByteBuffer } from 'flatbuffers';
 import { Registry } from '../src/generated/country-spike.js';
 import { CountryRegistry, CompatibilityError } from '../src/index.ts';
 import { canonical, checkEvidence, type EvidenceRequest, type WikiEntity, type Finding } from '../src/evidence.ts';
-import { buildCorpus } from '../src/source.ts';
+import { buildCorpus, readCorpusFile } from '../src/source.ts';
 
 const args = process.argv.slice(2);
 const option = (name: string) => { const i = args.indexOf(name); return i < 0 ? undefined : args[i + 1]; };
@@ -16,9 +16,14 @@ const readerResults = option('--reader-results');
 const offline = args.includes('--offline');
 const reportDir = resolve(option('--output') ?? 'reports/local/evidence');
 const sha = (value: string | Uint8Array) => createHash('sha256').update(value).digest('hex');
-const json = async (dir: string, file: string) => JSON.parse(await readFile(resolve(dir, file), 'utf8'));
+const json = async (dir: string, file: string) => JSON.parse(await readCorpusFile(dir, file));
 async function approvals(dir: string): Promise<Record<string, string>> {
   return json(dir, 'sources/review-approvals.json').catch(error => { if (error.code === 'ENOENT') return {}; throw error; });
+}
+async function selectedActivation(dir: string): Promise<boolean> {
+  const activation = await json(dir, 'sources/override-activation.json').catch(error => { if (error.code === 'ENOENT') return { active: [], retired: [] }; throw error; });
+  if (!activation || !Array.isArray(activation.active) || !Array.isArray(activation.retired)) throw new Error('Invalid review activation');
+  return activation.active.length > 0 || activation.retired.length > 0;
 }
 
 async function load(dir: string) {
@@ -51,7 +56,7 @@ try {
 if (args.includes('--reader')) throw new Error('The verdict checker cannot load proposed reader code; supply --reader-results from an isolated job');
 if (readerResults && !base) throw new Error('--reader-results requires a trusted --base');
 const proposed = await load(corpus);
-const hasReviews = proposed.requests.some(r => r.review);
+const hasReviews = proposed.requests.some(r => r.review) || await selectedActivation(corpus);
 if (hasReviews && !base) throw new Error('Reviewed evidence requires a trusted --base');
 const approvedReviews = base ? await approvals(resolve(base)) : {};
 let generated: Awaited<ReturnType<typeof buildCorpus>> | undefined;
@@ -96,7 +101,7 @@ if (base) {
     requests = [];
   } else {
   let reviewedTransition = false;
-  if (hasReviews || before.requests.some(r => r.review)) {
+  if (hasReviews || before.requests.some(r => r.review) || await selectedActivation(resolve(base))) {
     generated ??= await buildCorpus(corpus, approvedReviews);
     if (!Buffer.from(generated.bytes).equals(proposed.bytes) || generated.evidenceText !== await readFile(resolve(corpus, 'data/evidence.json'), 'utf8')) throw new Error('Reviewed artifacts differ from trusted source build');
     const oldPolicy = await json(resolve(base), 'sources/policy.json'), newPolicy = await json(corpus, 'sources/policy.json');

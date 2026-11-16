@@ -49,6 +49,66 @@ test('a proposed corpus cannot approve its own local review', async () => {
   });
 });
 
+test('selected activation triggers trusted rebuilding even when artifacts contain no reviews', async () => {
+  await reviewedCorpus(async (dir, r, approvals) => {
+    const { cp, mkdtemp, rm } = await import('node:fs/promises');
+    const base = await mkdtemp(join(dir, 'base-'));
+    try {
+      await cp('sources', join(base, 'sources'), { recursive: true });
+      await cp('data', join(base, 'data'), { recursive: true });
+      await writeFile(join(base, 'sources/review-approvals.json'), JSON.stringify(approvals));
+      await writeFile(join(base, 'sources/reviewed-overrides.json'), JSON.stringify({ schemaVersion: 1, records: [r] }));
+      await writeFile(join(dir, 'sources/policy.json'), await readFile(join(base, 'sources/policy.json')));
+      await cp('data', join(dir, 'data'), { recursive: true });
+      const stale = cli(dir, base);
+      assert.equal(stale.status, 1);
+      assert.match(stale.stdout + stale.stderr, /differ from trusted source build/);
+      await writeFile(join(base, 'sources/review-approvals.json'), '{}');
+      const unapproved = cli(dir, base);
+      assert.equal(unapproved.status, 1);
+      assert.match(unapproved.stdout + unapproved.stderr, /not approved/);
+      r.primary.url = r.baseline.references[0].snaks.P854[0].datavalue.value;
+      await writeFile(join(dir, 'sources/reviewed-overrides.json'), JSON.stringify({ schemaVersion: 1, records: [r] }));
+      await writeFile(join(base, 'sources/review-approvals.json'), JSON.stringify({ [r.id]: reviewDigest(r) }));
+      await writeFile(join(dir, 'sources/override-activation.json'), JSON.stringify({ active: [], retired: [r.id] }));
+      const retired = cli(dir, base);
+      assert.equal(retired.status, 1);
+      assert.match(retired.stdout + retired.stderr, /differ from trusted source build/);
+      await writeFile(join(dir, 'sources/override-activation.json'), JSON.stringify({ active: [], retired: [] }));
+      await writeFile(join(base, 'sources/override-activation.json'), JSON.stringify({ active: [r.id], retired: [] }));
+      await writeFile(join(base, 'sources/reviewed-overrides.json'), JSON.stringify({ schemaVersion: 1, records: [r] }));
+      const policyPath = join(dir, 'sources/policy.json'), policy = JSON.parse(await readFile(policyPath, 'utf8')); policy.datasetVersion++;
+      await writeFile(policyPath, JSON.stringify(policy));
+      const baseSelected = cli(dir, base);
+      assert.equal(baseSelected.status, 1);
+      assert.match(baseSelected.stdout + baseSelected.stderr, /differ from trusted source build/);
+    } finally { await rm(base, { recursive: true, force: true }); }
+  });
+});
+
+test('the checker rejects symlinked activation inputs before parsing their target', async () => {
+  await reviewedCorpus(async (dir) => {
+    const { cp, rm, symlink, mkdtemp } = await import('node:fs/promises');
+    await cp('data', join(dir, 'data'), { recursive: true });
+    const input = join(dir, 'sources/override-activation.json'), target = join(dir, 'synthetic-private-data');
+    await writeFile(target, 'synthetic-private-marker');
+    await rm(input); await symlink(target, input);
+    const result = cli(dir, '.');
+    assert.equal(result.status, 1);
+    assert.match(result.stdout + result.stderr, /Invalid.*corpus file/);
+    assert.equal((result.stdout + result.stderr).includes('synthetic-private-marker'), false);
+    const outside = await mkdtemp(join(dir, '../outside-review-config-'));
+    try {
+      await writeFile(join(outside, 'override-activation.json'), '{"active":[],"retired":[]}');
+      await rm(join(dir, 'sources'), { recursive: true, force: true });
+      await symlink(outside, join(dir, 'sources'), 'dir');
+      const escaped = cli(dir, '.');
+      assert.equal(escaped.status, 1);
+      assert.match(escaped.stdout + escaped.stderr, /Invalid.*corpus file/);
+    } finally { await rm(outside, { recursive: true, force: true }); }
+  });
+});
+
 test('unchanged reviewed artifacts report live drift without blocking a maintenance PR', async () => {
   await reviewedCorpus(async (dir, r, approvals) => {
     await save(dir, approvals);

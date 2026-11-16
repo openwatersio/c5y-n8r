@@ -1,12 +1,12 @@
 # Reviewed overrides: pre-push review
 
-This branch is a draft with one confirmed blocking finding. The local review stopped after the third completed round, as required by the Open Waters review workflow.
+The maintainer authorized a fourth round after the third-round stop. That round is complete, and the rebuild-trigger finding is fixed with a regression. No remaining skip path was found in the working-tree fix.
 
-## Open blocker
+## Rebuild-trigger regression
 
-The trusted rebuild in `scripts/check-evidence.ts` is triggered by review fields in committed artifacts, rather than by selected activation records. When both base and proposed artifacts contain no reviews, a proposal can select an active review without rebuilding the artifacts and the trusted evidence gate reports success. The proposed build job normally catches the stale artifacts, but that job runs proposed code and cannot substitute for the trusted check.
+The third-round defect was that the trusted rebuild in `scripts/check-evidence.ts` depended only on review fields in committed artifacts, ignoring selected activation records. When both base and proposed artifacts contain no reviews, a proposal can select an active review without rebuilding the artifacts and the trusted evidence gate reports success. The proposed build job normally catches the stale artifacts, but that job runs proposed code and cannot substitute for the trusted check.
 
-Reproduced with a temporary copy of the current sources and data: set the real Turkey review ID active, leave `data/` unchanged, then run the checker against this branch as the base. The result was exit 0, `passed: true`, `gatePassed: true`, `applicable: false`, with zero findings. The checker must consider selected activation state when deciding whether to rebuild. No production-code fix was made after this third-round finding.
+Reproduced with a temporary copy of the current sources and data: set the real Turkey review ID active, leave `data/` unchanged, then run the checker against this branch as the base. The result was exit 0, `passed: true`, `gatePassed: true`, `applicable: false`, with zero findings. The checker must consider selected activation state when deciding whether to rebuild. The checker also inspects selected activation in both the proposed and base sources. A regression covers stale active and retired selections, missing trusted approval and a selected base with stale proposed artifacts. The test failed before the fix and passes afterward.
 
 ## Completed rounds
 
@@ -24,6 +24,18 @@ Malformed staged records intentionally fail validation. A primary reference alre
 
 ## Verification
 
-`npm run check`: 79 passed, 0 failed, 0 skipped. `npm run build` reproduces the checked-in binary, evidence companion and release metadata byte-for-byte. Tests include the real Turkey review applied in a temporary corpus, forged revisions on unrelated countries, forged refreshed entity content, live drift on unchanged reviews, reviewed retirement, corrected runtime facts, fixture changes and binary date/entity tampering.
+`npm run check`: 80 passed, 0 failed, 0 skipped. `npm run build` reproduces the checked-in binary, evidence companion and release metadata byte-for-byte. Tests include the real Turkey review applied in a temporary corpus, forged revisions on unrelated countries, forged refreshed entity content, live drift on unchanged reviews, reviewed retirement, corrected runtime facts, fixture changes and binary date/entity tampering.
 
 The staged corpus remains inactive. The offline full-corpus report retains unresolved evidence; a passing code suite does not certify the dataset. Hosted CI results belong in the PR description.
+
+## Fourth round
+
+Opus and Sonnet completed the maintainer-authorized fourth round using static inspection. Both confirmed the working-tree trigger fix; their reports noted that the pushed HEAD and hosted results were still the earlier revision because the workflow requires reviewing before committing. The follow-up commit and fresh hosted results resolve that procedural finding.
+
+Opus highlighted the existing reliance on code-owner review for workflow edits, and the fact that answer-changing corrections remain blocked by the immutable compatibility fixture. Those are explicit limits in README and CONTRIBUTING; a new workflow-attestation or fixture-approval design is outside this patch. Sonnet’s scale concern is retained as a prototype limit: corpus and observation size bounds require review before expansion. Deactivation still receives an unresolved ordinary-statement finding, so omitting a binary-diff label does not approve withdrawal.
+
+The low finding about symlinked activation input was reproduced after the model review: JSON errors quoted a prefix of a synthetic target. The checker and builder share a bounded regular-file reader that also rejects paths escaping the corpus through a directory symlink. A regression covers both leaf and parent-directory symlinks. This lower-severity fix and its tests were made after the fourth model review; no fifth review ran. Source-language and licensing judgments remain human-reviewed, and the Node-only internal build modules are not exported by the runtime API.
+
+The previously verified GitHub main protection remains enabled: one approval, required code-owner review and approval of the last push. The rejected fourth-round launch was retried only after GitHub confirmed the repository is public; both reviewers completed the authorized retry. The source data and activation state remain unchanged.
+
+Current verification after the fourth-round follow-up: 81 tests passed, 0 failed, 0 skipped; build artifacts are byte-identical. The stale-activation regression keeps dataset versions equal for the activation-only case and exercises unauthorized selection, retirement and the base-only trigger. The previously reported HEAD/CI mismatch is resolved by pushing this fix and recording its hosted run in the PR description.

@@ -1,4 +1,4 @@
-import { reviewFinding, statementState, effectiveValue, selectedReviews, type AppliedReview } from './overrides.ts';
+import { reviewFinding, statementState, effectiveValue, sameStatementValue, selectedReviews, type AppliedReview } from './overrides.ts';
 
 export interface EvidenceRequest {
   id: string; qid: string; revision: number;
@@ -11,6 +11,7 @@ export interface Finding {
   id: string; status: 'verified' | 'source-match' | 'needs-review' | 'mismatch' | 'infrastructure-error';
   link: string; message: string; references: string[];
   provenance?: { kind: 'local-review' | 'upstream-reviewed'; reviewId: string; reviewDigest: string; issue: string };
+  blocking?: boolean;
 }
 export type WikiEntity = { id: string; lastrevid: number; labels: Record<string, { value: string }>; aliases?: Record<string, { value: string }[]>; claims: Record<string, any[]> };
 export type FetchEntity = (qid: string, revision?: number) => Promise<WikiEntity>;
@@ -35,10 +36,10 @@ export async function checkEvidence(request: EvidenceRequest, fetchEntity: Fetch
     if (request.review) {
       const { record, state } = request.review;
       selectedReviews({ schemaVersion: 1, records: [record] }, { active: state === 'active' ? [record.id] : [], retired: state === 'retired' ? [record.id] : [] }, approvedReviews);
-      if (!['active', 'retired'].includes(state) || request.kind !== 'statement' || request.qid !== record.qid || request.property !== record.property || request.statementId !== record.statementId || canonical(request.expected) !== canonical(effectiveValue(record).value) || canonical(request.qualifiers ?? {}) !== canonical(effectiveValue(record).qualifiers)) return finding('mismatch', 'Review does not bind the requested assertion');
+      if (!['active', 'retired'].includes(state) || request.kind !== 'statement' || request.qid !== record.qid || request.property !== record.property || request.statementId !== record.statementId || !sameStatementValue({ value: request.expected, qualifiers: request.qualifiers as Record<string, unknown> ?? {}, rank: effectiveValue(record).rank }, effectiveValue(record))) return finding('mismatch', 'Review does not bind the requested assertion');
       const claim = pinned.claims[record.property]?.find(c => c.id === record.statementId);
       if (state === 'active' ? !claim || pinned.lastrevid < record.revision || canonical(statementState(claim)) !== canonical(record.baseline) : reviewFinding(record, 'retired', pinned).status !== 'verified') return finding('mismatch', 'Review baseline differs from pinned assertion');
-      return { ...reviewFinding(record, state, current), id: request.id };
+      return { ...reviewFinding(record, state, current), id: request.id, link };
     }
     let value: unknown, currentValue: unknown, references: string[] = [], needsReview = false;
     if (request.kind === 'statement') {

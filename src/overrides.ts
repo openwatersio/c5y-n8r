@@ -9,6 +9,8 @@ export interface ReviewRecord {
   id: string; qid: string; property: string; statementId: string; revision: number;
   baseline: StatementState; baselineDigest: string; mode: 'evidence' | 'correction'; proposed?: StatementValue;
   scope: string; primary: ReviewSource; corroborating: ReviewSource[]; independence: string;
+  acceptedReferenceUrls?: string[];
+  acceptedReferenceItems?: string[];
   approval: { by: string; date: string; issue: string };
   upstream: { status: 'blocked' | 'pending' | 'accepted' | 'rejected'; reason: string; url?: string };
 }
@@ -29,6 +31,10 @@ export function statementState(claim: any): StatementState {
 }
 export function statementValue(state: StatementValue): StatementValue { return { value: state.value, qualifiers: state.qualifiers, rank: state.rank }; }
 export function effectiveValue(record: ReviewRecord): StatementValue { return statementValue(record.proposed ?? record.baseline); }
+export function sameStatementValue(a: StatementValue, b: StatementValue): boolean {
+  const semantic = (state: StatementValue) => ({ ...statementValue(state), qualifiers: Object.fromEntries(Object.entries(state.qualifiers).map(([property, snaks]) => [property, Array.isArray(snaks) ? snaks.map(snak => { const { hash, ...value } = snak; return value; }) : snaks])) });
+  return canonical(semantic(a)) === canonical(semantic(b));
+}
 function validValue(value: any): boolean {
   return object(value) && value.value !== undefined && object(value.qualifiers) && ['normal', 'preferred', 'deprecated'].includes(value.rank);
 }
@@ -42,15 +48,17 @@ function validPropertyValue(property: string, value: any): boolean {
 
 export function validateReviews(value: unknown): ReviewBundle {
   if (!object(value) || value.schemaVersion !== 1 || !Array.isArray(value.records)) throw new Error('Invalid review schema');
-  const ids = new Set<string>(), targets = new Set<string>();
+  const ids = new Set<string>();
   for (const r of value.records) {
     if (!object(r) || !text(r.id) || !/^Q[1-9][0-9]*$/.test(r.qid) || !properties.has(r.property) || !text(r.statementId) || !r.statementId.toUpperCase().startsWith(`${r.qid}$`) || !Number.isSafeInteger(r.revision) || r.revision < 1) throw new Error('Invalid review identity');
-    if (ids.has(r.id) || targets.has(r.statementId.toUpperCase())) throw new Error('Duplicate review identity or target');
-    ids.add(r.id); targets.add(r.statementId.toUpperCase());
+    if (ids.has(r.id)) throw new Error('Duplicate review identity');
+    ids.add(r.id);
     if (!validValue(r.baseline) || !Array.isArray(r.baseline.references) || r.baselineDigest !== reviewDigest(r.baseline) || !['evidence', 'correction'].includes(r.mode) || (r.mode === 'correction' ? !validValue(r.proposed) : r.proposed !== undefined)) throw new Error('Invalid review baseline or correction');
     if (!validPropertyValue(r.property, r.baseline.value) || (r.proposed && !validPropertyValue(r.property, r.proposed.value))) throw new Error('Invalid review property value');
     if (!text(r.scope) || !text(r.independence) || !object(r.approval) || !text(r.approval.by) || !date(r.approval.date) || !url(r.approval.issue) || !object(r.upstream) || !['blocked', 'pending', 'accepted', 'rejected'].includes(r.upstream.status) || !text(r.upstream.reason) || (r.upstream.url !== undefined && !url(r.upstream.url))) throw new Error('Missing review approval, scope or upstream state');
     if (!Array.isArray(r.corroborating) || r.corroborating.length < 2) throw new Error('Review requires two corroborating sources');
+    if (r.acceptedReferenceUrls !== undefined && (!Array.isArray(r.acceptedReferenceUrls) || r.acceptedReferenceUrls.some((u: unknown) => !url(u)))) throw new Error('Invalid accepted reference URLs');
+    if (r.acceptedReferenceItems !== undefined && (!Array.isArray(r.acceptedReferenceItems) || r.acceptedReferenceItems.some((id: unknown) => typeof id !== 'string' || !/^Q[1-9][0-9]*$/.test(id)))) throw new Error('Invalid accepted reference items');
     const sources = [r.primary, ...r.corroborating], urls = new Set<string>();
     for (const s of sources) {
       if (!object(s) || !url(s.url) || !text(s.title) || !text(s.location) || !text(s.passage) || !date(s.retrieved) || (s.publicationDate !== undefined && !date(s.publicationDate))) throw new Error('Invalid review source');
@@ -67,9 +75,12 @@ export function selectedReviews(bundle: ReviewBundle, activation: Activation, ap
   if (!object(activation) || !Array.isArray(activation.active) || !Array.isArray(activation.retired) || !object(approvals)) throw new Error('Invalid review activation or approvals');
   const ids = [...activation.active, ...activation.retired];
   if (ids.some(id => !text(id)) || new Set(ids).size !== ids.length) throw new Error('Duplicate or invalid review activation');
+  const targets = new Set<string>();
   return ids.map(id => {
     const record = bundle.records.find(r => r.id === id);
     if (!record) throw new Error(`Unknown review activation: ${id}`);
+    if (targets.has(record.statementId.toUpperCase())) throw new Error('Duplicate selected review target');
+    targets.add(record.statementId.toUpperCase());
     if (approvals[id] !== reviewDigest(record)) throw new Error(`Review is not approved by the trusted record digest: ${id}`);
     if (record.upstream.status === 'rejected') throw new Error(`Rejected upstream review requires reconsideration: ${id}`);
     return { record, state: activation.active.includes(id) ? 'active' : 'retired' };
@@ -77,12 +88,14 @@ export function selectedReviews(bundle: ReviewBundle, activation: Activation, ap
 }
 
 function hasPrimary(claim: any, record: ReviewRecord): boolean {
-  return (claim?.references ?? []).some((ref: any) => (ref.snaks?.P854 ?? []).some((s: any) => s.datavalue?.value === record.primary.url));
+  const normalized = (value: unknown) => { if (!url(value)) return ''; const u = new URL(value); u.hash = ''; return u.href; };
+  const accepted = [record.primary.url, ...(record.acceptedReferenceUrls ?? [])].map(normalized);
+  return (claim?.references ?? []).some((ref: any) => (ref.snaks?.P854 ?? []).some((s: any) => accepted.includes(normalized(s.datavalue?.value))) || (ref.snaks?.P248 ?? []).some((s: any) => record.acceptedReferenceItems?.includes(s.datavalue?.value?.id)));
 }
 export function reviewFinding(record: ReviewRecord, state: AppliedReview['state'], current: WikiEntity): Finding {
   const claim = current.claims[record.property]?.find(c => c.id === record.statementId);
   const observed = statementState(claim);
-  const sameValue = !!claim && canonical(statementValue(observed)) === canonical(effectiveValue(record));
+  const sameValue = !!claim && sameStatementValue(observed, effectiveValue(record));
   const adopted = sameValue && hasPrimary(claim, record);
   const unchanged = !!claim && canonical(observed) === canonical(record.baseline);
   const verified = state === 'retired' ? adopted : unchanged && !adopted;

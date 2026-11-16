@@ -36,8 +36,31 @@ test('invalid reviews and duplicate targets cannot certify assertions', () => {
   for (const mutate of [(r: any) => r.corroborating.pop(), (r: any) => r.corroborating[0].url = r.primary.url, (r: any) => r.approval.by = '', (r: any) => r.primary.passage = '', (r: any) => r.baseline.rank = 'invented', (r: any) => r.property = 'P999', (r: any) => r.revision = 0, (r: any) => r.primary.retrieved = '2026-02-30']) {
     const r = record(); mutate(r); assert.throws(() => validateReviews(bundle([r])));
   }
-  assert.throws(() => validateReviews(bundle([record(), { ...record(), id: 'duplicate-target' } ])), /Duplicate/);
+  const replacement = { ...record(), id: 'replacement' };
+  assert.doesNotThrow(() => validateReviews(bundle([record(), replacement])));
+  assert.throws(() => applyReviews(entity(), bundle([record(), replacement]), { active: ['turkey-review', 'replacement'], retired: [] }, { 'turkey-review': reviewDigest(record()), replacement: reviewDigest(replacement) }), /Duplicate.*target/);
   assert.throws(() => validateReviews({ schemaVersion: 2, records: [] }), /schema/);
+});
+
+test('retirement accepts only explicitly reviewed equivalent reference URLs', () => {
+  const r = record(); r.acceptedReferenceUrls = ['https://primary.example/report.pdf'];
+  const upstream = entity();
+  upstream.claims.P297[0].references = [{ snaks: { P854: [{ datavalue: { value: 'https://primary.example/report.pdf#section2' } }] } }];
+  assert.equal(reviewFinding(r, 'retired', upstream).status, 'verified');
+  delete r.acceptedReferenceUrls;
+  assert.equal(reviewFinding(r, 'retired', upstream).status, 'needs-review');
+});
+
+test('adoption ignores generated qualifier hashes and accepts approved stated-in items', () => {
+  const r = record(); r.mode = 'correction'; r.acceptedReferenceItems = ['Q123'];
+  r.proposed = { value: 'TR', rank: 'normal', qualifiers: { P518: [{ snaktype: 'value', property: 'P518', datatype: 'wikibase-item', hash: 'local', datavalue: { type: 'wikibase-entityid', value: { id: 'Q48' } } }] } };
+  const upstream = entity();
+  upstream.claims.P297[0].qualifiers = structuredClone(r.proposed.qualifiers);
+  (upstream.claims.P297[0].qualifiers as any).P518[0].hash = 'generated';
+  upstream.claims.P297[0].references = [{ snaks: { P248: [{ datavalue: { value: { id: 'Q123' } } }] } }];
+  assert.equal(reviewFinding(r, 'retired', upstream).status, 'verified');
+  (upstream.claims.P297[0].qualifiers as any).P518[0].datavalue.value.id = 'Q46';
+  assert.equal(reviewFinding(r, 'retired', upstream).status, 'needs-review');
 });
 
 test('corrections cannot introduce a value of the wrong property type', () => {

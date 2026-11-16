@@ -15,7 +15,7 @@ Waiting for Wikidata blocks independently verified corrections when editing is r
 - A stable local ID, QID, property, statement ID, and reviewed Wikidata revision.
 - The exact original statement value, qualifiers and rank, plus their fingerprint. Snapshot hashes remain in the source manifest.
 - The proposed statement value, qualifiers and rank, or an explicit evidence-only decision.
-- One primary source and two corroborating sources, each with URL, title, relevant passage or paraphrase, passage location, publication date when known, and retrieval date. Records explain source independence and any uncertainty; three URLs alone do not establish accuracy.
+- One primary source and two corroborating sources, each with URL, title, relevant passage or paraphrase, passage location, publication date when known, and retrieval date. Optional accepted reference URLs identify reviewed equivalent locations of the primary document. Records explain source independence and any uncertainty; three URLs alone do not establish accuracy.
 - Maintainer identity, approval date, review issue URL, and explanation of the applicable scope and time period.
 - Upstream state: blocked, pending, accepted, or rejected; the contribution or discussion URL when available, and the reason for a blocked edit.
 
@@ -25,7 +25,7 @@ The first version supports existing statement values and qualifiers consumed by 
 
 ## Build and provenance
 
-`src/overrides.ts` owns validation, matching and application. `scripts/build.ts` loads the overlay after validating each original snapshot digest, applies eligible records to a copy, and generates evidence for the effective assertion with the original source and review attached. Raw snapshots and their hashes never change because of an override.
+`src/overrides.ts` owns validation, matching and application. `src/source.ts`, called by `scripts/build.ts`, loads the overlay after validating each original snapshot digest, applies eligible records to a copy, and generates evidence for the effective assertion with the original source and review attached. Raw snapshots and their hashes never change because of an override.
 
 The binary remains the existing format. Its evidence digest binds the complete evidence companion, including local decisions and source details; any change to that companion changes the binary identity and requires a dataset version increase. The npm artifact includes the review records through the evidence companion. Documentation explains that generated data can contain reviewed local contributions and preserves the referenced documents' separate licensing terms.
 
@@ -41,7 +41,7 @@ A maintainer retires the data override after checking the accepted upstream asse
 
 ## Evidence policy
 
-`CONTRIBUTING.md`, README and issue guidance require one high-quality primary source, checked against two other quality sources supporting the same entity, meaning, value, scope and applicable period. Additional sources and independence notes stay in the review record and issue. A Wikidata contribution normally adds the primary reference only, preserving valid existing references.
+`CONTRIBUTING.md`, README and review records require one high-quality primary source, checked against two other quality sources supporting the same entity, meaning, value, scope and applicable period. Additional sources and independence notes stay in the review record and issue. A Wikidata contribution normally adds the primary reference only, preserving valid existing references.
 
 Wikidata remains the preferred upstream. A reviewed local decision is allowed when a contribution is blocked or pending; missing evidence cannot be replaced with an approval checkbox. Public-source licensing and notices remain part of the review.
 
@@ -54,3 +54,7 @@ Approval is bound to the digest of the complete review record through a trusted-
 The trusted checker recognizes a narrow evidence-only transition by comparing decoded runtime facts with the base and independently checking the authorized evidence differences. A changed evidence digest alone does not force every unrelated, unchanged assertion to become newly verified. Other changes remain non-passing unless they are exactly the authorized corrections. For factual overrides, the trusted checker independently derives and compares affected entity fields and assignment values and date bounds from the effective source; checking only the evidence ID is insufficient. Unrelated runtime changes cannot hide behind an approved record.
 
 Tests cover evidence-only approval, an effective value correction, missing approval or source details, stale baselines, duplicate decisions, live drift, upstream adoption, retirement, reproducible builds, evidence tampering and unchanged accepted lookup behavior. The Turkey record references HRI/CORE/1/Add.116 §2 and records FAO and Şekercioğlu et al. as corroboration, together with their limits. No Wikidata edit is part of this implementation.
+
+## Recovery and evidence verdicts
+
+An unchanged-artifact maintenance PR reports upstream drift or outages as non-blocking, while leaving its evidence verdict non-passing. A separate gate verdict distinguishes the safety of that PR from verification of the dataset. Activations still recheck every selected review and block on drift. A retirement refresh can use the scoped gate only for entities with selected reviews, when trusted rebuilding proves every effective runtime fact and unreviewed assertion unchanged apart from source revision and the complete changed snapshots match live pinned Wikidata entities. Re-baselining uses a staged replacement ID and approval before a follow-up activation; only one review per target can be selected at a time. Standalone reviewed evidence checks require an explicit trusted base.

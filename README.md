@@ -67,15 +67,15 @@ Entity IDs are limited to 64 UTF-16 code units in both compilation and loading, 
 ```sh
 npm run source:fetch
 npm run build
-npm run evidence
-npm run evidence -- --offline
+npm run evidence -- --base /path/to/trusted-main
+npm run evidence -- --base /path/to/trusted-main --offline
 ```
 
 `source:fetch` is an explicit network operation. `evidence` independently retrieves pinned and current Wikidata revisions and reports each supplied assertion, source link, reference links, and discrepancies. It verifies assignment-to-evidence identity/value bindings and reports the binary hash and evidence digest. Entity fields and temporal interpretation still require manual review. A spelling match is reported as `source-match`, not verified factual evidence. The offline mode checks pinned snapshots only and cannot certify live evidence. Both commands return a nonzero status when checked evidence remains unresolved; an unchanged `--base` comparison has no applicable assertions and exits zero; that is expected for this corpus.
 
 The PR evidence workflow runs the checker from the trusted base commit against the proposed merge artifacts, without executing PR code in that job. A separate build/test job checks reproducibility. Reader compatibility uses two PR-only jobs, each with a five-minute timeout: an untrusted observation job builds and runs the proposed reader, then a fresh verdict job compares its JSON observations against base expectations. The verdict job never checks out or executes proposed code, and requires every expected case exactly once. A failed observation job fails the verdict job too. The checker accepts `--reader-results`, not an executable reader path.
 
-The trusted checker also flags compatibility fixture changes when binary data is unchanged. Compatibility observations are regression evidence, not proof that a deliberately deceptive reader honestly executed a lookup; code and workflow changes still need maintainer review. The checker does not automate primary-document interpretation. A reviewed assertion requires a complete source review and an exact approval digest already present in the trusted base. Reviewed artifacts are independently rebuilt by trusted code; unrelated changes remain subject to review. Source refreshes still receive the broader evidence review. Repository branch-protection requirements are not configured by this spike. Format upgrades require a compatible trusted checker before the PR evidence job can inspect the new body; an unsupported checker must report the incompatibility rather than approve the data.
+The trusted checker also flags compatibility fixture changes when binary data is unchanged. Compatibility observations are regression evidence, not proof that a deliberately deceptive reader honestly executed a lookup; code and workflow changes still need maintainer review. The checker does not automate primary-document interpretation. A reviewed assertion requires a complete source review and an exact approval digest already present in the trusted base. Reviewed artifacts are independently rebuilt by trusted code; unrelated changes remain subject to review. Equivalent-fact refreshes can use the scoped gate after independent rebuilding; other source changes still receive the broader review. Live drift on byte-identical maintenance PRs is advisory, with separate evidence and gate verdicts. Reviewed corpora require an explicit trusted `--base`. Format upgrades require a compatible trusted checker before the PR evidence job can inspect the new body; an unsupported checker must report the incompatibility rather than approve the data.
 
 ## Ownership and scope
 

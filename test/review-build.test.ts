@@ -21,6 +21,31 @@ test('the staged Turkey review is complete and its approval binds the shipped re
   assert.equal(reviews[0].record.qid, 'Q43');
   assert.equal(reviews[0].record.mode, 'evidence');
   assert.equal(reviews[0].record.corroborating.length, 2);
+  const { cp, mkdtemp, rm } = await import('node:fs/promises'), { tmpdir } = await import('node:os');
+  const dir = await mkdtemp(join(tmpdir(), 'real-turkey-review-'));
+  try {
+    await cp('sources', join(dir, 'sources'), { recursive: true });
+    await writeFile(join(dir, 'sources/override-activation.json'), JSON.stringify({ active: [reviews[0].record.id], retired: [] }));
+    const generated = await buildCorpus(dir, approvals);
+    assert.equal(JSON.parse(generated.evidenceText).requests.find((r: any) => r.id === reviews[0].record.statementId).review.record.id, reviews[0].record.id);
+  } finally { await rm(dir, { recursive: true, force: true }); }
+});
+
+test('the trusted builder rejects noncanonical snapshot paths and symbolic-link inputs', async () => {
+  await reviewedCorpus(async (dir, _, approvals) => {
+    const { symlink, rm } = await import('node:fs/promises');
+    const path = join(dir, 'sources/manifest.json'), manifest = JSON.parse(await readFile(path, 'utf8'));
+    const original = manifest[0].file;
+    manifest[0].file = 'sources/unexpected.json';
+    await writeFile(path, JSON.stringify(manifest));
+    await assert.rejects(buildCorpus(dir, approvals), /manifest path/);
+    manifest[0].file = original;
+    await writeFile(path, JSON.stringify(manifest));
+    const originalPolicy = join(dir, 'sources/policy.json'), policyText = await readFile(originalPolicy);
+    const target = join(dir, 'outside-policy.json'); await writeFile(target, policyText);
+    await rm(originalPolicy); await symlink(target, originalPolicy);
+    await assert.rejects(buildCorpus(dir, approvals), /Invalid.*corpus file/);
+  });
 });
 
 test('an evidence-only build binds the review but preserves country answers and snapshots', async () => {

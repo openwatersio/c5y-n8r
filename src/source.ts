@@ -2,7 +2,7 @@ import { observeLookup } from './compatibility.ts';
 import { canonical } from './evidence.ts';
 import { resolve } from 'node:path';
 import { applyReviews, selectedReviews, emptyReviews, emptyActivation, type ReviewBundle, type Activation } from './overrides.ts';
-import { readFile } from 'node:fs/promises';
+import { readFile, lstat } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { CountryRegistry } from './index.ts';
 import { compile, type SourceData, type SourceAssignment } from './compile.ts';
@@ -10,7 +10,11 @@ import { day, FORMAT_VERSION } from './common.ts';
 import type { EvidenceRequest, WikiEntity } from './evidence.ts';
 
 export async function buildCorpus(corpus: string, trustedApprovals?: Record<string, string>) {
-const read = (path: string) => readFile(resolve(corpus, path), 'utf8');
+const read = async (path: string) => {
+  const file = resolve(corpus, path), info = await lstat(file);
+  if (!info.isFile() || info.size > 4 * 1024 * 1024) throw new Error(`Invalid or oversized corpus file: ${path}`);
+  return readFile(file, 'utf8');
+};
 const optional = async (path: string, fallback: unknown) => JSON.parse(await read(path).catch(error => { if (error.code === 'ENOENT') return JSON.stringify(fallback); throw error; }));
 const reviews: ReviewBundle = await optional('sources/reviewed-overrides.json', emptyReviews);
 const activation: Activation = await optional('sources/override-activation.json', emptyActivation);
@@ -51,6 +55,7 @@ function qualifierTime(claim: any, property: string) {
 }
 
 for (const item of manifest) {
+  if (!/^Q[1-9][0-9]*$/.test(item.id) || !Number.isSafeInteger(item.revision) || item.revision < 1 || item.file !== `sources/wikidata/${item.id}-${item.revision}.json`) throw new Error('Invalid snapshot manifest path or identity');
   const raw = await read(item.file);
   if (digest(raw) !== item.sha256) throw new Error(`Snapshot digest mismatch: ${item.id}`);
   const original: WikiEntity = JSON.parse(raw).entities[item.id];

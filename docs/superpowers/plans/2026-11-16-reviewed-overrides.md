@@ -31,3 +31,8 @@ PR fields cannot authenticate themselves; approved record contents cannot change
 - Independent final review found no other Critical or Important issues.
 - Verification: typecheck and 73 tests pass; build reproduces all data artifacts byte-for-byte. Offline evidence report remains non-passing with 55 needs-review and 81 source-match findings, as expected for the staged corpus.
 - No runtime data activation, Wikidata mutation, merge or publication is included.
+
+- Pre-push verification: 79 tests pass, none skipped; generated data stays byte-identical. Three Open Waters review rounds completed; see reports/review-2026-11-16-overrides.md.
+- Ruling: unchanged-artifact maintenance PRs retain non-passing evidence findings as advisory, so a source-review repair can reach main. Activations still block on unresolved reviews; the cost is that a green maintenance gate does not certify live data.
+- Ruling: a retirement refresh must preserve effective facts and unreviewed assertions, be limited to reviewed entities, and authenticate complete changed snapshots against live pinned revisions. The cost is that unrelated source updates require broader review.
+- Open blocker: activation selected without regenerated review-carrying artifacts can skip the trusted rebuild. Reproduced after round 3; stop implementation and open the requested PR as a draft.

@@ -129,7 +129,11 @@
         "status": "blocked",
         "reason": "Q43 is semi-protected for autoconfirmed users; the signed-in account exposes no edit controls. No edit was submitted.",
         "url": "https://www.wikidata.org/w/index.php?title=Q43&action=info"
-      }
+      },
+      "acceptedReferenceUrls": [
+        "https://digitallibrary.un.org/record/478573/files/HRI_CORE_1_Add.116-EN.pdf",
+        "https://docstore.ohchr.org/SelfServices/FilesHandler.ashx?enc=I6QhIMfAvxMYwIBL7%2Fy1c9Hd292JKLCFOSVokjdpnUtXyg754kuKkz%2BVWsLGM7q4NmaUZhTqywCBFKk37sqZRTJJyQ8yuo9vJqL3qAT4nBc%3D"
+      ]
     }
   ]
 }

@@ -6,6 +6,7 @@ import { ByteBuffer } from 'flatbuffers';
 import { Registry } from '../src/generated/country-spike.js';
 import { CountryRegistry, CompatibilityError } from '../src/index.ts';
 import { canonical, checkEvidence, type EvidenceRequest, type WikiEntity, type Finding } from '../src/evidence.ts';
+import { buildCorpus } from '../src/source.ts';
 
 const args = process.argv.slice(2);
 const option = (name: string) => { const i = args.indexOf(name); return i < 0 ? undefined : args[i + 1]; };
@@ -15,6 +16,10 @@ const readerResults = option('--reader-results');
 const offline = args.includes('--offline');
 const reportDir = resolve(option('--output') ?? 'reports/local/evidence');
 const sha = (value: string | Uint8Array) => createHash('sha256').update(value).digest('hex');
+const json = async (dir: string, file: string) => JSON.parse(await readFile(resolve(dir, file), 'utf8'));
+async function approvals(dir: string): Promise<Record<string, string>> {
+  return json(dir, 'sources/review-approvals.json').catch(error => { if (error.code === 'ENOENT') return {}; throw error; });
+}
 
 async function load(dir: string) {
   const bytes = await readFile(resolve(dir, 'data/countries.crdb'));
@@ -46,6 +51,12 @@ try {
 if (args.includes('--reader')) throw new Error('The verdict checker cannot load proposed reader code; supply --reader-results from an isolated job');
 if (readerResults && !base) throw new Error('--reader-results requires a trusted --base');
 const proposed = await load(corpus);
+const approvedReviews = await approvals(base ? resolve(base) : corpus);
+const hasReviews = proposed.requests.some(r => r.review);
+if (hasReviews) {
+  const generated = await buildCorpus(corpus, approvedReviews);
+  if (!Buffer.from(generated.bytes).equals(proposed.bytes) || generated.evidenceText !== await readFile(resolve(corpus, 'data/evidence.json'), 'utf8')) throw new Error('Reviewed artifacts differ from trusted source build');
+}
 let requests = proposed.requests;
 const preflight: Finding[] = [];
 let checkedLookups = 0;
@@ -79,15 +90,25 @@ if (base) {
     }
     requests = [];
   } else {
+  let reviewedTransition = false;
+  if (hasReviews || before.requests.some(r => r.review)) {
+    const generated = await buildCorpus(corpus, approvedReviews);
+    if (!Buffer.from(generated.bytes).equals(proposed.bytes) || generated.evidenceText !== await readFile(resolve(corpus, 'data/evidence.json'), 'utf8')) throw new Error('Reviewed artifacts differ from trusted source build');
+    const oldPolicy = await json(resolve(base), 'sources/policy.json'), newPolicy = await json(corpus, 'sources/policy.json');
+    delete oldPolicy.datasetVersion; delete newPolicy.datasetVersion;
+    reviewedTransition = canonical(oldPolicy) === canonical(newPolicy) && canonical(await json(resolve(base), 'sources/manifest.json')) === canonical(await json(corpus, 'sources/manifest.json'));
+  }
   const oldRequests = new Map(before.requests.map(r => [r.id, JSON.stringify(r)]));
-  requests = proposed.requests.filter(r => oldRequests.get(r.id) !== JSON.stringify(r));
+  requests = proposed.requests.filter(r => r.review || oldRequests.get(r.id) !== JSON.stringify(r));
   const removed = before.requests.filter(r => !proposed.requests.some(n => n.id === r.id));
   for (const r of removed) preflight.push({ id: r.id, status: 'needs-review', link: `https://www.wikidata.org/wiki/${r.qid}`, message: 'Evidence or accepted meaning removed; requires explicit review', references: [] });
   if (before.binarySha256 !== proposed.binarySha256) {
     if (proposed.metadata.datasetVersion <= before.metadata.datasetVersion) preflight.push({ id: 'dataset-version', status: 'mismatch', link: '', message: 'Changed runtime artifacts require an increased datasetVersion', references: [] });
     // The spike rechecks all claims when runtime facts change so omissions cannot hide behind unchanged requests.
-    requests = proposed.requests;
-    preflight.push({ id: 'binary-diff', status: 'needs-review', link: '', message: 'Runtime facts changed; inspect entity dates, relationships, and binary-to-source interpretation before approval', references: [] });
+    if (!reviewedTransition) {
+      requests = proposed.requests;
+      preflight.push({ id: 'binary-diff', status: 'needs-review', link: '', message: 'Runtime facts changed; inspect entity dates, relationships, and binary-to-source interpretation before approval', references: [] });
+    }
   }
   }
 }
@@ -118,9 +139,9 @@ async function fetchEntity(qid: string, revision?: number): Promise<WikiEntity> 
   return cache.get(key)!;
 }
 const findings = [...preflight];
-for (const request of requests) findings.push(await checkEvidence(request, fetchEntity));
+for (const request of requests) findings.push(await checkEvidence(request, fetchEntity, approvedReviews));
 const counts = findings.reduce<Record<string, number>>((out, f) => { out[f.status] = (out[f.status] ?? 0) + 1; return out; }, {});
-const report = { datasetVersion: proposed.metadata.datasetVersion, binarySha256: proposed.binarySha256, evidenceDigest: proposed.metadata.evidenceDigest, mode: readerResults ? 'reader-compatibility' : offline ? 'pinned-snapshots-only' : 'live-pinned-and-current', checkedLookups, applicable: !!readerResults || findings.length > 0, passed: readerResults ? findings.length === 0 : !offline && findings.every(f => f.status === 'verified'), counts, findings, limitation: 'Prototype: reference passages and maintainer review resolutions are not automated. Findings requiring interpretation stay non-passing.' };
+const report = { datasetVersion: proposed.metadata.datasetVersion, binarySha256: proposed.binarySha256, evidenceDigest: proposed.metadata.evidenceDigest, mode: readerResults ? 'reader-compatibility' : offline ? 'pinned-snapshots-only' : 'live-pinned-and-current', checkedLookups, applicable: !!readerResults || findings.length > 0, passed: readerResults ? findings.length === 0 : !offline && findings.every(f => f.status === 'verified'), counts, findings, limitation: 'Reference passages are interpreted by maintainers. Reviewed findings require an approved exact record digest; offline checks cannot certify live upstream state. Unreviewed assertions stay non-passing.' };
 await writeFile(resolve(reportDir, 'report.json'), JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify({ ...report, findings: undefined, report: resolve(reportDir, 'report.json') }, null, 2));
 process.exitCode = findings.length && !report.passed ? 1 : 0;

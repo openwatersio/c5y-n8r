@@ -1,12 +1,16 @@
+import { reviewFinding, statementState, effectiveValue, selectedReviews, type AppliedReview } from './overrides.ts';
+
 export interface EvidenceRequest {
   id: string; qid: string; revision: number;
   kind: 'statement' | 'label' | 'alias' | 'ascii-label' | 'local-policy';
   expected: unknown; property?: string; statementId?: string; language?: string;
   qualifiers?: unknown; reason?: string;
+  review?: AppliedReview;
 }
 export interface Finding {
   id: string; status: 'verified' | 'source-match' | 'needs-review' | 'mismatch' | 'infrastructure-error';
   link: string; message: string; references: string[];
+  provenance?: { kind: 'local-review' | 'upstream-reviewed'; reviewId: string; reviewDigest: string; issue: string };
 }
 export type WikiEntity = { id: string; lastrevid: number; labels: Record<string, { value: string }>; aliases?: Record<string, { value: string }[]>; claims: Record<string, any[]> };
 export type FetchEntity = (qid: string, revision?: number) => Promise<WikiEntity>;
@@ -18,7 +22,7 @@ export function canonical(value: any): string {
 }
 function claimValue(claim: any) { return claim?.mainsnak?.datavalue?.value; }
 
-export async function checkEvidence(request: EvidenceRequest, fetchEntity: FetchEntity): Promise<Finding> {
+export async function checkEvidence(request: EvidenceRequest, fetchEntity: FetchEntity, approvedReviews: Record<string, string> = {}): Promise<Finding> {
   const link = `https://www.wikidata.org/w/index.php?title=${request.qid}&oldid=${request.revision}`;
   const finding = (status: Finding['status'], message: string, references: string[] = []): Finding => ({ id: request.id, status, link, message, references });
   try {
@@ -28,6 +32,14 @@ export async function checkEvidence(request: EvidenceRequest, fetchEntity: Fetch
     if (pinned.id !== request.qid || pinned.lastrevid !== request.revision) return finding('mismatch', 'Retrieved entity or revision differs');
     const current = await fetchEntity(request.qid);
     if (current.id !== request.qid) return finding('mismatch', 'Current entity differs from supplied identity');
+    if (request.review) {
+      const { record, state } = request.review;
+      selectedReviews({ schemaVersion: 1, records: [record] }, { active: state === 'active' ? [record.id] : [], retired: state === 'retired' ? [record.id] : [] }, approvedReviews);
+      if (!['active', 'retired'].includes(state) || request.kind !== 'statement' || request.qid !== record.qid || request.property !== record.property || request.statementId !== record.statementId || canonical(request.expected) !== canonical(effectiveValue(record).value) || canonical(request.qualifiers ?? {}) !== canonical(effectiveValue(record).qualifiers)) return finding('mismatch', 'Review does not bind the requested assertion');
+      const claim = pinned.claims[record.property]?.find(c => c.id === record.statementId);
+      if (state === 'active' ? !claim || pinned.lastrevid < record.revision || canonical(statementState(claim)) !== canonical(record.baseline) : reviewFinding(record, 'retired', pinned).status !== 'verified') return finding('mismatch', 'Review baseline differs from pinned assertion');
+      return { ...reviewFinding(record, state, current), id: request.id };
+    }
     let value: unknown, currentValue: unknown, references: string[] = [], needsReview = false;
     if (request.kind === 'statement') {
       const claim = pinned.claims[request.property ?? '']?.find(c => c.id === request.statementId);

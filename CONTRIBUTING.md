@@ -1,37 +1,51 @@
 # Contributing
 
-c5y-n8r provides fast library access to verified information maintained in Wikidata. Accuracy and traceability are requirements for accepting data. Our first goal is verified coverage of the country inputs required by Slackwater; `sources/slackwater-required.json` records that inventory and its pending verification status.
+c5y-n8r provides fast library access to country information from pinned Wikidata snapshots and explicitly reviewed local contributions. Accuracy and traceability are requirements for accepting data. Our first goal is verified coverage of the country inputs required by Slackwater; `sources/slackwater-required.json` records that inventory and its pending verification status.
 
 ## Verify each assertion before editing Wikidata
 
-For every data addition or correction, identify a reliable source for the exact assertion and independently double-check it against at least three additional reliable sources. This means at least four sources in total. Record all of them as references on the relevant Wikidata statement when updating Wikidata.
+For every data addition or correction, identify one high-quality primary source for the exact assertion and check it against at least two other quality sources. Read all three. Add the primary reference to the relevant Wikidata statement; retain the corroborating sources, passages and review notes in the issue and review record. Preserve valid existing Wikidata references.
 
-The sources must support the same entity, value, meaning, and applicable time period. Prefer the responsible standards body or issuing authority as the original source. Three sites repeating one dataset, mirrors of the same publication, and sources derived from Wikidata do not provide independent corroboration. Search snippets and an AI-generated answer are not evidence.
+The sources must support the same entity, value, meaning, and applicable time period. Prefer the responsible standards body or issuing authority as the original source. Sites repeating one dataset, mirrors of the same publication, and sources derived from Wikidata do not provide independent corroboration. Explain assessed independence and any remaining uncertainty rather than inferring independence from different hostnames. Search snippets and an AI-generated answer are not evidence.
 
 Read the supporting passage or table in every source. Record its URL or publication identifier, section or page, publication or revision date where available, and retrieval date. Explain how it supports the assertion. For historical claims, verify the effective dates separately: a current ISO table does not establish when a code was introduced, retired, or reassigned. Preserve any uncertainty in date precision.
 
-If the sources disagree or fewer than three additional independent sources can be found, leave the assertion unresolved and document the gap. Do not update Wikidata on our behalf or accept the data into a verified release until the discrepancy is resolved and the evidence requirement is met. Never manufacture consensus by counting duplicate sources.
+If the sources disagree or fewer than two other quality corroborating sources can be found, leave the assertion unresolved and document the gap. Do not update Wikidata on our behalf or accept the data into a verified release until the discrepancy is resolved and the evidence requirement is met. Never manufacture consensus by counting duplicate sources.
 
-## Update upstream, then sync
+## Contribute upstream and preserve local review
 
 1. Check the current Wikidata entity and statement, including its qualifiers, rank, and existing references. Confirm the entity represents the intended country or historical identity.
-2. Complete the source checks above before submitting the Wikidata edit. Add the original source and all three or more corroborating sources as statement references using the appropriate reference properties. Preserve valid existing references and follow Wikidata's contribution rules. Keep a passage-level explanation in the pull request if the reference fields cannot capture it.
+2. Complete the source checks above before submitting the Wikidata edit. Add the primary source as a statement reference using the appropriate reference properties. Keep corroboration in the issue and review record. Preserve valid existing references and follow Wikidata's contribution rules. Keep a passage-level explanation in the pull request if the reference fields cannot capture it.
 3. Record the resulting Wikidata revision permalink and statement ID. If the statement is already correct and fully referenced, record its existing revision and verify those references against the same standard.
-4. Run `npm run source:fetch` to retrieve the updated Wikidata information, then `npm run build`. Commit the pinned snapshots, source manifest, binary, and evidence artifacts together. The library's imported assertions must come from the synced Wikidata revision; a local data patch cannot substitute for fixing upstream.
+4. Run `npm run source:fetch` to retrieve the updated Wikidata information, then `npm run build`. Commit the pinned snapshots, source manifest, binary, and evidence artifacts together. Keep raw snapshots immutable. When a Wikidata contribution is blocked or pending, use the reviewed override workflow below.
 5. Run `npm run check` and `npm run evidence`. Review every evidence result and include the report with the pull request. A missing source, inaccessible supporting passage, conflicting value, or unresolved review remains non-passing.
 
 Local matching rules, such as normalization and unofficial aliases, must be clearly identified as policy. They cannot establish a country fact or bypass source verification. The build checks `sources/accepted-inputs.json`; keep every pinned entity/input pair and its expected lookup behavior, and add compatibility fixtures for newly accepted inputs. Every input needs both namespaced and default lookup expectations. Changes to expected answers or fixture removal are flagged by the trusted-base checker and require explicit review against the base revision. The observation job runs proposed code, and a fresh verdict job compares only JSON results against protected base expectations, even when runtime data files are unchanged. Preserve accepted inputs and historical identities when preferred names or current codes change.
+
+## Reviewed local overrides
+
+`sources/reviewed-overrides.json` holds versioned review records. A record identifies the statement and reviewed revision, exact baseline and digest, proposed correction or evidence-only decision, scope and dates, three source passages, approval, issue, independence assessment and upstream state. The supported properties are P30, P297, P298, P299, P576 and P1366 on existing statements consumed by the build. Unknown or unused targets fail when activated. Labels and unofficial aliases retain their separate matching policy.
+
+`sources/review-approvals.json` maps review IDs to SHA-256 digests of their complete canonical JSON records. Compute a digest with `reviewDigest` from `src/overrides.ts`. Any edit to evidence, scope, value or approval changes that digest. An approval field in proposed JSON cannot authenticate itself: the PR checker uses only approval digests from the trusted base branch. Code owners review approval additions.
+
+The rollout has two PRs. First merge the schema support, reviewed record and approval digest without activating it or changing generated artifacts. Then add its ID to `active` in `sources/override-activation.json`, increase `datasetVersion` in `sources/policy.json`, rebuild and check the artifacts. The trusted base now owns the approved digest. An evidence-only record preserves the country value while binding the reviewed evidence into the companion and binary digest. A correction applies to an in-memory copy; it never rewrites the Wikidata snapshot.
+
+The checker rebuilds reviewed artifacts using trusted code and compares the full binary and companion, including entity fields and assignment date bounds. An unchanged manifest and policy (apart from dataset version) permit a narrowly scoped reviewed transition; unrelated source refreshes and compatibility-fixture changes still require review. A reviewed assertion does not certify the rest of the spike corpus. Offline findings cannot certify live upstream state.
+
+Each live check compares the original reviewed statement with current Wikidata. Value, qualifier, rank or reference changes require review. Once the effective assertion and primary reference are accepted upstream, review the new revision and move the ID from `active` to `retired`, then re-sync and rebuild with a new dataset version. Retired records retain source verification and must match the upstream assertion and primary reference. A source refresh still receives the broader existing evidence review. Rejected upstream proposals require reconsideration and cannot be activated. Keep the contribution discussion and final revision in the issue.
+
+The Turkey review for issue #2 is staged with no active IDs. It records the maintainer’s acceptance of the three publications and explicitly preserves uncertainty about independence of their underlying measurements.
 
 ## What a data pull request must include
 
 - The affected Slackwater inputs and intended answers, including any dates, ambiguity, or coverage limits.
 - The exact Wikidata entity, statement IDs, and revision permalinks used by the sync.
-- The original source and at least three additional independent sources for each assertion, with supporting passages or table locations and confirmation that all sources are referenced on Wikidata.
+- The primary source and at least two other quality corroborating sources for each assertion, with supporting passages or table locations, dates, and assessed independence. Identify the primary reference contributed to Wikidata or explain why it is pending.
 - An explanation of disagreements, date precision, and any unresolved assertions. Unresolved entries stay outside verified release coverage.
 - The dataset version change, generated artifact changes, compatibility fixtures, and evidence report. Explain any change to an existing answer; retain old accepted spellings and dated meanings.
 - Applicable upstream data licenses and notices, following [DATA_LICENSE.md](DATA_LICENSE.md). The [MIT license](LICENSE) covers code and documentation.
 
-The evidence checker currently verifies supplied Wikidata pointers, values, and references, but does not interpret source passages or enforce independent corroboration automatically. Maintainers must check those requirements during review. A green build or a reference count alone cannot certify a dataset. The spike's existing corpus remains unreviewed until it satisfies this policy.
+The evidence checker validates pointers, value bindings and exact approved review records; it does not interpret source passages or establish source independence automatically. Maintainers make those decisions during review. A green build or a reference count alone cannot certify a dataset. The spike's existing corpus remains unreviewed until it satisfies this policy.
 
 ## Review checks
 

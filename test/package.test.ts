@@ -39,5 +39,6 @@ test('a fresh packed install prepares its reader and excludes the pending consum
     await assert.rejects(access(join(target, 'sources/slackwater-required.json')));
     await assert.rejects(access(join(target, 'reports/benchmark.json')));
     await access(join(target, 'sources/licenses/country-code-lookup-MIT.txt'));
+    for (const file of ['reviewed-overrides.json', 'review-approvals.json', 'override-activation.json']) await access(join(target, 'sources', file));
   } finally { await rm(dir, { recursive: true, force: true }); }
 });

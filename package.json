@@ -47,6 +47,9 @@
     "DATA_LICENSE.md",
     "LICENSE",
     "README.md",
-    "sources/licenses/country-code-lookup-MIT.txt"
+    "sources/licenses/country-code-lookup-MIT.txt",
+    "sources/reviewed-overrides.json",
+    "sources/review-approvals.json",
+    "sources/override-activation.json"
   ]
 }

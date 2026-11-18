@@ -22,10 +22,10 @@ The reviewed APIs did not provide the combination of dated resolution, explicit 
 - One FlatBuffer artifact read directly by TypeScript. There is no separate JavaScript country table.
 - Direct alpha-2/numeric indexes and binary search over UTF-8 name/alpha-3 keys. The reader builds a compact entity-to-assignment integer index once on open; country facts remain in the binary.
 - Optional date lookup, retained historical candidates, retired entity pointers, and explicit ambiguity.
-- Embedded dataset, format, and minimum-reader versions (dataset 2 uses format 2 and requires reader 0.0.2); freshness comparison against release metadata supplied by the caller.
+- Embedded dataset, format, and minimum-reader versions (dataset 3 uses format 2 and requires reader 0.0.2); freshness comparison against release metadata supplied by the caller.
 - Pinned Wikidata snapshots, an evidence companion, and an evidence-check prototype that stays non-passing when a claim needs review.
 
-The corpus contains eleven entities selected to exercise renames, the reused `CS` code, the retired Netherlands Antilles, successor pointers, the unofficial `UK` code, and an ambiguous `Congo` shorthand. It is partial coverage from 1974 through the database reference date. All results expose `evidenceStatus: "unreviewed-spike"`; no historical completeness is asserted. The local-policy aliases deliberately require review.
+The candidate corpus contains 136 entities, including the historical demonstrations of renames, the reused `CS` code, the retired Netherlands Antilles, successor pointers, the unofficial `UK` code, and an ambiguous `Congo` shorthand. It is partial coverage from 1974 through the database reference date. All results expose `evidenceStatus: "unreviewed-spike"`; no historical completeness is asserted. The local-policy aliases deliberately require review.
 
 Wikidata's English label for Q43 in the pinned snapshot is `Turkey`; its Turkish label is `Türkiye`. Both spellings resolve. The reader does not pretend that the English label alone proves when an official name changed. Year-precision code qualifiers remain uncertain across the boundary year, and missing assignment dates remain unknown. See [spike findings](reports/findings.md) for the remaining design work.
 
@@ -85,7 +85,7 @@ There is no Slackwater migration, native reader, public API service, or producti
 
 ## First milestone: Slackwater coverage
 
-The current benchmark inventory contains 129 distinct country inputs across 8,728 source records. Only four inputs currently resolve in this deliberately small corpus. These counts describe coverage, not verification. The comparison library's expected codes are migration baselines, not authoritative evidence.
+The current benchmark inventory contains 129 distinct country inputs across 8,728 source records. The unreviewed candidate resolves 126 inputs covering 8,695 records to ISO alpha-2 codes. Those resolved inputs have continent metadata. Three inputs remain unresolved: Virgin Islands (26 records), Myanmar (Burma) (4), and Saint Helena (3). The source audit reports name/code coverage and continent completeness separately. These counts describe coverage, not verification. The comparison library's expected codes are migration baselines, not authoritative evidence.
 
 Before Slackwater adopts this library, every required input must resolve to its reviewed country identity and current ISO code, with explicit aliases for existing source spellings. Pin the Slackwater source revision in the coverage inventory, test every required input, and publish a report that separates verified, ambiguous, and unresolved entries. Historical fixtures remain useful tests; they do not establish complete historical coverage.
 
@@ -150,3 +150,7 @@ The source builder's `--extend-accepted-inputs` mode first checks every existing
 The existing statement-override workflow and the optional name-readiness diagnostic have distinct source rules: name readiness requires one authority plus three corroborating sources on the supporting Wikidata name statement. Existing staged statement approvals retain their documented requirements.
 
 Dated conversion from a name retains uncertainty and does not select a preferred code when that name’s applicability is unreviewed. Inspect both `source` and `target`; do not interpret an absent preferred result as a guessed redirect. The optional `fullEnglishAliasEntities` policy retains all English aliases only for listed entities; other entities admit the canonical label and required source-backed spellings selected by `candidateEntity` in the consumer inventory.
+
+The candidate has 622 assignments and 765 unreviewed evidence requests. [The evidence issue map](sources/evidence-review-issues.json) binds every request to a tracking issue and the exact evidence digest; an issue link is not an approval. [Continent taxonomy proof](sources/continent-taxonomy.json) pins the Oceania labels used for display grouping. Antarctica uses an explicit unreviewed self-continent policy supported by its real P31 continent statement, without inventing a P30 self-statement. These classifications apply at the reference date and do not assert historical geographic boundaries.
+
+After a dataset rebuild, add or retire issue mappings explicitly and run `node scripts/refresh-evidence-issues.mjs` to bind the tracker to the new evidence bytes and dataset version. The helper performs no network operations and refuses missing or orphaned mappings. The original `baseCommit` in the tracker identifies the 136-item evidence baseline, not the later code-review base. Taxonomy proof and research files are separate source records checked by the test suite, rather than inputs read into the runtime country manifest. The Q51 self-continent rule deliberately fails closed if its P31 support disappears or a P30 claim appears, so maintainers must review that source change.

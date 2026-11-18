@@ -1,0 +1,22 @@
+{
+  "verificationStatus": "pending",
+  "scope": "Display classification at dataset referenceDate; not historical boundaries or sovereignty. Q538 retains existing broad Oceania display grouping; Q55643 explicitly denotes Oceania. Taxonomy snapshots are proof only, not country entities.",
+  "snapshots": [
+    {
+      "id": "Q55643",
+      "revision": 2565433177,
+      "file": "sources/taxonomy/Q55643-2565433177.json",
+      "sha256": "0e53471f47afef4ac8ea13974011967f28ba8d8577386af3136c46f9671c407d",
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q55643&oldid=2565433177",
+      "englishLabel": "Oceania"
+    },
+    {
+      "id": "Q538",
+      "revision": 2567806906,
+      "file": "sources/taxonomy/Q538-2567806906.json",
+      "sha256": "02b15ba5a3188ae5d434e1fb499ef61ed8690f0f8b5d89fbf4eeb46ffea7720b",
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q538&oldid=2567806906",
+      "englishLabel": "Insular Oceania"
+    }
+  ]
+}

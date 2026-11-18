@@ -1,0 +1,41 @@
+{
+  "verificationStatus": "pending",
+  "proposals": [
+    {
+      "id": "Q29999",
+      "revision": 2563993960,
+      "file": "sources/wikidata/Q29999-2563993960.json",
+      "sha256": "60bca42bcccc40eb220d3e983b60422e829e5062f3183ff641eb757a2de8d11c",
+      "retrievedAt": "2026-11-18T16:09:29.941Z",
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q29999&oldid=2563993960",
+      "status": "admitted-unreviewed-candidate-correction",
+      "requiredSpelling": "Netherlands",
+      "finding": "Exact English alias Netherlands and normal P297 NL with ISO reference; replace discovery candidate Q55 rather than admit competing entity blindly.",
+      "replacedCandidate": "Q55",
+      "authoritativeReferenceStatus": "ISO source URL present on Wikidata statement; live ISO page HTTP403, not independently verified"
+    },
+    {
+      "id": "Q192184",
+      "revision": 2558478385,
+      "file": "sources/research/Q192184-2558478385.json",
+      "sha256": "68d975902e88c3dcbd0a52b5abbda4b43f801b28aedb5d363a1838da3ad1aefc",
+      "retrievedAt": "2026-11-18T15:14:08.837525Z",
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q192184&oldid=2558478385",
+      "status": "research-only-not-admitted",
+      "requiredSpelling": "Saint Helena",
+      "finding": "SH normal P297 has no references. English labels and aliases lack Saint Helena; exact et label exists but island versus territory scope still needs explicit policy and source review."
+    }
+  ],
+  "providerContext": [
+    {
+      "input": "Virgin Islands",
+      "source": "https://api.tidesandcurrents.noaa.gov/mdapi/prod/webapi/stations/9751583.json",
+      "finding": "All26 required station metadata endpoints returnedHTTP200;13 stateVI and13 statePR. NOAA state field cannot safely act as ISO authority. Example9751419 is statePR but named HAULOVERBAY,ST.JOHNS. No global alias admitted."
+    },
+    {
+      "input": "Myanmar (Burma)",
+      "source": "https://www.seanoe.org/data/00980/109129/data/122848.csv",
+      "finding": "Published CSV header explicitly has country; rows for akyab_sittwe-907-mmr-uhslc_fd and akyab_sittwe-907a-mmr-uhslc_rq contain countryMMR. Source contextsupports Myanmar identity, but combined spelling absent from Q836. Stream stopped after~518KB; Moulmein records not inspected."
+    }
+  ]
+}

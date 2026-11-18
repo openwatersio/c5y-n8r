@@ -10,775 +10,904 @@
       "input": "Denmark",
       "records": 177,
       "baselineAlpha2": "DK",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q35"
     },
     {
       "input": "Faroe Islands",
       "records": 11,
       "baselineAlpha2": "FO",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q4628"
     },
     {
       "input": "Greenland",
       "records": 86,
       "baselineAlpha2": "GL",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q223"
     },
     {
       "input": "Japan",
       "records": 337,
       "baselineAlpha2": "JP",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q17"
     },
     {
       "input": "Norway",
       "records": 99,
       "baselineAlpha2": "NO",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q20"
     },
     {
       "input": "New Zealand",
       "records": 101,
       "baselineAlpha2": "NZ",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q664"
     },
     {
       "input": "United States",
       "records": 5132,
       "baselineAlpha2": "US",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q30"
     },
     {
       "input": "Guam",
       "records": 2,
       "baselineAlpha2": "GU",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q16635"
     },
     {
       "input": "Northern Mariana Islands",
       "records": 5,
       "baselineAlpha2": "MP",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q16644"
     },
     {
       "input": "French Polynesia",
       "records": 8,
       "baselineAlpha2": "PF",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q30971"
     },
     {
       "input": "American Samoa",
       "records": 8,
       "baselineAlpha2": "AS",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q16641"
     },
     {
       "input": "Samoa",
       "records": 6,
       "baselineAlpha2": "WS",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q683"
     },
     {
       "input": "Kiribati",
       "records": 20,
       "baselineAlpha2": "KI",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q710"
     },
     {
       "input": "Marshall Islands",
       "records": 24,
       "baselineAlpha2": "MH",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q709"
     },
     {
       "input": "Federated States of Micronesia",
       "records": 24,
       "baselineAlpha2": "FM",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q702"
     },
     {
       "input": "Palau",
       "records": 7,
       "baselineAlpha2": "PW",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q695"
     },
     {
       "input": "Fiji",
       "records": 15,
       "baselineAlpha2": "FJ",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q712"
     },
     {
       "input": "British Indian Ocean Territory",
       "records": 1,
       "baselineAlpha2": "IO",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q43448"
     },
     {
       "input": "Bermuda",
       "records": 3,
       "baselineAlpha2": "BM",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q23635"
     },
     {
       "input": "Indonesia",
       "records": 37,
       "baselineAlpha2": "ID",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q252"
     },
     {
       "input": "Canada",
       "records": 326,
       "baselineAlpha2": "CA",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q16"
     },
     {
       "input": "Mexico",
       "records": 144,
       "baselineAlpha2": "MX",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q96"
     },
     {
       "input": "El Salvador",
       "records": 9,
       "baselineAlpha2": "SV",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q792"
     },
     {
       "input": "Honduras",
       "records": 9,
       "baselineAlpha2": "HN",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q783"
     },
     {
       "input": "Nicaragua",
       "records": 7,
       "baselineAlpha2": "NI",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q811"
     },
     {
       "input": "Costa Rica",
       "records": 16,
       "baselineAlpha2": "CR",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q800"
     },
     {
       "input": "The Bahamas",
       "records": 20,
       "baselineAlpha2": "BS",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q778"
     },
     {
       "input": "Virgin Islands",
       "records": 26,
       "baselineAlpha2": "VI",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q11703"
     },
     {
       "input": "Puerto Rico",
       "records": 45,
       "baselineAlpha2": "PR",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q1183"
     },
     {
       "input": "Dominican Republic",
       "records": 11,
       "baselineAlpha2": "DO",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q786"
     },
     {
       "input": "Antigua and Barbuda",
       "records": 1,
       "baselineAlpha2": "AG",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q781"
     },
     {
       "input": "Panama",
       "records": 26,
       "baselineAlpha2": "PA",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q804"
     },
     {
       "input": "Ecuador",
       "records": 25,
       "baselineAlpha2": "EC",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q736"
     },
     {
       "input": "Cuba",
       "records": 29,
       "baselineAlpha2": "CU",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q241"
     },
     {
       "input": "Turks and Caicos Islands",
       "records": 1,
       "baselineAlpha2": "TC",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q18221"
     },
     {
       "input": "Jamaica",
       "records": 6,
       "baselineAlpha2": "JM",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q766"
     },
     {
       "input": "Cayman Islands",
       "records": 1,
       "baselineAlpha2": "KY",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q5785"
     },
     {
       "input": "Haiti",
       "records": 5,
       "baselineAlpha2": "HT",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q790"
     },
     {
-      "input": "Saint Barth\u00e9lemy",
+      "input": "Saint Barthélemy",
       "records": 1,
       "baselineAlpha2": "BL",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q25362"
     },
     {
       "input": "Guadeloupe",
       "records": 1,
       "baselineAlpha2": "GP",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q17012"
     },
     {
       "input": "Dominica",
       "records": 2,
       "baselineAlpha2": "DM",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q784"
     },
     {
       "input": "Saint Lucia",
       "records": 2,
       "baselineAlpha2": "LC",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q760"
     },
     {
       "input": "Belize",
       "records": 3,
       "baselineAlpha2": "BZ",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q242"
     },
     {
       "input": "Guatemala",
       "records": 7,
       "baselineAlpha2": "GT",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q774"
     },
     {
       "input": "Chile",
       "records": 25,
       "baselineAlpha2": "CL",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q298"
     },
     {
       "input": "Cook Islands",
       "records": 7,
       "baselineAlpha2": "CK",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q26988"
     },
     {
       "input": "Tokelau",
       "records": 1,
       "baselineAlpha2": "TK",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q36823"
     },
     {
       "input": "Vanuatu",
       "records": 5,
       "baselineAlpha2": "VU",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q686"
     },
     {
       "input": "Tonga",
       "records": 5,
       "baselineAlpha2": "TO",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q678"
     },
     {
       "input": "Netherlands",
       "records": 254,
       "baselineAlpha2": "NL",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q29999"
     },
     {
       "input": "United Kingdom",
       "records": 151,
       "baselineAlpha2": "GB",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q145"
     },
     {
       "input": "Cote d'Ivoire",
       "records": 1,
       "baselineAlpha2": "CI",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q1008"
     },
     {
       "input": "Yemen",
       "records": 2,
       "baselineAlpha2": "YE",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q805"
     },
     {
       "input": "Greece",
       "records": 16,
       "baselineAlpha2": "GR",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q41"
     },
     {
       "input": "France",
       "records": 272,
       "baselineAlpha2": "FR",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q142"
     },
     {
       "input": "Myanmar (Burma)",
       "records": 4,
       "baselineAlpha2": "MM",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q836"
     },
     {
       "input": "Australia",
       "records": 165,
       "baselineAlpha2": "AU",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q408"
     },
     {
       "input": "Spain",
       "records": 86,
       "baselineAlpha2": "ES",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q29"
     },
     {
       "input": "Egypt",
       "records": 3,
       "baselineAlpha2": "EG",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q79"
     },
     {
       "input": "Niue",
       "records": 2,
       "baselineAlpha2": "NU",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q34020"
     },
     {
       "input": "Papua New Guinea",
       "records": 12,
       "baselineAlpha2": "PG",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q691"
     },
     {
       "input": "Germany",
       "records": 190,
       "baselineAlpha2": "DE",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q183"
     },
     {
       "input": "Italy",
       "records": 75,
       "baselineAlpha2": "IT",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q38"
     },
     {
       "input": "Portugal",
       "records": 20,
       "baselineAlpha2": "PT",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q45"
     },
     {
       "input": "Turkiye",
       "records": 17,
       "baselineAlpha2": "TR",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q43"
     },
     {
       "input": "Ireland",
       "records": 64,
       "baselineAlpha2": "IE",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q27"
     },
     {
       "input": "Sweden",
       "records": 142,
       "baselineAlpha2": "SE",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q34"
     },
     {
       "input": "Croatia",
       "records": 2,
       "baselineAlpha2": "HR",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q224"
     },
     {
       "input": "Bulgaria",
       "records": 6,
       "baselineAlpha2": "BG",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q219"
     },
     {
       "input": "China",
       "records": 14,
       "baselineAlpha2": "CN",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q148"
     },
     {
       "input": "Brazil",
       "records": 33,
       "baselineAlpha2": "BR",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q155"
     },
     {
       "input": "Malaysia",
       "records": 18,
       "baselineAlpha2": "MY",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q833"
     },
     {
       "input": "Belgium",
       "records": 6,
       "baselineAlpha2": "BE",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q31"
     },
     {
       "input": "Barbados",
       "records": 4,
       "baselineAlpha2": "BB",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q244"
     },
     {
       "input": "Colombia",
       "records": 8,
       "baselineAlpha2": "CO",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q739"
     },
     {
       "input": "Argentina",
       "records": 15,
       "baselineAlpha2": "AR",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q414"
     },
     {
-      "input": "Cura\u00e7ao",
+      "input": "Curaçao",
       "records": 3,
       "baselineAlpha2": "CW",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q25279"
     },
     {
       "input": "Peru",
       "records": 17,
       "baselineAlpha2": "PE",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q419"
     },
     {
       "input": "South Africa",
       "records": 23,
       "baselineAlpha2": "ZA",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q258"
     },
     {
       "input": "Philippines",
       "records": 16,
       "baselineAlpha2": "PH",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q928"
     },
     {
       "input": "Iran",
       "records": 3,
       "baselineAlpha2": "IR",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q794"
     },
     {
       "input": "Bangladesh",
       "records": 8,
       "baselineAlpha2": "BD",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q902"
     },
     {
       "input": "India",
       "records": 4,
       "baselineAlpha2": "IN",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q668"
     },
     {
       "input": "Sri Lanka",
       "records": 4,
       "baselineAlpha2": "LK",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q854"
     },
     {
       "input": "Senegal",
       "records": 4,
       "baselineAlpha2": "SN",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q1041"
     },
     {
       "input": "Tanzania",
       "records": 3,
       "baselineAlpha2": "TZ",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q924"
     },
     {
       "input": "Poland",
       "records": 5,
       "baselineAlpha2": "PL",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q36"
     },
     {
       "input": "Latvia",
       "records": 9,
       "baselineAlpha2": "LV",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q211"
     },
     {
       "input": "Finland",
       "records": 28,
       "baselineAlpha2": "FI",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q33"
     },
     {
       "input": "Djibouti",
       "records": 2,
       "baselineAlpha2": "DJ",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q977"
     },
     {
       "input": "Antarctica",
       "records": 7,
       "baselineAlpha2": "AQ",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q51"
     },
     {
       "input": "Estonia",
       "records": 21,
       "baselineAlpha2": "EE",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q191"
     },
     {
       "input": "Tuvalu",
       "records": 4,
       "baselineAlpha2": "TV",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q672"
     },
     {
       "input": "Maldives",
       "records": 8,
       "baselineAlpha2": "MV",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q826"
     },
     {
       "input": "Russia",
       "records": 5,
       "baselineAlpha2": "RU",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q159"
     },
     {
       "input": "Vietnam",
       "records": 7,
       "baselineAlpha2": "VN",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q881"
     },
     {
       "input": "Hong Kong",
       "records": 3,
       "baselineAlpha2": "HK",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q8646"
     },
     {
       "input": "Solomon Islands",
       "records": 4,
       "baselineAlpha2": "SB",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q685"
     },
     {
       "input": "Mozambique",
       "records": 6,
       "baselineAlpha2": "MZ",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q1029"
     },
     {
       "input": "Romania",
       "records": 2,
       "baselineAlpha2": "RO",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q218"
     },
     {
       "input": "Ukraine",
       "records": 2,
       "baselineAlpha2": "UA",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q212"
     },
     {
       "input": "Taiwan",
       "records": 2,
       "baselineAlpha2": "TW",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q865"
     },
     {
       "input": "Pakistan",
       "records": 3,
       "baselineAlpha2": "PK",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q843"
     },
     {
       "input": "Singapore",
       "records": 4,
       "baselineAlpha2": "SG",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q334"
     },
     {
       "input": "Saint Vincent and the Grenadines",
       "records": 1,
       "baselineAlpha2": "VC",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q757"
     },
     {
       "input": "Lithuania",
       "records": 1,
       "baselineAlpha2": "LT",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q37"
     },
     {
       "input": "Thailand",
       "records": 4,
       "baselineAlpha2": "TH",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q869"
     },
     {
       "input": "Slovenia",
       "records": 2,
       "baselineAlpha2": "SI",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q215"
     },
     {
       "input": "Venezuela",
       "records": 1,
       "baselineAlpha2": "VE",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q717"
     },
     {
       "input": "Nigeria",
       "records": 2,
       "baselineAlpha2": "NG",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q1033"
     },
     {
       "input": "Kenya",
       "records": 5,
       "baselineAlpha2": "KE",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q114"
     },
     {
       "input": "Angola",
       "records": 3,
       "baselineAlpha2": "AO",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q916"
     },
     {
       "input": "Oman",
       "records": 7,
       "baselineAlpha2": "OM",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q842"
     },
     {
       "input": "Bahrain",
       "records": 1,
       "baselineAlpha2": "BH",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q398"
     },
     {
       "input": "Nauru",
       "records": 4,
       "baselineAlpha2": "NR",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q697"
     },
     {
       "input": "Madagascar",
       "records": 1,
       "baselineAlpha2": "MG",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q1019"
     },
     {
       "input": "Mauritania",
       "records": 2,
       "baselineAlpha2": "MR",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q1025"
     },
     {
       "input": "Cabo Verde",
       "records": 3,
       "baselineAlpha2": "CV",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q1011"
     },
     {
       "input": "Trinidad and Tobago",
       "records": 2,
       "baselineAlpha2": "TT",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q754"
     },
     {
       "input": "Republic of the Congo",
       "records": 3,
       "baselineAlpha2": "CG",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q971"
     },
     {
       "input": "Mauritius",
       "records": 6,
       "baselineAlpha2": "MU",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q1027"
     },
     {
       "input": "Cameroon",
       "records": 2,
       "baselineAlpha2": "CM",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q1009"
     },
     {
       "input": "Seychelles",
       "records": 5,
       "baselineAlpha2": "SC",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q1042"
     },
     {
       "input": "Grenada",
       "records": 2,
       "baselineAlpha2": "GD",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q769"
     },
     {
       "input": "Iceland",
       "records": 3,
       "baselineAlpha2": "IS",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q189"
     },
     {
       "input": "Sao Tome and Principe",
       "records": 2,
       "baselineAlpha2": "ST",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q1039"
     },
     {
       "input": "Saint Helena",
       "records": 3,
       "baselineAlpha2": "SH",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q34497"
     },
     {
       "input": "Ghana",
       "records": 3,
       "baselineAlpha2": "GH",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q117"
     },
     {
       "input": "Namibia",
       "records": 2,
       "baselineAlpha2": "NA",
-      "verificationStatus": "pending"
+      "verificationStatus": "pending",
+      "candidateEntity": "Q1030"
     }
   ],
   "licenseInventory": {
@@ -786,5 +915,6 @@
     "slackwaterRootLicenseScope": "MIT excludes data/; individual source files carry their own terms",
     "baselinePackageLicense": "MIT; sources/licenses/country-code-lookup-MIT.txt",
     "notice": "Consumer inventory retains source terms; see DATA_LICENSE.md and sources/slackwater-licenses.json"
-  }
+  },
+  "candidateEntityPolicy": "QIDs are discovery candidates only. Labels, aliases and code claims must come from digest-pinned Wikidata snapshots; migration baseline codes are not evidence."
 }

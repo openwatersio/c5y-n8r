@@ -32,7 +32,7 @@ test('coverage-only changes cannot bypass PR evidence review', async () => {
     assert.equal(result.status, 1, result.stdout + result.stderr);
     const report = JSON.parse(await readFile(join(dir, 'report/report.json'), 'utf8'));
     assert.equal(report.applicable, true);
-    assert.equal(report.datasetVersion, 2);
+    assert.equal(report.datasetVersion, 3);
     assert.match(report.binarySha256, /^[a-f0-9]{64}$/);
     assert.match(report.evidenceDigest, /^[a-f0-9]{64}$/);
     assert.equal(report.findings.some((f: any) => f.id === 'dataset-version' && f.status === 'mismatch'), true);

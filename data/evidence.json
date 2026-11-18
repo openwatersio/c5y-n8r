@@ -1,6 +1,6 @@
 {
-  "datasetVersion": 2,
-  "snapshotManifestDigest": "f8f520b4d947894dc26277905ee32e5548f39a832082ab3df6d8d6fd25c4fbb7",
+  "datasetVersion": 3,
+  "snapshotManifestDigest": "bed739b2f4fae5ec546e3f4e11364a84871a3778919df01c9773b3d0b1550bd2",
   "requests": [
     {
       "id": "q43$05DBEBB8-5D18-40BB-9A4C-409073AA44F5",
@@ -1773,6 +1773,7068 @@
       "kind": "local-policy",
       "expected": "Congo",
       "reason": "Exercise deliberately ambiguous shorthand; not a claim of an official name."
+    },
+    {
+      "id": "q35$03139EE4-FFDF-4C41-9CEC-1373AB769D87",
+      "qid": "Q35",
+      "revision": 2570451990,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q35$03139EE4-FFDF-4C41-9CEC-1373AB769D87",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q35$3190F6A7-22AC-4556-AD6E-9D96776BB8A4",
+      "qid": "Q35",
+      "revision": 2570451990,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q35$3190F6A7-22AC-4556-AD6E-9D96776BB8A4",
+      "expected": "DK",
+      "qualifiers": {}
+    },
+    {
+      "id": "q35$A6361627-7335-4C5B-83D2-02C9DAC63AB1",
+      "qid": "Q35",
+      "revision": 2570451990,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q35$A6361627-7335-4C5B-83D2-02C9DAC63AB1",
+      "expected": "DNK",
+      "qualifiers": {}
+    },
+    {
+      "id": "q35$9D634E31-1B59-4957-A5D7-22DFCD8BB17C",
+      "qid": "Q35",
+      "revision": 2570451990,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q35$9D634E31-1B59-4957-A5D7-22DFCD8BB17C",
+      "expected": "208",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q35:label:en",
+      "qid": "Q35",
+      "revision": 2570451990,
+      "kind": "label",
+      "language": "en",
+      "expected": "Denmark"
+    },
+    {
+      "id": "Q4628$29ded074-4fd3-a445-57ad-2a05ceb9f05a",
+      "qid": "Q4628",
+      "revision": 2569882846,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "Q4628$29ded074-4fd3-a445-57ad-2a05ceb9f05a",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q4628$842F31D5-E59A-4252-AEA3-CA959E9FA84C",
+      "qid": "Q4628",
+      "revision": 2569882846,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q4628$842F31D5-E59A-4252-AEA3-CA959E9FA84C",
+      "expected": "FO",
+      "qualifiers": {}
+    },
+    {
+      "id": "q4628$4594B0D2-D816-4F33-A125-06F49E137F0B",
+      "qid": "Q4628",
+      "revision": 2569882846,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q4628$4594B0D2-D816-4F33-A125-06F49E137F0B",
+      "expected": "FRO",
+      "qualifiers": {}
+    },
+    {
+      "id": "q4628$287C392E-EB28-4506-8DED-D0D290CB0834",
+      "qid": "Q4628",
+      "revision": 2569882846,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q4628$287C392E-EB28-4506-8DED-D0D290CB0834",
+      "expected": "234",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q4628:label:en",
+      "qid": "Q4628",
+      "revision": 2569882846,
+      "kind": "label",
+      "language": "en",
+      "expected": "Faroe Islands"
+    },
+    {
+      "id": "q223$31A4C476-5B19-4BFE-837E-4BFDE977CFF6",
+      "qid": "Q223",
+      "revision": 2569883004,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q223$31A4C476-5B19-4BFE-837E-4BFDE977CFF6",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q223$0437EE53-2A8E-43A8-B044-232238188154",
+      "qid": "Q223",
+      "revision": 2569883004,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q223$0437EE53-2A8E-43A8-B044-232238188154",
+      "expected": "GL",
+      "qualifiers": {}
+    },
+    {
+      "id": "q223$7824F88A-DF78-48CC-9597-F2CB88D05BBE",
+      "qid": "Q223",
+      "revision": 2569883004,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q223$7824F88A-DF78-48CC-9597-F2CB88D05BBE",
+      "expected": "GRL",
+      "qualifiers": {}
+    },
+    {
+      "id": "q223$8DE286F7-C980-4928-9609-A02DA0D8BD7D",
+      "qid": "Q223",
+      "revision": 2569883004,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q223$8DE286F7-C980-4928-9609-A02DA0D8BD7D",
+      "expected": "304",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q223:label:en",
+      "qid": "Q223",
+      "revision": 2569883004,
+      "kind": "label",
+      "language": "en",
+      "expected": "Greenland"
+    },
+    {
+      "id": "q17$6EB4AB9C-4D26-4970-A8FC-C5CF5B47B4D2",
+      "qid": "Q17",
+      "revision": 2568774645,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q17$6EB4AB9C-4D26-4970-A8FC-C5CF5B47B4D2",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 48,
+        "id": "Q48"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q17$568789DC-E1D3-4B4D-B4D5-1BAEA87A09A7",
+      "qid": "Q17",
+      "revision": 2568774645,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q17$568789DC-E1D3-4B4D-B4D5-1BAEA87A09A7",
+      "expected": "JP",
+      "qualifiers": {}
+    },
+    {
+      "id": "q17$F8BE762B-059B-46C4-9E74-5BC2F4ADF3B7",
+      "qid": "Q17",
+      "revision": 2568774645,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q17$F8BE762B-059B-46C4-9E74-5BC2F4ADF3B7",
+      "expected": "JPN",
+      "qualifiers": {}
+    },
+    {
+      "id": "q17$5D11BC90-EE2A-49B7-B403-C2A6994BD9B4",
+      "qid": "Q17",
+      "revision": 2568774645,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q17$5D11BC90-EE2A-49B7-B403-C2A6994BD9B4",
+      "expected": "392",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q17:label:en",
+      "qid": "Q17",
+      "revision": 2568774645,
+      "kind": "label",
+      "language": "en",
+      "expected": "Japan"
+    },
+    {
+      "id": "q20$66DB3427-EFEB-4AFC-A683-8284A244D7B9",
+      "qid": "Q20",
+      "revision": 2568775321,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q20$66DB3427-EFEB-4AFC-A683-8284A244D7B9",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {
+        "P518": [
+          {
+            "snaktype": "value",
+            "property": "P518",
+            "hash": "81ab757fac60b6516dd77c983a34db0a089e2b15",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 98059339,
+                "id": "Q98059339"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          {
+            "snaktype": "value",
+            "property": "P518",
+            "hash": "45e3981373b89a54cd46812be1bf8ed95938af19",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 25231,
+                "id": "Q25231"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          {
+            "snaktype": "value",
+            "property": "P518",
+            "hash": "c09b979a8f3fb44a4ff7bc658d9602291857556e",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 14056,
+                "id": "Q14056"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q20$68FB120A-638F-4680-AD14-0363447CD171",
+      "qid": "Q20",
+      "revision": 2568775321,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q20$68FB120A-638F-4680-AD14-0363447CD171",
+      "expected": "NO",
+      "qualifiers": {}
+    },
+    {
+      "id": "q20$7085C823-76F0-4FE0-8B28-C323CD425F73",
+      "qid": "Q20",
+      "revision": 2568775321,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q20$7085C823-76F0-4FE0-8B28-C323CD425F73",
+      "expected": "NOR",
+      "qualifiers": {}
+    },
+    {
+      "id": "q20$0CE421F6-C217-4385-A244-73347123CDB3",
+      "qid": "Q20",
+      "revision": 2568775321,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q20$0CE421F6-C217-4385-A244-73347123CDB3",
+      "expected": "578",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q20:label:en",
+      "qid": "Q20",
+      "revision": 2568775321,
+      "kind": "label",
+      "language": "en",
+      "expected": "Norway"
+    },
+    {
+      "id": "Q664$AF506449-9836-4D78-834E-99C5B2CAD78A",
+      "qid": "Q664",
+      "revision": 2568132058,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "Q664$AF506449-9836-4D78-834E-99C5B2CAD78A",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 55643,
+        "id": "Q55643"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q664$7C13659A-1AA3-431A-9106-2B8F8379EDCD",
+      "qid": "Q664",
+      "revision": 2568132058,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q664$7C13659A-1AA3-431A-9106-2B8F8379EDCD",
+      "expected": "NZ",
+      "qualifiers": {}
+    },
+    {
+      "id": "q664$3A852A9C-3D4E-4C7A-BF97-FA2B84C0983E",
+      "qid": "Q664",
+      "revision": 2568132058,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q664$3A852A9C-3D4E-4C7A-BF97-FA2B84C0983E",
+      "expected": "NZL",
+      "qualifiers": {}
+    },
+    {
+      "id": "q664$9391150C-5C62-4F97-BF45-CFF53CB0EA4B",
+      "qid": "Q664",
+      "revision": 2568132058,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q664$9391150C-5C62-4F97-BF45-CFF53CB0EA4B",
+      "expected": "554",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q664:label:en",
+      "qid": "Q664",
+      "revision": 2568132058,
+      "kind": "label",
+      "language": "en",
+      "expected": "New Zealand"
+    },
+    {
+      "id": "q30$F21480EF-73A9-44B7-922A-CEE9DE3FA3AC",
+      "qid": "Q30",
+      "revision": 2568564901,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q30$F21480EF-73A9-44B7-922A-CEE9DE3FA3AC",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {
+        "P518": [
+          {
+            "snaktype": "value",
+            "property": "P518",
+            "hash": "db7afb64f305fa0e39e502a84d9aafa9b9d20ed3",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 578170,
+                "id": "Q578170"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          {
+            "snaktype": "value",
+            "property": "P518",
+            "hash": "2286756d07afae14fd959c6ce7eb6a09cdd08f64",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 797,
+                "id": "Q797"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          {
+            "snaktype": "value",
+            "property": "P518",
+            "hash": "aaa74aa3ddc7abeae91d93b23df7d106a4886d81",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1183,
+                "id": "Q1183"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          {
+            "snaktype": "value",
+            "property": "P518",
+            "hash": "a674058eec63c0e450e1298e090cccbba853f636",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 11703,
+                "id": "Q11703"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          }
+        ],
+        "P7452": [
+          {
+            "snaktype": "value",
+            "property": "P7452",
+            "hash": "6dda267e2e52fa175f8036ecbf44db9ebb4e1344",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 71538638,
+                "id": "Q71538638"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q30$8BE463FD-B84D-46DB-A3BC-2CFA2B395ABD",
+      "qid": "Q30",
+      "revision": 2568564901,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q30$8BE463FD-B84D-46DB-A3BC-2CFA2B395ABD",
+      "expected": "US",
+      "qualifiers": {}
+    },
+    {
+      "id": "q30$2268D314-A3C9-4441-B44A-CFDFE686D59F",
+      "qid": "Q30",
+      "revision": 2568564901,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q30$2268D314-A3C9-4441-B44A-CFDFE686D59F",
+      "expected": "USA",
+      "qualifiers": {}
+    },
+    {
+      "id": "q30$0B91534F-9F09-4901-8BEA-5BD92980BC5D",
+      "qid": "Q30",
+      "revision": 2568564901,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q30$0B91534F-9F09-4901-8BEA-5BD92980BC5D",
+      "expected": "840",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q30:label:en",
+      "qid": "Q30",
+      "revision": 2568564901,
+      "kind": "label",
+      "language": "en",
+      "expected": "United States"
+    },
+    {
+      "id": "q16635$6C675547-C675-4B33-A4B1-8868A1A08432",
+      "qid": "Q16635",
+      "revision": 2568807041,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q16635$6C675547-C675-4B33-A4B1-8868A1A08432",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 55643,
+        "id": "Q55643"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q16635$75201D0B-B1D7-42D9-86C3-63797338733D",
+      "qid": "Q16635",
+      "revision": 2568807041,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q16635$75201D0B-B1D7-42D9-86C3-63797338733D",
+      "expected": "GU",
+      "qualifiers": {}
+    },
+    {
+      "id": "q16635$1BEE4897-1C72-43F1-BDF2-068C5EF962D1",
+      "qid": "Q16635",
+      "revision": 2568807041,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q16635$1BEE4897-1C72-43F1-BDF2-068C5EF962D1",
+      "expected": "GUM",
+      "qualifiers": {}
+    },
+    {
+      "id": "q16635$A3947414-3B53-447B-9881-477D440E7D9E",
+      "qid": "Q16635",
+      "revision": 2568807041,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q16635$A3947414-3B53-447B-9881-477D440E7D9E",
+      "expected": "316",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q16635:label:en",
+      "qid": "Q16635",
+      "revision": 2568807041,
+      "kind": "label",
+      "language": "en",
+      "expected": "Guam"
+    },
+    {
+      "id": "q16644$7790B8C2-780E-4623-8E15-90ED2B83682D",
+      "qid": "Q16644",
+      "revision": 2569110943,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q16644$7790B8C2-780E-4623-8E15-90ED2B83682D",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 538,
+        "id": "Q538"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q16644$4CBFEAA3-1ECB-4FAC-BE9B-D3EDEEB793B8",
+      "qid": "Q16644",
+      "revision": 2569110943,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q16644$4CBFEAA3-1ECB-4FAC-BE9B-D3EDEEB793B8",
+      "expected": "MP",
+      "qualifiers": {}
+    },
+    {
+      "id": "q16644$72F3D7C1-A621-4FC8-ADB9-E209C30F2B99",
+      "qid": "Q16644",
+      "revision": 2569110943,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q16644$72F3D7C1-A621-4FC8-ADB9-E209C30F2B99",
+      "expected": "MNP",
+      "qualifiers": {}
+    },
+    {
+      "id": "q16644$67B6E7ED-7CB8-438D-86A1-0671B5F7DB4A",
+      "qid": "Q16644",
+      "revision": 2569110943,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q16644$67B6E7ED-7CB8-438D-86A1-0671B5F7DB4A",
+      "expected": "580",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q16644:label:en",
+      "qid": "Q16644",
+      "revision": 2569110943,
+      "kind": "label",
+      "language": "en",
+      "expected": "Northern Mariana Islands"
+    },
+    {
+      "id": "q30971$5e22e1f4-4eef-bf9e-84a5-0e9afb3f34c2",
+      "qid": "Q30971",
+      "revision": 2564285535,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q30971$5e22e1f4-4eef-bf9e-84a5-0e9afb3f34c2",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 538,
+        "id": "Q538"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q30971$48AE8EE6-FF65-407C-9F68-491458BB37D8",
+      "qid": "Q30971",
+      "revision": 2564285535,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q30971$48AE8EE6-FF65-407C-9F68-491458BB37D8",
+      "expected": "PF",
+      "qualifiers": {}
+    },
+    {
+      "id": "q30971$4BC8C70E-7B8F-4A1B-AF4B-274FDD43696E",
+      "qid": "Q30971",
+      "revision": 2564285535,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q30971$4BC8C70E-7B8F-4A1B-AF4B-274FDD43696E",
+      "expected": "PYF",
+      "qualifiers": {}
+    },
+    {
+      "id": "q30971$282CECFD-1FD8-4A77-9234-D962DE07AF08",
+      "qid": "Q30971",
+      "revision": 2564285535,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q30971$282CECFD-1FD8-4A77-9234-D962DE07AF08",
+      "expected": "258",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q30971:label:en",
+      "qid": "Q30971",
+      "revision": 2564285535,
+      "kind": "label",
+      "language": "en",
+      "expected": "French Polynesia"
+    },
+    {
+      "id": "q16641$CD831A33-827F-4F30-BBB9-E425DDED6C76",
+      "qid": "Q16641",
+      "revision": 2568804062,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q16641$CD831A33-827F-4F30-BBB9-E425DDED6C76",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 538,
+        "id": "Q538"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q16641$384D55F5-6F78-4569-ADBB-60C46FCAE662",
+      "qid": "Q16641",
+      "revision": 2568804062,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q16641$384D55F5-6F78-4569-ADBB-60C46FCAE662",
+      "expected": "AS",
+      "qualifiers": {}
+    },
+    {
+      "id": "q16641$DD5D6341-F6C5-4D80-A877-B33562030653",
+      "qid": "Q16641",
+      "revision": 2568804062,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q16641$DD5D6341-F6C5-4D80-A877-B33562030653",
+      "expected": "ASM",
+      "qualifiers": {}
+    },
+    {
+      "id": "q16641$A63025D8-E664-45D3-AE95-F287907E0463",
+      "qid": "Q16641",
+      "revision": 2568804062,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q16641$A63025D8-E664-45D3-AE95-F287907E0463",
+      "expected": "016",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q16641:label:en",
+      "qid": "Q16641",
+      "revision": 2568804062,
+      "kind": "label",
+      "language": "en",
+      "expected": "American Samoa"
+    },
+    {
+      "id": "Q683$fab79fd4-429b-c07f-73c7-5c3f0d42812e",
+      "qid": "Q683",
+      "revision": 2569313878,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "Q683$fab79fd4-429b-c07f-73c7-5c3f0d42812e",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 55643,
+        "id": "Q55643"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q683$AC13E366-DF24-41A6-A031-B397A928DE7D",
+      "qid": "Q683",
+      "revision": 2569313878,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q683$AC13E366-DF24-41A6-A031-B397A928DE7D",
+      "expected": "WS",
+      "qualifiers": {}
+    },
+    {
+      "id": "q683$F429C470-5572-439A-9CAF-A75D3EF51C02",
+      "qid": "Q683",
+      "revision": 2569313878,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q683$F429C470-5572-439A-9CAF-A75D3EF51C02",
+      "expected": "WSM",
+      "qualifiers": {}
+    },
+    {
+      "id": "q683$53D961EA-BB45-40FA-A6E8-4F2FC512B900",
+      "qid": "Q683",
+      "revision": 2569313878,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q683$53D961EA-BB45-40FA-A6E8-4F2FC512B900",
+      "expected": "882",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q683:label:en",
+      "qid": "Q683",
+      "revision": 2569313878,
+      "kind": "label",
+      "language": "en",
+      "expected": "Samoa"
+    },
+    {
+      "id": "q710$82CB79A7-CF05-4583-A217-A01D47D7CDB8",
+      "qid": "Q710",
+      "revision": 2571190821,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q710$82CB79A7-CF05-4583-A217-A01D47D7CDB8",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 538,
+        "id": "Q538"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q710$7E592525-6793-4100-8FF5-77920A8528E0",
+      "qid": "Q710",
+      "revision": 2571190821,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q710$7E592525-6793-4100-8FF5-77920A8528E0",
+      "expected": "KI",
+      "qualifiers": {}
+    },
+    {
+      "id": "q710$C49A24B0-05B4-4662-9208-08C48DBE6CA6",
+      "qid": "Q710",
+      "revision": 2571190821,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q710$C49A24B0-05B4-4662-9208-08C48DBE6CA6",
+      "expected": "KIR",
+      "qualifiers": {}
+    },
+    {
+      "id": "q710$AD9732E8-CDEC-4889-82A8-37E41455DE0A",
+      "qid": "Q710",
+      "revision": 2571190821,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q710$AD9732E8-CDEC-4889-82A8-37E41455DE0A",
+      "expected": "296",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q710:label:en",
+      "qid": "Q710",
+      "revision": 2571190821,
+      "kind": "label",
+      "language": "en",
+      "expected": "Kiribati"
+    },
+    {
+      "id": "Q709$096e8177-4fb9-b472-15d1-b53017b7896d",
+      "qid": "Q709",
+      "revision": 2571190787,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "Q709$096e8177-4fb9-b472-15d1-b53017b7896d",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 55643,
+        "id": "Q55643"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q709$7891C9E6-1C77-44CA-91F2-8ECEA27C82B6",
+      "qid": "Q709",
+      "revision": 2571190787,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q709$7891C9E6-1C77-44CA-91F2-8ECEA27C82B6",
+      "expected": "MH",
+      "qualifiers": {}
+    },
+    {
+      "id": "q709$7751A10E-A816-447E-8972-541D84D225A9",
+      "qid": "Q709",
+      "revision": 2571190787,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q709$7751A10E-A816-447E-8972-541D84D225A9",
+      "expected": "MHL",
+      "qualifiers": {}
+    },
+    {
+      "id": "q709$E550DC1E-E286-48DB-A976-1442CA93A454",
+      "qid": "Q709",
+      "revision": 2571190787,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q709$E550DC1E-E286-48DB-A976-1442CA93A454",
+      "expected": "584",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q709:label:en",
+      "qid": "Q709",
+      "revision": 2571190787,
+      "kind": "label",
+      "language": "en",
+      "expected": "Marshall Islands"
+    },
+    {
+      "id": "Q702$F0916C92-2C01-431C-960D-010145A693CE",
+      "qid": "Q702",
+      "revision": 2571191156,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "Q702$F0916C92-2C01-431C-960D-010145A693CE",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 55643,
+        "id": "Q55643"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q702$9AA370B4-B954-4671-B17E-B38F904CF656",
+      "qid": "Q702",
+      "revision": 2571191156,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q702$9AA370B4-B954-4671-B17E-B38F904CF656",
+      "expected": "FM",
+      "qualifiers": {}
+    },
+    {
+      "id": "q702$F4056428-7DDB-46D9-98B7-41B370A9F461",
+      "qid": "Q702",
+      "revision": 2571191156,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q702$F4056428-7DDB-46D9-98B7-41B370A9F461",
+      "expected": "FSM",
+      "qualifiers": {}
+    },
+    {
+      "id": "q702$773402E2-FBBB-4592-8DAB-3CD68FE97B93",
+      "qid": "Q702",
+      "revision": 2571191156,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q702$773402E2-FBBB-4592-8DAB-3CD68FE97B93",
+      "expected": "583",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q702:label:en",
+      "qid": "Q702",
+      "revision": 2571191156,
+      "kind": "label",
+      "language": "en",
+      "expected": "Federated States of Micronesia"
+    },
+    {
+      "id": "q695$776CBD52-2DFC-4900-8B5A-AEA5A1045824",
+      "qid": "Q695",
+      "revision": 2571151050,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q695$776CBD52-2DFC-4900-8B5A-AEA5A1045824",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 538,
+        "id": "Q538"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q695$5D22B128-F92B-411B-A2F7-DE8ABB101104",
+      "qid": "Q695",
+      "revision": 2571151050,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q695$5D22B128-F92B-411B-A2F7-DE8ABB101104",
+      "expected": "PW",
+      "qualifiers": {}
+    },
+    {
+      "id": "q695$6FD630DD-E6BC-4BA8-97E4-B4607FCED2EB",
+      "qid": "Q695",
+      "revision": 2571151050,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q695$6FD630DD-E6BC-4BA8-97E4-B4607FCED2EB",
+      "expected": "PLW",
+      "qualifiers": {}
+    },
+    {
+      "id": "q695$11B3A7F7-0C43-45EB-B47D-F319D6A35010",
+      "qid": "Q695",
+      "revision": 2571151050,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q695$11B3A7F7-0C43-45EB-B47D-F319D6A35010",
+      "expected": "585",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q695:label:en",
+      "qid": "Q695",
+      "revision": 2571151050,
+      "kind": "label",
+      "language": "en",
+      "expected": "Palau"
+    },
+    {
+      "id": "q712$68074BAA-1ABB-4EA6-B63E-C6EEA1B002D0",
+      "qid": "Q712",
+      "revision": 2571271792,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q712$68074BAA-1ABB-4EA6-B63E-C6EEA1B002D0",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 538,
+        "id": "Q538"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q712$2701E500-E846-409E-9B9F-FBA61BA6D3E9",
+      "qid": "Q712",
+      "revision": 2571271792,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q712$2701E500-E846-409E-9B9F-FBA61BA6D3E9",
+      "expected": "FJ",
+      "qualifiers": {}
+    },
+    {
+      "id": "q712$DCEBB615-A69E-4965-9EFE-7DFF1E2885D3",
+      "qid": "Q712",
+      "revision": 2571271792,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q712$DCEBB615-A69E-4965-9EFE-7DFF1E2885D3",
+      "expected": "FJI",
+      "qualifiers": {}
+    },
+    {
+      "id": "q712$6C59EE54-C2C2-4138-875B-D8B8F3DD7B01",
+      "qid": "Q712",
+      "revision": 2571271792,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q712$6C59EE54-C2C2-4138-875B-D8B8F3DD7B01",
+      "expected": "242",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q712:label:en",
+      "qid": "Q712",
+      "revision": 2571271792,
+      "kind": "label",
+      "language": "en",
+      "expected": "Fiji"
+    },
+    {
+      "id": "Q43448$7cfe844c-40c0-ee83-6352-96ae9f0cc13a",
+      "qid": "Q43448",
+      "revision": 2568799028,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "Q43448$7cfe844c-40c0-ee83-6352-96ae9f0cc13a",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q43448$B52EDA26-614E-4B71-9D60-3C2E6458F8EE",
+      "qid": "Q43448",
+      "revision": 2568799028,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q43448$B52EDA26-614E-4B71-9D60-3C2E6458F8EE",
+      "expected": "IO",
+      "qualifiers": {}
+    },
+    {
+      "id": "q43448$9A4576DA-DB46-495C-996C-EE205F54F515",
+      "qid": "Q43448",
+      "revision": 2568799028,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q43448$9A4576DA-DB46-495C-996C-EE205F54F515",
+      "expected": "IOT",
+      "qualifiers": {}
+    },
+    {
+      "id": "q43448$1CFAD661-1CA7-4208-86C9-C286A67B25C5",
+      "qid": "Q43448",
+      "revision": 2568799028,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q43448$1CFAD661-1CA7-4208-86C9-C286A67B25C5",
+      "expected": "086",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q43448:label:en",
+      "qid": "Q43448",
+      "revision": 2568799028,
+      "kind": "label",
+      "language": "en",
+      "expected": "British Indian Ocean Territory"
+    },
+    {
+      "id": "Q23635$ded82fb9-41a9-39da-c1ce-f55559c87b25",
+      "qid": "Q23635",
+      "revision": 2568773659,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "Q23635$ded82fb9-41a9-39da-c1ce-f55559c87b25",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q23635$3699A416-CD4D-40CC-B865-271A59C248A0",
+      "qid": "Q23635",
+      "revision": 2568773659,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q23635$3699A416-CD4D-40CC-B865-271A59C248A0",
+      "expected": "BM",
+      "qualifiers": {}
+    },
+    {
+      "id": "q23635$7EC7CD31-830E-44BB-B1BF-A6B13B41D57B",
+      "qid": "Q23635",
+      "revision": 2568773659,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q23635$7EC7CD31-830E-44BB-B1BF-A6B13B41D57B",
+      "expected": "BMU",
+      "qualifiers": {}
+    },
+    {
+      "id": "q23635$D0E1DE03-2627-49AC-A10C-F98375C2A436",
+      "qid": "Q23635",
+      "revision": 2568773659,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q23635$D0E1DE03-2627-49AC-A10C-F98375C2A436",
+      "expected": "060",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q23635:label:en",
+      "qid": "Q23635",
+      "revision": 2568773659,
+      "kind": "label",
+      "language": "en",
+      "expected": "Bermuda"
+    },
+    {
+      "id": "q252$FB05260F-34F8-4BF7-BD04-0E1249A01354",
+      "qid": "Q252",
+      "revision": 2568774488,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q252$FB05260F-34F8-4BF7-BD04-0E1249A01354",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 48,
+        "id": "Q48"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q252$507E4F76-6338-454A-9952-32FE37094F68",
+      "qid": "Q252",
+      "revision": 2568774488,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q252$507E4F76-6338-454A-9952-32FE37094F68",
+      "expected": "ID",
+      "qualifiers": {}
+    },
+    {
+      "id": "q252$3C287E41-9E84-4FE3-84C8-EA441DE68027",
+      "qid": "Q252",
+      "revision": 2568774488,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q252$3C287E41-9E84-4FE3-84C8-EA441DE68027",
+      "expected": "IDN",
+      "qualifiers": {}
+    },
+    {
+      "id": "q252$07B344A2-6B80-4E44-92FC-8D0C5EC60527",
+      "qid": "Q252",
+      "revision": 2568774488,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q252$07B344A2-6B80-4E44-92FC-8D0C5EC60527",
+      "expected": "360",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q252:label:en",
+      "qid": "Q252",
+      "revision": 2568774488,
+      "kind": "label",
+      "language": "en",
+      "expected": "Indonesia"
+    },
+    {
+      "id": "q16$4C33130E-3F1B-4249-899B-6698D77B8BF9",
+      "qid": "Q16",
+      "revision": 2567425781,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q16$4C33130E-3F1B-4249-899B-6698D77B8BF9",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q16$0C605347-6BEE-4840-9490-CD49470A0246",
+      "qid": "Q16",
+      "revision": 2567425781,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q16$0C605347-6BEE-4840-9490-CD49470A0246",
+      "expected": "CA",
+      "qualifiers": {}
+    },
+    {
+      "id": "q16$4EC6B014-AF1C-49B7-8C6D-385ADDCE2642",
+      "qid": "Q16",
+      "revision": 2567425781,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q16$4EC6B014-AF1C-49B7-8C6D-385ADDCE2642",
+      "expected": "CAN",
+      "qualifiers": {}
+    },
+    {
+      "id": "q16$0B3D33E9-8B6E-40E7-B8F5-03AD12D8AA8B",
+      "qid": "Q16",
+      "revision": 2567425781,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q16$0B3D33E9-8B6E-40E7-B8F5-03AD12D8AA8B",
+      "expected": "124",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q16:label:en",
+      "qid": "Q16",
+      "revision": 2567425781,
+      "kind": "label",
+      "language": "en",
+      "expected": "Canada"
+    },
+    {
+      "id": "q96$EBF67839-A5C3-4733-851B-B3AC63A27B3F",
+      "qid": "Q96",
+      "revision": 2571132586,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q96$EBF67839-A5C3-4733-851B-B3AC63A27B3F",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q96$7B6344D7-E5B5-4925-A749-26489011B3DD",
+      "qid": "Q96",
+      "revision": 2571132586,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q96$7B6344D7-E5B5-4925-A749-26489011B3DD",
+      "expected": "MX",
+      "qualifiers": {}
+    },
+    {
+      "id": "q96$6C135D3C-9CDF-44A3-A600-95B0DB046356",
+      "qid": "Q96",
+      "revision": 2571132586,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q96$6C135D3C-9CDF-44A3-A600-95B0DB046356",
+      "expected": "MEX",
+      "qualifiers": {}
+    },
+    {
+      "id": "q96$5227C62B-5E51-4D34-92F0-7382933F4BCC",
+      "qid": "Q96",
+      "revision": 2571132586,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q96$5227C62B-5E51-4D34-92F0-7382933F4BCC",
+      "expected": "484",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q96:label:en",
+      "qid": "Q96",
+      "revision": 2571132586,
+      "kind": "label",
+      "language": "en",
+      "expected": "Mexico"
+    },
+    {
+      "id": "q792$BB2E3D9F-175C-4A7C-8D3B-9D3DB4853190",
+      "qid": "Q792",
+      "revision": 2571191269,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q792$BB2E3D9F-175C-4A7C-8D3B-9D3DB4853190",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q792$9336E621-276A-4420-B23A-F61836F87E1F",
+      "qid": "Q792",
+      "revision": 2571191269,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q792$9336E621-276A-4420-B23A-F61836F87E1F",
+      "expected": "SV",
+      "qualifiers": {}
+    },
+    {
+      "id": "q792$DDC4A0BE-A7E8-4779-8D64-8B2F2FFAA45B",
+      "qid": "Q792",
+      "revision": 2571191269,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q792$DDC4A0BE-A7E8-4779-8D64-8B2F2FFAA45B",
+      "expected": "SLV",
+      "qualifiers": {}
+    },
+    {
+      "id": "q792$3AE7DF3C-7F25-4C54-A193-5EEBAFA7C26F",
+      "qid": "Q792",
+      "revision": 2571191269,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q792$3AE7DF3C-7F25-4C54-A193-5EEBAFA7C26F",
+      "expected": "222",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q792:label:en",
+      "qid": "Q792",
+      "revision": 2571191269,
+      "kind": "label",
+      "language": "en",
+      "expected": "El Salvador"
+    },
+    {
+      "id": "q783$E57254DA-8CDD-40EF-9C35-BA9B588A5006",
+      "qid": "Q783",
+      "revision": 2571190986,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q783$E57254DA-8CDD-40EF-9C35-BA9B588A5006",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q783$2EA6DEC6-EC10-4D97-9A9D-E3CF192C2399",
+      "qid": "Q783",
+      "revision": 2571190986,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q783$2EA6DEC6-EC10-4D97-9A9D-E3CF192C2399",
+      "expected": "HN",
+      "qualifiers": {}
+    },
+    {
+      "id": "q783$9EC70089-AF96-42DA-9647-5AF2132C4CC7",
+      "qid": "Q783",
+      "revision": 2571190986,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q783$9EC70089-AF96-42DA-9647-5AF2132C4CC7",
+      "expected": "HND",
+      "qualifiers": {}
+    },
+    {
+      "id": "q783$90654FEC-7478-4B95-8F6C-A1EFC79E25A7",
+      "qid": "Q783",
+      "revision": 2571190986,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q783$90654FEC-7478-4B95-8F6C-A1EFC79E25A7",
+      "expected": "340",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q783:label:en",
+      "qid": "Q783",
+      "revision": 2571190986,
+      "kind": "label",
+      "language": "en",
+      "expected": "Honduras"
+    },
+    {
+      "id": "q811$32DF46BC-D0ED-4928-8758-060789B06F54",
+      "qid": "Q811",
+      "revision": 2571151287,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q811$32DF46BC-D0ED-4928-8758-060789B06F54",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q811$A5A50967-8184-4B15-B216-FC189C24D2FF",
+      "qid": "Q811",
+      "revision": 2571151287,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q811$A5A50967-8184-4B15-B216-FC189C24D2FF",
+      "expected": "NI",
+      "qualifiers": {}
+    },
+    {
+      "id": "q811$95C63B54-73C5-448C-BCC4-236FBA3CC6F3",
+      "qid": "Q811",
+      "revision": 2571151287,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q811$95C63B54-73C5-448C-BCC4-236FBA3CC6F3",
+      "expected": "NIC",
+      "qualifiers": {}
+    },
+    {
+      "id": "q811$75DECEC0-8D23-4DAD-B266-6082BBE6D683",
+      "qid": "Q811",
+      "revision": 2571151287,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q811$75DECEC0-8D23-4DAD-B266-6082BBE6D683",
+      "expected": "558",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q811:label:en",
+      "qid": "Q811",
+      "revision": 2571151287,
+      "kind": "label",
+      "language": "en",
+      "expected": "Nicaragua"
+    },
+    {
+      "id": "Q800$17645ea4-4f01-4d65-d6be-aca6ceb03359",
+      "qid": "Q800",
+      "revision": 2568773926,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "Q800$17645ea4-4f01-4d65-d6be-aca6ceb03359",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q800$31924551-9946-48F4-8589-8C36BCE349D9",
+      "qid": "Q800",
+      "revision": 2568773926,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q800$31924551-9946-48F4-8589-8C36BCE349D9",
+      "expected": "CR",
+      "qualifiers": {}
+    },
+    {
+      "id": "q800$E0DFEFBE-F826-44BE-8B3F-76D73B31B88C",
+      "qid": "Q800",
+      "revision": 2568773926,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q800$E0DFEFBE-F826-44BE-8B3F-76D73B31B88C",
+      "expected": "CRI",
+      "qualifiers": {}
+    },
+    {
+      "id": "q800$668B66DE-63F9-4B3A-A4E8-6B9FC586F17D",
+      "qid": "Q800",
+      "revision": 2568773926,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q800$668B66DE-63F9-4B3A-A4E8-6B9FC586F17D",
+      "expected": "188",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q800:label:en",
+      "qid": "Q800",
+      "revision": 2568773926,
+      "kind": "label",
+      "language": "en",
+      "expected": "Costa Rica"
+    },
+    {
+      "id": "q778$AB3E13A2-0CB3-40F2-AC7B-6DB9025129F8",
+      "qid": "Q778",
+      "revision": 2568773582,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q778$AB3E13A2-0CB3-40F2-AC7B-6DB9025129F8",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q778$27559C0B-0381-405D-B66B-886409002E22",
+      "qid": "Q778",
+      "revision": 2568773582,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q778$27559C0B-0381-405D-B66B-886409002E22",
+      "expected": "BS",
+      "qualifiers": {}
+    },
+    {
+      "id": "q778$715B97D9-1E31-4542-A5C9-5B668278275E",
+      "qid": "Q778",
+      "revision": 2568773582,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q778$715B97D9-1E31-4542-A5C9-5B668278275E",
+      "expected": "BHS",
+      "qualifiers": {}
+    },
+    {
+      "id": "q778$324CCA0B-012E-4E2A-9037-840347232743",
+      "qid": "Q778",
+      "revision": 2568773582,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q778$324CCA0B-012E-4E2A-9037-840347232743",
+      "expected": "044",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q778:label:en",
+      "qid": "Q778",
+      "revision": 2568773582,
+      "kind": "label",
+      "language": "en",
+      "expected": "The Bahamas"
+    },
+    {
+      "id": "q11703$3c073ee4-49d2-9332-c960-2a2cab1814b0",
+      "qid": "Q11703",
+      "revision": 2568776349,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q11703$3c073ee4-49d2-9332-c960-2a2cab1814b0",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q11703$53E74DB9-FE90-4685-917D-02A2B1B01045",
+      "qid": "Q11703",
+      "revision": 2568776349,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q11703$53E74DB9-FE90-4685-917D-02A2B1B01045",
+      "expected": "VI",
+      "qualifiers": {
+        "P580": [
+          {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "ec3fad5617d6ec89ebe0e606278f737d999b5450",
+            "datavalue": {
+              "value": {
+                "time": "+1974-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ],
+        "P805": [
+          {
+            "snaktype": "value",
+            "property": "P805",
+            "hash": "5f4e92dd05875a7a219a752c9eb9daa87b500edb",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 20967,
+                "id": "Q20967"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q11703$5A8571B4-F5DC-4A4B-AF19-C5F763B51B8B",
+      "qid": "Q11703",
+      "revision": 2568776349,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q11703$5A8571B4-F5DC-4A4B-AF19-C5F763B51B8B",
+      "expected": "VIR",
+      "qualifiers": {}
+    },
+    {
+      "id": "q11703$652936FC-20C4-478B-B846-96990429ECEC",
+      "qid": "Q11703",
+      "revision": 2568776349,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q11703$652936FC-20C4-478B-B846-96990429ECEC",
+      "expected": "850",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q11703:label:en",
+      "qid": "Q11703",
+      "revision": 2568776349,
+      "kind": "label",
+      "language": "en",
+      "expected": "United States Virgin Islands"
+    },
+    {
+      "id": "q1183$ffce01f9-440d-4b5b-1c70-384b932058f3",
+      "qid": "Q1183",
+      "revision": 2568796919,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q1183$ffce01f9-440d-4b5b-1c70-384b932058f3",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q1183$508D167B-3289-4594-9C59-1A4C9AEFCF74",
+      "qid": "Q1183",
+      "revision": 2568796919,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q1183$508D167B-3289-4594-9C59-1A4C9AEFCF74",
+      "expected": "PR",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1183$B1CDFF90-DF1A-4BBE-A177-6F655A0B5039",
+      "qid": "Q1183",
+      "revision": 2568796919,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q1183$B1CDFF90-DF1A-4BBE-A177-6F655A0B5039",
+      "expected": "PRI",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1183$AFD40D43-E882-4D42-83CF-091D1A109B3F",
+      "qid": "Q1183",
+      "revision": 2568796919,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q1183$AFD40D43-E882-4D42-83CF-091D1A109B3F",
+      "expected": "630",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q1183:label:en",
+      "qid": "Q1183",
+      "revision": 2568796919,
+      "kind": "label",
+      "language": "en",
+      "expected": "Puerto Rico"
+    },
+    {
+      "id": "q786$70565B50-E793-467D-B45D-D407AFE213C5",
+      "qid": "Q786",
+      "revision": 2569300153,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q786$70565B50-E793-467D-B45D-D407AFE213C5",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q786$474374D1-68C1-46A7-94F6-CEC8C17787EC",
+      "qid": "Q786",
+      "revision": 2569300153,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q786$474374D1-68C1-46A7-94F6-CEC8C17787EC",
+      "expected": "DO",
+      "qualifiers": {}
+    },
+    {
+      "id": "q786$D9DF17B0-21F8-467D-BFB3-424DA10D3711",
+      "qid": "Q786",
+      "revision": 2569300153,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q786$D9DF17B0-21F8-467D-BFB3-424DA10D3711",
+      "expected": "DOM",
+      "qualifiers": {}
+    },
+    {
+      "id": "q786$6840BDE8-131C-4818-8FBB-EF41A129572A",
+      "qid": "Q786",
+      "revision": 2569300153,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q786$6840BDE8-131C-4818-8FBB-EF41A129572A",
+      "expected": "214",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q786:label:en",
+      "qid": "Q786",
+      "revision": 2569300153,
+      "kind": "label",
+      "language": "en",
+      "expected": "Dominican Republic"
+    },
+    {
+      "id": "q781$B41CFA18-8732-44F6-B454-82CDA95A8A5E",
+      "qid": "Q781",
+      "revision": 2566529971,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q781$B41CFA18-8732-44F6-B454-82CDA95A8A5E",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q781$044C1A95-FA1C-4B0D-8DA6-4EC868D4DD24",
+      "qid": "Q781",
+      "revision": 2566529971,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q781$044C1A95-FA1C-4B0D-8DA6-4EC868D4DD24",
+      "expected": "AG",
+      "qualifiers": {}
+    },
+    {
+      "id": "q781$1A382DA7-1B2B-4E4E-9B03-1961F3F4D640",
+      "qid": "Q781",
+      "revision": 2566529971,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q781$1A382DA7-1B2B-4E4E-9B03-1961F3F4D640",
+      "expected": "ATG",
+      "qualifiers": {}
+    },
+    {
+      "id": "q781$862DC93C-34A2-4652-A667-7E8DD6BDF40A",
+      "qid": "Q781",
+      "revision": 2566529971,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q781$862DC93C-34A2-4652-A667-7E8DD6BDF40A",
+      "expected": "028",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q781:label:en",
+      "qid": "Q781",
+      "revision": 2566529971,
+      "kind": "label",
+      "language": "en",
+      "expected": "Antigua and Barbuda"
+    },
+    {
+      "id": "Q804$fe5165ac-4a40-fb78-6543-39ee8067e00e",
+      "qid": "Q804",
+      "revision": 2568775421,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "Q804$fe5165ac-4a40-fb78-6543-39ee8067e00e",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q804$CDEC216D-E21C-40C9-A353-92F1C16D904A",
+      "qid": "Q804",
+      "revision": 2568775421,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q804$CDEC216D-E21C-40C9-A353-92F1C16D904A",
+      "expected": "PA",
+      "qualifiers": {}
+    },
+    {
+      "id": "q804$86D2CF1B-297D-4603-9E53-C0F43CBD4CF4",
+      "qid": "Q804",
+      "revision": 2568775421,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q804$86D2CF1B-297D-4603-9E53-C0F43CBD4CF4",
+      "expected": "PAN",
+      "qualifiers": {}
+    },
+    {
+      "id": "q804$5398C96E-0388-448E-B79B-0B30CBAEBE22",
+      "qid": "Q804",
+      "revision": 2568775421,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q804$5398C96E-0388-448E-B79B-0B30CBAEBE22",
+      "expected": "591",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q804:label:en",
+      "qid": "Q804",
+      "revision": 2568775421,
+      "kind": "label",
+      "language": "en",
+      "expected": "Panama"
+    },
+    {
+      "id": "Q736$9006c736-4e19-38e4-63b4-b9c7dd7efcd6",
+      "qid": "Q736",
+      "revision": 2568774095,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "Q736$9006c736-4e19-38e4-63b4-b9c7dd7efcd6",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 18,
+        "id": "Q18"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q736$C40A6A9D-0349-4F93-A11C-B01779853C80",
+      "qid": "Q736",
+      "revision": 2568774095,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q736$C40A6A9D-0349-4F93-A11C-B01779853C80",
+      "expected": "EC",
+      "qualifiers": {}
+    },
+    {
+      "id": "q736$9661FA5C-3AA6-45B8-B664-1F5AAA17EE43",
+      "qid": "Q736",
+      "revision": 2568774095,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q736$9661FA5C-3AA6-45B8-B664-1F5AAA17EE43",
+      "expected": "ECU",
+      "qualifiers": {}
+    },
+    {
+      "id": "q736$A1E5E046-BD4C-4AE4-B669-B72FD7D83E15",
+      "qid": "Q736",
+      "revision": 2568774095,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q736$A1E5E046-BD4C-4AE4-B669-B72FD7D83E15",
+      "expected": "218",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q736:label:en",
+      "qid": "Q736",
+      "revision": 2568774095,
+      "kind": "label",
+      "language": "en",
+      "expected": "Ecuador"
+    },
+    {
+      "id": "q241$7982f8d8-4bab-a3f5-f943-c949b4c0b3c2",
+      "qid": "Q241",
+      "revision": 2568773968,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q241$7982f8d8-4bab-a3f5-f943-c949b4c0b3c2",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q241$76794DC8-59CC-4397-A0B6-2878CACEFE09",
+      "qid": "Q241",
+      "revision": 2568773968,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q241$76794DC8-59CC-4397-A0B6-2878CACEFE09",
+      "expected": "CU",
+      "qualifiers": {}
+    },
+    {
+      "id": "q241$643469D1-D3C2-4D7C-AAAD-6F1429F90BA0",
+      "qid": "Q241",
+      "revision": 2568773968,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q241$643469D1-D3C2-4D7C-AAAD-6F1429F90BA0",
+      "expected": "CUB",
+      "qualifiers": {}
+    },
+    {
+      "id": "q241$977C282E-E8D5-4F41-B29D-3536FE78C5B0",
+      "qid": "Q241",
+      "revision": 2568773968,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q241$977C282E-E8D5-4F41-B29D-3536FE78C5B0",
+      "expected": "192",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q241:label:en",
+      "qid": "Q241",
+      "revision": 2568773968,
+      "kind": "label",
+      "language": "en",
+      "expected": "Cuba"
+    },
+    {
+      "id": "q18221$86505e3f-4adc-5033-304b-47ed8381b0c6",
+      "qid": "Q18221",
+      "revision": 2569672058,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q18221$86505e3f-4adc-5033-304b-47ed8381b0c6",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q18221$8A3D6E45-E7EF-477A-9FDE-FF2EFC1F9D7E",
+      "qid": "Q18221",
+      "revision": 2569672058,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q18221$8A3D6E45-E7EF-477A-9FDE-FF2EFC1F9D7E",
+      "expected": "TC",
+      "qualifiers": {}
+    },
+    {
+      "id": "q18221$54DFFADC-15F1-4E1B-9418-CA3C1AC33176",
+      "qid": "Q18221",
+      "revision": 2569672058,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q18221$54DFFADC-15F1-4E1B-9418-CA3C1AC33176",
+      "expected": "TCA",
+      "qualifiers": {}
+    },
+    {
+      "id": "q18221$B32DD94B-A644-442C-ADE2-70768A05DD3E",
+      "qid": "Q18221",
+      "revision": 2569672058,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q18221$B32DD94B-A644-442C-ADE2-70768A05DD3E",
+      "expected": "796",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q18221:label:en",
+      "qid": "Q18221",
+      "revision": 2569672058,
+      "kind": "label",
+      "language": "en",
+      "expected": "Turks and Caicos Islands"
+    },
+    {
+      "id": "q766$13622D8E-4C88-49C3-8F1F-1B176DAF298B",
+      "qid": "Q766",
+      "revision": 2571190935,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q766$13622D8E-4C88-49C3-8F1F-1B176DAF298B",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q766$C964761F-0C1A-4C7B-BECF-1FD62007230E",
+      "qid": "Q766",
+      "revision": 2571190935,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q766$C964761F-0C1A-4C7B-BECF-1FD62007230E",
+      "expected": "JM",
+      "qualifiers": {}
+    },
+    {
+      "id": "q766$D5CDF154-91A0-47CA-BB8A-47D1DBEDBE67",
+      "qid": "Q766",
+      "revision": 2571190935,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q766$D5CDF154-91A0-47CA-BB8A-47D1DBEDBE67",
+      "expected": "JAM",
+      "qualifiers": {}
+    },
+    {
+      "id": "q766$90EE25A3-63AB-4319-B369-30FBF5A5BFAB",
+      "qid": "Q766",
+      "revision": 2571190935,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q766$90EE25A3-63AB-4319-B369-30FBF5A5BFAB",
+      "expected": "388",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q766:label:en",
+      "qid": "Q766",
+      "revision": 2571190935,
+      "kind": "label",
+      "language": "en",
+      "expected": "Jamaica"
+    },
+    {
+      "id": "q5785$bf90d704-4bdc-ad7c-d35c-252f570b74e8",
+      "qid": "Q5785",
+      "revision": 2568846436,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q5785$bf90d704-4bdc-ad7c-d35c-252f570b74e8",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q5785$D25F3C60-D670-46D0-8D52-195FD0D0A69F",
+      "qid": "Q5785",
+      "revision": 2568846436,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q5785$D25F3C60-D670-46D0-8D52-195FD0D0A69F",
+      "expected": "KY",
+      "qualifiers": {}
+    },
+    {
+      "id": "q5785$313760CB-8B07-4BF1-9484-CF3694A1190B",
+      "qid": "Q5785",
+      "revision": 2568846436,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q5785$313760CB-8B07-4BF1-9484-CF3694A1190B",
+      "expected": "CYM",
+      "qualifiers": {}
+    },
+    {
+      "id": "q5785$C6738BD4-BDE4-4D96-A033-04461AA5F448",
+      "qid": "Q5785",
+      "revision": 2568846436,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q5785$C6738BD4-BDE4-4D96-A033-04461AA5F448",
+      "expected": "136",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q5785:label:en",
+      "qid": "Q5785",
+      "revision": 2568846436,
+      "kind": "label",
+      "language": "en",
+      "expected": "Cayman Islands"
+    },
+    {
+      "id": "q790$6BB80AEB-A65F-4ACB-B1AB-617E01F2AF8E",
+      "qid": "Q790",
+      "revision": 2571191014,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q790$6BB80AEB-A65F-4ACB-B1AB-617E01F2AF8E",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q790$BE0E0E24-6047-42DC-8F35-CCE5298DFB78",
+      "qid": "Q790",
+      "revision": 2571191014,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q790$BE0E0E24-6047-42DC-8F35-CCE5298DFB78",
+      "expected": "HT",
+      "qualifiers": {}
+    },
+    {
+      "id": "q790$08523DFE-E954-43FB-8E93-D3329A963ECB",
+      "qid": "Q790",
+      "revision": 2571191014,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q790$08523DFE-E954-43FB-8E93-D3329A963ECB",
+      "expected": "HTI",
+      "qualifiers": {}
+    },
+    {
+      "id": "q790$CCA3980E-BE99-47FE-B1A6-9AD069922C09",
+      "qid": "Q790",
+      "revision": 2571191014,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q790$CCA3980E-BE99-47FE-B1A6-9AD069922C09",
+      "expected": "332",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q790:label:en",
+      "qid": "Q790",
+      "revision": 2571191014,
+      "kind": "label",
+      "language": "en",
+      "expected": "Haiti"
+    },
+    {
+      "id": "q25362$c75df5a7-4a6a-3787-855a-aa0e498fa95c",
+      "qid": "Q25362",
+      "revision": 2566960075,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q25362$c75df5a7-4a6a-3787-855a-aa0e498fa95c",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q25362$9CD61EED-B6C5-4FC3-AC0A-A9897E3FDD83",
+      "qid": "Q25362",
+      "revision": 2566960075,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q25362$9CD61EED-B6C5-4FC3-AC0A-A9897E3FDD83",
+      "expected": "BL",
+      "qualifiers": {
+        "P580": [
+          {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "ca92b1ea15a854867573a2ba2def9ca01ca3658f",
+            "datavalue": {
+              "value": {
+                "time": "+2007-09-21T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q25362$50B9DA3E-B535-4F73-8E98-C1DD78981D1C",
+      "qid": "Q25362",
+      "revision": 2566960075,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q25362$50B9DA3E-B535-4F73-8E98-C1DD78981D1C",
+      "expected": "BLM",
+      "qualifiers": {}
+    },
+    {
+      "id": "q25362$47D8880D-28E7-42B1-A458-F12B5CA2E567",
+      "qid": "Q25362",
+      "revision": 2566960075,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q25362$47D8880D-28E7-42B1-A458-F12B5CA2E567",
+      "expected": "652",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q25362:label:en",
+      "qid": "Q25362",
+      "revision": 2566960075,
+      "kind": "label",
+      "language": "en",
+      "expected": "Saint Barthélemy"
+    },
+    {
+      "id": "q17012$be081229-4d73-0c54-8197-a57858423d75",
+      "qid": "Q17012",
+      "revision": 2564981447,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q17012$be081229-4d73-0c54-8197-a57858423d75",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q17012$D606B7C5-268A-4F92-A942-C28B9A45B50C",
+      "qid": "Q17012",
+      "revision": 2564981447,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q17012$D606B7C5-268A-4F92-A942-C28B9A45B50C",
+      "expected": "GP",
+      "qualifiers": {}
+    },
+    {
+      "id": "q17012$8F87CBD7-B937-4B9D-BA09-461015E55A74",
+      "qid": "Q17012",
+      "revision": 2564981447,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q17012$8F87CBD7-B937-4B9D-BA09-461015E55A74",
+      "expected": "GLP",
+      "qualifiers": {}
+    },
+    {
+      "id": "q17012$D06C160C-6A96-42A0-93A9-A3F1E67FC64F",
+      "qid": "Q17012",
+      "revision": 2564981447,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q17012$D06C160C-6A96-42A0-93A9-A3F1E67FC64F",
+      "expected": "312",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q17012:label:en",
+      "qid": "Q17012",
+      "revision": 2564981447,
+      "kind": "label",
+      "language": "en",
+      "expected": "Guadeloupe"
+    },
+    {
+      "id": "q784$FE7B235E-2F51-4CAB-8CFA-C92460F4CE38",
+      "qid": "Q784",
+      "revision": 2569302408,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q784$FE7B235E-2F51-4CAB-8CFA-C92460F4CE38",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q784$666EB2A2-E3C8-4F47-AF43-6FCF410F7A57",
+      "qid": "Q784",
+      "revision": 2569302408,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q784$666EB2A2-E3C8-4F47-AF43-6FCF410F7A57",
+      "expected": "DM",
+      "qualifiers": {}
+    },
+    {
+      "id": "q784$2D8214C0-E82E-40D9-9653-826D506EB34A",
+      "qid": "Q784",
+      "revision": 2569302408,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q784$2D8214C0-E82E-40D9-9653-826D506EB34A",
+      "expected": "DMA",
+      "qualifiers": {}
+    },
+    {
+      "id": "q784$3E4033A1-8B2E-49B4-8EFB-05A235D4814B",
+      "qid": "Q784",
+      "revision": 2569302408,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q784$3E4033A1-8B2E-49B4-8EFB-05A235D4814B",
+      "expected": "212",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q784:label:en",
+      "qid": "Q784",
+      "revision": 2569302408,
+      "kind": "label",
+      "language": "en",
+      "expected": "Dominica"
+    },
+    {
+      "id": "q760$f261c35c-4f47-3b24-9317-fc3a031cac41",
+      "qid": "Q760",
+      "revision": 2568796680,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q760$f261c35c-4f47-3b24-9317-fc3a031cac41",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q760$8CDF5B94-4389-4662-ADA6-8C83B3F2B90F",
+      "qid": "Q760",
+      "revision": 2568796680,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q760$8CDF5B94-4389-4662-ADA6-8C83B3F2B90F",
+      "expected": "LC",
+      "qualifiers": {
+        "P805": [
+          {
+            "snaktype": "value",
+            "property": "P805",
+            "hash": "efa37329a26b8450c9bbfc565d4d6ff989550609",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 28300,
+                "id": "Q28300"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          }
+        ],
+        "P580": [
+          {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "847ac9cf370c98288b78380b0326f288193bdfe9",
+            "datavalue": {
+              "value": {
+                "time": "+1989-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q760$08EB863E-2655-42FC-AEE4-BE64D6E7FA9F",
+      "qid": "Q760",
+      "revision": 2568796680,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q760$08EB863E-2655-42FC-AEE4-BE64D6E7FA9F",
+      "expected": "LCA",
+      "qualifiers": {}
+    },
+    {
+      "id": "q760$E10807D8-9290-4D6C-AB35-724B7FB04537",
+      "qid": "Q760",
+      "revision": 2568796680,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q760$E10807D8-9290-4D6C-AB35-724B7FB04537",
+      "expected": "662",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q760:label:en",
+      "qid": "Q760",
+      "revision": 2568796680,
+      "kind": "label",
+      "language": "en",
+      "expected": "Saint Lucia"
+    },
+    {
+      "id": "q242$B44F57E2-A67C-43CD-9256-F2A588C763B2",
+      "qid": "Q242",
+      "revision": 2567719330,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q242$B44F57E2-A67C-43CD-9256-F2A588C763B2",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q242$CF6D1D27-540A-4F05-BD0A-9878FF613F83",
+      "qid": "Q242",
+      "revision": 2567719330,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q242$CF6D1D27-540A-4F05-BD0A-9878FF613F83",
+      "expected": "BZ",
+      "qualifiers": {}
+    },
+    {
+      "id": "q242$97A6A9DC-C542-461F-B993-82F50902F9F0",
+      "qid": "Q242",
+      "revision": 2567719330,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q242$97A6A9DC-C542-461F-B993-82F50902F9F0",
+      "expected": "BLZ",
+      "qualifiers": {}
+    },
+    {
+      "id": "q242$CF5492F1-18C6-4A84-9402-41C61FFDC0F1",
+      "qid": "Q242",
+      "revision": 2567719330,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q242$CF5492F1-18C6-4A84-9402-41C61FFDC0F1",
+      "expected": "084",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q242:label:en",
+      "qid": "Q242",
+      "revision": 2567719330,
+      "kind": "label",
+      "language": "en",
+      "expected": "Belize"
+    },
+    {
+      "id": "q774$514E9401-AC32-4D9A-91ED-BE8F5203D93C",
+      "qid": "Q774",
+      "revision": 2571191066,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q774$514E9401-AC32-4D9A-91ED-BE8F5203D93C",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q774$09EB1373-6986-4975-8EA1-3A929B5B79D6",
+      "qid": "Q774",
+      "revision": 2571191066,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q774$09EB1373-6986-4975-8EA1-3A929B5B79D6",
+      "expected": "GT",
+      "qualifiers": {}
+    },
+    {
+      "id": "q774$19409719-EE5B-4CD6-88C2-779A99F376B8",
+      "qid": "Q774",
+      "revision": 2571191066,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q774$19409719-EE5B-4CD6-88C2-779A99F376B8",
+      "expected": "GTM",
+      "qualifiers": {}
+    },
+    {
+      "id": "q774$ACEA311F-A408-450C-BACA-3504BDED3FFB",
+      "qid": "Q774",
+      "revision": 2571191066,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q774$ACEA311F-A408-450C-BACA-3504BDED3FFB",
+      "expected": "320",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q774:label:en",
+      "qid": "Q774",
+      "revision": 2571191066,
+      "kind": "label",
+      "language": "en",
+      "expected": "Guatemala"
+    },
+    {
+      "id": "q298$E8EDB8AA-FF49-469E-9B8B-1E16D6E3F4B7",
+      "qid": "Q298",
+      "revision": 2571439885,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q298$E8EDB8AA-FF49-469E-9B8B-1E16D6E3F4B7",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 18,
+        "id": "Q18"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q298$FF65074B-643E-412D-8F69-4ED3B4D66896",
+      "qid": "Q298",
+      "revision": 2571439885,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q298$FF65074B-643E-412D-8F69-4ED3B4D66896",
+      "expected": "CL",
+      "qualifiers": {}
+    },
+    {
+      "id": "q298$61CB0864-DBA9-464A-B84F-166758C98103",
+      "qid": "Q298",
+      "revision": 2571439885,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q298$61CB0864-DBA9-464A-B84F-166758C98103",
+      "expected": "CHL",
+      "qualifiers": {}
+    },
+    {
+      "id": "q298$F3DCF1BD-20C0-4130-A713-043A5DC3DA3B",
+      "qid": "Q298",
+      "revision": 2571439885,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q298$F3DCF1BD-20C0-4130-A713-043A5DC3DA3B",
+      "expected": "152",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q298:label:en",
+      "qid": "Q298",
+      "revision": 2571439885,
+      "kind": "label",
+      "language": "en",
+      "expected": "Chile"
+    },
+    {
+      "id": "q26988$ba610759-4dcb-dc30-7a28-7efab3004c52",
+      "qid": "Q26988",
+      "revision": 2568773913,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q26988$ba610759-4dcb-dc30-7a28-7efab3004c52",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 538,
+        "id": "Q538"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q26988$6A75981E-0ED3-4140-AF12-3FEF18DFA2F2",
+      "qid": "Q26988",
+      "revision": 2568773913,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q26988$6A75981E-0ED3-4140-AF12-3FEF18DFA2F2",
+      "expected": "CK",
+      "qualifiers": {}
+    },
+    {
+      "id": "q26988$71A17109-1F52-403E-A92A-D1AFBBD82674",
+      "qid": "Q26988",
+      "revision": 2568773913,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q26988$71A17109-1F52-403E-A92A-D1AFBBD82674",
+      "expected": "COK",
+      "qualifiers": {}
+    },
+    {
+      "id": "q26988$6EBE081C-84BC-40F6-80D4-E94CB58678FA",
+      "qid": "Q26988",
+      "revision": 2568773913,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q26988$6EBE081C-84BC-40F6-80D4-E94CB58678FA",
+      "expected": "184",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q26988:label:en",
+      "qid": "Q26988",
+      "revision": 2568773913,
+      "kind": "label",
+      "language": "en",
+      "expected": "Cook Islands"
+    },
+    {
+      "id": "q36823$edb08b42-4d70-c3a5-b453-90a9b9206dd6",
+      "qid": "Q36823",
+      "revision": 2568795007,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q36823$edb08b42-4d70-c3a5-b453-90a9b9206dd6",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 538,
+        "id": "Q538"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q36823$1DB8868E-8391-4143-87DB-E1AB22EA7FF7",
+      "qid": "Q36823",
+      "revision": 2568795007,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q36823$1DB8868E-8391-4143-87DB-E1AB22EA7FF7",
+      "expected": "TK",
+      "qualifiers": {}
+    },
+    {
+      "id": "q36823$E4CB33C3-1861-43F2-B2F0-97F9DBE38E6C",
+      "qid": "Q36823",
+      "revision": 2568795007,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q36823$E4CB33C3-1861-43F2-B2F0-97F9DBE38E6C",
+      "expected": "TKL",
+      "qualifiers": {}
+    },
+    {
+      "id": "q36823$CBD16085-97FE-4C2A-A147-D5F4654D8D01",
+      "qid": "Q36823",
+      "revision": 2568795007,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q36823$CBD16085-97FE-4C2A-A147-D5F4654D8D01",
+      "expected": "772",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q36823:label:en",
+      "qid": "Q36823",
+      "revision": 2568795007,
+      "kind": "label",
+      "language": "en",
+      "expected": "Tokelau"
+    },
+    {
+      "id": "q686$55626d84-4f41-4a59-44c3-628ee77d5efa",
+      "qid": "Q686",
+      "revision": 2569298219,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q686$55626d84-4f41-4a59-44c3-628ee77d5efa",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 538,
+        "id": "Q538"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q686$DC56B0F8-E621-4D48-B200-EBC4EB775A52",
+      "qid": "Q686",
+      "revision": 2569298219,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q686$DC56B0F8-E621-4D48-B200-EBC4EB775A52",
+      "expected": "VU",
+      "qualifiers": {}
+    },
+    {
+      "id": "q686$2928D1F3-DF22-455C-A65F-D5157F1DCA98",
+      "qid": "Q686",
+      "revision": 2569298219,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q686$2928D1F3-DF22-455C-A65F-D5157F1DCA98",
+      "expected": "VUT",
+      "qualifiers": {}
+    },
+    {
+      "id": "q686$1A57EEF1-6A98-4E69-B1DC-E05A9B9E57D4",
+      "qid": "Q686",
+      "revision": 2569298219,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q686$1A57EEF1-6A98-4E69-B1DC-E05A9B9E57D4",
+      "expected": "548",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q686:label:en",
+      "qid": "Q686",
+      "revision": 2569298219,
+      "kind": "label",
+      "language": "en",
+      "expected": "Vanuatu"
+    },
+    {
+      "id": "Q678$ce71a1ca-4d7a-fee3-94a1-e42124a34977",
+      "qid": "Q678",
+      "revision": 2571150828,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "Q678$ce71a1ca-4d7a-fee3-94a1-e42124a34977",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 55643,
+        "id": "Q55643"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q678$2262229B-C837-472F-9B80-4770B878C8E4",
+      "qid": "Q678",
+      "revision": 2571150828,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q678$2262229B-C837-472F-9B80-4770B878C8E4",
+      "expected": "TO",
+      "qualifiers": {}
+    },
+    {
+      "id": "q678$333B5FD5-7961-4D45-A490-2ED680C7494F",
+      "qid": "Q678",
+      "revision": 2571150828,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q678$333B5FD5-7961-4D45-A490-2ED680C7494F",
+      "expected": "TON",
+      "qualifiers": {}
+    },
+    {
+      "id": "q678$C5962C0C-75B8-4D9B-BF8F-959C187C372B",
+      "qid": "Q678",
+      "revision": 2571150828,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q678$C5962C0C-75B8-4D9B-BF8F-959C187C372B",
+      "expected": "776",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q678:label:en",
+      "qid": "Q678",
+      "revision": 2571150828,
+      "kind": "label",
+      "language": "en",
+      "expected": "Tonga"
+    },
+    {
+      "id": "q1008$1D0325D5-8C39-4046-84CC-BF4E839536E9",
+      "qid": "Q1008",
+      "revision": 2569306051,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q1008$1D0325D5-8C39-4046-84CC-BF4E839536E9",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q1008$97DBA302-D753-4FFC-B9CF-5036D9F48124",
+      "qid": "Q1008",
+      "revision": 2569306051,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q1008$97DBA302-D753-4FFC-B9CF-5036D9F48124",
+      "expected": "CI",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1008$6B68DD7A-314D-4FAB-B5E6-1A57879F25FB",
+      "qid": "Q1008",
+      "revision": 2569306051,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q1008$6B68DD7A-314D-4FAB-B5E6-1A57879F25FB",
+      "expected": "CIV",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1008$1F7D9974-8C5C-434B-8AAD-D15AE0BA4997",
+      "qid": "Q1008",
+      "revision": 2569306051,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q1008$1F7D9974-8C5C-434B-8AAD-D15AE0BA4997",
+      "expected": "384",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q1008:label:en",
+      "qid": "Q1008",
+      "revision": 2569306051,
+      "kind": "label",
+      "language": "en",
+      "expected": "Ivory Coast"
+    },
+    {
+      "id": "Q1008:alias:en:Cote d'Ivoire",
+      "qid": "Q1008",
+      "revision": 2569306051,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Cote d'Ivoire"
+    },
+    {
+      "id": "q805$395FDE13-66BB-4D94-90FD-85089678B44A",
+      "qid": "Q805",
+      "revision": 2569315361,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q805$395FDE13-66BB-4D94-90FD-85089678B44A",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 48,
+        "id": "Q48"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q805$D8A5DE0D-A8A2-4F0F-B42A-2488DC9FA941",
+      "qid": "Q805",
+      "revision": 2569315361,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q805$D8A5DE0D-A8A2-4F0F-B42A-2488DC9FA941",
+      "expected": "YE",
+      "qualifiers": {}
+    },
+    {
+      "id": "q805$BC579B8D-A02E-4486-AB5F-920AD86BB985",
+      "qid": "Q805",
+      "revision": 2569315361,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q805$BC579B8D-A02E-4486-AB5F-920AD86BB985",
+      "expected": "YEM",
+      "qualifiers": {}
+    },
+    {
+      "id": "q805$E7356629-2814-4DAA-B07C-D45709FBC236",
+      "qid": "Q805",
+      "revision": 2569315361,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q805$E7356629-2814-4DAA-B07C-D45709FBC236",
+      "expected": "887",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q805:label:en",
+      "qid": "Q805",
+      "revision": 2569315361,
+      "kind": "label",
+      "language": "en",
+      "expected": "Yemen"
+    },
+    {
+      "id": "q41$133574D3-C52B-4B2A-9CC9-FCFC7AF656A1",
+      "qid": "Q41",
+      "revision": 2568798210,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q41$133574D3-C52B-4B2A-9CC9-FCFC7AF656A1",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q41$11951C48-0C14-4A82-BB7E-2FEEE81886E5",
+      "qid": "Q41",
+      "revision": 2568798210,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q41$11951C48-0C14-4A82-BB7E-2FEEE81886E5",
+      "expected": "GR",
+      "qualifiers": {}
+    },
+    {
+      "id": "q41$2A9B311A-CDD9-45E6-A874-D6474FD24F92",
+      "qid": "Q41",
+      "revision": 2568798210,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q41$2A9B311A-CDD9-45E6-A874-D6474FD24F92",
+      "expected": "GRC",
+      "qualifiers": {}
+    },
+    {
+      "id": "q41$05B4ED23-2BDD-4A22-B484-C29853B95C61",
+      "qid": "Q41",
+      "revision": 2568798210,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q41$05B4ED23-2BDD-4A22-B484-C29853B95C61",
+      "expected": "300",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q41:label:en",
+      "qid": "Q41",
+      "revision": 2568798210,
+      "kind": "label",
+      "language": "en",
+      "expected": "Greece"
+    },
+    {
+      "id": "q142$CB0749F2-18AD-4CFB-800A-0FFD25D7BD38",
+      "qid": "Q142",
+      "revision": 2569645472,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q142$CB0749F2-18AD-4CFB-800A-0FFD25D7BD38",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {
+        "P518": [
+          {
+            "snaktype": "value",
+            "property": "P518",
+            "hash": "142f9123bbdd916b90c81612bfe1b73ea88f6360",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 212429,
+                "id": "Q212429"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q142$7E0296A4-1574-49A9-A521-47113029D128",
+      "qid": "Q142",
+      "revision": 2569645472,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q142$7E0296A4-1574-49A9-A521-47113029D128",
+      "expected": "FR",
+      "qualifiers": {}
+    },
+    {
+      "id": "q142$46A4494C-C889-4ECA-9747-D5F6298395C6",
+      "qid": "Q142",
+      "revision": 2569645472,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q142$46A4494C-C889-4ECA-9747-D5F6298395C6",
+      "expected": "FRA",
+      "qualifiers": {}
+    },
+    {
+      "id": "q142$A92E89CC-F39C-4399-8940-47A11D0FB0F4",
+      "qid": "Q142",
+      "revision": 2569645472,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q142$A92E89CC-F39C-4399-8940-47A11D0FB0F4",
+      "expected": "250",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q142:label:en",
+      "qid": "Q142",
+      "revision": 2569645472,
+      "kind": "label",
+      "language": "en",
+      "expected": "France"
+    },
+    {
+      "id": "q836$5B3845D8-0479-401E-ACAD-86370FBE98A1",
+      "qid": "Q836",
+      "revision": 2568775107,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q836$5B3845D8-0479-401E-ACAD-86370FBE98A1",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 48,
+        "id": "Q48"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q836$29EB0A84-6B64-4E4D-AAE1-88D570C9109A",
+      "qid": "Q836",
+      "revision": 2568775107,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q836$29EB0A84-6B64-4E4D-AAE1-88D570C9109A",
+      "expected": "MM",
+      "qualifiers": {
+        "P580": [
+          {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "847ac9cf370c98288b78380b0326f288193bdfe9",
+            "datavalue": {
+              "value": {
+                "time": "+1989-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ],
+        "P805": [
+          {
+            "snaktype": "value",
+            "property": "P805",
+            "hash": "09cfd2d07b165799ac7105dfccd2eb2e83c088ec",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 389806,
+                "id": "Q389806"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q836$157f71ad-4138-145d-87b0-3f5df312297c",
+      "qid": "Q836",
+      "revision": 2568775107,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "Q836$157f71ad-4138-145d-87b0-3f5df312297c",
+      "expected": "BU",
+      "qualifiers": {
+        "P582": [
+          {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "e2a9e2983e84400425efbf13a1480b9686a21e0e",
+            "datavalue": {
+              "value": {
+                "time": "+1989-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q836$EB62395B-BAE8-4A79-A0A4-6F0F730405EF",
+      "qid": "Q836",
+      "revision": 2568775107,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q836$EB62395B-BAE8-4A79-A0A4-6F0F730405EF",
+      "expected": "MMR",
+      "qualifiers": {
+        "P580": [
+          {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "847ac9cf370c98288b78380b0326f288193bdfe9",
+            "datavalue": {
+              "value": {
+                "time": "+1989-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q836$0e62bd09-4236-4d40-0f20-b0aa1aa1ef43",
+      "qid": "Q836",
+      "revision": 2568775107,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "Q836$0e62bd09-4236-4d40-0f20-b0aa1aa1ef43",
+      "expected": "BUR",
+      "qualifiers": {
+        "P582": [
+          {
+            "snaktype": "value",
+            "property": "P582",
+            "hash": "e2a9e2983e84400425efbf13a1480b9686a21e0e",
+            "datavalue": {
+              "value": {
+                "time": "+1989-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q836$E87DAA34-773B-4F7F-AFA2-A5DE984D49B7",
+      "qid": "Q836",
+      "revision": 2568775107,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q836$E87DAA34-773B-4F7F-AFA2-A5DE984D49B7",
+      "expected": "104",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q836:label:en",
+      "qid": "Q836",
+      "revision": 2568775107,
+      "kind": "label",
+      "language": "en",
+      "expected": "Myanmar"
+    },
+    {
+      "id": "q408$2537064E-C71F-49F4-B0BE-97A6D1E4387C",
+      "qid": "Q408",
+      "revision": 2567535006,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q408$2537064E-C71F-49F4-B0BE-97A6D1E4387C",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 55643,
+        "id": "Q55643"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q408$7F318FE3-1460-4C42-B53A-0D62E7E2B3C6",
+      "qid": "Q408",
+      "revision": 2567535006,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q408$7F318FE3-1460-4C42-B53A-0D62E7E2B3C6",
+      "expected": "AU",
+      "qualifiers": {
+        "P580": [
+          {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "ec3fad5617d6ec89ebe0e606278f737d999b5450",
+            "datavalue": {
+              "value": {
+                "time": "+1974-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ],
+        "P805": [
+          {
+            "snaktype": "value",
+            "property": "P805",
+            "hash": "35a627d264aa3d724f90f1666aaee1e955fb5f19",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 21047,
+                "id": "Q21047"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q408$B455D5AA-E1CF-4FAF-9B71-1C24B0DED0F4",
+      "qid": "Q408",
+      "revision": 2567535006,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q408$B455D5AA-E1CF-4FAF-9B71-1C24B0DED0F4",
+      "expected": "AUS",
+      "qualifiers": {}
+    },
+    {
+      "id": "q408$0F1EF5CB-03E5-4C9B-938D-853794A8FDC7",
+      "qid": "Q408",
+      "revision": 2567535006,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q408$0F1EF5CB-03E5-4C9B-938D-853794A8FDC7",
+      "expected": "036",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q408:label:en",
+      "qid": "Q408",
+      "revision": 2567535006,
+      "kind": "label",
+      "language": "en",
+      "expected": "Australia"
+    },
+    {
+      "id": "q29$A06E990B-9100-4FB2-8AD0-836FFE6BF9B3",
+      "qid": "Q29",
+      "revision": 2565415102,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q29$A06E990B-9100-4FB2-8AD0-836FFE6BF9B3",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {
+        "P518": [
+          {
+            "snaktype": "value",
+            "property": "P518",
+            "hash": "b3fdbae6a39d8b151e31bd4d12cc38d93529efd2",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 16390686,
+                "id": "Q16390686"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          },
+          {
+            "snaktype": "value",
+            "property": "P518",
+            "hash": "2a348784deb2379e7098f1c46151a878218fac5c",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 5765,
+                "id": "Q5765"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q29$C3781D60-F32A-4011-B008-C19DCE225995",
+      "qid": "Q29",
+      "revision": 2565415102,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q29$C3781D60-F32A-4011-B008-C19DCE225995",
+      "expected": "ES",
+      "qualifiers": {}
+    },
+    {
+      "id": "q29$75319286-647D-4F3A-A65A-3AD471A3C448",
+      "qid": "Q29",
+      "revision": 2565415102,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q29$75319286-647D-4F3A-A65A-3AD471A3C448",
+      "expected": "ESP",
+      "qualifiers": {}
+    },
+    {
+      "id": "q29$1BBB6AF5-56C2-4B2C-A5E9-711E2F1F4A9F",
+      "qid": "Q29",
+      "revision": 2565415102,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q29$1BBB6AF5-56C2-4B2C-A5E9-711E2F1F4A9F",
+      "expected": "724",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q29:label:en",
+      "qid": "Q29",
+      "revision": 2565415102,
+      "kind": "label",
+      "language": "en",
+      "expected": "Spain"
+    },
+    {
+      "id": "Q79$bb475323-405c-4eb8-af2d-82da0902461b",
+      "qid": "Q79",
+      "revision": 2568774112,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "Q79$bb475323-405c-4eb8-af2d-82da0902461b",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q79$B6EF30A2-A357-42C1-B82A-07AE3D8A713F",
+      "qid": "Q79",
+      "revision": 2568774112,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q79$B6EF30A2-A357-42C1-B82A-07AE3D8A713F",
+      "expected": "EG",
+      "qualifiers": {}
+    },
+    {
+      "id": "q79$B2CFAF8B-02D0-4073-B763-C9C808A7A3E0",
+      "qid": "Q79",
+      "revision": 2568774112,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q79$B2CFAF8B-02D0-4073-B763-C9C808A7A3E0",
+      "expected": "EGY",
+      "qualifiers": {}
+    },
+    {
+      "id": "q79$E160CF77-E9B0-4885-8C53-AFFE0C129179",
+      "qid": "Q79",
+      "revision": 2568774112,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q79$E160CF77-E9B0-4885-8C53-AFFE0C129179",
+      "expected": "818",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q79:label:en",
+      "qid": "Q79",
+      "revision": 2568774112,
+      "kind": "label",
+      "language": "en",
+      "expected": "Egypt"
+    },
+    {
+      "id": "q34020$12b55480-4389-f22b-d7fe-fbcd865b4a38",
+      "qid": "Q34020",
+      "revision": 2568775247,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q34020$12b55480-4389-f22b-d7fe-fbcd865b4a38",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 538,
+        "id": "Q538"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q34020$AEBCC4E8-6A8F-41E3-9C3C-F0F651AECE36",
+      "qid": "Q34020",
+      "revision": 2568775247,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q34020$AEBCC4E8-6A8F-41E3-9C3C-F0F651AECE36",
+      "expected": "NU",
+      "qualifiers": {}
+    },
+    {
+      "id": "q34020$46457B59-4365-4EB1-89D3-3DE8ECEE6CD4",
+      "qid": "Q34020",
+      "revision": 2568775247,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q34020$46457B59-4365-4EB1-89D3-3DE8ECEE6CD4",
+      "expected": "NIU",
+      "qualifiers": {}
+    },
+    {
+      "id": "q34020$CE55D06A-5A05-41D8-BCE1-175A4855A07B",
+      "qid": "Q34020",
+      "revision": 2568775247,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q34020$CE55D06A-5A05-41D8-BCE1-175A4855A07B",
+      "expected": "570",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q34020:label:en",
+      "qid": "Q34020",
+      "revision": 2568775247,
+      "kind": "label",
+      "language": "en",
+      "expected": "Niue"
+    },
+    {
+      "id": "Q691$03f5f28a-49ce-8be4-d159-9acfe47e8e77",
+      "qid": "Q691",
+      "revision": 2569307830,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "Q691$03f5f28a-49ce-8be4-d159-9acfe47e8e77",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 55643,
+        "id": "Q55643"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q691$923AB551-2A89-409B-A203-20EB01C2F374",
+      "qid": "Q691",
+      "revision": 2569307830,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q691$923AB551-2A89-409B-A203-20EB01C2F374",
+      "expected": "PG",
+      "qualifiers": {}
+    },
+    {
+      "id": "q691$4A2C8BB3-0D01-4D32-88AD-2492B25056CC",
+      "qid": "Q691",
+      "revision": 2569307830,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q691$4A2C8BB3-0D01-4D32-88AD-2492B25056CC",
+      "expected": "PNG",
+      "qualifiers": {}
+    },
+    {
+      "id": "q691$8460A584-AC92-4468-8197-A84E8AA1E058",
+      "qid": "Q691",
+      "revision": 2569307830,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q691$8460A584-AC92-4468-8197-A84E8AA1E058",
+      "expected": "598",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q691:label:en",
+      "qid": "Q691",
+      "revision": 2569307830,
+      "kind": "label",
+      "language": "en",
+      "expected": "Papua New Guinea"
+    },
+    {
+      "id": "q183$76123936-F15F-4D73-BB22-1E86BC0614FE",
+      "qid": "Q183",
+      "revision": 2565378989,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q183$76123936-F15F-4D73-BB22-1E86BC0614FE",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q183$A945083A-AAD3-4793-B94A-5FB16F00174C",
+      "qid": "Q183",
+      "revision": 2565378989,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q183$A945083A-AAD3-4793-B94A-5FB16F00174C",
+      "expected": "DE",
+      "qualifiers": {}
+    },
+    {
+      "id": "q183$48397B6D-766F-4B40-B643-149AAF164DF0",
+      "qid": "Q183",
+      "revision": 2565378989,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q183$48397B6D-766F-4B40-B643-149AAF164DF0",
+      "expected": "DEU",
+      "qualifiers": {}
+    },
+    {
+      "id": "q183$B6D6823D-6A7C-4329-B9E0-0937CA6C430C",
+      "qid": "Q183",
+      "revision": 2565378989,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q183$B6D6823D-6A7C-4329-B9E0-0937CA6C430C",
+      "expected": "276",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q183:label:en",
+      "qid": "Q183",
+      "revision": 2565378989,
+      "kind": "label",
+      "language": "en",
+      "expected": "Germany"
+    },
+    {
+      "id": "q38$9348E4E4-1E38-4DAB-A936-8D380370F307",
+      "qid": "Q38",
+      "revision": 2569731626,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q38$9348E4E4-1E38-4DAB-A936-8D380370F307",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q38$B0202A62-4B99-4CAE-B3E7-637DB7DDE0C4",
+      "qid": "Q38",
+      "revision": 2569731626,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q38$B0202A62-4B99-4CAE-B3E7-637DB7DDE0C4",
+      "expected": "IT",
+      "qualifiers": {}
+    },
+    {
+      "id": "q38$7D71CFE9-31F7-4490-893A-BDE6C04FB8B1",
+      "qid": "Q38",
+      "revision": 2569731626,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q38$7D71CFE9-31F7-4490-893A-BDE6C04FB8B1",
+      "expected": "ITA",
+      "qualifiers": {}
+    },
+    {
+      "id": "q38$8E70EA97-2561-4E7D-B4B5-1E778C1CD1E8",
+      "qid": "Q38",
+      "revision": 2569731626,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q38$8E70EA97-2561-4E7D-B4B5-1E778C1CD1E8",
+      "expected": "380",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q38:label:en",
+      "qid": "Q38",
+      "revision": 2569731626,
+      "kind": "label",
+      "language": "en",
+      "expected": "Italy"
+    },
+    {
+      "id": "q45$07C2A38E-1E81-4E2A-A0E0-A5C4CE78DFF4",
+      "qid": "Q45",
+      "revision": 2569180981,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q45$07C2A38E-1E81-4E2A-A0E0-A5C4CE78DFF4",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q45$BA23C5F4-94E2-4419-94B1-BAEF84DC3D77",
+      "qid": "Q45",
+      "revision": 2569180981,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q45$BA23C5F4-94E2-4419-94B1-BAEF84DC3D77",
+      "expected": "PT",
+      "qualifiers": {}
+    },
+    {
+      "id": "q45$64F787FE-67F9-4870-BD7D-25EB6D806922",
+      "qid": "Q45",
+      "revision": 2569180981,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q45$64F787FE-67F9-4870-BD7D-25EB6D806922",
+      "expected": "PRT",
+      "qualifiers": {}
+    },
+    {
+      "id": "q45$CB8B1717-79D3-4FAB-97CA-C9C1E0196AFF",
+      "qid": "Q45",
+      "revision": 2569180981,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q45$CB8B1717-79D3-4FAB-97CA-C9C1E0196AFF",
+      "expected": "620",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q45:label:en",
+      "qid": "Q45",
+      "revision": 2569180981,
+      "kind": "label",
+      "language": "en",
+      "expected": "Portugal"
+    },
+    {
+      "id": "q27$C508966A-66CC-4FB6-803E-990DB80772DD",
+      "qid": "Q27",
+      "revision": 2569180938,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q27$C508966A-66CC-4FB6-803E-990DB80772DD",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q27$DF80CD4A-16AC-45DB-BB64-BCE65645CB32",
+      "qid": "Q27",
+      "revision": 2569180938,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q27$DF80CD4A-16AC-45DB-BB64-BCE65645CB32",
+      "expected": "IE",
+      "qualifiers": {}
+    },
+    {
+      "id": "q27$F74AA4AC-B448-430B-B667-7BF8277A0558",
+      "qid": "Q27",
+      "revision": 2569180938,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q27$F74AA4AC-B448-430B-B667-7BF8277A0558",
+      "expected": "IRL",
+      "qualifiers": {}
+    },
+    {
+      "id": "q27$76CAAA49-3B71-49A0-BDCB-0CEC1A7B7090",
+      "qid": "Q27",
+      "revision": 2569180938,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q27$76CAAA49-3B71-49A0-BDCB-0CEC1A7B7090",
+      "expected": "372",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q27:label:en",
+      "qid": "Q27",
+      "revision": 2569180938,
+      "kind": "label",
+      "language": "en",
+      "expected": "Ireland"
+    },
+    {
+      "id": "q34$A34546B8-A940-4ED1-8077-C13C6E55CC58",
+      "qid": "Q34",
+      "revision": 2568059265,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q34$A34546B8-A940-4ED1-8077-C13C6E55CC58",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q34$A35CF344-2372-4BE5-86D1-9D6C82301276",
+      "qid": "Q34",
+      "revision": 2568059265,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q34$A35CF344-2372-4BE5-86D1-9D6C82301276",
+      "expected": "SE",
+      "qualifiers": {}
+    },
+    {
+      "id": "q34$F8E28754-F8B7-499A-81DB-5686BBC96916",
+      "qid": "Q34",
+      "revision": 2568059265,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q34$F8E28754-F8B7-499A-81DB-5686BBC96916",
+      "expected": "SWE",
+      "qualifiers": {}
+    },
+    {
+      "id": "q34$76A97CA6-E4BC-4F2A-B003-20A6D2093682",
+      "qid": "Q34",
+      "revision": 2568059265,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q34$76A97CA6-E4BC-4F2A-B003-20A6D2093682",
+      "expected": "752",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q34:label:en",
+      "qid": "Q34",
+      "revision": 2568059265,
+      "kind": "label",
+      "language": "en",
+      "expected": "Sweden"
+    },
+    {
+      "id": "q224$6632BFB6-AD18-483E-A2D0-1B767425A583",
+      "qid": "Q224",
+      "revision": 2568798493,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q224$6632BFB6-AD18-483E-A2D0-1B767425A583",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q224$25F452B6-4171-4885-987B-395676F771DB",
+      "qid": "Q224",
+      "revision": 2568798493,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q224$25F452B6-4171-4885-987B-395676F771DB",
+      "expected": "HR",
+      "qualifiers": {}
+    },
+    {
+      "id": "q224$B6CEDD86-960F-4904-9E8A-BE60E8C32F5A",
+      "qid": "Q224",
+      "revision": 2568798493,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q224$B6CEDD86-960F-4904-9E8A-BE60E8C32F5A",
+      "expected": "HRV",
+      "qualifiers": {}
+    },
+    {
+      "id": "q224$71680DC7-046B-4570-AEBF-40BE30FBBD4D",
+      "qid": "Q224",
+      "revision": 2568798493,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q224$71680DC7-046B-4570-AEBF-40BE30FBBD4D",
+      "expected": "191",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q224:label:en",
+      "qid": "Q224",
+      "revision": 2568798493,
+      "kind": "label",
+      "language": "en",
+      "expected": "Croatia"
+    },
+    {
+      "id": "q219$BE6EC90F-13F9-49F8-B473-BA6F1812EE1B",
+      "qid": "Q219",
+      "revision": 2568377949,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q219$BE6EC90F-13F9-49F8-B473-BA6F1812EE1B",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q219$972E474D-43EE-488F-9730-595C35F771C6",
+      "qid": "Q219",
+      "revision": 2568377949,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q219$972E474D-43EE-488F-9730-595C35F771C6",
+      "expected": "BG",
+      "qualifiers": {}
+    },
+    {
+      "id": "q219$0F8378C9-FA93-48F1-9D51-F0658E2E28DB",
+      "qid": "Q219",
+      "revision": 2568377949,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q219$0F8378C9-FA93-48F1-9D51-F0658E2E28DB",
+      "expected": "BGR",
+      "qualifiers": {}
+    },
+    {
+      "id": "q219$6367060B-5A31-471A-BAAC-F2CB75E5E305",
+      "qid": "Q219",
+      "revision": 2568377949,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q219$6367060B-5A31-471A-BAAC-F2CB75E5E305",
+      "expected": "100",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q219:label:en",
+      "qid": "Q219",
+      "revision": 2568377949,
+      "kind": "label",
+      "language": "en",
+      "expected": "Bulgaria"
+    },
+    {
+      "id": "q148$46E9381A-E9A0-4339-AC30-30BFC92B3447",
+      "qid": "Q148",
+      "revision": 2570363697,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q148$46E9381A-E9A0-4339-AC30-30BFC92B3447",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 48,
+        "id": "Q48"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q148$A4552BA6-6800-418C-A4E1-D67801374A2B",
+      "qid": "Q148",
+      "revision": 2570363697,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q148$A4552BA6-6800-418C-A4E1-D67801374A2B",
+      "expected": "CN",
+      "qualifiers": {}
+    },
+    {
+      "id": "q148$190E50B5-7B3C-4C01-A04E-A02A4FB8EA09",
+      "qid": "Q148",
+      "revision": 2570363697,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q148$190E50B5-7B3C-4C01-A04E-A02A4FB8EA09",
+      "expected": "CHN",
+      "qualifiers": {}
+    },
+    {
+      "id": "q148$218EBFDF-3194-4321-A477-9A67A4F80918",
+      "qid": "Q148",
+      "revision": 2570363697,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q148$218EBFDF-3194-4321-A477-9A67A4F80918",
+      "expected": "156",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q148:label:en",
+      "qid": "Q148",
+      "revision": 2570363697,
+      "kind": "label",
+      "language": "en",
+      "expected": "People's Republic of China"
+    },
+    {
+      "id": "Q148:policy:name:China",
+      "qid": "Q148",
+      "revision": 2570363697,
+      "kind": "label",
+      "language": "en-gb",
+      "expected": "China"
+    },
+    {
+      "id": "q155$016A03CE-7721-4822-AAD0-B8D1ED814389",
+      "qid": "Q155",
+      "revision": 2568773711,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q155$016A03CE-7721-4822-AAD0-B8D1ED814389",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 18,
+        "id": "Q18"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q155$6C3F2E1B-1FE5-40D4-B98B-BD588222C0D3",
+      "qid": "Q155",
+      "revision": 2568773711,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q155$6C3F2E1B-1FE5-40D4-B98B-BD588222C0D3",
+      "expected": "BR",
+      "qualifiers": {}
+    },
+    {
+      "id": "q155$52384265-9736-4DCC-9D14-3F2E0489991D",
+      "qid": "Q155",
+      "revision": 2568773711,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q155$52384265-9736-4DCC-9D14-3F2E0489991D",
+      "expected": "BRA",
+      "qualifiers": {}
+    },
+    {
+      "id": "q155$1C98B6E0-9E71-4BA8-96FB-0362481D19D6",
+      "qid": "Q155",
+      "revision": 2568773711,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q155$1C98B6E0-9E71-4BA8-96FB-0362481D19D6",
+      "expected": "076",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q155:label:en",
+      "qid": "Q155",
+      "revision": 2568773711,
+      "kind": "label",
+      "language": "en",
+      "expected": "Brazil"
+    },
+    {
+      "id": "q833$80B68694-4035-48B2-AE43-B31CA4691821",
+      "qid": "Q833",
+      "revision": 2569810315,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q833$80B68694-4035-48B2-AE43-B31CA4691821",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 48,
+        "id": "Q48"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q833$B33DE986-CBB6-49E3-98FD-B6A96375C225",
+      "qid": "Q833",
+      "revision": 2569810315,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q833$B33DE986-CBB6-49E3-98FD-B6A96375C225",
+      "expected": "MY",
+      "qualifiers": {}
+    },
+    {
+      "id": "q833$70948C99-2D8F-4B13-8B52-751FD92A9696",
+      "qid": "Q833",
+      "revision": 2569810315,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q833$70948C99-2D8F-4B13-8B52-751FD92A9696",
+      "expected": "MYS",
+      "qualifiers": {}
+    },
+    {
+      "id": "q833$849B1C1D-6884-4613-BA4E-EB4FA443F787",
+      "qid": "Q833",
+      "revision": 2569810315,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q833$849B1C1D-6884-4613-BA4E-EB4FA443F787",
+      "expected": "458",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q833:label:en",
+      "qid": "Q833",
+      "revision": 2569810315,
+      "kind": "label",
+      "language": "en",
+      "expected": "Malaysia"
+    },
+    {
+      "id": "q31$639B3CF8-46BA-4888-95FB-E0504D8E7F74",
+      "qid": "Q31",
+      "revision": 2569315931,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q31$639B3CF8-46BA-4888-95FB-E0504D8E7F74",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q31$28EA4443-61DA-4828-B1F2-34AC27C8C7B6",
+      "qid": "Q31",
+      "revision": 2569315931,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q31$28EA4443-61DA-4828-B1F2-34AC27C8C7B6",
+      "expected": "BE",
+      "qualifiers": {}
+    },
+    {
+      "id": "q31$273B592D-B189-4716-9A31-D4286D7D975B",
+      "qid": "Q31",
+      "revision": 2569315931,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q31$273B592D-B189-4716-9A31-D4286D7D975B",
+      "expected": "BEL",
+      "qualifiers": {}
+    },
+    {
+      "id": "q31$5E609C07-4521-4528-AD0E-45F0723FEE22",
+      "qid": "Q31",
+      "revision": 2569315931,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q31$5E609C07-4521-4528-AD0E-45F0723FEE22",
+      "expected": "056",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q31:label:en",
+      "qid": "Q31",
+      "revision": 2569315931,
+      "kind": "label",
+      "language": "en",
+      "expected": "Belgium"
+    },
+    {
+      "id": "q244$4DEB1C41-160F-4871-8DCC-626937B7A081",
+      "qid": "Q244",
+      "revision": 2569311430,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q244$4DEB1C41-160F-4871-8DCC-626937B7A081",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q244$05C4CEC8-7B06-431A-890E-91CAE7CAA775",
+      "qid": "Q244",
+      "revision": 2569311430,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q244$05C4CEC8-7B06-431A-890E-91CAE7CAA775",
+      "expected": "BB",
+      "qualifiers": {}
+    },
+    {
+      "id": "q244$06AA70A9-D24E-4182-8828-4507D15A1AC3",
+      "qid": "Q244",
+      "revision": 2569311430,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q244$06AA70A9-D24E-4182-8828-4507D15A1AC3",
+      "expected": "BRB",
+      "qualifiers": {}
+    },
+    {
+      "id": "q244$B1E118E9-DEB5-4C5E-B7A4-CD8447B5CF9C",
+      "qid": "Q244",
+      "revision": 2569311430,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q244$B1E118E9-DEB5-4C5E-B7A4-CD8447B5CF9C",
+      "expected": "052",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q244:label:en",
+      "qid": "Q244",
+      "revision": 2569311430,
+      "kind": "label",
+      "language": "en",
+      "expected": "Barbados"
+    },
+    {
+      "id": "q739$F75D610E-D311-414B-A693-30419A94D7D0",
+      "qid": "Q739",
+      "revision": 2568773891,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q739$F75D610E-D311-414B-A693-30419A94D7D0",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 18,
+        "id": "Q18"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q739$AA83A5B4-6DB2-4490-802F-D1375B32C742",
+      "qid": "Q739",
+      "revision": 2568773891,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q739$AA83A5B4-6DB2-4490-802F-D1375B32C742",
+      "expected": "CO",
+      "qualifiers": {}
+    },
+    {
+      "id": "q739$201F83F4-5DC2-4323-9305-67067DE27ED3",
+      "qid": "Q739",
+      "revision": 2568773891,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q739$201F83F4-5DC2-4323-9305-67067DE27ED3",
+      "expected": "COL",
+      "qualifiers": {}
+    },
+    {
+      "id": "q739$4B0DB4AF-6C81-4A87-AD7B-39BE5D71ADCC",
+      "qid": "Q739",
+      "revision": 2568773891,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q739$4B0DB4AF-6C81-4A87-AD7B-39BE5D71ADCC",
+      "expected": "170",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q739:label:en",
+      "qid": "Q739",
+      "revision": 2568773891,
+      "kind": "label",
+      "language": "en",
+      "expected": "Colombia"
+    },
+    {
+      "id": "q414$91618057-70B5-476E-894C-179120E771F2",
+      "qid": "Q414",
+      "revision": 2567814018,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q414$91618057-70B5-476E-894C-179120E771F2",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 18,
+        "id": "Q18"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q414$886D0013-2A53-42BC-9DB2-D304A0C0D117",
+      "qid": "Q414",
+      "revision": 2567814018,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q414$886D0013-2A53-42BC-9DB2-D304A0C0D117",
+      "expected": "AR",
+      "qualifiers": {}
+    },
+    {
+      "id": "q414$91805BB6-4ED7-49F1-AC80-B5848FEF5AFD",
+      "qid": "Q414",
+      "revision": 2567814018,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q414$91805BB6-4ED7-49F1-AC80-B5848FEF5AFD",
+      "expected": "ARG",
+      "qualifiers": {}
+    },
+    {
+      "id": "q414$CE8B49AF-2226-4A0C-A41F-007DAF176DDB",
+      "qid": "Q414",
+      "revision": 2567814018,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q414$CE8B49AF-2226-4A0C-A41F-007DAF176DDB",
+      "expected": "032",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q414:label:en",
+      "qid": "Q414",
+      "revision": 2567814018,
+      "kind": "label",
+      "language": "en",
+      "expected": "Argentina"
+    },
+    {
+      "id": "q419$1F3A6782-C06C-433F-B8F1-4F97EAB5B29E",
+      "qid": "Q419",
+      "revision": 2568117526,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q419$1F3A6782-C06C-433F-B8F1-4F97EAB5B29E",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 18,
+        "id": "Q18"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q419$465FE9B7-703A-4611-9001-EDEB6C2354E3",
+      "qid": "Q419",
+      "revision": 2568117526,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q419$465FE9B7-703A-4611-9001-EDEB6C2354E3",
+      "expected": "PE",
+      "qualifiers": {}
+    },
+    {
+      "id": "q419$7CA7FA61-EEE6-4409-A0D3-1157E8231923",
+      "qid": "Q419",
+      "revision": 2568117526,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q419$7CA7FA61-EEE6-4409-A0D3-1157E8231923",
+      "expected": "PER",
+      "qualifiers": {}
+    },
+    {
+      "id": "q419$08C46F87-551E-4008-8E05-C1227491BF56",
+      "qid": "Q419",
+      "revision": 2568117526,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q419$08C46F87-551E-4008-8E05-C1227491BF56",
+      "expected": "604",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q419:label:en",
+      "qid": "Q419",
+      "revision": 2568117526,
+      "kind": "label",
+      "language": "en",
+      "expected": "Peru"
+    },
+    {
+      "id": "q258$5209D1ED-DCAC-44A0-958A-38518E31029C",
+      "qid": "Q258",
+      "revision": 2568126124,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q258$5209D1ED-DCAC-44A0-958A-38518E31029C",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q258$08D446E1-8122-47AD-A0C0-09772320175C",
+      "qid": "Q258",
+      "revision": 2568126124,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q258$08D446E1-8122-47AD-A0C0-09772320175C",
+      "expected": "ZA",
+      "qualifiers": {}
+    },
+    {
+      "id": "q258$776B7FCE-CC5C-425D-B213-07C84049E737",
+      "qid": "Q258",
+      "revision": 2568126124,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q258$776B7FCE-CC5C-425D-B213-07C84049E737",
+      "expected": "ZAF",
+      "qualifiers": {}
+    },
+    {
+      "id": "q258$A0D29F39-C2FB-49BC-91FF-B4E7C9B76825",
+      "qid": "Q258",
+      "revision": 2568126124,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q258$A0D29F39-C2FB-49BC-91FF-B4E7C9B76825",
+      "expected": "710",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q258:label:en",
+      "qid": "Q258",
+      "revision": 2568126124,
+      "kind": "label",
+      "language": "en",
+      "expected": "South Africa"
+    },
+    {
+      "id": "q928$12556E56-85E7-4C67-A828-A0DF40570E6D",
+      "qid": "Q928",
+      "revision": 2569311280,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q928$12556E56-85E7-4C67-A828-A0DF40570E6D",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 48,
+        "id": "Q48"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q928$507C6FCB-217A-4A3A-ABD2-1A32395A1A77",
+      "qid": "Q928",
+      "revision": 2569311280,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q928$507C6FCB-217A-4A3A-ABD2-1A32395A1A77",
+      "expected": "PH",
+      "qualifiers": {}
+    },
+    {
+      "id": "q928$9759F40C-0FE9-4573-BA9C-D05B6B2472FB",
+      "qid": "Q928",
+      "revision": 2569311280,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q928$9759F40C-0FE9-4573-BA9C-D05B6B2472FB",
+      "expected": "PHL",
+      "qualifiers": {}
+    },
+    {
+      "id": "q928$B7BFE5C0-2891-4EEA-B7E2-49CCDD434171",
+      "qid": "Q928",
+      "revision": 2569311280,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q928$B7BFE5C0-2891-4EEA-B7E2-49CCDD434171",
+      "expected": "608",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q928:label:en",
+      "qid": "Q928",
+      "revision": 2569311280,
+      "kind": "label",
+      "language": "en",
+      "expected": "Philippines"
+    },
+    {
+      "id": "q794$A2B755C8-A989-4C88-B91E-7AD92BE3C7BC",
+      "qid": "Q794",
+      "revision": 2569323694,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q794$A2B755C8-A989-4C88-B91E-7AD92BE3C7BC",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 48,
+        "id": "Q48"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q794$49EEB985-5721-43B0-99FB-9835B6D07C6E",
+      "qid": "Q794",
+      "revision": 2569323694,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q794$49EEB985-5721-43B0-99FB-9835B6D07C6E",
+      "expected": "IR",
+      "qualifiers": {}
+    },
+    {
+      "id": "q794$39F5FAEC-8AA4-4393-826F-F3915EF07BE4",
+      "qid": "Q794",
+      "revision": 2569323694,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q794$39F5FAEC-8AA4-4393-826F-F3915EF07BE4",
+      "expected": "IRN",
+      "qualifiers": {}
+    },
+    {
+      "id": "q794$8C85C6D0-D3FE-44B1-A789-0FD055BA0D82",
+      "qid": "Q794",
+      "revision": 2569323694,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q794$8C85C6D0-D3FE-44B1-A789-0FD055BA0D82",
+      "expected": "364",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q794:label:en",
+      "qid": "Q794",
+      "revision": 2569323694,
+      "kind": "label",
+      "language": "en",
+      "expected": "Iran"
+    },
+    {
+      "id": "q902$6D176CD0-2139-44C4-A0F5-E3B92ABD3EDB",
+      "qid": "Q902",
+      "revision": 2567630410,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q902$6D176CD0-2139-44C4-A0F5-E3B92ABD3EDB",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 48,
+        "id": "Q48"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q902$AA23DC52-B700-4FB3-8264-B7F26F2B4208",
+      "qid": "Q902",
+      "revision": 2567630410,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q902$AA23DC52-B700-4FB3-8264-B7F26F2B4208",
+      "expected": "BD",
+      "qualifiers": {}
+    },
+    {
+      "id": "q902$728A3951-46E9-4F7C-857F-870894B4FBD1",
+      "qid": "Q902",
+      "revision": 2567630410,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q902$728A3951-46E9-4F7C-857F-870894B4FBD1",
+      "expected": "BGD",
+      "qualifiers": {}
+    },
+    {
+      "id": "q902$D58225A8-A3B8-496C-B3F3-159B3DDD5837",
+      "qid": "Q902",
+      "revision": 2567630410,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q902$D58225A8-A3B8-496C-B3F3-159B3DDD5837",
+      "expected": "050",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q902:label:en",
+      "qid": "Q902",
+      "revision": 2567630410,
+      "kind": "label",
+      "language": "en",
+      "expected": "Bangladesh"
+    },
+    {
+      "id": "q668$EFFE083D-8F92-4223-8E36-28CB7E71DA16",
+      "qid": "Q668",
+      "revision": 2568774463,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q668$EFFE083D-8F92-4223-8E36-28CB7E71DA16",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 48,
+        "id": "Q48"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q668$E198548B-5D49-499D-83AD-CC4686624834",
+      "qid": "Q668",
+      "revision": 2568774463,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q668$E198548B-5D49-499D-83AD-CC4686624834",
+      "expected": "IN",
+      "qualifiers": {}
+    },
+    {
+      "id": "q668$CE03E756-DF20-4009-B784-D3FE5B7A906D",
+      "qid": "Q668",
+      "revision": 2568774463,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q668$CE03E756-DF20-4009-B784-D3FE5B7A906D",
+      "expected": "IND",
+      "qualifiers": {}
+    },
+    {
+      "id": "q668$122230A0-3780-45AC-8D20-743C967751F6",
+      "qid": "Q668",
+      "revision": 2568774463,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q668$122230A0-3780-45AC-8D20-743C967751F6",
+      "expected": "356",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q668:label:en",
+      "qid": "Q668",
+      "revision": 2568774463,
+      "kind": "label",
+      "language": "en",
+      "expected": "India"
+    },
+    {
+      "id": "q854$5de9991a-4579-666b-082b-d325fccb0be1",
+      "qid": "Q854",
+      "revision": 2569302228,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q854$5de9991a-4579-666b-082b-d325fccb0be1",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 48,
+        "id": "Q48"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q854$17A7CB5B-5A60-47CD-9151-D0C6D2874DC8",
+      "qid": "Q854",
+      "revision": 2569302228,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q854$17A7CB5B-5A60-47CD-9151-D0C6D2874DC8",
+      "expected": "LK",
+      "qualifiers": {}
+    },
+    {
+      "id": "q854$682AE141-4DAE-49A6-85A4-3FFED941DB03",
+      "qid": "Q854",
+      "revision": 2569302228,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q854$682AE141-4DAE-49A6-85A4-3FFED941DB03",
+      "expected": "LKA",
+      "qualifiers": {}
+    },
+    {
+      "id": "q854$DC4902E0-15B5-4C4D-9027-591071C175F6",
+      "qid": "Q854",
+      "revision": 2569302228,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q854$DC4902E0-15B5-4C4D-9027-591071C175F6",
+      "expected": "144",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q854:label:en",
+      "qid": "Q854",
+      "revision": 2569302228,
+      "kind": "label",
+      "language": "en",
+      "expected": "Sri Lanka"
+    },
+    {
+      "id": "q1041$8FC94DD3-5A4D-41C3-B776-8193C616086E",
+      "qid": "Q1041",
+      "revision": 2568775745,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q1041$8FC94DD3-5A4D-41C3-B776-8193C616086E",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q1041$E9CE991B-A787-463A-8FC2-310531DD7BE9",
+      "qid": "Q1041",
+      "revision": 2568775745,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q1041$E9CE991B-A787-463A-8FC2-310531DD7BE9",
+      "expected": "SN",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1041$17C99B26-E2CD-42FF-BB1D-8BA50EE6FE74",
+      "qid": "Q1041",
+      "revision": 2568775745,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q1041$17C99B26-E2CD-42FF-BB1D-8BA50EE6FE74",
+      "expected": "SEN",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1041$6BC60728-91F4-470B-A615-7914EAF45750",
+      "qid": "Q1041",
+      "revision": 2568775745,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q1041$6BC60728-91F4-470B-A615-7914EAF45750",
+      "expected": "686",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q1041:label:en",
+      "qid": "Q1041",
+      "revision": 2568775745,
+      "kind": "label",
+      "language": "en",
+      "expected": "Senegal"
+    },
+    {
+      "id": "q924$5E307641-4D87-421C-A2DB-001AF7AEFA4F",
+      "qid": "Q924",
+      "revision": 2568776091,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q924$5E307641-4D87-421C-A2DB-001AF7AEFA4F",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q924$EDDBCFFD-4F05-45A8-A3B8-6D97BB4F0E9E",
+      "qid": "Q924",
+      "revision": 2568776091,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q924$EDDBCFFD-4F05-45A8-A3B8-6D97BB4F0E9E",
+      "expected": "TZ",
+      "qualifiers": {}
+    },
+    {
+      "id": "q924$06D25FCA-83C0-4476-A2A1-49E8D84C1C40",
+      "qid": "Q924",
+      "revision": 2568776091,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q924$06D25FCA-83C0-4476-A2A1-49E8D84C1C40",
+      "expected": "TZA",
+      "qualifiers": {}
+    },
+    {
+      "id": "q924$CF34451E-8A67-4E1C-9985-8A25BE439C63",
+      "qid": "Q924",
+      "revision": 2568776091,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q924$CF34451E-8A67-4E1C-9985-8A25BE439C63",
+      "expected": "834",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q924:label:en",
+      "qid": "Q924",
+      "revision": 2568776091,
+      "kind": "label",
+      "language": "en",
+      "expected": "Tanzania"
+    },
+    {
+      "id": "q36$D6FEA2C0-DA81-4C89-97F8-7AFA90B6D12D",
+      "qid": "Q36",
+      "revision": 2569747262,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q36$D6FEA2C0-DA81-4C89-97F8-7AFA90B6D12D",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q36$554A3F61-9742-4536-A66A-3415CA5133B8",
+      "qid": "Q36",
+      "revision": 2569747262,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q36$554A3F61-9742-4536-A66A-3415CA5133B8",
+      "expected": "PL",
+      "qualifiers": {}
+    },
+    {
+      "id": "q36$A4E427DF-0F5E-4F1C-B31D-668B98D4750D",
+      "qid": "Q36",
+      "revision": 2569747262,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q36$A4E427DF-0F5E-4F1C-B31D-668B98D4750D",
+      "expected": "POL",
+      "qualifiers": {}
+    },
+    {
+      "id": "q36$CBA3039D-3F32-4831-8037-12E9E7779575",
+      "qid": "Q36",
+      "revision": 2569747262,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q36$CBA3039D-3F32-4831-8037-12E9E7779575",
+      "expected": "616",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q36:label:en",
+      "qid": "Q36",
+      "revision": 2569747262,
+      "kind": "label",
+      "language": "en",
+      "expected": "Poland"
+    },
+    {
+      "id": "q211$0E62E8AC-CE81-4188-80E7-EB9E55F7E405",
+      "qid": "Q211",
+      "revision": 2568774804,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q211$0E62E8AC-CE81-4188-80E7-EB9E55F7E405",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q211$1B380B19-E128-41E4-B369-29172DA25FA5",
+      "qid": "Q211",
+      "revision": 2568774804,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q211$1B380B19-E128-41E4-B369-29172DA25FA5",
+      "expected": "LV",
+      "qualifiers": {}
+    },
+    {
+      "id": "q211$3F2AE2E7-A262-49B5-A384-A605CF942236",
+      "qid": "Q211",
+      "revision": 2568774804,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q211$3F2AE2E7-A262-49B5-A384-A605CF942236",
+      "expected": "LVA",
+      "qualifiers": {}
+    },
+    {
+      "id": "q211$C953EDFB-464E-4B3F-AFEF-7DEC40929FA8",
+      "qid": "Q211",
+      "revision": 2568774804,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q211$C953EDFB-464E-4B3F-AFEF-7DEC40929FA8",
+      "expected": "428",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q211:label:en",
+      "qid": "Q211",
+      "revision": 2568774804,
+      "kind": "label",
+      "language": "en",
+      "expected": "Latvia"
+    },
+    {
+      "id": "q33$07AD9D8C-A845-493D-82DA-862DAD23BC61",
+      "qid": "Q33",
+      "revision": 2571508451,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q33$07AD9D8C-A845-493D-82DA-862DAD23BC61",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q33$8D8466A0-5E3C-4F64-9553-E382CB591D15",
+      "qid": "Q33",
+      "revision": 2571508451,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q33$8D8466A0-5E3C-4F64-9553-E382CB591D15",
+      "expected": "FI",
+      "qualifiers": {}
+    },
+    {
+      "id": "q33$083E940F-9069-43B9-BD0B-8A8289F7E28A",
+      "qid": "Q33",
+      "revision": 2571508451,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q33$083E940F-9069-43B9-BD0B-8A8289F7E28A",
+      "expected": "FIN",
+      "qualifiers": {}
+    },
+    {
+      "id": "q33$ABB67FE5-7A37-4732-AE51-71A27B22E013",
+      "qid": "Q33",
+      "revision": 2571508451,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q33$ABB67FE5-7A37-4732-AE51-71A27B22E013",
+      "expected": "246",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q33:label:en",
+      "qid": "Q33",
+      "revision": 2571508451,
+      "kind": "label",
+      "language": "en",
+      "expected": "Finland"
+    },
+    {
+      "id": "q977$262B5B58-A725-4670-83D8-5ABEE2318907",
+      "qid": "Q977",
+      "revision": 2568774057,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q977$262B5B58-A725-4670-83D8-5ABEE2318907",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q977$A1681B0C-D720-4D30-B7EA-923D2E9234C3",
+      "qid": "Q977",
+      "revision": 2568774057,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q977$A1681B0C-D720-4D30-B7EA-923D2E9234C3",
+      "expected": "DJ",
+      "qualifiers": {}
+    },
+    {
+      "id": "q977$A585C4F3-24A6-4E04-9A49-1CA05B580A4F",
+      "qid": "Q977",
+      "revision": 2568774057,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q977$A585C4F3-24A6-4E04-9A49-1CA05B580A4F",
+      "expected": "DJI",
+      "qualifiers": {}
+    },
+    {
+      "id": "q977$9C007730-C53F-4E0B-913A-31309A2E5EE4",
+      "qid": "Q977",
+      "revision": 2568774057,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q977$9C007730-C53F-4E0B-913A-31309A2E5EE4",
+      "expected": "262",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q977:label:en",
+      "qid": "Q977",
+      "revision": 2568774057,
+      "kind": "label",
+      "language": "en",
+      "expected": "Djibouti"
+    },
+    {
+      "id": "q51$1156F414-87F1-46BB-BABA-8AAF3DA0F45C",
+      "qid": "Q51",
+      "revision": 2569325779,
+      "kind": "statement",
+      "property": "P31",
+      "statementId": "q51$1156F414-87F1-46BB-BABA-8AAF3DA0F45C",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 5107,
+        "id": "Q5107"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "Q51:policy:continent:Antarctica",
+      "qid": "Q51",
+      "revision": 2569325779,
+      "kind": "local-policy",
+      "expected": "Antarctica",
+      "reason": "At referenceDate, display a continent entity as its own continent when its pinned P31 establishes continent identity; does not assert any P30 self-statement or historical boundaries."
+    },
+    {
+      "id": "Q51$5778ec91-4ded-03c3-2bf7-7d6ded653e32",
+      "qid": "Q51",
+      "revision": 2569325779,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "Q51$5778ec91-4ded-03c3-2bf7-7d6ded653e32",
+      "expected": "AQ",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q51$e86e6bfc-4389-8a1e-6677-7719381333fd",
+      "qid": "Q51",
+      "revision": 2569325779,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "Q51$e86e6bfc-4389-8a1e-6677-7719381333fd",
+      "expected": "ATA",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q51:label:en",
+      "qid": "Q51",
+      "revision": 2569325779,
+      "kind": "label",
+      "language": "en",
+      "expected": "Antarctica"
+    },
+    {
+      "id": "q191$F9D2EA8D-AF49-4CF4-A620-EB0420952CC2",
+      "qid": "Q191",
+      "revision": 2571146930,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q191$F9D2EA8D-AF49-4CF4-A620-EB0420952CC2",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q191$F5CF53BB-6173-4BC0-A3C1-640D834FEF40",
+      "qid": "Q191",
+      "revision": 2571146930,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q191$F5CF53BB-6173-4BC0-A3C1-640D834FEF40",
+      "expected": "EE",
+      "qualifiers": {}
+    },
+    {
+      "id": "q191$4E064827-3077-4BEE-B8F5-83E378467DC4",
+      "qid": "Q191",
+      "revision": 2571146930,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q191$4E064827-3077-4BEE-B8F5-83E378467DC4",
+      "expected": "EST",
+      "qualifiers": {}
+    },
+    {
+      "id": "q191$B4D334FA-CA86-431D-87F7-5F227738B0A8",
+      "qid": "Q191",
+      "revision": 2571146930,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q191$B4D334FA-CA86-431D-87F7-5F227738B0A8",
+      "expected": "233",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q191:label:en",
+      "qid": "Q191",
+      "revision": 2571146930,
+      "kind": "label",
+      "language": "en",
+      "expected": "Estonia"
+    },
+    {
+      "id": "q672$bb32e0f8-4c7b-a4af-9526-97a17d39320c",
+      "qid": "Q672",
+      "revision": 2569306537,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q672$bb32e0f8-4c7b-a4af-9526-97a17d39320c",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 538,
+        "id": "Q538"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q672$00848DC3-17FF-47FE-961B-469391365675",
+      "qid": "Q672",
+      "revision": 2569306537,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q672$00848DC3-17FF-47FE-961B-469391365675",
+      "expected": "TV",
+      "qualifiers": {}
+    },
+    {
+      "id": "q672$307FE90F-6C18-48F3-B8F9-D176B3774041",
+      "qid": "Q672",
+      "revision": 2569306537,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q672$307FE90F-6C18-48F3-B8F9-D176B3774041",
+      "expected": "TUV",
+      "qualifiers": {}
+    },
+    {
+      "id": "q672$DDEF2285-38DE-48B6-B402-8AA7F5600929",
+      "qid": "Q672",
+      "revision": 2569306537,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q672$DDEF2285-38DE-48B6-B402-8AA7F5600929",
+      "expected": "798",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q672:label:en",
+      "qid": "Q672",
+      "revision": 2569306537,
+      "kind": "label",
+      "language": "en",
+      "expected": "Tuvalu"
+    },
+    {
+      "id": "q826$1aa0234e-4289-9ffb-be05-7ad8d4976f6c",
+      "qid": "Q826",
+      "revision": 2569310541,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q826$1aa0234e-4289-9ffb-be05-7ad8d4976f6c",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 48,
+        "id": "Q48"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q826$5DB6479A-10DF-488B-85E5-A715DD16E00F",
+      "qid": "Q826",
+      "revision": 2569310541,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q826$5DB6479A-10DF-488B-85E5-A715DD16E00F",
+      "expected": "MV",
+      "qualifiers": {}
+    },
+    {
+      "id": "q826$2A2AFFFC-5229-41AA-9C15-393F86CB9481",
+      "qid": "Q826",
+      "revision": 2569310541,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q826$2A2AFFFC-5229-41AA-9C15-393F86CB9481",
+      "expected": "MDV",
+      "qualifiers": {}
+    },
+    {
+      "id": "q826$271B3635-1A97-40A3-A35F-AC2CA7E73825",
+      "qid": "Q826",
+      "revision": 2569310541,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q826$271B3635-1A97-40A3-A35F-AC2CA7E73825",
+      "expected": "462",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q826:label:en",
+      "qid": "Q826",
+      "revision": 2569310541,
+      "kind": "label",
+      "language": "en",
+      "expected": "Maldives"
+    },
+    {
+      "id": "Q159$b525fd39-4fac-7688-e7aa-12ed1fe9a298",
+      "qid": "Q159",
+      "revision": 2568775621,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "Q159$b525fd39-4fac-7688-e7aa-12ed1fe9a298",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {
+        "P518": [
+          {
+            "snaktype": "value",
+            "property": "P518",
+            "hash": "36cf899268fb383f35f13b6ac746e9e0e940dec8",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 875134,
+                "id": "Q875134"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q159$021F06CF-36E4-4026-8347-0DB9632367A4",
+      "qid": "Q159",
+      "revision": 2568775621,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q159$021F06CF-36E4-4026-8347-0DB9632367A4",
+      "expected": "RU",
+      "qualifiers": {
+        "P580": [
+          {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "ed730e4c258f94d6bf2b86c50e53de07ad209ae2",
+            "datavalue": {
+              "value": {
+                "time": "+1992-00-00T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 9,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ],
+        "P805": [
+          {
+            "snaktype": "value",
+            "property": "P805",
+            "hash": "f6e1f15b6ff83067f38d1143af813bd73ec760ca",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 21031,
+                "id": "Q21031"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q159$8538B03E-A27F-465D-8778-4340A952BC75",
+      "qid": "Q159",
+      "revision": 2568775621,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q159$8538B03E-A27F-465D-8778-4340A952BC75",
+      "expected": "RUS",
+      "qualifiers": {}
+    },
+    {
+      "id": "q159$CB3038DC-8CFF-4143-A91F-AD9D3F3EAE17",
+      "qid": "Q159",
+      "revision": 2568775621,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q159$CB3038DC-8CFF-4143-A91F-AD9D3F3EAE17",
+      "expected": "643",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q159:label:en",
+      "qid": "Q159",
+      "revision": 2568775621,
+      "kind": "label",
+      "language": "en",
+      "expected": "Russia"
+    },
+    {
+      "id": "q881$574D1CCB-FF9F-43C5-9CEF-18ABF9DF6F6D",
+      "qid": "Q881",
+      "revision": 2569318472,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q881$574D1CCB-FF9F-43C5-9CEF-18ABF9DF6F6D",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 48,
+        "id": "Q48"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q881$1E621EF3-A380-4EA0-BE07-E5DAA3EE91C1",
+      "qid": "Q881",
+      "revision": 2569318472,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q881$1E621EF3-A380-4EA0-BE07-E5DAA3EE91C1",
+      "expected": "VN",
+      "qualifiers": {}
+    },
+    {
+      "id": "q881$0D76B481-B230-4E6A-99CC-7ABC012EBA08",
+      "qid": "Q881",
+      "revision": 2569318472,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q881$0D76B481-B230-4E6A-99CC-7ABC012EBA08",
+      "expected": "VNM",
+      "qualifiers": {}
+    },
+    {
+      "id": "q881$1AFA705F-57EB-454B-90CC-236F975FE49E",
+      "qid": "Q881",
+      "revision": 2569318472,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q881$1AFA705F-57EB-454B-90CC-236F975FE49E",
+      "expected": "704",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q881:label:en",
+      "qid": "Q881",
+      "revision": 2569318472,
+      "kind": "label",
+      "language": "en",
+      "expected": "Vietnam"
+    },
+    {
+      "id": "Q8646$b594a14d-4baa-2767-b780-f239d9fa546a",
+      "qid": "Q8646",
+      "revision": 2570385335,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "Q8646$b594a14d-4baa-2767-b780-f239d9fa546a",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 48,
+        "id": "Q48"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q8646$572F68C0-9726-49DE-AA2C-03F5E1588A66",
+      "qid": "Q8646",
+      "revision": 2570385335,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q8646$572F68C0-9726-49DE-AA2C-03F5E1588A66",
+      "expected": "HK",
+      "qualifiers": {
+        "P805": [
+          {
+            "snaktype": "value",
+            "property": "P805",
+            "hash": "0e6c543cbb42cdae3a1e338f7c292c3ec810f7f9",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 1209208,
+                "id": "Q1209208"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q8646$CCA3D702-57B7-4B87-BB6B-7F963BB9FEDB",
+      "qid": "Q8646",
+      "revision": 2570385335,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q8646$CCA3D702-57B7-4B87-BB6B-7F963BB9FEDB",
+      "expected": "HKG",
+      "qualifiers": {}
+    },
+    {
+      "id": "q8646$DA39C869-FB70-4C3E-A7B7-0265630D23C8",
+      "qid": "Q8646",
+      "revision": 2570385335,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q8646$DA39C869-FB70-4C3E-A7B7-0265630D23C8",
+      "expected": "344",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q8646:label:en",
+      "qid": "Q8646",
+      "revision": 2570385335,
+      "kind": "label",
+      "language": "en",
+      "expected": "Hong Kong"
+    },
+    {
+      "id": "Q685$92FACC87-785C-4B86-9230-3684E4806989",
+      "qid": "Q685",
+      "revision": 2570346590,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "Q685$92FACC87-785C-4B86-9230-3684E4806989",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 55643,
+        "id": "Q55643"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q685$285F2B46-DC0D-4FC1-9706-872FD6C8D39B",
+      "qid": "Q685",
+      "revision": 2570346590,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q685$285F2B46-DC0D-4FC1-9706-872FD6C8D39B",
+      "expected": "SB",
+      "qualifiers": {}
+    },
+    {
+      "id": "q685$AD3668BF-6217-41C0-B9E6-2C126089AF7C",
+      "qid": "Q685",
+      "revision": 2570346590,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q685$AD3668BF-6217-41C0-B9E6-2C126089AF7C",
+      "expected": "SLB",
+      "qualifiers": {}
+    },
+    {
+      "id": "q685$0B99CFBB-874B-4997-BF61-0A9C2E7B01E5",
+      "qid": "Q685",
+      "revision": 2570346590,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q685$0B99CFBB-874B-4997-BF61-0A9C2E7B01E5",
+      "expected": "090",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q685:label:en",
+      "qid": "Q685",
+      "revision": 2570346590,
+      "kind": "label",
+      "language": "en",
+      "expected": "Solomon Islands"
+    },
+    {
+      "id": "q1029$4807D056-4AD7-426C-BF98-F320838BA696",
+      "qid": "Q1029",
+      "revision": 2571151400,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q1029$4807D056-4AD7-426C-BF98-F320838BA696",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q1029$E765E32F-56FD-4BC2-AA0A-C58003A122E1",
+      "qid": "Q1029",
+      "revision": 2571151400,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q1029$E765E32F-56FD-4BC2-AA0A-C58003A122E1",
+      "expected": "MZ",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1029$7B31E82B-D186-4546-931D-770CB46199B4",
+      "qid": "Q1029",
+      "revision": 2571151400,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q1029$7B31E82B-D186-4546-931D-770CB46199B4",
+      "expected": "MOZ",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1029$28064F55-4C36-4DAD-B4D4-59582911DCA7",
+      "qid": "Q1029",
+      "revision": 2571151400,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q1029$28064F55-4C36-4DAD-B4D4-59582911DCA7",
+      "expected": "508",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q1029:label:en",
+      "qid": "Q1029",
+      "revision": 2571151400,
+      "kind": "label",
+      "language": "en",
+      "expected": "Mozambique"
+    },
+    {
+      "id": "q218$61FCBB6D-1C03-4A98-B0B8-413A9F954924",
+      "qid": "Q218",
+      "revision": 2570674138,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q218$61FCBB6D-1C03-4A98-B0B8-413A9F954924",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q218$89A11A43-A6E3-4D21-BCDC-2E77E42E5B07",
+      "qid": "Q218",
+      "revision": 2570674138,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q218$89A11A43-A6E3-4D21-BCDC-2E77E42E5B07",
+      "expected": "RO",
+      "qualifiers": {}
+    },
+    {
+      "id": "q218$9B781DC9-0736-48CE-9EF0-7D2C3E5A6498",
+      "qid": "Q218",
+      "revision": 2570674138,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q218$9B781DC9-0736-48CE-9EF0-7D2C3E5A6498",
+      "expected": "ROU",
+      "qualifiers": {}
+    },
+    {
+      "id": "q218$A97376F1-847C-4538-9B7E-B4DAB5DF032E",
+      "qid": "Q218",
+      "revision": 2570674138,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q218$A97376F1-847C-4538-9B7E-B4DAB5DF032E",
+      "expected": "642",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q218:label:en",
+      "qid": "Q218",
+      "revision": 2570674138,
+      "kind": "label",
+      "language": "en",
+      "expected": "Romania"
+    },
+    {
+      "id": "q212$5B70E04E-F40C-40A6-9989-70B289F74F3B",
+      "qid": "Q212",
+      "revision": 2568776241,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q212$5B70E04E-F40C-40A6-9989-70B289F74F3B",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q212$B2DDF74E-9BC1-4C1C-AB33-1E5FCD42B09C",
+      "qid": "Q212",
+      "revision": 2568776241,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q212$B2DDF74E-9BC1-4C1C-AB33-1E5FCD42B09C",
+      "expected": "UA",
+      "qualifiers": {}
+    },
+    {
+      "id": "q212$3DE8946A-EAF9-437D-98FB-24EA0A9FBD9F",
+      "qid": "Q212",
+      "revision": 2568776241,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q212$3DE8946A-EAF9-437D-98FB-24EA0A9FBD9F",
+      "expected": "UKR",
+      "qualifiers": {}
+    },
+    {
+      "id": "q212$A211BEA5-CFEE-4D26-984C-712FBD3184AA",
+      "qid": "Q212",
+      "revision": 2568776241,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q212$A211BEA5-CFEE-4D26-984C-712FBD3184AA",
+      "expected": "804",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q212:label:en",
+      "qid": "Q212",
+      "revision": 2568776241,
+      "kind": "label",
+      "language": "en",
+      "expected": "Ukraine"
+    },
+    {
+      "id": "q865$9504f664-4412-f2af-5248-f541a86cf196",
+      "qid": "Q865",
+      "revision": 2571372610,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q865$9504f664-4412-f2af-5248-f541a86cf196",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 48,
+        "id": "Q48"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q865$E790B2BE-550E-4B1B-82FF-58AF6FB3C0FD",
+      "qid": "Q865",
+      "revision": 2571372610,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q865$E790B2BE-550E-4B1B-82FF-58AF6FB3C0FD",
+      "expected": "TW",
+      "qualifiers": {}
+    },
+    {
+      "id": "q865$F9D2CA75-EEA5-473E-92E3-612BCFB6F6F5",
+      "qid": "Q865",
+      "revision": 2571372610,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q865$F9D2CA75-EEA5-473E-92E3-612BCFB6F6F5",
+      "expected": "TWN",
+      "qualifiers": {}
+    },
+    {
+      "id": "q865$E01DEE01-72EE-4A4D-ADC1-C25DC72016EC",
+      "qid": "Q865",
+      "revision": 2571372610,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q865$E01DEE01-72EE-4A4D-ADC1-C25DC72016EC",
+      "expected": "158",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q865:label:en",
+      "qid": "Q865",
+      "revision": 2571372610,
+      "kind": "label",
+      "language": "en",
+      "expected": "Taiwan"
+    },
+    {
+      "id": "q843$e56cd97d-4ada-a511-3cb0-9a8b7180a2d1",
+      "qid": "Q843",
+      "revision": 2569320522,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q843$e56cd97d-4ada-a511-3cb0-9a8b7180a2d1",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 48,
+        "id": "Q48"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q843$9EB3C51B-E39C-460E-A71D-87F60F3FB019",
+      "qid": "Q843",
+      "revision": 2569320522,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q843$9EB3C51B-E39C-460E-A71D-87F60F3FB019",
+      "expected": "PK",
+      "qualifiers": {
+        "P580": [
+          {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "8e1a2b26f19b222d45fbc7c6e46304cab2a49eb4",
+            "datavalue": {
+              "value": {
+                "time": "+2020-11-24T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ],
+        "P805": [
+          {
+            "snaktype": "value",
+            "property": "P805",
+            "hash": "d4d841a2ebee03bafe6c97dcb93b1f833ea3144a",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 843,
+                "id": "Q843"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          }
+        ]
+      }
+    },
+    {
+      "id": "q843$28A58292-6F9B-4505-A642-B363E77A85FB",
+      "qid": "Q843",
+      "revision": 2569320522,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q843$28A58292-6F9B-4505-A642-B363E77A85FB",
+      "expected": "PAK",
+      "qualifiers": {}
+    },
+    {
+      "id": "q843$F420F643-1962-486B-A81F-0BFF0731FB15",
+      "qid": "Q843",
+      "revision": 2569320522,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q843$F420F643-1962-486B-A81F-0BFF0731FB15",
+      "expected": "586",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q843:label:en",
+      "qid": "Q843",
+      "revision": 2569320522,
+      "kind": "label",
+      "language": "en",
+      "expected": "Pakistan"
+    },
+    {
+      "id": "Q334$823a6a8c-4dbd-3874-b6ea-2043a94709e5",
+      "qid": "Q334",
+      "revision": 2568775806,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "Q334$823a6a8c-4dbd-3874-b6ea-2043a94709e5",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 48,
+        "id": "Q48"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q334$811155F3-AE29-43CF-8723-14B9486FED36",
+      "qid": "Q334",
+      "revision": 2568775806,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q334$811155F3-AE29-43CF-8723-14B9486FED36",
+      "expected": "SG",
+      "qualifiers": {}
+    },
+    {
+      "id": "q334$B46F6273-3777-4D27-BC23-61BA38D9AC14",
+      "qid": "Q334",
+      "revision": 2568775806,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q334$B46F6273-3777-4D27-BC23-61BA38D9AC14",
+      "expected": "SGP",
+      "qualifiers": {}
+    },
+    {
+      "id": "q334$1C1AE95F-1C2B-4F24-9B2D-DAE13AA49631",
+      "qid": "Q334",
+      "revision": 2568775806,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q334$1C1AE95F-1C2B-4F24-9B2D-DAE13AA49631",
+      "expected": "702",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q334:label:en",
+      "qid": "Q334",
+      "revision": 2568775806,
+      "kind": "label",
+      "language": "en",
+      "expected": "Singapore"
+    },
+    {
+      "id": "q757$01c739f3-495b-d9c9-dfa0-70089cafc0ca",
+      "qid": "Q757",
+      "revision": 2564285413,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q757$01c739f3-495b-d9c9-dfa0-70089cafc0ca",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q757$AEB1B783-148C-45B5-B781-69B97607F727",
+      "qid": "Q757",
+      "revision": 2564285413,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q757$AEB1B783-148C-45B5-B781-69B97607F727",
+      "expected": "VC",
+      "qualifiers": {}
+    },
+    {
+      "id": "q757$DAC0A9CF-C547-4CDF-8636-1B2377955BE5",
+      "qid": "Q757",
+      "revision": 2564285413,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q757$DAC0A9CF-C547-4CDF-8636-1B2377955BE5",
+      "expected": "VCT",
+      "qualifiers": {}
+    },
+    {
+      "id": "q757$C85FB464-4266-4757-AD0E-DEE02C5A9C32",
+      "qid": "Q757",
+      "revision": 2564285413,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q757$C85FB464-4266-4757-AD0E-DEE02C5A9C32",
+      "expected": "670",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q757:label:en",
+      "qid": "Q757",
+      "revision": 2564285413,
+      "kind": "label",
+      "language": "en",
+      "expected": "Saint Vincent and the Grenadines"
+    },
+    {
+      "id": "q37$ca7c64b9-42a2-804d-adcd-12149c37af80",
+      "qid": "Q37",
+      "revision": 2562955089,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q37$ca7c64b9-42a2-804d-adcd-12149c37af80",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q37$80E4C4BB-8E3D-4D19-BB9C-C610F06C1FB1",
+      "qid": "Q37",
+      "revision": 2562955089,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q37$80E4C4BB-8E3D-4D19-BB9C-C610F06C1FB1",
+      "expected": "LT",
+      "qualifiers": {}
+    },
+    {
+      "id": "q37$1EB9428C-CED5-4655-A7B2-99ED8ED26C17",
+      "qid": "Q37",
+      "revision": 2562955089,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q37$1EB9428C-CED5-4655-A7B2-99ED8ED26C17",
+      "expected": "LTU",
+      "qualifiers": {}
+    },
+    {
+      "id": "q37$0F27C892-2CAC-4B7A-ADD8-05E57065BC6E",
+      "qid": "Q37",
+      "revision": 2562955089,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q37$0F27C892-2CAC-4B7A-ADD8-05E57065BC6E",
+      "expected": "440",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q37:label:en",
+      "qid": "Q37",
+      "revision": 2562955089,
+      "kind": "label",
+      "language": "en",
+      "expected": "Lithuania"
+    },
+    {
+      "id": "q869$409e96f5-4b7a-0a1a-70c4-d7e18ffa2c09",
+      "qid": "Q869",
+      "revision": 2568776102,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q869$409e96f5-4b7a-0a1a-70c4-d7e18ffa2c09",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 48,
+        "id": "Q48"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q869$5F8D2D2A-CCC3-4C3A-AF4B-A115897806B4",
+      "qid": "Q869",
+      "revision": 2568776102,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q869$5F8D2D2A-CCC3-4C3A-AF4B-A115897806B4",
+      "expected": "TH",
+      "qualifiers": {}
+    },
+    {
+      "id": "q869$EC40F3DE-AD65-4D21-8A4B-A8D517E708A2",
+      "qid": "Q869",
+      "revision": 2568776102,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q869$EC40F3DE-AD65-4D21-8A4B-A8D517E708A2",
+      "expected": "THA",
+      "qualifiers": {}
+    },
+    {
+      "id": "q869$3594BB4A-29FA-455A-852D-9C9A6F7F6D9B",
+      "qid": "Q869",
+      "revision": 2568776102,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q869$3594BB4A-29FA-455A-852D-9C9A6F7F6D9B",
+      "expected": "764",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q869:label:en",
+      "qid": "Q869",
+      "revision": 2568776102,
+      "kind": "label",
+      "language": "en",
+      "expected": "Thailand"
+    },
+    {
+      "id": "q215$FB80B6C5-7E6C-4540-B36A-046BC7AC3E0B",
+      "qid": "Q215",
+      "revision": 2569312825,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q215$FB80B6C5-7E6C-4540-B36A-046BC7AC3E0B",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q215$3A4776D1-290D-492C-8EA8-A516A55DF45E",
+      "qid": "Q215",
+      "revision": 2569312825,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q215$3A4776D1-290D-492C-8EA8-A516A55DF45E",
+      "expected": "SI",
+      "qualifiers": {}
+    },
+    {
+      "id": "q215$AD7FE32F-6803-4749-B134-3E0D3916C7C9",
+      "qid": "Q215",
+      "revision": 2569312825,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q215$AD7FE32F-6803-4749-B134-3E0D3916C7C9",
+      "expected": "SVN",
+      "qualifiers": {}
+    },
+    {
+      "id": "q215$88C6EFF1-A992-4177-A422-BA9D89C3A7A4",
+      "qid": "Q215",
+      "revision": 2569312825,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q215$88C6EFF1-A992-4177-A422-BA9D89C3A7A4",
+      "expected": "705",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q215:label:en",
+      "qid": "Q215",
+      "revision": 2569312825,
+      "kind": "label",
+      "language": "en",
+      "expected": "Slovenia"
+    },
+    {
+      "id": "q717$2ECF074A-100B-4A20-90F8-D595C3C4E4A6",
+      "qid": "Q717",
+      "revision": 2569315065,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q717$2ECF074A-100B-4A20-90F8-D595C3C4E4A6",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 18,
+        "id": "Q18"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q717$F5C700AE-F26E-4D5A-B773-3477F1C00669",
+      "qid": "Q717",
+      "revision": 2569315065,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q717$F5C700AE-F26E-4D5A-B773-3477F1C00669",
+      "expected": "VE",
+      "qualifiers": {}
+    },
+    {
+      "id": "q717$2D6BBA56-FFEF-49A6-A6FB-B838414D38BE",
+      "qid": "Q717",
+      "revision": 2569315065,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q717$2D6BBA56-FFEF-49A6-A6FB-B838414D38BE",
+      "expected": "VEN",
+      "qualifiers": {}
+    },
+    {
+      "id": "q717$C7391309-BA73-4FCB-8E75-5DFE3DA7868D",
+      "qid": "Q717",
+      "revision": 2569315065,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q717$C7391309-BA73-4FCB-8E75-5DFE3DA7868D",
+      "expected": "862",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q717:label:en",
+      "qid": "Q717",
+      "revision": 2569315065,
+      "kind": "label",
+      "language": "en",
+      "expected": "Venezuela"
+    },
+    {
+      "id": "q1033$E2316A33-7264-4782-9140-4DF313EAEEC2",
+      "qid": "Q1033",
+      "revision": 2569692357,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q1033$E2316A33-7264-4782-9140-4DF313EAEEC2",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q1033$37ADF889-217E-49AC-95CE-E81AA055C690",
+      "qid": "Q1033",
+      "revision": 2569692357,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q1033$37ADF889-217E-49AC-95CE-E81AA055C690",
+      "expected": "NG",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1033$5664432E-BEFC-419F-8A8D-455B983E3487",
+      "qid": "Q1033",
+      "revision": 2569692357,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q1033$5664432E-BEFC-419F-8A8D-455B983E3487",
+      "expected": "NGA",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1033$6403E551-BE08-4739-BA95-E9A621ADF511",
+      "qid": "Q1033",
+      "revision": 2569692357,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q1033$6403E551-BE08-4739-BA95-E9A621ADF511",
+      "expected": "566",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q1033:label:en",
+      "qid": "Q1033",
+      "revision": 2569692357,
+      "kind": "label",
+      "language": "en",
+      "expected": "Nigeria"
+    },
+    {
+      "id": "q114$B6F7FA84-E5DC-4041-94C5-D70400576D13",
+      "qid": "Q114",
+      "revision": 2571190890,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q114$B6F7FA84-E5DC-4041-94C5-D70400576D13",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q114$791EB029-CD5B-483A-903E-871B5E8E198C",
+      "qid": "Q114",
+      "revision": 2571190890,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q114$791EB029-CD5B-483A-903E-871B5E8E198C",
+      "expected": "KE",
+      "qualifiers": {}
+    },
+    {
+      "id": "q114$68078D5B-2C55-4DF4-9370-B05F6339B660",
+      "qid": "Q114",
+      "revision": 2571190890,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q114$68078D5B-2C55-4DF4-9370-B05F6339B660",
+      "expected": "KEN",
+      "qualifiers": {}
+    },
+    {
+      "id": "q114$B596A237-611D-4CC3-B38E-97447D09C71E",
+      "qid": "Q114",
+      "revision": 2571190890,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q114$B596A237-611D-4CC3-B38E-97447D09C71E",
+      "expected": "404",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q114:label:en",
+      "qid": "Q114",
+      "revision": 2571190890,
+      "kind": "label",
+      "language": "en",
+      "expected": "Kenya"
+    },
+    {
+      "id": "q916$6ADE155C-5FA0-4A05-9FC5-6FF2200A9CD1",
+      "qid": "Q916",
+      "revision": 2568121581,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q916$6ADE155C-5FA0-4A05-9FC5-6FF2200A9CD1",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q916$B239B5AE-2D43-4AD2-9A47-467C2EA6B397",
+      "qid": "Q916",
+      "revision": 2568121581,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q916$B239B5AE-2D43-4AD2-9A47-467C2EA6B397",
+      "expected": "AO",
+      "qualifiers": {}
+    },
+    {
+      "id": "q916$4BC05A03-9779-460D-89DC-A64BC815C331",
+      "qid": "Q916",
+      "revision": 2568121581,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q916$4BC05A03-9779-460D-89DC-A64BC815C331",
+      "expected": "AGO",
+      "qualifiers": {}
+    },
+    {
+      "id": "q916$774599D5-948D-4E58-933C-C256A1CE0811",
+      "qid": "Q916",
+      "revision": 2568121581,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q916$774599D5-948D-4E58-933C-C256A1CE0811",
+      "expected": "024",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q916:label:en",
+      "qid": "Q916",
+      "revision": 2568121581,
+      "kind": "label",
+      "language": "en",
+      "expected": "Angola"
+    },
+    {
+      "id": "q842$CABA0233-1172-4262-A580-BA4EA0C47404",
+      "qid": "Q842",
+      "revision": 2569313493,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q842$CABA0233-1172-4262-A580-BA4EA0C47404",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 48,
+        "id": "Q48"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q842$911E1A57-F979-424B-A76D-52B2F6026BF0",
+      "qid": "Q842",
+      "revision": 2569313493,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q842$911E1A57-F979-424B-A76D-52B2F6026BF0",
+      "expected": "OM",
+      "qualifiers": {}
+    },
+    {
+      "id": "q842$1EDD61B0-CD96-4572-A3E6-C00B2560A909",
+      "qid": "Q842",
+      "revision": 2569313493,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q842$1EDD61B0-CD96-4572-A3E6-C00B2560A909",
+      "expected": "OMN",
+      "qualifiers": {}
+    },
+    {
+      "id": "q842$B538B694-7A0F-4C40-9719-9B437E216075",
+      "qid": "Q842",
+      "revision": 2569313493,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q842$B538B694-7A0F-4C40-9719-9B437E216075",
+      "expected": "512",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q842:label:en",
+      "qid": "Q842",
+      "revision": 2569313493,
+      "kind": "label",
+      "language": "en",
+      "expected": "Oman"
+    },
+    {
+      "id": "q398$4FBDC317-F4E8-41CF-AC36-0540589D228C",
+      "qid": "Q398",
+      "revision": 2567717091,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q398$4FBDC317-F4E8-41CF-AC36-0540589D228C",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 48,
+        "id": "Q48"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q398$F7B56D66-26E6-4CD7-B902-B3A331C1A28B",
+      "qid": "Q398",
+      "revision": 2567717091,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q398$F7B56D66-26E6-4CD7-B902-B3A331C1A28B",
+      "expected": "BH",
+      "qualifiers": {}
+    },
+    {
+      "id": "q398$867262A0-9C12-4451-A5F0-3EBB31EA833B",
+      "qid": "Q398",
+      "revision": 2567717091,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q398$867262A0-9C12-4451-A5F0-3EBB31EA833B",
+      "expected": "BHR",
+      "qualifiers": {}
+    },
+    {
+      "id": "q398$E4712ADE-D247-431D-AEE5-1CEEEA0BA0C1",
+      "qid": "Q398",
+      "revision": 2567717091,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q398$E4712ADE-D247-431D-AEE5-1CEEEA0BA0C1",
+      "expected": "048",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q398:label:en",
+      "qid": "Q398",
+      "revision": 2567717091,
+      "kind": "label",
+      "language": "en",
+      "expected": "Bahrain"
+    },
+    {
+      "id": "Q697$7b8db3e2-4157-3c97-d3c5-bd52a26d3f0c",
+      "qid": "Q697",
+      "revision": 2570051730,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "Q697$7b8db3e2-4157-3c97-d3c5-bd52a26d3f0c",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 55643,
+        "id": "Q55643"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q697$88071E3C-AD50-48CC-8F93-3617C45B39A4",
+      "qid": "Q697",
+      "revision": 2570051730,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q697$88071E3C-AD50-48CC-8F93-3617C45B39A4",
+      "expected": "NR",
+      "qualifiers": {}
+    },
+    {
+      "id": "q697$26467130-BBAB-4CF1-9671-C1E272427E58",
+      "qid": "Q697",
+      "revision": 2570051730,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q697$26467130-BBAB-4CF1-9671-C1E272427E58",
+      "expected": "NRU",
+      "qualifiers": {}
+    },
+    {
+      "id": "q697$3532475D-AC15-47CA-B2C5-89ED07CBB69D",
+      "qid": "Q697",
+      "revision": 2570051730,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q697$3532475D-AC15-47CA-B2C5-89ED07CBB69D",
+      "expected": "520",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q697:label:en",
+      "qid": "Q697",
+      "revision": 2570051730,
+      "kind": "label",
+      "language": "en",
+      "expected": "Nauru"
+    },
+    {
+      "id": "q1019$2FAB88CE-B315-4A4E-AA26-2BEB5722D43F",
+      "qid": "Q1019",
+      "revision": 2568774893,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q1019$2FAB88CE-B315-4A4E-AA26-2BEB5722D43F",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q1019$4C637CAB-7BE5-4165-B34B-9CE21DC89212",
+      "qid": "Q1019",
+      "revision": 2568774893,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q1019$4C637CAB-7BE5-4165-B34B-9CE21DC89212",
+      "expected": "MG",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1019$4621056F-EAF5-444D-8592-0599019DDD51",
+      "qid": "Q1019",
+      "revision": 2568774893,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q1019$4621056F-EAF5-444D-8592-0599019DDD51",
+      "expected": "MDG",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1019$0975DE2E-A65C-4613-931D-CE40B09DAF3C",
+      "qid": "Q1019",
+      "revision": 2568774893,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q1019$0975DE2E-A65C-4613-931D-CE40B09DAF3C",
+      "expected": "450",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q1019:label:en",
+      "qid": "Q1019",
+      "revision": 2568774893,
+      "kind": "label",
+      "language": "en",
+      "expected": "Madagascar"
+    },
+    {
+      "id": "q1025$9ACBAE60-0D44-4440-A5E6-8928FB537BBA",
+      "qid": "Q1025",
+      "revision": 2571190722,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q1025$9ACBAE60-0D44-4440-A5E6-8928FB537BBA",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q1025$CC22C92F-9E31-4D34-B374-605725AE081B",
+      "qid": "Q1025",
+      "revision": 2571190722,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q1025$CC22C92F-9E31-4D34-B374-605725AE081B",
+      "expected": "MR",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1025$1E9EA604-C71A-450D-BFA3-C4E8640B6ED7",
+      "qid": "Q1025",
+      "revision": 2571190722,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q1025$1E9EA604-C71A-450D-BFA3-C4E8640B6ED7",
+      "expected": "MRT",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1025$5B1B212F-50A4-481A-823A-36BC4E6B8221",
+      "qid": "Q1025",
+      "revision": 2571190722,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q1025$5B1B212F-50A4-481A-823A-36BC4E6B8221",
+      "expected": "478",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q1025:label:en",
+      "qid": "Q1025",
+      "revision": 2571190722,
+      "kind": "label",
+      "language": "en",
+      "expected": "Mauritania"
+    },
+    {
+      "id": "q1011$0BE77550-D342-41CC-9A98-6F9DA98A2759",
+      "qid": "Q1011",
+      "revision": 2569328331,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q1011$0BE77550-D342-41CC-9A98-6F9DA98A2759",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q1011$9BEE7E3B-E52B-4286-B9A9-0A0CC364DD78",
+      "qid": "Q1011",
+      "revision": 2569328331,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q1011$9BEE7E3B-E52B-4286-B9A9-0A0CC364DD78",
+      "expected": "CV",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1011$3CF1ECEA-4A0E-4A79-A601-95C461376515",
+      "qid": "Q1011",
+      "revision": 2569328331,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q1011$3CF1ECEA-4A0E-4A79-A601-95C461376515",
+      "expected": "CPV",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1011$AB6916E7-DB90-4176-B0E7-2C9554986140",
+      "qid": "Q1011",
+      "revision": 2569328331,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q1011$AB6916E7-DB90-4176-B0E7-2C9554986140",
+      "expected": "132",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q1011:label:en",
+      "qid": "Q1011",
+      "revision": 2569328331,
+      "kind": "label",
+      "language": "en",
+      "expected": "Cape Verde"
+    },
+    {
+      "id": "Q1011:policy:name:Cabo Verde",
+      "qid": "Q1011",
+      "revision": 2569328331,
+      "kind": "label",
+      "language": "pt",
+      "expected": "Cabo Verde"
+    },
+    {
+      "id": "q754$9B9377F5-311B-4CEB-9508-D89D372C5850",
+      "qid": "Q754",
+      "revision": 2568776156,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q754$9B9377F5-311B-4CEB-9508-D89D372C5850",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q754$DF8FFDC8-F15B-473F-BFA8-36890FD886D7",
+      "qid": "Q754",
+      "revision": 2568776156,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q754$DF8FFDC8-F15B-473F-BFA8-36890FD886D7",
+      "expected": "TT",
+      "qualifiers": {}
+    },
+    {
+      "id": "q754$A2F822AF-F426-4C41-9F49-1128FEF8F3CE",
+      "qid": "Q754",
+      "revision": 2568776156,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q754$A2F822AF-F426-4C41-9F49-1128FEF8F3CE",
+      "expected": "TTO",
+      "qualifiers": {}
+    },
+    {
+      "id": "q754$B1D9AD8C-5D79-480B-B108-CD5F5CCCC32C",
+      "qid": "Q754",
+      "revision": 2568776156,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q754$B1D9AD8C-5D79-480B-B108-CD5F5CCCC32C",
+      "expected": "780",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q754:label:en",
+      "qid": "Q754",
+      "revision": 2568776156,
+      "kind": "label",
+      "language": "en",
+      "expected": "Trinidad and Tobago"
+    },
+    {
+      "id": "q1027$C44F50C3-142A-4349-91E9-EB26C8D1B5CB",
+      "qid": "Q1027",
+      "revision": 2571191775,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q1027$C44F50C3-142A-4349-91E9-EB26C8D1B5CB",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q1027$9E1ACE13-1B50-439F-9DE9-B11186A86441",
+      "qid": "Q1027",
+      "revision": 2571191775,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q1027$9E1ACE13-1B50-439F-9DE9-B11186A86441",
+      "expected": "MU",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1027$BA0708EF-F4EF-4E92-8560-A6DA409AB090",
+      "qid": "Q1027",
+      "revision": 2571191775,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q1027$BA0708EF-F4EF-4E92-8560-A6DA409AB090",
+      "expected": "MUS",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1027$CD8874BF-5AD7-47AC-8B16-F76C83F68B2A",
+      "qid": "Q1027",
+      "revision": 2571191775,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q1027$CD8874BF-5AD7-47AC-8B16-F76C83F68B2A",
+      "expected": "480",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q1027:label:en",
+      "qid": "Q1027",
+      "revision": 2571191775,
+      "kind": "label",
+      "language": "en",
+      "expected": "Mauritius"
+    },
+    {
+      "id": "q1009$8CDA6120-9749-4C4C-BF7E-66691BE7CE6B",
+      "qid": "Q1009",
+      "revision": 2568773800,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q1009$8CDA6120-9749-4C4C-BF7E-66691BE7CE6B",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q1009$D5F7DA06-78BB-4966-AF26-90764A6E305B",
+      "qid": "Q1009",
+      "revision": 2568773800,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q1009$D5F7DA06-78BB-4966-AF26-90764A6E305B",
+      "expected": "CM",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1009$1653F355-ED3B-472B-A96E-E4D9B61334F0",
+      "qid": "Q1009",
+      "revision": 2568773800,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q1009$1653F355-ED3B-472B-A96E-E4D9B61334F0",
+      "expected": "CMR",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1009$B0F87075-289D-40E8-BD96-B1BA8A4CEE0E",
+      "qid": "Q1009",
+      "revision": 2568773800,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q1009$B0F87075-289D-40E8-BD96-B1BA8A4CEE0E",
+      "expected": "120",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q1009:label:en",
+      "qid": "Q1009",
+      "revision": 2568773800,
+      "kind": "label",
+      "language": "en",
+      "expected": "Cameroon"
+    },
+    {
+      "id": "q1042$CFEA3865-A48D-4360-983A-5845109D6E9C",
+      "qid": "Q1042",
+      "revision": 2568775771,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q1042$CFEA3865-A48D-4360-983A-5845109D6E9C",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q1042$A3181B56-408D-4158-B7B9-14756C98B671",
+      "qid": "Q1042",
+      "revision": 2568775771,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q1042$A3181B56-408D-4158-B7B9-14756C98B671",
+      "expected": "SC",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1042$57BFEC3E-6BE2-4D0B-8008-477C35DBC51B",
+      "qid": "Q1042",
+      "revision": 2568775771,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q1042$57BFEC3E-6BE2-4D0B-8008-477C35DBC51B",
+      "expected": "SYC",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1042$E8FA4509-C95C-4FA4-A774-A9CF98636F89",
+      "qid": "Q1042",
+      "revision": 2568775771,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q1042$E8FA4509-C95C-4FA4-A774-A9CF98636F89",
+      "expected": "690",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q1042:label:en",
+      "qid": "Q1042",
+      "revision": 2568775771,
+      "kind": "label",
+      "language": "en",
+      "expected": "Seychelles"
+    },
+    {
+      "id": "q769$8ba2cfac-4b07-5279-54c2-737803682588",
+      "qid": "Q769",
+      "revision": 2571191095,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q769$8ba2cfac-4b07-5279-54c2-737803682588",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 49,
+        "id": "Q49"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q769$22671240-2620-4B21-A32B-9FDC4B1032AF",
+      "qid": "Q769",
+      "revision": 2571191095,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q769$22671240-2620-4B21-A32B-9FDC4B1032AF",
+      "expected": "GD",
+      "qualifiers": {}
+    },
+    {
+      "id": "q769$2A87A94F-1C6B-4A91-AD65-81CBB0E10F94",
+      "qid": "Q769",
+      "revision": 2571191095,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q769$2A87A94F-1C6B-4A91-AD65-81CBB0E10F94",
+      "expected": "GRD",
+      "qualifiers": {}
+    },
+    {
+      "id": "q769$358F0511-0F1B-48F8-8564-BB69F7BF4646",
+      "qid": "Q769",
+      "revision": 2571191095,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q769$358F0511-0F1B-48F8-8564-BB69F7BF4646",
+      "expected": "308",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q769:label:en",
+      "qid": "Q769",
+      "revision": 2571191095,
+      "kind": "label",
+      "language": "en",
+      "expected": "Grenada"
+    },
+    {
+      "id": "q189$6A72DFAE-C9D2-44ED-9F42-AA8CD351838A",
+      "qid": "Q189",
+      "revision": 2569305992,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q189$6A72DFAE-C9D2-44ED-9F42-AA8CD351838A",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q189$6C7AB2FC-9D8E-4991-A510-347D7F2E9B70",
+      "qid": "Q189",
+      "revision": 2569305992,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q189$6C7AB2FC-9D8E-4991-A510-347D7F2E9B70",
+      "expected": "IS",
+      "qualifiers": {}
+    },
+    {
+      "id": "q189$6722CBF7-46AF-46D4-B99F-EEF3317CD5EA",
+      "qid": "Q189",
+      "revision": 2569305992,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q189$6722CBF7-46AF-46D4-B99F-EEF3317CD5EA",
+      "expected": "ISL",
+      "qualifiers": {}
+    },
+    {
+      "id": "q189$60AAF3E9-57A6-440D-9750-7DEF31B5AFD7",
+      "qid": "Q189",
+      "revision": 2569305992,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q189$60AAF3E9-57A6-440D-9750-7DEF31B5AFD7",
+      "expected": "352",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q189:label:en",
+      "qid": "Q189",
+      "revision": 2569305992,
+      "kind": "label",
+      "language": "en",
+      "expected": "Iceland"
+    },
+    {
+      "id": "q1039$6ABD4FD1-F90C-45CA-863B-8D183EC45570",
+      "qid": "Q1039",
+      "revision": 2568775717,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q1039$6ABD4FD1-F90C-45CA-863B-8D183EC45570",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q1039$9FBFA181-BA81-45C1-A190-D2C2197A72CE",
+      "qid": "Q1039",
+      "revision": 2568775717,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q1039$9FBFA181-BA81-45C1-A190-D2C2197A72CE",
+      "expected": "ST",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1039$4D1A4EB4-F46D-4169-A1D2-E9B3E4C8C319",
+      "qid": "Q1039",
+      "revision": 2568775717,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q1039$4D1A4EB4-F46D-4169-A1D2-E9B3E4C8C319",
+      "expected": "STP",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1039$5579E605-5828-430A-8CBF-C251EAF443DD",
+      "qid": "Q1039",
+      "revision": 2568775717,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q1039$5579E605-5828-430A-8CBF-C251EAF443DD",
+      "expected": "678",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q1039:label:en",
+      "qid": "Q1039",
+      "revision": 2568775717,
+      "kind": "label",
+      "language": "en",
+      "expected": "São Tomé and Príncipe"
+    },
+    {
+      "id": "Q1039:alias:en:Sao Tome and Principe",
+      "qid": "Q1039",
+      "revision": 2568775717,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Sao Tome and Principe"
+    },
+    {
+      "id": "Q34497$d3739c54-40ad-b833-2a66-99a3e21e95b2",
+      "qid": "Q34497",
+      "revision": 2565388728,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "Q34497$d3739c54-40ad-b833-2a66-99a3e21e95b2",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "Q34497:label:en",
+      "qid": "Q34497",
+      "revision": 2565388728,
+      "kind": "label",
+      "language": "en",
+      "expected": "Saint Helena"
+    },
+    {
+      "id": "q117$210ADF36-E576-4AB4-84F7-9C3C29B98565",
+      "qid": "Q117",
+      "revision": 2568774309,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q117$210ADF36-E576-4AB4-84F7-9C3C29B98565",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q117$D57EF292-013C-454D-B7B4-F59AF694BD1C",
+      "qid": "Q117",
+      "revision": 2568774309,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q117$D57EF292-013C-454D-B7B4-F59AF694BD1C",
+      "expected": "GH",
+      "qualifiers": {}
+    },
+    {
+      "id": "q117$D57086C5-A882-4B50-B7D1-3D20E8DA8EDA",
+      "qid": "Q117",
+      "revision": 2568774309,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q117$D57086C5-A882-4B50-B7D1-3D20E8DA8EDA",
+      "expected": "GHA",
+      "qualifiers": {}
+    },
+    {
+      "id": "q117$0FEC0AFE-7A46-49FE-A22C-F6F3709360A8",
+      "qid": "Q117",
+      "revision": 2568774309,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q117$0FEC0AFE-7A46-49FE-A22C-F6F3709360A8",
+      "expected": "288",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q117:label:en",
+      "qid": "Q117",
+      "revision": 2568774309,
+      "kind": "label",
+      "language": "en",
+      "expected": "Ghana"
+    },
+    {
+      "id": "q1030$1C419F86-62AE-4ABA-8A5B-B98D8301B7DF",
+      "qid": "Q1030",
+      "revision": 2571151362,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q1030$1C419F86-62AE-4ABA-8A5B-B98D8301B7DF",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q1030$206822F6-736C-48F2-8587-FF5B18D3113D",
+      "qid": "Q1030",
+      "revision": 2571151362,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q1030$206822F6-736C-48F2-8587-FF5B18D3113D",
+      "expected": "NA",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1030$63EA350B-9565-40EC-9591-688E4EC5B866",
+      "qid": "Q1030",
+      "revision": 2571151362,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q1030$63EA350B-9565-40EC-9591-688E4EC5B866",
+      "expected": "NAM",
+      "qualifiers": {}
+    },
+    {
+      "id": "q1030$8E5E9C0C-FAA1-4C80-9D6B-4C3CF0E961BC",
+      "qid": "Q1030",
+      "revision": 2571151362,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q1030$8E5E9C0C-FAA1-4C80-9D6B-4C3CF0E961BC",
+      "expected": "516",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q1030:label:en",
+      "qid": "Q1030",
+      "revision": 2571151362,
+      "kind": "label",
+      "language": "en",
+      "expected": "Namibia"
+    },
+    {
+      "id": "Q29999$a990a5f3-415c-181e-b304-85736ca7648e",
+      "qid": "Q29999",
+      "revision": 2563993960,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "Q29999$a990a5f3-415c-181e-b304-85736ca7648e",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 46,
+        "id": "Q46"
+      },
+      "qualifiers": {
+        "P580": [
+          {
+            "snaktype": "value",
+            "property": "P580",
+            "hash": "b57f11ba3be2555edb8be7fef22fcd359e72e65e",
+            "datavalue": {
+              "value": {
+                "time": "+1813-11-20T00:00:00Z",
+                "timezone": 0,
+                "before": 0,
+                "after": 0,
+                "precision": 11,
+                "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+              },
+              "type": "time"
+            },
+            "datatype": "time"
+          }
+        ],
+        "P518": [
+          {
+            "snaktype": "value",
+            "property": "P518",
+            "hash": "dbc43a324c398b8d74fed03266a8c59f0f0f8270",
+            "datavalue": {
+              "value": {
+                "entity-type": "item",
+                "numeric-id": 2118709,
+                "id": "Q2118709"
+              },
+              "type": "wikibase-entityid"
+            },
+            "datatype": "wikibase-item"
+          }
+        ]
+      }
+    },
+    {
+      "id": "Q29999$aff4399d-4855-cd4e-2f6b-40970da21842",
+      "qid": "Q29999",
+      "revision": 2563993960,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "Q29999$aff4399d-4855-cd4e-2f6b-40970da21842",
+      "expected": "NL",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q29999$5fd81a30-4c2d-fcd3-9763-cfca696239bd",
+      "qid": "Q29999",
+      "revision": 2563993960,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "Q29999$5fd81a30-4c2d-fcd3-9763-cfca696239bd",
+      "expected": "NLD",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q29999$4310746f-4d31-447f-c814-888f3c899d33",
+      "qid": "Q29999",
+      "revision": 2563993960,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "Q29999$4310746f-4d31-447f-c814-888f3c899d33",
+      "expected": "528",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q29999:label:en",
+      "qid": "Q29999",
+      "revision": 2563993960,
+      "kind": "label",
+      "language": "en",
+      "expected": "Kingdom of the Netherlands"
+    },
+    {
+      "id": "Q29999:alias:en:Netherlands",
+      "qid": "Q29999",
+      "revision": 2563993960,
+      "kind": "alias",
+      "language": "en",
+      "expected": "Netherlands"
     }
   ]
 }

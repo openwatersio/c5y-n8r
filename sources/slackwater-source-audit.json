@@ -1,0 +1,1994 @@
+{
+  "sourceCounts": {
+    "entities": 11,
+    "assignments": 119,
+    "evidence": 136
+  },
+  "inventoryRevision": "f9c3d42c066efe87e606f8c09673fb70cff2b2cf",
+  "snapshotManifestDigest": "f8f520b4d947894dc26277905ee32e5548f39a832082ab3df6d8d6fd25c4fbb7",
+  "verificationStatus": "pending",
+  "summary": {
+    "inputs": 129,
+    "records": 8728,
+    "sourceBackedInputs": 4,
+    "sourceBackedRecords": 174,
+    "verifiedInputs": 0
+  },
+  "required": [
+    {
+      "input": "Denmark",
+      "records": 177,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Faroe Islands",
+      "records": 11,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Greenland",
+      "records": 86,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Japan",
+      "records": 337,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Norway",
+      "records": 99,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "New Zealand",
+      "records": 101,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "United States",
+      "records": 5132,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Guam",
+      "records": 2,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Northern Mariana Islands",
+      "records": 5,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "French Polynesia",
+      "records": 8,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "American Samoa",
+      "records": 8,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Samoa",
+      "records": 6,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Kiribati",
+      "records": 20,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Marshall Islands",
+      "records": 24,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Federated States of Micronesia",
+      "records": 24,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Palau",
+      "records": 7,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Fiji",
+      "records": 15,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "British Indian Ocean Territory",
+      "records": 1,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Bermuda",
+      "records": 3,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Indonesia",
+      "records": 37,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Canada",
+      "records": 326,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Mexico",
+      "records": 144,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "El Salvador",
+      "records": 9,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Honduras",
+      "records": 9,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Nicaragua",
+      "records": 7,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Costa Rica",
+      "records": 16,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "The Bahamas",
+      "records": 20,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Virgin Islands",
+      "records": 26,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Puerto Rico",
+      "records": 45,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Dominican Republic",
+      "records": 11,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Antigua and Barbuda",
+      "records": 1,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Panama",
+      "records": 26,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Ecuador",
+      "records": 25,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Cuba",
+      "records": 29,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Turks and Caicos Islands",
+      "records": 1,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Jamaica",
+      "records": 6,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Cayman Islands",
+      "records": 1,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Haiti",
+      "records": 5,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Saint Barthélemy",
+      "records": 1,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Guadeloupe",
+      "records": 1,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Dominica",
+      "records": 2,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Saint Lucia",
+      "records": 2,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Belize",
+      "records": 3,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Guatemala",
+      "records": 7,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Chile",
+      "records": 25,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Cook Islands",
+      "records": 7,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Tokelau",
+      "records": 1,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Vanuatu",
+      "records": 5,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Tonga",
+      "records": 5,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Netherlands",
+      "records": 254,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "United Kingdom",
+      "records": 151,
+      "candidateEntity": "Q145",
+      "functionalStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2569133680,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
+      "snapshotSha256": "68491a3f03cefc682536c8e32456fec8b5533965e99fac22ad4e4745e9660341",
+      "nameEvidence": [
+        "Q145:label:en"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q145$638D9E2A-227E-4040-851C-457AFCEBFFF7",
+          "value": "GB",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Cote d'Ivoire",
+      "records": 1,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Yemen",
+      "records": 2,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Greece",
+      "records": 16,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "France",
+      "records": 272,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Myanmar (Burma)",
+      "records": 4,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Australia",
+      "records": 165,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Spain",
+      "records": 86,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Egypt",
+      "records": 3,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Niue",
+      "records": 2,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Papua New Guinea",
+      "records": 12,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Germany",
+      "records": 190,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Italy",
+      "records": 75,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Portugal",
+      "records": 20,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Turkiye",
+      "records": 17,
+      "candidateEntity": "Q43",
+      "functionalStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2568776192,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q43&oldid=2568776192",
+      "snapshotSha256": "45b31c143b3270b9b0c096b829004a0a0c38ad29e2824fe99e6b5fc24e7c0371",
+      "nameEvidence": [
+        "Q43:policy:name:Turkiye"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q43$8E2552E4-2A17-4D8C-9D77-CDF56CFBF263",
+          "value": "TR",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Ireland",
+      "records": 64,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Sweden",
+      "records": 142,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Croatia",
+      "records": 2,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Bulgaria",
+      "records": 6,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "China",
+      "records": 14,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Brazil",
+      "records": 33,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Malaysia",
+      "records": 18,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Belgium",
+      "records": 6,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Barbados",
+      "records": 4,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Colombia",
+      "records": 8,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Argentina",
+      "records": 15,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Curaçao",
+      "records": 3,
+      "candidateEntity": "Q25279",
+      "functionalStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2568773983,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
+      "snapshotSha256": "85041a1de9989e330bb147e9de0363fbad050238116adc0f8d84b3225b02c014",
+      "nameEvidence": [
+        "Q25279:label:en"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q25279$34DAD74E-9FEA-4AC6-840E-4A8C84406C59",
+          "value": "CW",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Peru",
+      "records": 17,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "South Africa",
+      "records": 23,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Philippines",
+      "records": 16,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Iran",
+      "records": 3,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Bangladesh",
+      "records": 8,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "India",
+      "records": 4,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Sri Lanka",
+      "records": 4,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Senegal",
+      "records": 4,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Tanzania",
+      "records": 3,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Poland",
+      "records": 5,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Latvia",
+      "records": 9,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Finland",
+      "records": 28,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Djibouti",
+      "records": 2,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Antarctica",
+      "records": 7,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Estonia",
+      "records": 21,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Tuvalu",
+      "records": 4,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Maldives",
+      "records": 8,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Russia",
+      "records": 5,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Vietnam",
+      "records": 7,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Hong Kong",
+      "records": 3,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Solomon Islands",
+      "records": 4,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Mozambique",
+      "records": 6,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Romania",
+      "records": 2,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Ukraine",
+      "records": 2,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Taiwan",
+      "records": 2,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Pakistan",
+      "records": 3,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Singapore",
+      "records": 4,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Saint Vincent and the Grenadines",
+      "records": 1,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Lithuania",
+      "records": 1,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Thailand",
+      "records": 4,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Slovenia",
+      "records": 2,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Venezuela",
+      "records": 1,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Nigeria",
+      "records": 2,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Kenya",
+      "records": 5,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Angola",
+      "records": 3,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Oman",
+      "records": 7,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Bahrain",
+      "records": 1,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Nauru",
+      "records": 4,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Madagascar",
+      "records": 1,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Mauritania",
+      "records": 2,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Cabo Verde",
+      "records": 3,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Trinidad and Tobago",
+      "records": 2,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Republic of the Congo",
+      "records": 3,
+      "candidateEntity": "Q971",
+      "functionalStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2568810694,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q971&oldid=2568810694",
+      "snapshotSha256": "58d9e69ca5c15d7b66739bec7d4984fd16b4f8e0e5f82eb443c9fe90d203d24a",
+      "nameEvidence": [
+        "Q971:label:en"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q971$3B127E91-487A-4AF7-82B3-67C4B761DEF2",
+          "value": "CG",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Mauritius",
+      "records": 6,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Cameroon",
+      "records": 2,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Seychelles",
+      "records": 5,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Grenada",
+      "records": 2,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Iceland",
+      "records": 3,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Sao Tome and Principe",
+      "records": 2,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Saint Helena",
+      "records": 3,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Ghana",
+      "records": 3,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    },
+    {
+      "input": "Namibia",
+      "records": 2,
+      "functionalStatus": "missing-source-mapping",
+      "verificationStatus": "pending",
+      "nameEvidence": [],
+      "codeClaims": [],
+      "blockers": [
+        "No source-backed candidate mapping; discover and review the entity before fetching",
+        "Exact spelling absent from admitted source labels and aliases",
+        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives",
+        "Name evidence requires cited statement or independently reviewed name source",
+        "Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed"
+      ]
+    }
+  ]
+}

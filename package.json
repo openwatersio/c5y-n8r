@@ -1,6 +1,6 @@
 {
   "name": "@openwaters/c5y-n8r",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "type": "module",
   "license": "MIT",
@@ -24,8 +24,9 @@
     "benchmark": "node --import tsx scripts/benchmark.ts",
     "evidence": "node --import tsx scripts/check-evidence.ts",
     "check": "npm run typecheck && npm test",
-    "build:reader": "tsc -p tsconfig.build.json",
-    "prepare": "npm run build:reader"
+    "build:reader": "node -e \"require('node:fs').rmSync('dist', { recursive: true, force: true })\" && tsc -p tsconfig.build.json",
+    "prepare": "npm run build:reader",
+    "distribution": "node scripts/pack-distribution.mjs"
   },
   "dependencies": {
     "flatbuffers": "25.9.23"
@@ -47,9 +48,9 @@
     "DATA_LICENSE.md",
     "LICENSE",
     "README.md",
-    "sources/licenses/country-code-lookup-MIT.txt",
     "sources/reviewed-overrides.json",
     "sources/review-approvals.json",
-    "sources/override-activation.json"
+    "sources/override-activation.json",
+    "sources/licenses"
   ]
 }

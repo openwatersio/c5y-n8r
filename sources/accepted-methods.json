@@ -1,0 +1,1066 @@
+{
+  "schemaVersion": 1,
+  "cases": [
+    {
+      "operation": "convert",
+      "from": "name",
+      "to": "iso-alpha2",
+      "input": "Turkey",
+      "result": {
+        "source": {
+          "preferred": {
+            "id": "Q43",
+            "name": "Turkey",
+            "continent": "Asia",
+            "namespace": "name",
+            "value": "Turkey",
+            "matchedBy": "label",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "Q43:label:en"
+            ],
+            "successors": [],
+            "applicability": "active",
+            "tentative": false
+          },
+          "candidates": [
+            {
+              "id": "Q43",
+              "name": "Turkey",
+              "continent": "Asia",
+              "namespace": "name",
+              "value": "Turkey",
+              "matchedBy": "label",
+              "temporalReviewed": false,
+              "retiredAtDay": 2147483647,
+              "evidence": [
+                "Q43:label:en"
+              ],
+              "successors": [],
+              "applicability": "active",
+              "tentative": false
+            }
+          ],
+          "selection": "latest",
+          "temporalAmbiguity": false,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        },
+        "target": {
+          "preferred": {
+            "id": "Q43",
+            "name": "Turkey",
+            "continent": "Asia",
+            "namespace": "iso-alpha2",
+            "value": "TR",
+            "matchedBy": "iso-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "q43$8E2552E4-2A17-4D8C-9D77-CDF56CFBF263"
+            ],
+            "successors": [],
+            "applicability": "uncertain",
+            "tentative": true
+          },
+          "candidates": [
+            {
+              "id": "Q43",
+              "name": "Turkey",
+              "continent": "Asia",
+              "namespace": "iso-alpha2",
+              "value": "TR",
+              "matchedBy": "iso-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 2147483647,
+              "evidence": [
+                "q43$8E2552E4-2A17-4D8C-9D77-CDF56CFBF263"
+              ],
+              "successors": [],
+              "applicability": "uncertain",
+              "tentative": true
+            }
+          ],
+          "selection": "latest",
+          "temporalAmbiguity": true,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        }
+      }
+    },
+    {
+      "operation": "convert",
+      "from": "iso-alpha3",
+      "to": "iso-alpha2",
+      "input": "TUR",
+      "result": {
+        "source": {
+          "preferred": {
+            "id": "Q43",
+            "name": "Turkey",
+            "continent": "Asia",
+            "namespace": "iso-alpha3",
+            "value": "TUR",
+            "matchedBy": "iso-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "q43$9BB2620D-BD47-4973-AF4E-1C368C0DF3F4"
+            ],
+            "successors": [],
+            "applicability": "uncertain",
+            "tentative": true
+          },
+          "candidates": [
+            {
+              "id": "Q43",
+              "name": "Turkey",
+              "continent": "Asia",
+              "namespace": "iso-alpha3",
+              "value": "TUR",
+              "matchedBy": "iso-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 2147483647,
+              "evidence": [
+                "q43$9BB2620D-BD47-4973-AF4E-1C368C0DF3F4"
+              ],
+              "successors": [],
+              "applicability": "uncertain",
+              "tentative": true
+            }
+          ],
+          "selection": "latest",
+          "temporalAmbiguity": true,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        },
+        "target": {
+          "preferred": {
+            "id": "Q43",
+            "name": "Turkey",
+            "continent": "Asia",
+            "namespace": "iso-alpha2",
+            "value": "TR",
+            "matchedBy": "iso-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "q43$8E2552E4-2A17-4D8C-9D77-CDF56CFBF263"
+            ],
+            "successors": [],
+            "applicability": "uncertain",
+            "tentative": true
+          },
+          "candidates": [
+            {
+              "id": "Q43",
+              "name": "Turkey",
+              "continent": "Asia",
+              "namespace": "iso-alpha2",
+              "value": "TR",
+              "matchedBy": "iso-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 2147483647,
+              "evidence": [
+                "q43$8E2552E4-2A17-4D8C-9D77-CDF56CFBF263"
+              ],
+              "successors": [],
+              "applicability": "uncertain",
+              "tentative": true
+            }
+          ],
+          "selection": "latest",
+          "temporalAmbiguity": true,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        }
+      }
+    },
+    {
+      "operation": "convert",
+      "from": "iso-alpha2",
+      "to": "iso-alpha3",
+      "input": "TR",
+      "result": {
+        "source": {
+          "preferred": {
+            "id": "Q43",
+            "name": "Turkey",
+            "continent": "Asia",
+            "namespace": "iso-alpha2",
+            "value": "TR",
+            "matchedBy": "iso-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "q43$8E2552E4-2A17-4D8C-9D77-CDF56CFBF263"
+            ],
+            "successors": [],
+            "applicability": "uncertain",
+            "tentative": true
+          },
+          "candidates": [
+            {
+              "id": "Q43",
+              "name": "Turkey",
+              "continent": "Asia",
+              "namespace": "iso-alpha2",
+              "value": "TR",
+              "matchedBy": "iso-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 2147483647,
+              "evidence": [
+                "q43$8E2552E4-2A17-4D8C-9D77-CDF56CFBF263"
+              ],
+              "successors": [],
+              "applicability": "uncertain",
+              "tentative": true
+            }
+          ],
+          "selection": "latest",
+          "temporalAmbiguity": true,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        },
+        "target": {
+          "preferred": {
+            "id": "Q43",
+            "name": "Turkey",
+            "continent": "Asia",
+            "namespace": "iso-alpha3",
+            "value": "TUR",
+            "matchedBy": "iso-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "q43$9BB2620D-BD47-4973-AF4E-1C368C0DF3F4"
+            ],
+            "successors": [],
+            "applicability": "uncertain",
+            "tentative": true
+          },
+          "candidates": [
+            {
+              "id": "Q43",
+              "name": "Turkey",
+              "continent": "Asia",
+              "namespace": "iso-alpha3",
+              "value": "TUR",
+              "matchedBy": "iso-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 2147483647,
+              "evidence": [
+                "q43$9BB2620D-BD47-4973-AF4E-1C368C0DF3F4"
+              ],
+              "successors": [],
+              "applicability": "uncertain",
+              "tentative": true
+            }
+          ],
+          "selection": "latest",
+          "temporalAmbiguity": true,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        }
+      }
+    },
+    {
+      "operation": "convert",
+      "from": "name",
+      "to": "iso-alpha2",
+      "input": "Congo",
+      "result": {
+        "source": {
+          "preferred": null,
+          "candidates": [
+            {
+              "id": "Q971",
+              "name": "Republic of the Congo",
+              "continent": "Africa",
+              "namespace": "name",
+              "value": "Congo",
+              "matchedBy": "policy-local-policy",
+              "temporalReviewed": false,
+              "retiredAtDay": 2147483647,
+              "evidence": [
+                "Q971:policy:name:Congo"
+              ],
+              "successors": [],
+              "applicability": "active",
+              "tentative": false
+            },
+            {
+              "id": "Q974",
+              "name": "Democratic Republic of the Congo",
+              "continent": "Africa",
+              "namespace": "name",
+              "value": "Congo",
+              "matchedBy": "policy-local-policy",
+              "temporalReviewed": false,
+              "retiredAtDay": 2147483647,
+              "evidence": [
+                "Q974:policy:name:Congo"
+              ],
+              "successors": [],
+              "applicability": "active",
+              "tentative": false
+            }
+          ],
+          "selection": "ambiguous",
+          "temporalAmbiguity": false,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        },
+        "target": {
+          "preferred": null,
+          "candidates": [
+            {
+              "id": "Q971",
+              "name": "Republic of the Congo",
+              "continent": "Africa",
+              "namespace": "iso-alpha2",
+              "value": "CG",
+              "matchedBy": "iso-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 2147483647,
+              "evidence": [
+                "q971$3B127E91-487A-4AF7-82B3-67C4B761DEF2"
+              ],
+              "successors": [],
+              "applicability": "uncertain",
+              "tentative": true
+            },
+            {
+              "id": "Q974",
+              "name": "Democratic Republic of the Congo",
+              "continent": "Africa",
+              "namespace": "iso-alpha2",
+              "value": "CD",
+              "matchedBy": "iso-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 2147483647,
+              "evidence": [
+                "q974$7029C629-44ED-4F26-92F9-EFCB20AFD6A0"
+              ],
+              "successors": [],
+              "applicability": "uncertain",
+              "tentative": true
+            }
+          ],
+          "selection": "ambiguous",
+          "temporalAmbiguity": true,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        }
+      }
+    },
+    {
+      "operation": "convert",
+      "from": "iso-alpha2",
+      "to": "iso-alpha3",
+      "input": "AN",
+      "result": {
+        "source": {
+          "preferred": {
+            "id": "Q25227",
+            "name": "Netherlands Antilles",
+            "continent": "North America",
+            "namespace": "iso-alpha2",
+            "value": "AN",
+            "matchedBy": "historical-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 14893,
+            "evidence": [
+              "Q25227$3E2A11CA-27E5-458E-A28B-07D47A78948D"
+            ],
+            "successors": [
+              "Q25279",
+              "Q26273",
+              "Q27561"
+            ],
+            "applicability": "retired",
+            "tentative": false
+          },
+          "candidates": [
+            {
+              "id": "Q25227",
+              "name": "Netherlands Antilles",
+              "continent": "North America",
+              "namespace": "iso-alpha2",
+              "value": "AN",
+              "matchedBy": "historical-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 14893,
+              "evidence": [
+                "Q25227$3E2A11CA-27E5-458E-A28B-07D47A78948D"
+              ],
+              "successors": [
+                "Q25279",
+                "Q26273",
+                "Q27561"
+              ],
+              "applicability": "retired",
+              "tentative": false
+            }
+          ],
+          "selection": "latest",
+          "temporalAmbiguity": false,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        },
+        "target": {
+          "preferred": {
+            "id": "Q25227",
+            "name": "Netherlands Antilles",
+            "continent": "North America",
+            "namespace": "iso-alpha3",
+            "value": "ANT",
+            "matchedBy": "historical-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 14893,
+            "evidence": [
+              "Q25227$094621ff-4c27-b245-ab60-da8ab6517a23"
+            ],
+            "successors": [
+              "Q25279",
+              "Q26273",
+              "Q27561"
+            ],
+            "applicability": "retired",
+            "tentative": false
+          },
+          "candidates": [
+            {
+              "id": "Q25227",
+              "name": "Netherlands Antilles",
+              "continent": "North America",
+              "namespace": "iso-alpha3",
+              "value": "ANT",
+              "matchedBy": "historical-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 14893,
+              "evidence": [
+                "Q25227$094621ff-4c27-b245-ab60-da8ab6517a23"
+              ],
+              "successors": [
+                "Q25279",
+                "Q26273",
+                "Q27561"
+              ],
+              "applicability": "retired",
+              "tentative": false
+            }
+          ],
+          "selection": "latest",
+          "temporalAmbiguity": false,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        }
+      }
+    },
+    {
+      "operation": "convert",
+      "from": "iso-alpha2",
+      "to": "iso-alpha3",
+      "input": "CS",
+      "date": "1990-01-01",
+      "result": {
+        "source": {
+          "preferred": {
+            "id": "Q33946",
+            "name": "Czechoslovakia",
+            "continent": "Europe",
+            "namespace": "iso-alpha2",
+            "value": "CS",
+            "matchedBy": "withdrawn-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 8401,
+            "evidence": [
+              "Q33946$83d631a6-4dd9-1b66-e6cb-b4c33d4836ab"
+            ],
+            "successors": [],
+            "applicability": "active",
+            "tentative": false
+          },
+          "candidates": [
+            {
+              "id": "Q33946",
+              "name": "Czechoslovakia",
+              "continent": "Europe",
+              "namespace": "iso-alpha2",
+              "value": "CS",
+              "matchedBy": "withdrawn-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 8401,
+              "evidence": [
+                "Q33946$83d631a6-4dd9-1b66-e6cb-b4c33d4836ab"
+              ],
+              "successors": [],
+              "applicability": "active",
+              "tentative": false
+            },
+            {
+              "id": "Q37024",
+              "name": "Serbia and Montenegro",
+              "continent": "Europe",
+              "namespace": "iso-alpha2",
+              "value": "CS",
+              "matchedBy": "withdrawn-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 13304,
+              "evidence": [
+                "Q37024$1E270954-8EF3-4C59-A2E5-544077150937"
+              ],
+              "successors": [],
+              "applicability": "outside-date",
+              "tentative": false
+            }
+          ],
+          "selection": "at-date",
+          "temporalAmbiguity": true,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        },
+        "target": {
+          "preferred": {
+            "id": "Q33946",
+            "name": "Czechoslovakia",
+            "continent": "Europe",
+            "namespace": "iso-alpha3",
+            "value": "CSK",
+            "matchedBy": "historical-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 8401,
+            "evidence": [
+              "Q33946$c77605ef-41d9-a25e-8086-0a3fc46e7e15"
+            ],
+            "successors": [],
+            "applicability": "active",
+            "tentative": false
+          },
+          "candidates": [
+            {
+              "id": "Q33946",
+              "name": "Czechoslovakia",
+              "continent": "Europe",
+              "namespace": "iso-alpha3",
+              "value": "CSK",
+              "matchedBy": "historical-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 8401,
+              "evidence": [
+                "Q33946$c77605ef-41d9-a25e-8086-0a3fc46e7e15"
+              ],
+              "successors": [],
+              "applicability": "active",
+              "tentative": false
+            },
+            {
+              "id": "Q37024",
+              "name": "Serbia and Montenegro",
+              "continent": "Europe",
+              "namespace": "iso-alpha3",
+              "value": "SCG",
+              "matchedBy": "historical-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 13304,
+              "evidence": [
+                "Q37024$4fb9a7e1-4463-b926-7a24-fd19b2d3b9b4"
+              ],
+              "successors": [],
+              "applicability": "outside-date",
+              "tentative": false
+            }
+          ],
+          "selection": "at-date",
+          "temporalAmbiguity": true,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        }
+      }
+    },
+    {
+      "operation": "convert",
+      "from": "iso-alpha2",
+      "to": "iso-alpha3",
+      "input": "CS",
+      "date": "2005-01-01",
+      "result": {
+        "source": {
+          "preferred": {
+            "id": "Q37024",
+            "name": "Serbia and Montenegro",
+            "continent": "Europe",
+            "namespace": "iso-alpha2",
+            "value": "CS",
+            "matchedBy": "withdrawn-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 13304,
+            "evidence": [
+              "Q37024$1E270954-8EF3-4C59-A2E5-544077150937"
+            ],
+            "successors": [],
+            "applicability": "active",
+            "tentative": false
+          },
+          "candidates": [
+            {
+              "id": "Q33946",
+              "name": "Czechoslovakia",
+              "continent": "Europe",
+              "namespace": "iso-alpha2",
+              "value": "CS",
+              "matchedBy": "withdrawn-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 8401,
+              "evidence": [
+                "Q33946$83d631a6-4dd9-1b66-e6cb-b4c33d4836ab"
+              ],
+              "successors": [],
+              "applicability": "outside-date",
+              "tentative": false
+            },
+            {
+              "id": "Q37024",
+              "name": "Serbia and Montenegro",
+              "continent": "Europe",
+              "namespace": "iso-alpha2",
+              "value": "CS",
+              "matchedBy": "withdrawn-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 13304,
+              "evidence": [
+                "Q37024$1E270954-8EF3-4C59-A2E5-544077150937"
+              ],
+              "successors": [],
+              "applicability": "active",
+              "tentative": false
+            }
+          ],
+          "selection": "at-date",
+          "temporalAmbiguity": true,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        },
+        "target": {
+          "preferred": {
+            "id": "Q37024",
+            "name": "Serbia and Montenegro",
+            "continent": "Europe",
+            "namespace": "iso-alpha3",
+            "value": "SCG",
+            "matchedBy": "historical-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 13304,
+            "evidence": [
+              "Q37024$4fb9a7e1-4463-b926-7a24-fd19b2d3b9b4"
+            ],
+            "successors": [],
+            "applicability": "active",
+            "tentative": false
+          },
+          "candidates": [
+            {
+              "id": "Q33946",
+              "name": "Czechoslovakia",
+              "continent": "Europe",
+              "namespace": "iso-alpha3",
+              "value": "CSK",
+              "matchedBy": "historical-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 8401,
+              "evidence": [
+                "Q33946$c77605ef-41d9-a25e-8086-0a3fc46e7e15"
+              ],
+              "successors": [],
+              "applicability": "outside-date",
+              "tentative": false
+            },
+            {
+              "id": "Q37024",
+              "name": "Serbia and Montenegro",
+              "continent": "Europe",
+              "namespace": "iso-alpha3",
+              "value": "SCG",
+              "matchedBy": "historical-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 13304,
+              "evidence": [
+                "Q37024$4fb9a7e1-4463-b926-7a24-fd19b2d3b9b4"
+              ],
+              "successors": [],
+              "applicability": "active",
+              "tentative": false
+            }
+          ],
+          "selection": "at-date",
+          "temporalAmbiguity": true,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        }
+      }
+    },
+    {
+      "operation": "convert",
+      "from": "name",
+      "to": "iso-alpha2",
+      "input": "Turkey",
+      "date": "1985-01-01",
+      "result": {
+        "source": {
+          "preferred": null,
+          "candidates": [
+            {
+              "id": "Q43",
+              "name": "Turkey",
+              "continent": "Asia",
+              "namespace": "name",
+              "value": "Turkey",
+              "matchedBy": "label",
+              "temporalReviewed": false,
+              "retiredAtDay": 2147483647,
+              "evidence": [
+                "Q43:label:en"
+              ],
+              "successors": [],
+              "applicability": "uncertain",
+              "tentative": false
+            }
+          ],
+          "selection": "uncertain",
+          "temporalAmbiguity": true,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        },
+        "target": {
+          "preferred": null,
+          "candidates": [
+            {
+              "id": "Q43",
+              "name": "Turkey",
+              "continent": "Asia",
+              "namespace": "iso-alpha2",
+              "value": "TR",
+              "matchedBy": "iso-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 2147483647,
+              "evidence": [
+                "q43$8E2552E4-2A17-4D8C-9D77-CDF56CFBF263"
+              ],
+              "successors": [],
+              "applicability": "uncertain",
+              "tentative": true
+            }
+          ],
+          "selection": "uncertain",
+          "temporalAmbiguity": true,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        }
+      }
+    },
+    {
+      "operation": "convert",
+      "from": "iso-alpha2",
+      "to": "iso-alpha3",
+      "input": "TR",
+      "date": "1970-01-01",
+      "result": {
+        "source": {
+          "preferred": null,
+          "candidates": [
+            {
+              "id": "Q43",
+              "name": "Turkey",
+              "continent": "Asia",
+              "namespace": "iso-alpha2",
+              "value": "TR",
+              "matchedBy": "iso-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 2147483647,
+              "evidence": [
+                "q43$8E2552E4-2A17-4D8C-9D77-CDF56CFBF263"
+              ],
+              "successors": [],
+              "applicability": "uncertain",
+              "tentative": true
+            }
+          ],
+          "selection": "uncertain",
+          "temporalAmbiguity": true,
+          "coverage": "outside-coverage",
+          "evidenceStatus": "unreviewed-spike"
+        },
+        "target": {
+          "preferred": null,
+          "candidates": [
+            {
+              "id": "Q43",
+              "name": "Turkey",
+              "continent": "Asia",
+              "namespace": "iso-alpha3",
+              "value": "TUR",
+              "matchedBy": "iso-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 2147483647,
+              "evidence": [
+                "q43$9BB2620D-BD47-4973-AF4E-1C368C0DF3F4"
+              ],
+              "successors": [],
+              "applicability": "uncertain",
+              "tentative": true
+            }
+          ],
+          "selection": "uncertain",
+          "temporalAmbiguity": true,
+          "coverage": "outside-coverage",
+          "evidenceStatus": "unreviewed-spike"
+        }
+      }
+    },
+    {
+      "operation": "convert",
+      "from": "name",
+      "to": "iso-alpha2",
+      "input": "unrecorded",
+      "result": {
+        "source": {
+          "preferred": null,
+          "candidates": [],
+          "selection": "none",
+          "temporalAmbiguity": false,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        },
+        "target": {
+          "preferred": null,
+          "candidates": [],
+          "selection": "none",
+          "temporalAmbiguity": false,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        }
+      }
+    },
+    {
+      "operation": "assignments",
+      "input": "Q43",
+      "namespace": "iso-alpha2",
+      "result": {
+        "preferred": {
+          "id": "Q43",
+          "name": "Turkey",
+          "continent": "Asia",
+          "namespace": "iso-alpha2",
+          "value": "TR",
+          "matchedBy": "iso-code",
+          "temporalReviewed": false,
+          "retiredAtDay": 2147483647,
+          "evidence": [
+            "q43$8E2552E4-2A17-4D8C-9D77-CDF56CFBF263"
+          ],
+          "successors": [],
+          "applicability": "uncertain",
+          "tentative": true
+        },
+        "candidates": [
+          {
+            "id": "Q43",
+            "name": "Turkey",
+            "continent": "Asia",
+            "namespace": "iso-alpha2",
+            "value": "TR",
+            "matchedBy": "iso-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "q43$8E2552E4-2A17-4D8C-9D77-CDF56CFBF263"
+            ],
+            "successors": [],
+            "applicability": "uncertain",
+            "tentative": true
+          }
+        ],
+        "selection": "latest",
+        "temporalAmbiguity": true,
+        "coverage": "partial",
+        "evidenceStatus": "unreviewed-spike"
+      }
+    },
+    {
+      "operation": "assignments",
+      "input": "Q43",
+      "namespace": "iso-alpha3",
+      "date": "1985-01-01",
+      "result": {
+        "preferred": null,
+        "candidates": [
+          {
+            "id": "Q43",
+            "name": "Turkey",
+            "continent": "Asia",
+            "namespace": "iso-alpha3",
+            "value": "TUR",
+            "matchedBy": "iso-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "q43$9BB2620D-BD47-4973-AF4E-1C368C0DF3F4"
+            ],
+            "successors": [],
+            "applicability": "uncertain",
+            "tentative": true
+          }
+        ],
+        "selection": "uncertain",
+        "temporalAmbiguity": true,
+        "coverage": "partial",
+        "evidenceStatus": "unreviewed-spike"
+      }
+    },
+    {
+      "operation": "assignments",
+      "input": "Q25227",
+      "namespace": "iso-alpha2",
+      "result": {
+        "preferred": {
+          "id": "Q25227",
+          "name": "Netherlands Antilles",
+          "continent": "North America",
+          "namespace": "iso-alpha2",
+          "value": "AN",
+          "matchedBy": "historical-code",
+          "temporalReviewed": false,
+          "retiredAtDay": 14893,
+          "evidence": [
+            "Q25227$3E2A11CA-27E5-458E-A28B-07D47A78948D"
+          ],
+          "successors": [
+            "Q25279",
+            "Q26273",
+            "Q27561"
+          ],
+          "applicability": "retired",
+          "tentative": false
+        },
+        "candidates": [
+          {
+            "id": "Q25227",
+            "name": "Netherlands Antilles",
+            "continent": "North America",
+            "namespace": "iso-alpha2",
+            "value": "AN",
+            "matchedBy": "historical-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 14893,
+            "evidence": [
+              "Q25227$3E2A11CA-27E5-458E-A28B-07D47A78948D"
+            ],
+            "successors": [
+              "Q25279",
+              "Q26273",
+              "Q27561"
+            ],
+            "applicability": "retired",
+            "tentative": false
+          }
+        ],
+        "selection": "latest",
+        "temporalAmbiguity": false,
+        "coverage": "partial",
+        "evidenceStatus": "unreviewed-spike"
+      }
+    },
+    {
+      "operation": "assignments",
+      "input": "Q33946",
+      "namespace": "iso-alpha2",
+      "date": "1990-01-01",
+      "result": {
+        "preferred": {
+          "id": "Q33946",
+          "name": "Czechoslovakia",
+          "continent": "Europe",
+          "namespace": "iso-alpha2",
+          "value": "CS",
+          "matchedBy": "withdrawn-code",
+          "temporalReviewed": false,
+          "retiredAtDay": 8401,
+          "evidence": [
+            "Q33946$83d631a6-4dd9-1b66-e6cb-b4c33d4836ab"
+          ],
+          "successors": [],
+          "applicability": "active",
+          "tentative": false
+        },
+        "candidates": [
+          {
+            "id": "Q33946",
+            "name": "Czechoslovakia",
+            "continent": "Europe",
+            "namespace": "iso-alpha2",
+            "value": "CS",
+            "matchedBy": "withdrawn-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 8401,
+            "evidence": [
+              "Q33946$83d631a6-4dd9-1b66-e6cb-b4c33d4836ab"
+            ],
+            "successors": [],
+            "applicability": "active",
+            "tentative": false
+          }
+        ],
+        "selection": "at-date",
+        "temporalAmbiguity": false,
+        "coverage": "partial",
+        "evidenceStatus": "unreviewed-spike"
+      }
+    },
+    {
+      "operation": "assignments",
+      "input": "Q43",
+      "namespace": "iso-alpha2",
+      "date": "2027-01-01",
+      "result": {
+        "preferred": null,
+        "candidates": [
+          {
+            "id": "Q43",
+            "name": "Turkey",
+            "continent": "Asia",
+            "namespace": "iso-alpha2",
+            "value": "TR",
+            "matchedBy": "iso-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "q43$8E2552E4-2A17-4D8C-9D77-CDF56CFBF263"
+            ],
+            "successors": [],
+            "applicability": "uncertain",
+            "tentative": true
+          }
+        ],
+        "selection": "uncertain",
+        "temporalAmbiguity": true,
+        "coverage": "outside-coverage",
+        "evidenceStatus": "unreviewed-spike"
+      }
+    },
+    {
+      "operation": "assignments",
+      "input": "missing",
+      "namespace": "iso-alpha2",
+      "result": {
+        "preferred": null,
+        "candidates": [],
+        "selection": "none",
+        "temporalAmbiguity": false,
+        "coverage": "partial",
+        "evidenceStatus": "unreviewed-spike"
+      }
+    }
+  ]
+}

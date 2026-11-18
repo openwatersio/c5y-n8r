@@ -12,5 +12,7 @@ const bytes = await readFile(resolve(option('--corpus'), 'data/countries.crdb'))
 // This process is untrusted; only a separate job may judge its observations.
 const Reader = (await import(pathToFileURL(resolve(option('--reader'))).href)).CountryRegistry;
 const reader = Reader.open(bytes);
-const cases = fixture.lookups.map((input: any) => observeLookup(reader, input));
+const methodFixture = JSON.parse(await readFile(resolve('sources/accepted-methods.json'), 'utf8').catch(error => { if (error.code === 'ENOENT') return '{"schemaVersion":1,"cases":[]}'; throw error; }));
+if (methodFixture.schemaVersion !== 1 || !Array.isArray(methodFixture.cases)) throw new Error('Invalid method compatibility fixture');
+const cases = [...fixture.lookups, ...methodFixture.cases].map((input: any) => observeLookup(reader, input));
 await writeFile(output, JSON.stringify({ schemaVersion: 2, cases }, null, 2) + '\n');

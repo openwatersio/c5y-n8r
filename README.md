@@ -20,7 +20,7 @@ The reviewed APIs did not provide the combination of dated resolution, explicit 
 ## What the spike demonstrates
 
 - One FlatBuffer artifact read directly by TypeScript. There is no separate JavaScript country table.
-- Direct alpha-2/numeric indexes and binary search over UTF-8 name/alpha-3 keys. The reader builds no runtime country index.
+- Direct alpha-2/numeric indexes and binary search over UTF-8 name/alpha-3 keys. The reader builds a compact entity-to-assignment integer index once on open; country facts remain in the binary.
 - Optional date lookup, retained historical candidates, retired entity pointers, and explicit ambiguity.
 - Embedded dataset, format, and minimum-reader versions (dataset 2 uses format 2 and requires reader 0.0.2); freshness comparison against release metadata supplied by the caller.
 - Pinned Wikidata snapshots, an evidence companion, and an evidence-check prototype that stays non-passing when a claim needs review.
@@ -56,7 +56,7 @@ await countries.compareRelease(); // freshness unknown until release metadata is
 
 The package prepare step builds the reader for git installs and packing. The package file list excludes the Slackwater consumer inventory. The build emits JavaScript and TypeScript declarations for the reader in `dist/`; Node consumers use the package export without a TypeScript loader. The country dataset remains a single binary. A benchmark run without a Slackwater directory writes to `reports/local/benchmark.json` and preserves the checked-in compatibility inventory.
 
-Entity IDs are limited to 64 UTF-16 code units in both compilation and loading, bounding later indexed identity reads. Verification memoizes shared structures and rejects expanded traversal work above eight times the file size, including cached references that later readers would traverse. Opening validates the stable metadata envelope first, reports unsupported format/reader requirements through `CompatibilityError`, then validates the supported body and semantic indexes. The root metadata field and existing metadata field layouts must remain stable across formats. Format 1 is rejected because its deprecated-claim status has a different meaning. Keep the supplied bytes immutable and alive while registry/result views are in use. Result fields decode on demand. Names use trimmed NFC Unicode lowercase matching; punctuation, accent, and locale-specific case variants (including Turkish dotted I) need explicit aliases. Single-entity date uncertainty uses `selection: "uncertain"`; ambiguity is reserved for competing entities. Specify a namespace to avoid combining code and name meanings. Dates use UTC calendar days. A tentative undated code match with unknown bounds retains an uncertainty indication; it cannot outrank a different entity with an established historical assignment. The convenience result object and API are provisional.
+Entity IDs are limited to 64 UTF-16 code units in both compilation and loading, bounding later indexed identity reads. Verification memoizes shared structures and rejects expanded traversal work above eight times the file size, including cached references that later readers would traverse. Opening validates the stable metadata envelope first, reports unsupported format/reader requirements through `CompatibilityError`, then validates the supported body and semantic indexes. The root metadata field and existing metadata field layouts must remain stable across formats. Format 1 is rejected because its deprecated-claim status has a different meaning. Keep the supplied bytes immutable and alive while registry/result views are in use. Result fields decode on demand. Names use trimmed NFC Unicode lowercase matching; punctuation, accent, and locale-specific case variants (including Turkish dotted I) need explicit aliases. Single-entity date uncertainty uses `selection: "uncertain"`; name ambiguity denotes competing entities; assignment and conversion ambiguity also includes competing codes on one entity. Specify a namespace to avoid combining code and name meanings. Dates use UTC calendar days. A tentative undated code match with unknown bounds retains an uncertainty indication; it cannot outrank a different entity with an established historical assignment. The convenience result object and API are provisional.
 
 `compareRelease` is asynchronous. Equal dataset versions with different embedded metadata return `freshness: "different"`. When the supplied release includes `sha256`, it also compares the loaded binary hash using Web Crypto and caches that calculation. Lookups and opening remain synchronous; hashing occurs only when checking a release. Keep loaded bytes immutable for the registry's lifetime.
 
@@ -65,13 +65,13 @@ Entity IDs are limited to 64 UTF-16 code units in both compilation and loading, 
 `sources/manifest.json` records source revisions, hashes, retrieval times, and permanent links. `sources/wikidata/` contains the corresponding Wikidata JSON. `sources/policy.json` records local alias policy and the minimum compatible reader version; that threshold changes when interpretation requires it, rather than on every package patch. A sync preserves pinned files and retrieval times for unchanged revisions. Historical snapshot files remain available for provenance. `sources/reviewed-overrides.json` records reviewed statements, `sources/review-approvals.json` binds approvals to complete record digests, and `sources/override-activation.json` selects active or retired reviews. The Turkey review is staged and inactive. `npm run build` uses only these local inputs and produces `data/countries.crdb`, `data/evidence.json`, and `data/release.json`. The evidence companion and release manifest are supporting artifacts; the binary is the only runtime country dataset.
 
 ```sh
-npm run source:fetch
+npm run source:fetch -- --refresh
 npm run build
 npm run evidence -- --base /path/to/trusted-main
 npm run evidence -- --base /path/to/trusted-main --offline
 ```
 
-`source:fetch` is an explicit network operation. `evidence` independently retrieves pinned and current Wikidata revisions and reports each supplied assertion, source link, reference links, and discrepancies. It verifies assignment-to-evidence identity/value bindings and reports the binary hash and evidence digest. Entity fields and temporal interpretation still require manual review. A spelling match is reported as `source-match`, not verified factual evidence. The offline mode checks pinned snapshots only and cannot certify live evidence. The exit code follows `gatePassed`; `passed` separately describes evidence verification. Unresolved live findings on byte-identical reviewed artifacts can be advisory for maintenance, while offline checks with applicable assertions remain non-passing. Comparisons without changed assertions or selected reviews have no applicable assertions and exit zero.
+`source:fetch` uses the network for newly mapped entities; `--refresh` explicitly retrieves updates for existing pins. `evidence` independently retrieves pinned and current Wikidata revisions and reports each supplied assertion, source link, reference links, and discrepancies. It verifies assignment-to-evidence identity/value bindings and reports the binary hash and evidence digest. Entity fields and temporal interpretation still require manual review. A spelling match is reported as `source-match`, not verified factual evidence. The offline mode checks pinned snapshots only and cannot certify live evidence. The exit code follows `gatePassed`; `passed` separately describes evidence verification. Unresolved live findings on byte-identical reviewed artifacts can be advisory for maintenance, while offline checks with applicable assertions remain non-passing. Comparisons without changed assertions or selected reviews have no applicable assertions and exit zero.
 
 The PR evidence workflow runs the checker from the trusted base commit against the proposed merge artifacts, without executing PR code in that job. A separate build/test job checks reproducibility. Reader compatibility uses two PR-only jobs, each with a five-minute timeout: an untrusted observation job builds and runs the proposed reader, then a fresh verdict job compares its JSON observations against base expectations. The verdict job never checks out or executes proposed code, and requires every expected case exactly once. A failed observation job fails the verdict job too. The checker accepts `--reader-results`, not an executable reader path.
 
@@ -89,7 +89,7 @@ The current benchmark inventory contains 129 distinct country inputs across 8,72
 
 Before Slackwater adopts this library, every required input must resolve to its reviewed country identity and current ISO code, with explicit aliases for existing source spellings. Pin the Slackwater source revision in the coverage inventory, test every required input, and publish a report that separates verified, ambiguous, and unresolved entries. Historical fixtures remain useful tests; they do not establish complete historical coverage.
 
-Follow [CONTRIBUTING.md](CONTRIBUTING.md) for data changes. Before updating Wikidata, verify each assertion against one high-quality primary source and at least two other quality sources. Add the primary reference to Wikidata and retain corroboration, passages and independence notes in the issue and review record. Record the resulting revision link and rerun the source sync and evidence check. A reference URL alone does not prove a claim. Check the source passage and distinguish current code evidence from evidence for historical assignment dates. Missing evidence remains unresolved. When upstream editing is blocked or pending, a maintainer-reviewed local override can supply the effective assertion or its evidence. Raw snapshots remain immutable. Approval and activation use separate PRs so proposed fields cannot approve themselves; see the reviewed override workflow in CONTRIBUTING.md.
+Follow [CONTRIBUTING.md](CONTRIBUTING.md) for data changes. Before updating Wikidata, verify each assertion against one high-quality primary source and at least two other quality sources. Add the primary reference to Wikidata and retain corroboration, passages and independence notes in the issue and review record. Record the resulting revision link and run `npm run source:fetch -- --refresh Q43` for the affected entity and evidence check. A reference URL alone does not prove a claim. Check the source passage and distinguish current code evidence from evidence for historical assignment dates. Missing evidence remains unresolved. When upstream editing is blocked or pending, a maintainer-reviewed local override can supply the effective assertion or its evidence. Raw snapshots remain immutable. Approval and activation use separate PRs so proposed fields cannot approve themselves; see the reviewed override workflow in CONTRIBUTING.md.
 
 Code and data have separate licensing. See [data licensing and provenance](DATA_LICENSE.md).
 
@@ -100,3 +100,53 @@ Main requires the `Country policy gate` status, successful build checks and reso
 Reviewed overlays preserve the protected lookup contract. A correction that changes accepted answers remains non-passing until a separate trusted compatibility-approval route exists; this PR does not provide that route. Evidence-only reviews, such as the staged Turkey record, can use the two-stage flow without changing answers. Per-record provenance lives in the evidence companion; the reader continues to report the corpus as an unreviewed spike.
 
 The policy controller independently verifies reader observations. It relies on the evidence job’s workflow definition for evidence execution, so maintainers must inspect edits to that workflow before merging; its success status is not independent attestation of an altered workflow. Corpus JSON files and observation artifacts have bounded sizes, which must be revisited before expanding the prototype corpus.
+
+## Prepared distribution without npm publication
+
+`npm run distribution` compiles the reader and writes a prepared npm tarball, `SHA256SUMS`, and `distribution.json` to `reports/local/distribution/`. It packages the checked-in binary; run `npm run build` and verify the data diff before preparing a reviewed distribution. The manifest records the exact Git commit, archive SHA-256, npm integrity, binary SHA-256, and whether the checkout is dirty. Dirty builds are for local testing only. The package stays `private: true`; this command does not publish anything.
+
+The manually dispatched **Prepare distribution** workflow builds and checks the selected commit and uploads an Actions artifact named with its full SHA. It requires a clean checkout after regeneration. Download and inspect that artifact before separately authorizing a GitHub release. A release should use a tag containing the full commit SHA, preserve its archive/checksum/manifest assets, and never replace those assets. No release is created by the workflow. GitHub assets are replaceable by maintainers, so consumers must verify a checksum obtained through their reviewed dependency update and retain the package-lock integrity.
+
+For a downloaded artifact, verify and install without lifecycle scripts:
+
+```sh
+shasum -a 256 -c SHA256SUMS
+npm install --ignore-scripts ./openwaters-c5y-n8r-*.tgz
+```
+
+Once an approved release exists, download the same archive from `https://github.com/openwatersio/c5y-n8r/releases/download/commit-<FULL_SHA>/openwaters-c5y-n8r-<VERSION>.tgz`, verify its reviewed SHA-256, and install the local file as above. The URL is a distribution convention, not an existing release. Direct Git source archives lack the prepared reader when scripts are disabled. Slackwater's root dependency policy permits npm registry dependencies only; use this artifact in the separately installed diagnostic until a distribution and adoption path is approved. Do not weaken that policy to install a release URL.
+
+The package contains one runtime dataset at `@openwaters/c5y-n8r/data`, compiled JavaScript and declarations, code MIT licensing, data licensing, source provenance, and transitive source notices. Consumer compatibility inventories are excluded. Node can load the binary with `readFile(new URL(import.meta.resolve('@openwaters/c5y-n8r/data')))`. The reader accepts bytes and has no Node filesystem import.
+
+In a browser or web worker, configure the bundler to emit the exported binary as a URL (this example uses Vite's `?url` convention):
+
+```ts
+import { CountryRegistry } from '@openwaters/c5y-n8r';
+import dataUrl from '@openwaters/c5y-n8r/data?url';
+
+const response = await fetch(dataUrl);
+if (!response.ok) throw new Error(`Country data download failed: ${response.status}`);
+const countries = CountryRegistry.open(new Uint8Array(await response.arrayBuffer()));
+```
+
+Other bundlers can copy the binary to a static asset and supply its URL to the same fetch call. Keep the bytes alive and immutable while using the registry. Packaging tests install the prepared tarball with an empty npm cache, offline mode, and `--ignore-scripts`, then exercise plain Node imports and fetched bytes in a worker. They also reject Node builtin imports in emitted reader modules. The Vite example itself is not a browser integration test.
+
+## Convert a resolved country to a code
+
+```ts
+const { source, target } = registry.convert('Türkiye', { from: 'name', to: 'iso-alpha2' });
+const code = target.preferred?.value;
+const assignments = registry.assignments('Q43', { namespace: 'iso-alpha2' });
+```
+
+Both results retain alternatives, applicability, uncertainty, coverage and evidence. A missing or ambiguous source does not become a guessed target. Entity assignment lists are indexed once during opening; conversion does not enumerate possible codes. This adds O(assignments) startup work and a small integer-list index while preserving the binary format and existing lookup results. The dataset remains unreviewed.
+
+The source builder's `--extend-accepted-inputs` mode first checks every existing protected observation, appends only newly admitted inputs and exits without replacing data artifacts. `--audit-slackwater` writes the required-input source audit without replacing the binary; explicit candidate Wikidata IDs can be supplied in the inventory, while unresolved and unfetched mappings stay visible as incomplete audit rows. Both commands are development tools and cannot approve evidence.
+
+`npm run source:fetch` preserves and authenticates existing pins while discovering newly mapped entities. After an upstream edit, use `npm run source:fetch -- --refresh Q43` to refresh that entity, or `npm run source:fetch -- --refresh` to refresh the entire manifest. Unchanged revisions retain their retrieval metadata and files. Refresh does not remove historical entities or approve changed facts; rebuild and inspect the evidence and compatibility reports afterward.
+
+`assignments(id)` without a namespace returns all namespaces and may be ambiguous. Converting to `name` retains all accepted names rather than choosing a display label; use a selected candidate’s `name` for its entity label. The protected method fixture contains full conversion and assignment results alongside the original lookup fixture.
+
+The existing statement-override workflow and the optional name-readiness diagnostic have distinct source rules: name readiness requires one authority plus three corroborating sources on the supporting Wikidata name statement. Existing staged statement approvals retain their documented requirements.
+
+Dated conversion from a name retains uncertainty and does not select a preferred code when that name’s applicability is unreviewed. Inspect both `source` and `target`; do not interpret an absent preferred result as a guessed redirect. The optional `fullEnglishAliasEntities` policy retains all English aliases only for listed entities; other entities admit the canonical label and required source-backed spellings selected by `candidateEntity` in the consumer inventory.

@@ -4,7 +4,8 @@
   "revision": "f9c3d42c066efe87e606f8c09673fb70cff2b2cf",
   "scope": [
     "sources/slackwater-required.json",
-    "reports/benchmark.json compatibility section"
+    "reports/benchmark.json compatibility section",
+    "sources/slackwater-source-audit.json"
   ],
   "content": "Country input strings and aggregate record counts only; no station coordinates, harmonic constituents, predictions or observations.",
   "records": 8728,

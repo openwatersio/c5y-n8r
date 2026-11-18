@@ -1,3 +1,4 @@
+import { observeLookup } from '../src/compatibility.ts';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -187,4 +188,80 @@ test('release freshness checks the supplied binary hash even when metadata is id
   const release = JSON.parse(readFileSync('data/release.json', 'utf8'));
   assert.equal((await registry.compareRelease(release)).freshness, 'current');
   assert.equal((await registry.compareRelease({ ...release, sha256: '0'.repeat(64) })).freshness, 'different');
+});
+
+
+test('entity assignments provide direct code lookup with dates and evidence', () => {
+  const db = CountryRegistry.open(compile(fixture()));
+  const result = db.assignments('A', { namespace: 'iso-alpha2', date: '1985-01-01' });
+  assert.equal(result.preferred?.value, 'ZZ');
+  assert.deepEqual(result.preferred?.evidence, ['synthetic']);
+  assert.equal(db.assignments('A', { namespace: 'iso-alpha2' }).preferred?.applicability, 'retired');
+  assert.equal(db.assignments('A', { date: '1990-01-01' }).preferred, undefined);
+  assert.deepEqual(db.assignments('missing').candidates, []);
+  assert.throws(() => db.assignments('A', { date: '2025-02-29' }));
+});
+
+test('same entity with two codes never invents a unique preferred code', () => {
+  const data = fixture();
+  data.assignments = [data.assignments[0], { ...data.assignments[0], value: 'YY' }];
+  const db = CountryRegistry.open(compile(data));
+  const result = db.assignments('A', { namespace: 'iso-alpha2', date: '1985-01-01' });
+  assert.equal(result.preferred, undefined);
+  assert.equal(result.selection, 'ambiguous');
+  assert.deepEqual(new Set(result.candidates.map(c => c.value)), new Set(['ZZ', 'YY']));
+});
+
+test('conversion retains source ambiguity and all target alternatives', () => {
+  const data = fixture();
+  data.assignments.push(
+    { ...data.assignments[0], namespace: 'iso-alpha3', value: 'AAA' },
+    { ...data.assignments[1], namespace: 'iso-alpha3', value: 'BBB' },
+  );
+  const db = CountryRegistry.open(compile(data));
+  const dated = db.convert('ZZ', { from: 'iso-alpha2', to: 'iso-alpha3', date: '1985-01-01' });
+  assert.equal(dated.target.preferred?.value, 'AAA');
+  assert.equal(dated.target.candidates.length, 2);
+  assert.deepEqual(dated.target.preferred?.evidence, ['synthetic']);
+  assert.equal(db.convert('ZZ', { to: 'iso-alpha3', date: '1995-01-01' }).target.preferred, undefined);
+  delete data.assignments[1].from; delete data.assignments[1].until;
+  data.assignments[1].temporalReviewed = false;
+  const ambiguous = CountryRegistry.open(compile(data)).convert('ZZ', { to: 'iso-alpha3' });
+  assert.equal(ambiguous.source.selection, 'ambiguous');
+  assert.equal(ambiguous.target.selection, 'ambiguous');
+  assert.equal(ambiguous.target.preferred, undefined);
+  assert.equal(ambiguous.target.candidates.length, 2);
+});
+
+test('assignment lookup preserves unknown dates, deprecated claims and coverage', () => {
+  const data = fixture(); data.assignments = [data.assignments[0]];
+  delete data.assignments[0].from; data.assignments[0].temporalReviewed = false;
+  let db = CountryRegistry.open(compile(data));
+  assert.equal(db.assignments('A', { date: '1985-01-01' }).selection, 'uncertain');
+  assert.equal(db.assignments('A', { date: '1970-01-01' }).coverage, 'outside-coverage');
+  data.assignments[0].status = 'deprecated-claim'; db = CountryRegistry.open(compile(data));
+  assert.equal(db.assignments('A').preferred, undefined);
+  assert.equal(db.assignments('A').candidates[0].applicability, 'deprecated');
+});
+
+
+test('method observations preserve full source and target contracts and absent methods fail closed', () => {
+  const converted = observeLookup(registry, { operation: 'convert', input: 'TUR', from: 'iso-alpha3', to: 'iso-alpha2' });
+  assert.ok('source' in converted.result);
+  if ('source' in converted.result) {
+    assert.ok(converted.result.source);
+    assert.ok(converted.result.target);
+    assert.equal(converted.result.source.evidenceStatus, 'unreviewed-spike');
+    assert.equal(converted.result.target.candidates[0].namespace, 'iso-alpha2');
+    assert.ok(converted.result.target.candidates[0].evidence.length);
+    assert.equal(typeof converted.result.target.candidates[0].tentative, 'boolean');
+  }
+  for (const operation of ['convert', 'assignments'] as const) {
+    const missing = observeLookup({ resolve: registry.resolve.bind(registry) }, { operation, input: 'Q43', to: 'iso-alpha2' });
+    assert.deepEqual(missing.result, { error: { name: 'Error', message: `Reader method unavailable: ${operation}` } });
+  }
+  const legacy = observeLookup(registry, { input: 'TR', namespace: 'iso-alpha2' });
+  assert.equal('operation' in legacy, false);
+  assert.equal('from' in legacy, false);
+  assert.equal('to' in legacy, false);
 });

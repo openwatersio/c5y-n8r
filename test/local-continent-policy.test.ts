@@ -15,6 +15,20 @@ test('continent policy requires trusted withdrawal approval when a pinned P30 su
   const dir = await mkdtemp(join(tmpdir(), 'country-continent-policy-'));
   try {
     await cp('sources', join(dir, 'sources'), { recursive: true });
+    const syntheticIds = new Set(['Q51', 'Q408']);
+    const manifestPath = join(dir, 'sources/manifest.json');
+    const manifest = JSON.parse(await readFile(manifestPath, 'utf8')).filter((entry: any) => !syntheticIds.has(entry.id));
+    await writeFile(manifestPath, JSON.stringify(manifest));
+    const fixturePath = join(dir, 'sources/accepted-inputs.json');
+    const fixture = JSON.parse(await readFile(fixturePath, 'utf8'));
+    const unrelated = (lookup: unknown) => !/"Q(?:51|408)"/.test(JSON.stringify(lookup));
+    fixture.inputs = fixture.inputs.filter((input: any) => !syntheticIds.has(input.entity));
+    fixture.lookups = fixture.lookups.filter(unrelated);
+    await writeFile(fixturePath, JSON.stringify(fixture));
+    const methodsPath = join(dir, 'sources/accepted-methods.json');
+    const methods = JSON.parse(await readFile(methodsPath, 'utf8'));
+    methods.cases = methods.cases.filter(unrelated);
+    await writeFile(methodsPath, JSON.stringify(methods));
     const policyPath = join(dir, 'sources/policy.json');
     const policy = JSON.parse(await readFile(policyPath, 'utf8'));
     const claim = (id: string, value: string, rank = 'normal') => ({ id, rank, mainsnak: { datavalue: { value: { id: value } } } });
@@ -22,8 +36,6 @@ test('continent policy requires trusted withdrawal approval when a pinned P30 su
     policy.selfContinent = { entity: 'Q51', value: 'Antarctica', statementId: identity.id, instanceOf: 'Q5107', scope: 'Reference-date display' };
     await writeFile(policyPath, JSON.stringify(policy));
     await assert.rejects(buildCorpus(dir), /Unknown self-continent entity/);
-    const manifestPath = join(dir, 'sources/manifest.json');
-    const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
     const snapshot = async (id: string, name: string, claims: object, revision = 1) => {
       const file = `sources/wikidata/${id}-${revision}.json`;
       const raw = JSON.stringify({ entities: { [id]: { id, lastrevid: revision, labels: { en: { value: name } }, claims } } });
@@ -51,7 +63,6 @@ test('continent policy requires trusted withdrawal approval when a pinned P30 su
     }
 
     await snapshot('Q51', 'Antarctica', { P31: [identity] });
-    const fixturePath = join(dir, 'sources/accepted-inputs.json');
     for (const input of built.addedInputs) {
       built.accepted.inputs.push({ entity: input.entity, namespace: input.namespace, value: input.value });
       for (const namespace of [input.namespace, undefined]) {

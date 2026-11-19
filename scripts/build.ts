@@ -19,22 +19,28 @@ if (process.argv.includes('--audit-slackwater')) {
     const conversion = registry.convert(input.input, { from: 'name', to: 'iso-alpha2' });
     const currentCode = conversion.target.preferred;
     const hasCode = currentCode !== undefined && currentCode.id === candidateEntity && !['retired', 'outside-date', 'deprecated'].includes(currentCode.applicability);
+    const continent = source.entities.find(e => e.id === candidateEntity)?.continent;
+    const preferredContinents = (entity?.claims.P30 ?? []).filter((c: any) => c.rank === 'preferred');
+    const continentSelection = preferredContinents.length ? 'preferred-source-statement' : (entity?.claims.P30?.length ?? 0) > 1 ? 'first-source-statement-unreviewed' : entity?.claims.P30?.length ? 'single-source-statement' : continent ? 'local-policy' : 'missing';
     const codeClaims = (entity?.claims.P297 ?? []).map((claim: any) => ({
       statementId: claim.id, value: claim.mainsnak.datavalue?.value, rank: claim.rank,
       references: (claim.references ?? []).map((reference: any) => ({ hash: reference.hash, snaks: reference.snaks })),
     }));
     required.push({ input: input.input, records: input.records, candidateEntity,
       functionalStatus: !candidateEntity ? 'missing-source-mapping' : !item ? 'missing-source-snapshot' : result.selection === 'ambiguous' ? 'ambiguous-source-name' : result.preferred?.id !== candidateEntity ? 'missing-source-spelling' : hasCode ? 'source-backed-unreviewed' : 'missing-current-iso-code',
+      continent, continentSelection, metadataStatus: continent ? 'source-backed-unreviewed' : 'missing-continent',
       verificationStatus: 'pending', revision: item?.revision, permanentLink: item?.permanentLink, snapshotSha256: item?.sha256,
       nameEvidence: result.candidates.filter(c => c.id === candidateEntity).flatMap(c => c.evidence), codeClaims,
       blockers: [...(!candidateEntity ? ['No source-backed candidate mapping; discover and review the entity before fetching'] : !item ? ['Mapped entity snapshot missing; run source:fetch before auditing its claims'] : []), ...(result.selection === 'ambiguous' ? ['Source spelling has competing country meanings; provide reviewed context'] : candidateEntity && result.preferred?.id === candidateEntity ? [] : ['Exact spelling absent from admitted source labels and aliases']),
-        ...(hasCode ? [] : ['No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives'])],
+        ...(hasCode ? [] : ['No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives']),
+        ...(continent ? [] : ['No admitted continent classification for candidate entity'])],
       qualityFlags: ['Independent evidence research is pending; it is advisory once functional source coverage is established'],
     });
   }
   const matched = required.filter(r => r.functionalStatus === 'source-backed-unreviewed');
   const report = { sourceCounts: { entities: source.entities.length, assignments: source.assignments.length, evidence: JSON.parse(evidenceText).requests.length }, inventoryRevision: inventory.revision, snapshotManifestDigest: createHash('sha256').update(manifestText).digest('hex'), verificationStatus: 'pending',
     summary: { inputs: required.length, records: inventory.records, sourceBackedInputs: matched.length,
+      metadataIncompleteInputs: matched.filter(r => r.metadataStatus === 'missing-continent').length,
       sourceBackedRecords: matched.reduce((sum, r) => sum + r.records, 0), verifiedInputs: 0 }, required };
   await writeFile('sources/slackwater-source-audit.json', JSON.stringify(report, null, 2) + '\n');
   console.log(JSON.stringify({ ...report.summary, ...report.sourceCounts }));

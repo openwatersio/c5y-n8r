@@ -1,32 +1,45 @@
 {
   "sourceCounts": {
-    "entities": 11,
-    "assignments": 119,
-    "evidence": 136
+    "entities": 136,
+    "assignments": 622,
+    "evidence": 765
   },
   "inventoryRevision": "f9c3d42c066efe87e606f8c09673fb70cff2b2cf",
-  "snapshotManifestDigest": "f8f520b4d947894dc26277905ee32e5548f39a832082ab3df6d8d6fd25c4fbb7",
+  "snapshotManifestDigest": "bed739b2f4fae5ec546e3f4e11364a84871a3778919df01c9773b3d0b1550bd2",
   "verificationStatus": "pending",
   "summary": {
     "inputs": 129,
     "records": 8728,
-    "sourceBackedInputs": 4,
-    "sourceBackedRecords": 174,
+    "sourceBackedInputs": 126,
+    "metadataIncompleteInputs": 0,
+    "sourceBackedRecords": 8695,
     "verifiedInputs": 0
   },
   "required": [
     {
       "input": "Denmark",
       "records": 177,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q35",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2570451990,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q35&oldid=2570451990",
+      "snapshotSha256": "1be978e98461ba290e43315d7ab0e60b95cf294eb1845352557d23d75cb9d6e0",
+      "nameEvidence": [
+        "Q35:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q35$3190F6A7-22AC-4556-AD6E-9D96776BB8A4",
+          "value": "DK",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -34,15 +47,27 @@
     {
       "input": "Faroe Islands",
       "records": 11,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q4628",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569882846,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q4628&oldid=2569882846",
+      "snapshotSha256": "6c865236f741f38ba89d473963d1dbcfe3b39a8069fe2cb84b89cd9c77e8043f",
+      "nameEvidence": [
+        "Q4628:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q4628$842F31D5-E59A-4252-AEA3-CA959E9FA84C",
+          "value": "FO",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -50,15 +75,27 @@
     {
       "input": "Greenland",
       "records": 86,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q223",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569883004,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q223&oldid=2569883004",
+      "snapshotSha256": "5a347535c390d8dd31ec2669314a28c3425ec8a2ebca1a638b1b36effb838ca5",
+      "nameEvidence": [
+        "Q223:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q223$0437EE53-2A8E-43A8-B044-232238188154",
+          "value": "GL",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -66,15 +103,27 @@
     {
       "input": "Japan",
       "records": 337,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q17",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568774645,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q17&oldid=2568774645",
+      "snapshotSha256": "84f72ad38a6fb384a84b4dab26bcdfbadf919b363fdcce02dce21def99edb6f4",
+      "nameEvidence": [
+        "Q17:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q17$568789DC-E1D3-4B4D-B4D5-1BAEA87A09A7",
+          "value": "JP",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -82,15 +131,27 @@
     {
       "input": "Norway",
       "records": 99,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q20",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "preferred-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568775321,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q20&oldid=2568775321",
+      "snapshotSha256": "5a5c2d7dcf1a445af79fd1308ae8b60ffc808b5d8512e93b80edc99b789066ea",
+      "nameEvidence": [
+        "Q20:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q20$68FB120A-638F-4680-AD14-0363447CD171",
+          "value": "NO",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -98,15 +159,27 @@
     {
       "input": "New Zealand",
       "records": 101,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q664",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "preferred-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568132058,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q664&oldid=2568132058",
+      "snapshotSha256": "b4dca75188df895c4d58b02bb8da43bc68e7b3e9f9971a9010734c1375f90a1e",
+      "nameEvidence": [
+        "Q664:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q664$7C13659A-1AA3-431A-9106-2B8F8379EDCD",
+          "value": "NZ",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -114,15 +187,116 @@
     {
       "input": "United States",
       "records": 5132,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q30",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "preferred-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568564901,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q30&oldid=2568564901",
+      "snapshotSha256": "18ef161c023d6aae0588d30c905436c27954ac80b749579739963ee49ae8c9c5",
+      "nameEvidence": [
+        "Q30:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q30$8BE463FD-B84D-46DB-A3BC-2CFA2B395ABD",
+          "value": "US",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "d1cc320d913d4030065acda8062ab5f34fd968e4",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "062933830c4bf3f110cfe0afce0d35352151fdb5",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 25275,
+                        "id": "Q25275"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P503": [
+                  {
+                    "snaktype": "value",
+                    "property": "P503",
+                    "hash": "6551539d68f6cf0d2f3cbd1c98217662ef2d58ea",
+                    "datavalue": {
+                      "value": "3166",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P299": [
+                  {
+                    "snaktype": "value",
+                    "property": "P299",
+                    "hash": "5f594d8ad716ebd52c188464c4ba32b82db4be8e",
+                    "datavalue": {
+                      "value": "840",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P298": [
+                  {
+                    "snaktype": "value",
+                    "property": "P298",
+                    "hash": "317edc5394c02e9b2b9185405c94c8a1e3b0f471",
+                    "datavalue": {
+                      "value": "USA",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "8231c396a6b308d2bf37bcb03379c2a3d57da627",
+                    "datavalue": {
+                      "value": "https://www.iso.org/obp/ui/#iso:code:3166:US",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "c6ab2df3a412e3900522655b91c659277b9ac3c1",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2018-09-15T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -130,15 +304,27 @@
     {
       "input": "Guam",
       "records": 2,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q16635",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568807041,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q16635&oldid=2568807041",
+      "snapshotSha256": "4fb05c9fd09ba6770fb7642be4cf5151d3c1eb1366517c25ef26660f98a145f3",
+      "nameEvidence": [
+        "Q16635:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q16635$75201D0B-B1D7-42D9-86C3-63797338733D",
+          "value": "GU",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -146,15 +332,116 @@
     {
       "input": "Northern Mariana Islands",
       "records": 5,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q16644",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569110943,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q16644&oldid=2569110943",
+      "snapshotSha256": "b5aa8c0b98b0a93d156df228317a20999794296545c0453f68e2d5daf5c7c5c0",
+      "nameEvidence": [
+        "Q16644:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q16644$4CBFEAA3-1ECB-4FAC-BE9B-D3EDEEB793B8",
+          "value": "MP",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "755333d9bd4b24a36df829b7f22048491313b458",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "125a07bb54b9b89b2b07f9072d0b627074c98e4a",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 81661634,
+                        "id": "Q81661634"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P6778": [
+                  {
+                    "snaktype": "value",
+                    "property": "P6778",
+                    "hash": "de9a8b86a0a030d974f3e7eb61cdc0d8852a4955",
+                    "datavalue": {
+                      "value": "00007109",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "c96a1fe82cb7a4e27bbee9fad963a6e427d5fb3f",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-12-07T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              }
+            },
+            {
+              "hash": "486a47038e4c40334048e1d0e86ee624e7ffab9b",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "c593a3ea3d310fe24bbeebce729033d3a1b5a671",
+                    "datavalue": {
+                      "value": "https://www.iso.org/obp/ui#iso:code:3166:MP",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "c96a1fe82cb7a4e27bbee9fad963a6e427d5fb3f",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-12-07T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -162,15 +449,27 @@
     {
       "input": "French Polynesia",
       "records": 8,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q30971",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2564285535,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q30971&oldid=2564285535",
+      "snapshotSha256": "1d6f09812ba659b9106a924d34493d00b29ec9ce0cf9deadf92f43a8f192c691",
+      "nameEvidence": [
+        "Q30971:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q30971$48AE8EE6-FF65-407C-9F68-491458BB37D8",
+          "value": "PF",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -178,15 +477,27 @@
     {
       "input": "American Samoa",
       "records": 8,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q16641",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568804062,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q16641&oldid=2568804062",
+      "snapshotSha256": "b23c24caa045ae37a1599fb9c58dd1715bb24177db35624c78fc4d0b44b0bc2c",
+      "nameEvidence": [
+        "Q16641:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q16641$384D55F5-6F78-4569-ADBB-60C46FCAE662",
+          "value": "AS",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -194,15 +505,27 @@
     {
       "input": "Samoa",
       "records": 6,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q683",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "preferred-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569313878,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q683&oldid=2569313878",
+      "snapshotSha256": "df878fe452e0f3fcd69b015bf7340bcaab4b694f225eafdb785e69f881a66a34",
+      "nameEvidence": [
+        "Q683:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q683$AC13E366-DF24-41A6-A031-B397A928DE7D",
+          "value": "WS",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -210,15 +533,27 @@
     {
       "input": "Kiribati",
       "records": 20,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q710",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "first-source-statement-unreviewed",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2571190821,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q710&oldid=2571190821",
+      "snapshotSha256": "85a495a43c431ba985e42440313a839b0d9eb1134c18d04fb27bb876fa8c9371",
+      "nameEvidence": [
+        "Q710:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q710$7E592525-6793-4100-8FF5-77920A8528E0",
+          "value": "KI",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -226,15 +561,27 @@
     {
       "input": "Marshall Islands",
       "records": 24,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q709",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "preferred-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2571190787,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q709&oldid=2571190787",
+      "snapshotSha256": "e312824a01f0073aa711257e8280a911350a459b6a6ffc4ca667b8fc55211cdf",
+      "nameEvidence": [
+        "Q709:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q709$7891C9E6-1C77-44CA-91F2-8ECEA27C82B6",
+          "value": "MH",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -242,15 +589,27 @@
     {
       "input": "Federated States of Micronesia",
       "records": 24,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q702",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "preferred-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2571191156,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q702&oldid=2571191156",
+      "snapshotSha256": "4cc4e50945cb206e0567d1981163444323ed62836e4b7cbee539abd28039c5d8",
+      "nameEvidence": [
+        "Q702:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q702$9AA370B4-B954-4671-B17E-B38F904CF656",
+          "value": "FM",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -258,15 +617,27 @@
     {
       "input": "Palau",
       "records": 7,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q695",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "first-source-statement-unreviewed",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2571151050,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q695&oldid=2571151050",
+      "snapshotSha256": "e05f0a34eba392f7d36fb2a81995748afe52ab06542eca7d50d002cfa13ae493",
+      "nameEvidence": [
+        "Q695:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q695$5D22B128-F92B-411B-A2F7-DE8ABB101104",
+          "value": "PW",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -274,15 +645,27 @@
     {
       "input": "Fiji",
       "records": 15,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q712",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2571271792,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q712&oldid=2571271792",
+      "snapshotSha256": "8ed5cd3442dfc0774da9b8a3af36ca4e6eb63243713596a5c889ee0d7de69b61",
+      "nameEvidence": [
+        "Q712:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q712$2701E500-E846-409E-9B9F-FBA61BA6D3E9",
+          "value": "FJ",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -290,15 +673,27 @@
     {
       "input": "British Indian Ocean Territory",
       "records": 1,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q43448",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568799028,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q43448&oldid=2568799028",
+      "snapshotSha256": "cf6bab3df63435f82476d7512ccfe34e3f6fc8622e40b1960bdac88e89c66f88",
+      "nameEvidence": [
+        "Q43448:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q43448$B52EDA26-614E-4B71-9D60-3C2E6458F8EE",
+          "value": "IO",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -306,15 +701,27 @@
     {
       "input": "Bermuda",
       "records": 3,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q23635",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568773659,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q23635&oldid=2568773659",
+      "snapshotSha256": "e3f2b9a3b7fd0e7b56c9e2fd86e8414da791026ad9c3346d16e7bc658993ec73",
+      "nameEvidence": [
+        "Q23635:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q23635$3699A416-CD4D-40CC-B865-271A59C248A0",
+          "value": "BM",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -322,15 +729,27 @@
     {
       "input": "Indonesia",
       "records": 37,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q252",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "preferred-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568774488,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q252&oldid=2568774488",
+      "snapshotSha256": "0c5721c08cac65573e2d415664970548f5698f05780dd176e5d8fec1ecac4a36",
+      "nameEvidence": [
+        "Q252:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q252$507E4F76-6338-454A-9952-32FE37094F68",
+          "value": "ID",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -338,15 +757,27 @@
     {
       "input": "Canada",
       "records": 326,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q16",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2567425781,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q16&oldid=2567425781",
+      "snapshotSha256": "6bf6b2f6be25d30d1f5ce9fc9fbb2e6a40404367c0eb356d535b59ba2d043787",
+      "nameEvidence": [
+        "Q16:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q16$0C605347-6BEE-4840-9490-CD49470A0246",
+          "value": "CA",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -354,15 +785,97 @@
     {
       "input": "Mexico",
       "records": 144,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q96",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2571132586,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q96&oldid=2571132586",
+      "snapshotSha256": "62b60a2f388516ae03e07be5eb968da7cd3a25e0fd55022fc8d4c019024e84f2",
+      "nameEvidence": [
+        "Q96:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q96$7B6344D7-E5B5-4925-A749-26489011B3DD",
+          "value": "MX",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "5680e22464e2045d34d023717fabff036d126261",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "062933830c4bf3f110cfe0afce0d35352151fdb5",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 25275,
+                        "id": "Q25275"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P503": [
+                  {
+                    "snaktype": "value",
+                    "property": "P503",
+                    "hash": "6551539d68f6cf0d2f3cbd1c98217662ef2d58ea",
+                    "datavalue": {
+                      "value": "3166",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P299": [
+                  {
+                    "snaktype": "value",
+                    "property": "P299",
+                    "hash": "d208c97a3a6eb58a80c28b0a0940940b5139a829",
+                    "datavalue": {
+                      "value": "484",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P298": [
+                  {
+                    "snaktype": "value",
+                    "property": "P298",
+                    "hash": "5b5c13a44d9e7be03b705c7945feed51f19d4e9c",
+                    "datavalue": {
+                      "value": "MEX",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "e524a00b9101f2d630aa3e0cc42814a144f68b08",
+                    "datavalue": {
+                      "value": "https://www.iso.org/obp/ui/#iso:code:3166:MX",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -370,15 +883,27 @@
     {
       "input": "El Salvador",
       "records": 9,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q792",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2571191269,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q792&oldid=2571191269",
+      "snapshotSha256": "9af0030c3ecd6fb3dc35563b49958bb440d6adc2f86bc95a85ae3fa882de7f20",
+      "nameEvidence": [
+        "Q792:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q792$9336E621-276A-4420-B23A-F61836F87E1F",
+          "value": "SV",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -386,15 +911,27 @@
     {
       "input": "Honduras",
       "records": 9,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q783",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2571190986,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q783&oldid=2571190986",
+      "snapshotSha256": "940d7f630c25cd61d434ea03120eacbfe21b28f40ea57a581bf50b951ed887eb",
+      "nameEvidence": [
+        "Q783:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q783$2EA6DEC6-EC10-4D97-9A9D-E3CF192C2399",
+          "value": "HN",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -402,15 +939,27 @@
     {
       "input": "Nicaragua",
       "records": 7,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q811",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2571151287,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q811&oldid=2571151287",
+      "snapshotSha256": "f95ceabff4e443b014dde0f972bca26a73627cc2959d099c77eddbe972f7e159",
+      "nameEvidence": [
+        "Q811:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q811$A5A50967-8184-4B15-B216-FC189C24D2FF",
+          "value": "NI",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -418,15 +967,27 @@
     {
       "input": "Costa Rica",
       "records": 16,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q800",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568773926,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q800&oldid=2568773926",
+      "snapshotSha256": "050d7e0248953e0ee1162431f3544e6c6ec518b71909f7b1854ed509da74fe82",
+      "nameEvidence": [
+        "Q800:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q800$31924551-9946-48F4-8589-8C36BCE349D9",
+          "value": "CR",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -434,15 +995,27 @@
     {
       "input": "The Bahamas",
       "records": 20,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q778",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568773582,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q778&oldid=2568773582",
+      "snapshotSha256": "5729e42e5c29a2c5e15016f5486a606ceee17814bf1c3c11a205d32499d53c67",
+      "nameEvidence": [
+        "Q778:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q778$27559C0B-0381-405D-B66B-886409002E22",
+          "value": "BS",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -450,12 +1023,25 @@
     {
       "input": "Virgin Islands",
       "records": 26,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q11703",
+      "functionalStatus": "missing-source-spelling",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
+      "revision": 2568776349,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q11703&oldid=2568776349",
+      "snapshotSha256": "b926d56afb23b6e792dde66ca3ddd9b628e4e75b1f17aa2e06b99db46af80a20",
       "nameEvidence": [],
-      "codeClaims": [],
+      "codeClaims": [
+        {
+          "statementId": "q11703$53E74DB9-FE90-4685-917D-02A2B1B01045",
+          "value": "VI",
+          "rank": "normal",
+          "references": []
+        }
+      ],
       "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
         "Exact spelling absent from admitted source labels and aliases",
         "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
       ],
@@ -466,15 +1052,27 @@
     {
       "input": "Puerto Rico",
       "records": 45,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q1183",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568796919,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q1183&oldid=2568796919",
+      "snapshotSha256": "671a49c70f50ea2fcb2a0185746e1802c57db14ed871ba11fde1944f9368e1ce",
+      "nameEvidence": [
+        "Q1183:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q1183$508D167B-3289-4594-9C59-1A4C9AEFCF74",
+          "value": "PR",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -482,15 +1080,27 @@
     {
       "input": "Dominican Republic",
       "records": 11,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q786",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569300153,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q786&oldid=2569300153",
+      "snapshotSha256": "e09e6799d3b89d24cc7a4da5eee9d5adf1ecbd03d75f89db1cf238f4f06e01dc",
+      "nameEvidence": [
+        "Q786:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q786$474374D1-68C1-46A7-94F6-CEC8C17787EC",
+          "value": "DO",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -498,15 +1108,27 @@
     {
       "input": "Antigua and Barbuda",
       "records": 1,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q781",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2566529971,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q781&oldid=2566529971",
+      "snapshotSha256": "3158d0248f0b55e241b2c6cf60b852effdf02582e3a20455662fcd1bd50b3016",
+      "nameEvidence": [
+        "Q781:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q781$044C1A95-FA1C-4B0D-8DA6-4EC868D4DD24",
+          "value": "AG",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -514,15 +1136,27 @@
     {
       "input": "Panama",
       "records": 26,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q804",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "preferred-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568775421,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q804&oldid=2568775421",
+      "snapshotSha256": "139d734eab5611aa077f5080f81e5d61dd28566153d60e854e5c4c1ff973b12c",
+      "nameEvidence": [
+        "Q804:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q804$CDEC216D-E21C-40C9-A353-92F1C16D904A",
+          "value": "PA",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -530,15 +1164,27 @@
     {
       "input": "Ecuador",
       "records": 25,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q736",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "South America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568774095,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q736&oldid=2568774095",
+      "snapshotSha256": "d3236aaf8bd4e3faafb21b2b745adb8c3006aa157e613e36d8d032f735276c05",
+      "nameEvidence": [
+        "Q736:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q736$C40A6A9D-0349-4F93-A11C-B01779853C80",
+          "value": "EC",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -546,15 +1192,27 @@
     {
       "input": "Cuba",
       "records": 29,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q241",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568773968,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q241&oldid=2568773968",
+      "snapshotSha256": "4de42913dd0ca17255522cb08106175daf36170aa197e35ddf068f0a5f3a65c7",
+      "nameEvidence": [
+        "Q241:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q241$76794DC8-59CC-4397-A0B6-2878CACEFE09",
+          "value": "CU",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -562,15 +1220,27 @@
     {
       "input": "Turks and Caicos Islands",
       "records": 1,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q18221",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569672058,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q18221&oldid=2569672058",
+      "snapshotSha256": "f1df80e281a9884c7ff3fe439bb645b1643b293928dd2b1fb66fbd1eb4b63598",
+      "nameEvidence": [
+        "Q18221:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q18221$8A3D6E45-E7EF-477A-9FDE-FF2EFC1F9D7E",
+          "value": "TC",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -578,15 +1248,27 @@
     {
       "input": "Jamaica",
       "records": 6,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q766",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2571190935,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q766&oldid=2571190935",
+      "snapshotSha256": "e88aef4b413f0cc1a64b9dd4f16f669b0ef0513209c5495d2121edd63cdb10ae",
+      "nameEvidence": [
+        "Q766:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q766$C964761F-0C1A-4C7B-BECF-1FD62007230E",
+          "value": "JM",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -594,15 +1276,27 @@
     {
       "input": "Cayman Islands",
       "records": 1,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q5785",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568846436,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q5785&oldid=2568846436",
+      "snapshotSha256": "404d0b2b0c1ce3ca8f3ba08f4a4b1362bf90714ab437bd5877a290a61cbda288",
+      "nameEvidence": [
+        "Q5785:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q5785$D25F3C60-D670-46D0-8D52-195FD0D0A69F",
+          "value": "KY",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -610,15 +1304,27 @@
     {
       "input": "Haiti",
       "records": 5,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q790",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2571191014,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q790&oldid=2571191014",
+      "snapshotSha256": "e911b0b2f71f8a2d755cbaeac3f55cc2daa875f1e9ed7d17005ca5e508657982",
+      "nameEvidence": [
+        "Q790:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q790$BE0E0E24-6047-42DC-8F35-CCE5298DFB78",
+          "value": "HT",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -626,15 +1332,27 @@
     {
       "input": "Saint Barthélemy",
       "records": 1,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q25362",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2566960075,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q25362&oldid=2566960075",
+      "snapshotSha256": "efd0c1eab09ffe9d5021a5c41666b0e62ce915f3c6538214ac1ab42c53d6e955",
+      "nameEvidence": [
+        "Q25362:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q25362$9CD61EED-B6C5-4FC3-AC0A-A9897E3FDD83",
+          "value": "BL",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -642,15 +1360,27 @@
     {
       "input": "Guadeloupe",
       "records": 1,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q17012",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2564981447,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q17012&oldid=2564981447",
+      "snapshotSha256": "d4cf308e2a6ee7863e005379d77e76ead879615bb74c740672ed3d4622170cea",
+      "nameEvidence": [
+        "Q17012:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q17012$D606B7C5-268A-4F92-A942-C28B9A45B50C",
+          "value": "GP",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -658,15 +1388,27 @@
     {
       "input": "Dominica",
       "records": 2,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q784",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569302408,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q784&oldid=2569302408",
+      "snapshotSha256": "4371f397b1a6ba1e9fab5ced8708371cafb4afe571c1bb7d67571e55327542eb",
+      "nameEvidence": [
+        "Q784:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q784$666EB2A2-E3C8-4F47-AF43-6FCF410F7A57",
+          "value": "DM",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -674,15 +1416,27 @@
     {
       "input": "Saint Lucia",
       "records": 2,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q760",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568796680,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q760&oldid=2568796680",
+      "snapshotSha256": "9a928c826fea5ffc1d6cd361bf8a173daf948a96f804b2f59bc46e9dfc1f0a71",
+      "nameEvidence": [
+        "Q760:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q760$8CDF5B94-4389-4662-ADA6-8C83B3F2B90F",
+          "value": "LC",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -690,15 +1444,27 @@
     {
       "input": "Belize",
       "records": 3,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q242",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2567719330,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q242&oldid=2567719330",
+      "snapshotSha256": "020564356285a70454f75a638eb7145ec96948c9f36669ce9d56f7cc9176c2da",
+      "nameEvidence": [
+        "Q242:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q242$CF6D1D27-540A-4F05-BD0A-9878FF613F83",
+          "value": "BZ",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -706,15 +1472,27 @@
     {
       "input": "Guatemala",
       "records": 7,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q774",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2571191066,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q774&oldid=2571191066",
+      "snapshotSha256": "911945c04066ed667d269e6e8aa3b970f6d03b6acb1ac7c56d11024cfaab1167",
+      "nameEvidence": [
+        "Q774:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q774$09EB1373-6986-4975-8EA1-3A929B5B79D6",
+          "value": "GT",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -722,15 +1500,27 @@
     {
       "input": "Chile",
       "records": 25,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q298",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "South America",
+      "continentSelection": "preferred-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2571439885,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q298&oldid=2571439885",
+      "snapshotSha256": "cc5037f2bfd258b70247a8d23a327317c85256a56f04dc299eb48fd2d24d6b39",
+      "nameEvidence": [
+        "Q298:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q298$FF65074B-643E-412D-8F69-4ED3B4D66896",
+          "value": "CL",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -738,15 +1528,27 @@
     {
       "input": "Cook Islands",
       "records": 7,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q26988",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568773913,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q26988&oldid=2568773913",
+      "snapshotSha256": "3520a4970c951a09d3f88f3a2accd0718449824e21831222c8ee0ef1f147b668",
+      "nameEvidence": [
+        "Q26988:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q26988$6A75981E-0ED3-4140-AF12-3FEF18DFA2F2",
+          "value": "CK",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -754,15 +1556,27 @@
     {
       "input": "Tokelau",
       "records": 1,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q36823",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568795007,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q36823&oldid=2568795007",
+      "snapshotSha256": "9f3f94e76a84b40d9e2255a8020137b2d9876ee009784d06cd5d54aec0fa6162",
+      "nameEvidence": [
+        "Q36823:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q36823$1DB8868E-8391-4143-87DB-E1AB22EA7FF7",
+          "value": "TK",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -770,15 +1584,27 @@
     {
       "input": "Vanuatu",
       "records": 5,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q686",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569298219,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q686&oldid=2569298219",
+      "snapshotSha256": "6056676db46b963b58899ffb8940bb68f19b5e55e25a5ea43d30bb48c154b8cf",
+      "nameEvidence": [
+        "Q686:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q686$DC56B0F8-E621-4D48-B200-EBC4EB775A52",
+          "value": "VU",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -786,15 +1612,27 @@
     {
       "input": "Tonga",
       "records": 5,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q678",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "preferred-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2571150828,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q678&oldid=2571150828",
+      "snapshotSha256": "e702ce660c75dd750491fe1dc7653076babeab453f97bc520403837cf55e8f29",
+      "nameEvidence": [
+        "Q678:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q678$2262229B-C837-472F-9B80-4770B878C8E4",
+          "value": "TO",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -802,15 +1640,45 @@
     {
       "input": "Netherlands",
       "records": 254,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q29999",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "preferred-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2563993960,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q29999&oldid=2563993960",
+      "snapshotSha256": "60bca42bcccc40eb220d3e983b60422e829e5062f3183ff641eb757a2de8d11c",
+      "nameEvidence": [
+        "Q29999:alias:en:Netherlands"
       ],
+      "codeClaims": [
+        {
+          "statementId": "Q29999$aff4399d-4855-cd4e-2f6b-40970da21842",
+          "value": "NL",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "dc5d3f93f213b9fbd8061710baa7b75061fbcb6b",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "51b73752ed89cbd863a8ca7674e9cd2daeed5cad",
+                    "datavalue": {
+                      "value": "https://www.iso.org/obp/ui/#iso:code:3166:NL",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -820,6 +1688,9 @@
       "records": 151,
       "candidateEntity": "Q145",
       "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
       "revision": 2569133680,
       "permanentLink": "https://www.wikidata.org/w/index.php?title=Q145&oldid=2569133680",
@@ -843,15 +1714,27 @@
     {
       "input": "Cote d'Ivoire",
       "records": 1,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q1008",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569306051,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q1008&oldid=2569306051",
+      "snapshotSha256": "0f6bfc4675e4d42fd47e7aa420014b8f6e89b18941dd29e67af2774b1c7b6aca",
+      "nameEvidence": [
+        "Q1008:alias:en:Cote d'Ivoire"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q1008$97DBA302-D753-4FFC-B9CF-5036D9F48124",
+          "value": "CI",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -859,15 +1742,27 @@
     {
       "input": "Yemen",
       "records": 2,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q805",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "preferred-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569315361,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q805&oldid=2569315361",
+      "snapshotSha256": "bba8f01dbd8db9a6ad11a22a9f0f010323593d01d89d450cbec5c9d77d90aa0a",
+      "nameEvidence": [
+        "Q805:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q805$D8A5DE0D-A8A2-4F0F-B42A-2488DC9FA941",
+          "value": "YE",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -875,15 +1770,27 @@
     {
       "input": "Greece",
       "records": 16,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q41",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568798210,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q41&oldid=2568798210",
+      "snapshotSha256": "7b32ca958d8125df76854e8b255230bb2954306a78a7700c3a147a3d9c077969",
+      "nameEvidence": [
+        "Q41:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q41$11951C48-0C14-4A82-BB7E-2FEEE81886E5",
+          "value": "GR",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -891,15 +1798,27 @@
     {
       "input": "France",
       "records": 272,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q142",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "preferred-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569645472,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q142&oldid=2569645472",
+      "snapshotSha256": "0dc84061d2501f0b8dcdb84a11f8e4c26554c384da553320662697779e6bb177",
+      "nameEvidence": [
+        "Q142:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q142$7E0296A4-1574-49A9-A521-47113029D128",
+          "value": "FR",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -907,12 +1826,31 @@
     {
       "input": "Myanmar (Burma)",
       "records": 4,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q836",
+      "functionalStatus": "missing-source-spelling",
+      "continent": "Asia",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
+      "revision": 2568775107,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q836&oldid=2568775107",
+      "snapshotSha256": "9958669a013240f631fc13e6c7945d77dd6f6c444296d497bc1ef30b9b13b740",
       "nameEvidence": [],
-      "codeClaims": [],
+      "codeClaims": [
+        {
+          "statementId": "q836$29EB0A84-6B64-4E4D-AAE1-88D570C9109A",
+          "value": "MM",
+          "rank": "preferred",
+          "references": []
+        },
+        {
+          "statementId": "Q836$157f71ad-4138-145d-87b0-3f5df312297c",
+          "value": "BU",
+          "rank": "normal",
+          "references": []
+        }
+      ],
       "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
         "Exact spelling absent from admitted source labels and aliases",
         "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
       ],
@@ -923,15 +1861,49 @@
     {
       "input": "Australia",
       "records": 165,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q408",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "preferred-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2567535006,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q408&oldid=2567535006",
+      "snapshotSha256": "5ba01e50c43aa2033995e6c35d5db1f4d53223c5b76a7c1e2f0fe67fa3a876e3",
+      "nameEvidence": [
+        "Q408:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q408$7F318FE3-1460-4C42-B53A-0D62E7E2B3C6",
+          "value": "AU",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "c18985c8eec64ba56d825d795983e1b41e9905fe",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "062933830c4bf3f110cfe0afce0d35352151fdb5",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 25275,
+                        "id": "Q25275"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -939,15 +1911,27 @@
     {
       "input": "Spain",
       "records": 86,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q29",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "preferred-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2565415102,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q29&oldid=2565415102",
+      "snapshotSha256": "6c5679f46e7c127b14b255f1ba24e165dc410f10e9ce7eba8398f6dcf0f128a0",
+      "nameEvidence": [
+        "Q29:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q29$C3781D60-F32A-4011-B008-C19DCE225995",
+          "value": "ES",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -955,15 +1939,27 @@
     {
       "input": "Egypt",
       "records": 3,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q79",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "preferred-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568774112,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q79&oldid=2568774112",
+      "snapshotSha256": "c6bc39806412af1753dbac27c5a8ecb2ea1607d0f117dcf1b4778052546762c5",
+      "nameEvidence": [
+        "Q79:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q79$B6EF30A2-A357-42C1-B82A-07AE3D8A713F",
+          "value": "EG",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -971,15 +1967,27 @@
     {
       "input": "Niue",
       "records": 2,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q34020",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568775247,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q34020&oldid=2568775247",
+      "snapshotSha256": "a14adc3ed4ea4dc903e4bbbc675512c453831bc9d21f82098244aa674694fa9b",
+      "nameEvidence": [
+        "Q34020:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q34020$AEBCC4E8-6A8F-41E3-9C3C-F0F651AECE36",
+          "value": "NU",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -987,15 +1995,27 @@
     {
       "input": "Papua New Guinea",
       "records": 12,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q691",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "preferred-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569307830,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q691&oldid=2569307830",
+      "snapshotSha256": "24f087eb49c4cc6ba211793cedd4c49ddf9ac2bbb9dc04b2846bb92c81f85409",
+      "nameEvidence": [
+        "Q691:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q691$923AB551-2A89-409B-A203-20EB01C2F374",
+          "value": "PG",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1003,15 +2023,27 @@
     {
       "input": "Germany",
       "records": 190,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q183",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2565378989,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q183&oldid=2565378989",
+      "snapshotSha256": "cfa995112e2989cbb4bcc72e49eb804e80c29d5d24e2b47d4fe90067019e7a18",
+      "nameEvidence": [
+        "Q183:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q183$A945083A-AAD3-4793-B94A-5FB16F00174C",
+          "value": "DE",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1019,15 +2051,27 @@
     {
       "input": "Italy",
       "records": 75,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q38",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "preferred-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569731626,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q38&oldid=2569731626",
+      "snapshotSha256": "995ebf976286aa2d53c73bf43b3e2ea0aec7096380e49484aa00ab7f4ac2dcff",
+      "nameEvidence": [
+        "Q38:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q38$B0202A62-4B99-4CAE-B3E7-637DB7DDE0C4",
+          "value": "IT",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1035,15 +2079,27 @@
     {
       "input": "Portugal",
       "records": 20,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q45",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569180981,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q45&oldid=2569180981",
+      "snapshotSha256": "ecf0b73ccc1ccbb4137a7857b694da1321d01864a753b85c63bd1e3f89c14dc1",
+      "nameEvidence": [
+        "Q45:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q45$BA23C5F4-94E2-4419-94B1-BAEF84DC3D77",
+          "value": "PT",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1053,6 +2109,9 @@
       "records": 17,
       "candidateEntity": "Q43",
       "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "first-source-statement-unreviewed",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
       "revision": 2568776192,
       "permanentLink": "https://www.wikidata.org/w/index.php?title=Q43&oldid=2568776192",
@@ -1076,15 +2135,27 @@
     {
       "input": "Ireland",
       "records": 64,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q27",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569180938,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q27&oldid=2569180938",
+      "snapshotSha256": "6b12eb02f2c1673300eb1c1886da562aca4d72277f64ddabf82715dffd47ea54",
+      "nameEvidence": [
+        "Q27:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q27$DF80CD4A-16AC-45DB-BB64-BCE65645CB32",
+          "value": "IE",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1092,15 +2163,27 @@
     {
       "input": "Sweden",
       "records": 142,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q34",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568059265,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q34&oldid=2568059265",
+      "snapshotSha256": "e33336347fa16f9170cff60e70e157e56c493934c3f230399eec88ca12bcc4da",
+      "nameEvidence": [
+        "Q34:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q34$A35CF344-2372-4BE5-86D1-9D6C82301276",
+          "value": "SE",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1108,15 +2191,27 @@
     {
       "input": "Croatia",
       "records": 2,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q224",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568798493,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q224&oldid=2568798493",
+      "snapshotSha256": "067bbe495f700fadd195155ba1b4c35c582426c8326f320c86ed915aba0b154f",
+      "nameEvidence": [
+        "Q224:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q224$25F452B6-4171-4885-987B-395676F771DB",
+          "value": "HR",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1124,15 +2219,27 @@
     {
       "input": "Bulgaria",
       "records": 6,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q219",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568377949,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q219&oldid=2568377949",
+      "snapshotSha256": "40919fb04cceb445e2763bdb4fe9e97a09c3f76dfce3aaaf12738eb9981eef6a",
+      "nameEvidence": [
+        "Q219:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q219$972E474D-43EE-488F-9730-595C35F771C6",
+          "value": "BG",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1140,15 +2247,27 @@
     {
       "input": "China",
       "records": 14,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q148",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2570363697,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q148&oldid=2570363697",
+      "snapshotSha256": "a2a1510447997840e184134214c6159495e6638c34f177502691177bc58fbad3",
+      "nameEvidence": [
+        "Q148:policy:name:China"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q148$A4552BA6-6800-418C-A4E1-D67801374A2B",
+          "value": "CN",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1156,15 +2275,27 @@
     {
       "input": "Brazil",
       "records": 33,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q155",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "South America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568773711,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q155&oldid=2568773711",
+      "snapshotSha256": "1bb0907f6d21257cb25fb81d65629d010f5b238c22d0b7dc71524f3e2065159e",
+      "nameEvidence": [
+        "Q155:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q155$6C3F2E1B-1FE5-40D4-B98B-BD588222C0D3",
+          "value": "BR",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1172,15 +2303,27 @@
     {
       "input": "Malaysia",
       "records": 18,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q833",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569810315,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q833&oldid=2569810315",
+      "snapshotSha256": "0504a0e461b1c437ce7df3444fa55bcfaef22e137eff9621f5c207cfca76e79c",
+      "nameEvidence": [
+        "Q833:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q833$B33DE986-CBB6-49E3-98FD-B6A96375C225",
+          "value": "MY",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1188,15 +2331,27 @@
     {
       "input": "Belgium",
       "records": 6,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q31",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569315931,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q31&oldid=2569315931",
+      "snapshotSha256": "d768a58508e8655f6b7e7b17c5dc899ccc2b2bfe408b97935d03dfc7ece4a03d",
+      "nameEvidence": [
+        "Q31:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q31$28EA4443-61DA-4828-B1F2-34AC27C8C7B6",
+          "value": "BE",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1204,15 +2359,27 @@
     {
       "input": "Barbados",
       "records": 4,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q244",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569311430,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q244&oldid=2569311430",
+      "snapshotSha256": "272eab5c1b3202007972b4fcc94cc012e2c51435190b2be3bb49f89981eb69db",
+      "nameEvidence": [
+        "Q244:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q244$05C4CEC8-7B06-431A-890E-91CAE7CAA775",
+          "value": "BB",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1220,15 +2387,27 @@
     {
       "input": "Colombia",
       "records": 8,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q739",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "South America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568773891,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q739&oldid=2568773891",
+      "snapshotSha256": "caf9793b038f0939bb6e364c38cfe16fa4bb59e81df24b5284ef6a7d9c5c8d3b",
+      "nameEvidence": [
+        "Q739:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q739$AA83A5B4-6DB2-4490-802F-D1375B32C742",
+          "value": "CO",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1236,15 +2415,27 @@
     {
       "input": "Argentina",
       "records": 15,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q414",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "South America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2567814018,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q414&oldid=2567814018",
+      "snapshotSha256": "67f6a17efe04469bb7ec62a790e71e9b02bebfa2d94674d3bbaf316a9a477aa8",
+      "nameEvidence": [
+        "Q414:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q414$886D0013-2A53-42BC-9DB2-D304A0C0D117",
+          "value": "AR",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1254,6 +2445,9 @@
       "records": 3,
       "candidateEntity": "Q25279",
       "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
       "revision": 2568773983,
       "permanentLink": "https://www.wikidata.org/w/index.php?title=Q25279&oldid=2568773983",
@@ -1277,15 +2471,27 @@
     {
       "input": "Peru",
       "records": 17,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q419",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "South America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568117526,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q419&oldid=2568117526",
+      "snapshotSha256": "86003eac43217c5019060f01c4ee2c82f266c4bf073b8bd78fd7ad47b8ad4ec3",
+      "nameEvidence": [
+        "Q419:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q419$465FE9B7-703A-4611-9001-EDEB6C2354E3",
+          "value": "PE",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1293,15 +2499,27 @@
     {
       "input": "South Africa",
       "records": 23,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q258",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568126124,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q258&oldid=2568126124",
+      "snapshotSha256": "7b8f16c59060b5460727c1129f9ca0333c9a75d213e7c96500b9a75fdd3ad53c",
+      "nameEvidence": [
+        "Q258:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q258$08D446E1-8122-47AD-A0C0-09772320175C",
+          "value": "ZA",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1309,15 +2527,27 @@
     {
       "input": "Philippines",
       "records": 16,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q928",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569311280,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q928&oldid=2569311280",
+      "snapshotSha256": "c532d571caecb2a214eba6444ed6bfd9643b07f086aa2d4c8cd6d536b0ce0359",
+      "nameEvidence": [
+        "Q928:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q928$507C6FCB-217A-4A3A-ABD2-1A32395A1A77",
+          "value": "PH",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1325,15 +2555,27 @@
     {
       "input": "Iran",
       "records": 3,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q794",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569323694,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q794&oldid=2569323694",
+      "snapshotSha256": "beb61d3fd73b382665a7507a1407e2215e22c8ab9f6cae235813f8489e588dfd",
+      "nameEvidence": [
+        "Q794:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q794$49EEB985-5721-43B0-99FB-9835B6D07C6E",
+          "value": "IR",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1341,15 +2583,27 @@
     {
       "input": "Bangladesh",
       "records": 8,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q902",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2567630410,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q902&oldid=2567630410",
+      "snapshotSha256": "f1b8b258e116fd12c461a4f6eb26f30a27048202a266ea220af75810f7c9ff7e",
+      "nameEvidence": [
+        "Q902:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q902$AA23DC52-B700-4FB3-8264-B7F26F2B4208",
+          "value": "BD",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1357,15 +2611,27 @@
     {
       "input": "India",
       "records": 4,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q668",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568774463,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q668&oldid=2568774463",
+      "snapshotSha256": "49e6423ae94009fe19ecdd43e26e24e981857756c8d125cf89541b02acd82271",
+      "nameEvidence": [
+        "Q668:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q668$E198548B-5D49-499D-83AD-CC4686624834",
+          "value": "IN",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1373,15 +2639,27 @@
     {
       "input": "Sri Lanka",
       "records": 4,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q854",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569302228,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q854&oldid=2569302228",
+      "snapshotSha256": "a245ee3f19f321fc78fdf6de0a53b3f6b962e3f60de1682f913c3613fce1f683",
+      "nameEvidence": [
+        "Q854:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q854$17A7CB5B-5A60-47CD-9151-D0C6D2874DC8",
+          "value": "LK",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1389,15 +2667,27 @@
     {
       "input": "Senegal",
       "records": 4,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q1041",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568775745,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q1041&oldid=2568775745",
+      "snapshotSha256": "f0d8ace0cf3b87629b239cdd4f82532e0f272e2f60db825651ead364b79bf5d5",
+      "nameEvidence": [
+        "Q1041:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q1041$E9CE991B-A787-463A-8FC2-310531DD7BE9",
+          "value": "SN",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1405,15 +2695,27 @@
     {
       "input": "Tanzania",
       "records": 3,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q924",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568776091,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q924&oldid=2568776091",
+      "snapshotSha256": "13b7b327e0280a7861ef074b99f0110c92cd362e4b342ed897e05ddf3005acb6",
+      "nameEvidence": [
+        "Q924:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q924$EDDBCFFD-4F05-45A8-A3B8-6D97BB4F0E9E",
+          "value": "TZ",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1421,15 +2723,49 @@
     {
       "input": "Poland",
       "records": 5,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q36",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569747262,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q36&oldid=2569747262",
+      "snapshotSha256": "26a68eb4d7416aa754853e7ea5c7a2219f80a78cdc043cb1833930ca939ebf0a",
+      "nameEvidence": [
+        "Q36:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q36$554A3F61-9742-4536-A66A-3415CA5133B8",
+          "value": "PL",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "14d2400e3b1d36332748dc330276f099eeaa8800",
+              "snaks": {
+                "P143": [
+                  {
+                    "snaktype": "value",
+                    "property": "P143",
+                    "hash": "39224a9c2e8ce5424defbd16603d25771956c7fc",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1551807,
+                        "id": "Q1551807"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1437,15 +2773,27 @@
     {
       "input": "Latvia",
       "records": 9,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q211",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568774804,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q211&oldid=2568774804",
+      "snapshotSha256": "015030d0e69f72d346b1bf7082f9bffb1912679f939aa7effb9a1f63863f5bc7",
+      "nameEvidence": [
+        "Q211:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q211$1B380B19-E128-41E4-B369-29172DA25FA5",
+          "value": "LV",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1453,15 +2801,27 @@
     {
       "input": "Finland",
       "records": 28,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q33",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2571508451,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q33&oldid=2571508451",
+      "snapshotSha256": "daa4264df432baf6dbb58826c8c3d3349a6c0e6ec665eacc0f13ada7c715c7a8",
+      "nameEvidence": [
+        "Q33:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q33$8D8466A0-5E3C-4F64-9553-E382CB591D15",
+          "value": "FI",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1469,15 +2829,27 @@
     {
       "input": "Djibouti",
       "records": 2,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q977",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568774057,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q977&oldid=2568774057",
+      "snapshotSha256": "715d36c9a41b8610758a7ae732f748deaacf9661f0796e15bc6c2691fa3c3564",
+      "nameEvidence": [
+        "Q977:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q977$A1681B0C-D720-4D30-B7EA-923D2E9234C3",
+          "value": "DJ",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1485,15 +2857,27 @@
     {
       "input": "Antarctica",
       "records": 7,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q51",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Antarctica",
+      "continentSelection": "local-policy",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569325779,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q51&oldid=2569325779",
+      "snapshotSha256": "36791b6bee74d40680d6ce16d34ec18e976749bead5c156159c31025745b38b5",
+      "nameEvidence": [
+        "Q51:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "Q51$5778ec91-4ded-03c3-2bf7-7d6ded653e32",
+          "value": "AQ",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1501,15 +2885,27 @@
     {
       "input": "Estonia",
       "records": 21,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q191",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2571146930,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q191&oldid=2571146930",
+      "snapshotSha256": "e4b3869d5957b779a2a2c02fd367d8c0f94764201c175fdd563a83097fbbf73b",
+      "nameEvidence": [
+        "Q191:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q191$F5CF53BB-6173-4BC0-A3C1-640D834FEF40",
+          "value": "EE",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1517,15 +2913,27 @@
     {
       "input": "Tuvalu",
       "records": 4,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q672",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "first-source-statement-unreviewed",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569306537,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q672&oldid=2569306537",
+      "snapshotSha256": "6049965ff7f807a34b3cc111100e0d1de99271d6940415bd8ab7a3d30df3a4c4",
+      "nameEvidence": [
+        "Q672:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q672$00848DC3-17FF-47FE-961B-469391365675",
+          "value": "TV",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1533,15 +2941,27 @@
     {
       "input": "Maldives",
       "records": 8,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q826",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569310541,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q826&oldid=2569310541",
+      "snapshotSha256": "539863a80d00536be8037e26c3a2b4b3c775fced217826034d18c2e3e1a0bb2c",
+      "nameEvidence": [
+        "Q826:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q826$5DB6479A-10DF-488B-85E5-A715DD16E00F",
+          "value": "MV",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1549,15 +2969,27 @@
     {
       "input": "Russia",
       "records": 5,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q159",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "first-source-statement-unreviewed",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568775621,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q159&oldid=2568775621",
+      "snapshotSha256": "a078cea6eb98e57901432bc99c50cd82eb069bf146c49b61ad636d7cc49f5a51",
+      "nameEvidence": [
+        "Q159:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q159$021F06CF-36E4-4026-8347-0DB9632367A4",
+          "value": "RU",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1565,15 +2997,27 @@
     {
       "input": "Vietnam",
       "records": 7,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q881",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569318472,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q881&oldid=2569318472",
+      "snapshotSha256": "6c16108837cbda590a6efddf81a12a94fbec59289a910d8c8c32ac0ef1575af3",
+      "nameEvidence": [
+        "Q881:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q881$1E621EF3-A380-4EA0-BE07-E5DAA3EE91C1",
+          "value": "VN",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1581,15 +3025,27 @@
     {
       "input": "Hong Kong",
       "records": 3,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q8646",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2570385335,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q8646&oldid=2570385335",
+      "snapshotSha256": "24c76aaf6215debc52a39933746ec91e32def8ac68c06c1bfe9af9745473e450",
+      "nameEvidence": [
+        "Q8646:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q8646$572F68C0-9726-49DE-AA2C-03F5E1588A66",
+          "value": "HK",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1597,15 +3053,27 @@
     {
       "input": "Solomon Islands",
       "records": 4,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q685",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "first-source-statement-unreviewed",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2570346590,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q685&oldid=2570346590",
+      "snapshotSha256": "99c01c649f9988a1ea5e655acfc09c88a339d4ce8091a69c2d9c3fb558ecebd4",
+      "nameEvidence": [
+        "Q685:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q685$285F2B46-DC0D-4FC1-9706-872FD6C8D39B",
+          "value": "SB",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1613,15 +3081,27 @@
     {
       "input": "Mozambique",
       "records": 6,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q1029",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2571151400,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q1029&oldid=2571151400",
+      "snapshotSha256": "f17ab04d8786e139ee43788384ebc0f68c4c79f952044df8ab8341af1fcc073f",
+      "nameEvidence": [
+        "Q1029:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q1029$E765E32F-56FD-4BC2-AA0A-C58003A122E1",
+          "value": "MZ",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1629,15 +3109,27 @@
     {
       "input": "Romania",
       "records": 2,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q218",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2570674138,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q218&oldid=2570674138",
+      "snapshotSha256": "5c4c7a6d8aed14bb33047ba7ac18767be99b8e64bebc7e435b0edbc0fc51051f",
+      "nameEvidence": [
+        "Q218:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q218$89A11A43-A6E3-4D21-BCDC-2E77E42E5B07",
+          "value": "RO",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1645,15 +3137,27 @@
     {
       "input": "Ukraine",
       "records": 2,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q212",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568776241,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q212&oldid=2568776241",
+      "snapshotSha256": "750e61e896b97166921e0c9c9514e017c20d07bd6fb3f6e59709d89ecfef0261",
+      "nameEvidence": [
+        "Q212:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q212$B2DDF74E-9BC1-4C1C-AB33-1E5FCD42B09C",
+          "value": "UA",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1661,15 +3165,27 @@
     {
       "input": "Taiwan",
       "records": 2,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q865",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2571372610,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q865&oldid=2571372610",
+      "snapshotSha256": "06371ba01638632db99baebfcf81cba4360c57e255f82cd49cb0e5fa21a697ac",
+      "nameEvidence": [
+        "Q865:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q865$E790B2BE-550E-4B1B-82FF-58AF6FB3C0FD",
+          "value": "TW",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1677,15 +3193,27 @@
     {
       "input": "Pakistan",
       "records": 3,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q843",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569320522,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q843&oldid=2569320522",
+      "snapshotSha256": "59fefc0e3c5d08158a665342063c60d68cc9b7aa8b95e6b12a2d5cf033d0ad82",
+      "nameEvidence": [
+        "Q843:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q843$9EB3C51B-E39C-460E-A71D-87F60F3FB019",
+          "value": "PK",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1693,15 +3221,27 @@
     {
       "input": "Singapore",
       "records": 4,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q334",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568775806,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q334&oldid=2568775806",
+      "snapshotSha256": "48521b59e5c8fc5510fcd19fed95173518a7fb52ba094be7c853ab609e069a85",
+      "nameEvidence": [
+        "Q334:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q334$811155F3-AE29-43CF-8723-14B9486FED36",
+          "value": "SG",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1709,15 +3249,27 @@
     {
       "input": "Saint Vincent and the Grenadines",
       "records": 1,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q757",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2564285413,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q757&oldid=2564285413",
+      "snapshotSha256": "7d40c17a56f4072fda695d71ef05b487f8dae599aeabd6045ed445d99a178d0a",
+      "nameEvidence": [
+        "Q757:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q757$AEB1B783-148C-45B5-B781-69B97607F727",
+          "value": "VC",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1725,15 +3277,27 @@
     {
       "input": "Lithuania",
       "records": 1,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q37",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2562955089,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q37&oldid=2562955089",
+      "snapshotSha256": "f6e848e608fa0a55562d77170f1e70d121848d2c50bd2f4c64d57782d469c24e",
+      "nameEvidence": [
+        "Q37:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q37$80E4C4BB-8E3D-4D19-BB9C-C610F06C1FB1",
+          "value": "LT",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1741,15 +3305,27 @@
     {
       "input": "Thailand",
       "records": 4,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q869",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568776102,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q869&oldid=2568776102",
+      "snapshotSha256": "ad949071661cd9fbf1ccdbc805c67ba76e63d00308b09118043d35bec57f8d3c",
+      "nameEvidence": [
+        "Q869:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q869$5F8D2D2A-CCC3-4C3A-AF4B-A115897806B4",
+          "value": "TH",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1757,15 +3333,27 @@
     {
       "input": "Slovenia",
       "records": 2,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q215",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569312825,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q215&oldid=2569312825",
+      "snapshotSha256": "ee7f98d98a52a502a0e2f6710e78c9aed066d3fb0590e19e3ad09dffdd66b27f",
+      "nameEvidence": [
+        "Q215:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q215$3A4776D1-290D-492C-8EA8-A516A55DF45E",
+          "value": "SI",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1773,15 +3361,27 @@
     {
       "input": "Venezuela",
       "records": 1,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q717",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "South America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569315065,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q717&oldid=2569315065",
+      "snapshotSha256": "9d9e85855c34e4f69c08774fd1ea749276807cd1146156ac8a190451162e9f2c",
+      "nameEvidence": [
+        "Q717:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q717$F5C700AE-F26E-4D5A-B773-3477F1C00669",
+          "value": "VE",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1789,15 +3389,27 @@
     {
       "input": "Nigeria",
       "records": 2,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q1033",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569692357,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q1033&oldid=2569692357",
+      "snapshotSha256": "b37ce271aa77c3ba9d1b342560cfd363c0773701d5f862385c8d1905603c4809",
+      "nameEvidence": [
+        "Q1033:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q1033$37ADF889-217E-49AC-95CE-E81AA055C690",
+          "value": "NG",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1805,15 +3417,27 @@
     {
       "input": "Kenya",
       "records": 5,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q114",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2571190890,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q114&oldid=2571190890",
+      "snapshotSha256": "a97f6b264f552331e5e1c042dd72cd2828d74c6ed7a6fcb38fae67a717cb2dd5",
+      "nameEvidence": [
+        "Q114:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q114$791EB029-CD5B-483A-903E-871B5E8E198C",
+          "value": "KE",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1821,15 +3445,27 @@
     {
       "input": "Angola",
       "records": 3,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q916",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568121581,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q916&oldid=2568121581",
+      "snapshotSha256": "41026eb6fb63635638269e7f5c6511be4bacbf49ca7b065aa5a3de964f14e676",
+      "nameEvidence": [
+        "Q916:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q916$B239B5AE-2D43-4AD2-9A47-467C2EA6B397",
+          "value": "AO",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1837,15 +3473,27 @@
     {
       "input": "Oman",
       "records": 7,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q842",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569313493,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q842&oldid=2569313493",
+      "snapshotSha256": "e5b389d2d5e5053c09f5816dd7c1a31a8d4821b023a00575583cd2e4ffe7e044",
+      "nameEvidence": [
+        "Q842:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q842$911E1A57-F979-424B-A76D-52B2F6026BF0",
+          "value": "OM",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1853,15 +3501,27 @@
     {
       "input": "Bahrain",
       "records": 1,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q398",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2567717091,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q398&oldid=2567717091",
+      "snapshotSha256": "9707f232250bdd268d93df87fb07e3b3e04b51c7e56e7c33a1c66241fa7e45ad",
+      "nameEvidence": [
+        "Q398:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q398$F7B56D66-26E6-4CD7-B902-B3A331C1A28B",
+          "value": "BH",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1869,15 +3529,27 @@
     {
       "input": "Nauru",
       "records": 4,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q697",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "preferred-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2570051730,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q697&oldid=2570051730",
+      "snapshotSha256": "7f09fe1cef8ae7031b435855d0c3dbfae2bb4983a561055d26578e1442add99d",
+      "nameEvidence": [
+        "Q697:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q697$88071E3C-AD50-48CC-8F93-3617C45B39A4",
+          "value": "NR",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1885,15 +3557,27 @@
     {
       "input": "Madagascar",
       "records": 1,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q1019",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568774893,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q1019&oldid=2568774893",
+      "snapshotSha256": "c89a5ce2b4f75986a8100978e7de85b88262428cbc6604550387b4115b26e247",
+      "nameEvidence": [
+        "Q1019:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q1019$4C637CAB-7BE5-4165-B34B-9CE21DC89212",
+          "value": "MG",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1901,15 +3585,27 @@
     {
       "input": "Mauritania",
       "records": 2,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q1025",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2571190722,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q1025&oldid=2571190722",
+      "snapshotSha256": "8906573996366e57bafd6e48bf05ed913ac3fff4ad7066a6f51d30b7c2031097",
+      "nameEvidence": [
+        "Q1025:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q1025$CC22C92F-9E31-4D34-B374-605725AE081B",
+          "value": "MR",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1917,15 +3613,27 @@
     {
       "input": "Cabo Verde",
       "records": 3,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q1011",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569328331,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q1011&oldid=2569328331",
+      "snapshotSha256": "e285cb5dd513da040fd67f3c44726ffcf6121e022e8d80b811326394d62ef38a",
+      "nameEvidence": [
+        "Q1011:policy:name:Cabo Verde"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q1011$9BEE7E3B-E52B-4286-B9A9-0A0CC364DD78",
+          "value": "CV",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1933,15 +3641,27 @@
     {
       "input": "Trinidad and Tobago",
       "records": 2,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q754",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568776156,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q754&oldid=2568776156",
+      "snapshotSha256": "2391bcf7a0e3d431ca560452ca6e88afbe8e2eda77dfdf23d82685a4fba693d0",
+      "nameEvidence": [
+        "Q754:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q754$DF8FFDC8-F15B-473F-BFA8-36890FD886D7",
+          "value": "TT",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1951,6 +3671,9 @@
       "records": 3,
       "candidateEntity": "Q971",
       "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
       "revision": 2568810694,
       "permanentLink": "https://www.wikidata.org/w/index.php?title=Q971&oldid=2568810694",
@@ -1974,15 +3697,27 @@
     {
       "input": "Mauritius",
       "records": 6,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q1027",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2571191775,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q1027&oldid=2571191775",
+      "snapshotSha256": "aeb794ca3612019b3fa0630843452f692470e65cddc883c273a44bccb3f616c6",
+      "nameEvidence": [
+        "Q1027:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q1027$9E1ACE13-1B50-439F-9DE9-B11186A86441",
+          "value": "MU",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -1990,15 +3725,27 @@
     {
       "input": "Cameroon",
       "records": 2,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q1009",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568773800,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q1009&oldid=2568773800",
+      "snapshotSha256": "2bce901c0d61fa66edf48bc33a52318b19a528133ddb4850435b12ea911aa0f8",
+      "nameEvidence": [
+        "Q1009:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q1009$D5F7DA06-78BB-4966-AF26-90764A6E305B",
+          "value": "CM",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -2006,15 +3753,27 @@
     {
       "input": "Seychelles",
       "records": 5,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q1042",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568775771,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q1042&oldid=2568775771",
+      "snapshotSha256": "26ce49300e75c4812ac9255add19e932a159878ecad7b3faecab2b90d4e61947",
+      "nameEvidence": [
+        "Q1042:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q1042$A3181B56-408D-4158-B7B9-14756C98B671",
+          "value": "SC",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -2022,15 +3781,27 @@
     {
       "input": "Grenada",
       "records": 2,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q769",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2571191095,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q769&oldid=2571191095",
+      "snapshotSha256": "66322346f67b074d5cd11c889f145f5cda2da1bdf33ac75a159c46c7b6c5ef9e",
+      "nameEvidence": [
+        "Q769:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q769$22671240-2620-4B21-A32B-9FDC4B1032AF",
+          "value": "GD",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -2038,15 +3809,104 @@
     {
       "input": "Iceland",
       "records": 3,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q189",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2569305992,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q189&oldid=2569305992",
+      "snapshotSha256": "8614cdafd8741caeaa50c67a71dfa4baadfa2717be89d431d21fdc59267b8ff4",
+      "nameEvidence": [
+        "Q189:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q189$6C7AB2FC-9D8E-4991-A510-347D7F2E9B70",
+          "value": "IS",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "12608fcc7d11a0833dcc37caad5cbdb733a55d85",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "062933830c4bf3f110cfe0afce0d35352151fdb5",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 25275,
+                        "id": "Q25275"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P503": [
+                  {
+                    "snaktype": "value",
+                    "property": "P503",
+                    "hash": "ac357b528b56dbc239b3d119bc2174816052ed38",
+                    "datavalue": {
+                      "value": "ISO 3166",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P298": [
+                  {
+                    "snaktype": "value",
+                    "property": "P298",
+                    "hash": "dceb1d07c3bc0500b42c7f28e91b1a7cc2abbb23",
+                    "datavalue": {
+                      "value": "ISL",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "417441fd56af722418cd5615905af2a0422d1db9",
+                    "datavalue": {
+                      "value": "https://www.iso.org/obp/ui/#iso:code:3166:IS",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "4341eed2a6dc7cbe52de2d43e720db1325d66362",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2023-06-25T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -2054,15 +3914,27 @@
     {
       "input": "Sao Tome and Principe",
       "records": 2,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q1039",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568775717,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q1039&oldid=2568775717",
+      "snapshotSha256": "74582ab98e3b8e7c46aca4c42ceef240f2062cf365659c50b8d5ea7dc9641ae1",
+      "nameEvidence": [
+        "Q1039:alias:en:Sao Tome and Principe"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q1039$9FBFA181-BA81-45C1-A190-D2C2197A72CE",
+          "value": "ST",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -2070,13 +3942,20 @@
     {
       "input": "Saint Helena",
       "records": 3,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q34497",
+      "functionalStatus": "missing-current-iso-code",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
+      "revision": 2565388728,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q34497&oldid=2565388728",
+      "snapshotSha256": "2248c99838a09e3bbbfdc960b3de13e520f1596f6f19d34a36adc2d4e3c08cf9",
+      "nameEvidence": [
+        "Q34497:label:en"
+      ],
       "codeClaims": [],
       "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
         "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
       ],
       "qualityFlags": [
@@ -2086,15 +3965,27 @@
     {
       "input": "Ghana",
       "records": 3,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q117",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2568774309,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q117&oldid=2568774309",
+      "snapshotSha256": "f43476c5027e47725c0d4dd6423ee0f0d4ec2959a62aa6c1b29543ab621e9c7e",
+      "nameEvidence": [
+        "Q117:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q117$D57EF292-013C-454D-B7B4-F59AF694BD1C",
+          "value": "GH",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]
@@ -2102,15 +3993,27 @@
     {
       "input": "Namibia",
       "records": 2,
-      "functionalStatus": "missing-source-mapping",
+      "candidateEntity": "Q1030",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
       "verificationStatus": "pending",
-      "nameEvidence": [],
-      "codeClaims": [],
-      "blockers": [
-        "No source-backed candidate mapping; discover and review the entity before fetching",
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
+      "revision": 2571151362,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q1030&oldid=2571151362",
+      "snapshotSha256": "b783c52758908ebc09f8955fd52b9f96fadafec45b1d9d43e2ba4f38613b2bfa",
+      "nameEvidence": [
+        "Q1030:label:en"
       ],
+      "codeClaims": [
+        {
+          "statementId": "q1030$206822F6-736C-48F2-8587-FF5B18D3113D",
+          "value": "NA",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]

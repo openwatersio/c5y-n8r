@@ -91,6 +91,7 @@ const preflight: Finding[] = [];
 let checkedLookups = 0;
 let unchangedArtifacts = false;
 const inheritedPolicies = new Set<string>();
+const approvedPolicies = new Set<string>();
 const unchangedAssertions = new Set<string>();
 const assertion = ({ revision, ...value }: EvidenceRequest) => canonical(value);
 const provenanceSnapshots: { id: string; revision: number; file: string; sha256?: string }[] = [];
@@ -139,16 +140,23 @@ if (base) {
     if (!Buffer.from(generated.bytes).equals(proposed.bytes) || generated.evidenceText !== await readCorpusFile(corpus, 'data/evidence.json')) throw new Error('Artifacts differ from trusted source build');
   }
   const oldPolicy = await json(resolve(base), 'sources/policy.json'), newPolicy = await json(corpus, 'sources/policy.json');
-  delete oldPolicy.datasetVersion; delete newPolicy.datasetVersion;
-  delete oldPolicy.aliases; delete newPolicy.aliases;
-  if (canonical(oldPolicy) !== canonical(newPolicy)) preflight.push({ id: 'local-policy-declarations', status: 'needs-review', link: '', message: 'Local coverage, reader requirements or interpretation declarations changed; requires explicit trusted review', references: [] });
+  for (const policy of [oldPolicy, newPolicy]) {
+    delete policy.datasetVersion;
+    delete policy.aliases;
+  }
+  if (canonical(oldPolicy) !== canonical(newPolicy)) {
+    const digest = sha(canonical({ before: oldPolicy, after: newPolicy }));
+    if (approvedReviews['local-policy-transition'] !== digest) preflight.push({ id: 'local-policy-declarations', status: 'needs-review', link: '', message: `Local policy declarations require trusted approval for transition digest ${digest}`, references: [] });
+  }
   const oldManifest = await json(resolve(base), 'sources/manifest.json'), newManifest = await json(corpus, 'sources/manifest.json');
   provenanceSnapshots.push(...newManifest.filter((m: any) => canonical(oldManifest.find((o: any) => o.id === m.id)) !== canonical(m)));
   const oldRequests = new Map(before.requests.map(r => [r.id, r]));
   for (const request of proposed.requests) {
+    const isLocal = /^Q[1-9][0-9]*:policy:/.test(request.id) || ['local-policy', 'ascii-label'].includes(request.kind);
+    if (['local-policy', 'ascii-label'].includes(request.kind) && !request.review && approvedReviews[`local-policy-request:${request.id}`] === sha(canonical(request))) approvedPolicies.add(request.id);
     const old = oldRequests.get(request.id);
     if (!old) continue;
-    if ((/^Q[1-9][0-9]*:policy:/.test(request.id) || ['local-policy', 'ascii-label'].includes(request.kind)) && assertion(old) === assertion(request)) inheritedPolicies.add(request.id);
+    if (isLocal && assertion(old) === assertion(request)) inheritedPolicies.add(request.id);
     if (unchangedArtifacts && canonical(old) === canonical(request)) unchangedAssertions.add(request.id);
   }
   for (const old of before.requests) if (old.review && !proposed.requests.find(r => r.id === old.id)?.review) preflight.push({ id: `withdrawn-review:${old.id}`, status: 'needs-review', link: '', message: 'A previously approved local review was withdrawn; requires explicit trusted review', references: [] });
@@ -219,6 +227,7 @@ for (const snapshot of provenanceSnapshots) {
 for (const request of requests) {
   const finding = await checkEvidence(request, fetchEntity, approvedReviews);
   if (generated && inheritedPolicies.has(request.id) && finding.status === 'needs-review') { finding.blocking = false; finding.advisories = ['inherited-trusted-local-policy']; }
+  if (generated && approvedPolicies.has(request.id) && finding.status === 'needs-review') { finding.blocking = false; finding.advisories = ['approved-trusted-local-policy']; }
   if (unchangedAssertions.has(request.id) && finding.status === 'infrastructure-error' && finding.advisories?.includes('pinned-source-unavailable')) { finding.blocking = false; finding.advisories.push('unchanged-trusted-assertion'); }
   if (unchangedArtifacts && request.review && (finding.status === 'needs-review' || (finding.status === 'infrastructure-error' && finding.advisories?.includes('review-current-source-unavailable')))) finding.blocking = false;
   findings.push(finding);

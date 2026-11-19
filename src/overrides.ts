@@ -43,7 +43,7 @@ function validPropertyValue(property: string, value: any): boolean {
   if (property === 'P298') return typeof value === 'string' && /^[A-Z]{3}$/.test(value);
   if (property === 'P299') return typeof value === 'string' && /^\d{3}$/.test(value);
   if (property === 'P576') return object(value) && text(value.time) && value.precision === 11 && value.calendarmodel === 'http://www.wikidata.org/entity/Q1985727';
-  return object(value) && value['entity-type'] === 'item' && /^Q[1-9][0-9]*$/.test(value.id) && value['numeric-id'] === Number(value.id.slice(1)) && (property !== 'P30' || ['Q15', 'Q46', 'Q48', 'Q49', 'Q18', 'Q538', 'Q51'].includes(value.id));
+  return object(value) && value['entity-type'] === 'item' && /^Q[1-9][0-9]*$/.test(value.id) && value['numeric-id'] === Number(value.id.slice(1)) && (property !== 'P30' || ['Q15', 'Q46', 'Q48', 'Q49', 'Q18', 'Q538', 'Q55643', 'Q51'].includes(value.id));
 }
 
 export function validateReviews(value: unknown): ReviewBundle {

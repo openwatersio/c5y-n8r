@@ -35,7 +35,7 @@ const requests: EvidenceRequest[] = [];
 const assignments: SourceAssignment[] = [];
 const entities: SourceData['entities'] = [];
 const allIds = new Set<string>(manifest.map((m: any) => m.id));
-const continents: Record<string, string> = { Q15: 'Africa', Q46: 'Europe', Q48: 'Asia', Q49: 'North America', Q18: 'South America', Q538: 'Oceania', Q51: 'Antarctica' };
+const continents: Record<string, string> = { Q15: 'Africa', Q46: 'Europe', Q48: 'Asia', Q49: 'North America', Q18: 'South America', Q538: 'Oceania', Q55643: 'Oceania', Q51: 'Antarctica' };
 
 function timeBounds(value: any): { first: string; after: string } | undefined {
   if (!value || value.calendarmodel !== 'http://www.wikidata.org/entity/Q1985727' || value.before || value.after || value.timezone) throw new Error('Unsupported Wikidata time');
@@ -52,6 +52,7 @@ function timeBounds(value: any): { first: string; after: string } | undefined {
   return { first, after: next.toISOString().slice(0, 10) };
 }
 
+if (policy.selfContinent && !allIds.has(policy.selfContinent.entity)) throw new Error('Unknown self-continent entity');
 for (const alias of policy.aliases) if (!allIds.has(alias.entity)) throw new Error(`Unknown alias entity: ${alias.entity}`);
 function qualifierTime(claim: any, property: string) {
   const snaks = claim.qualifiers?.[property];
@@ -82,11 +83,20 @@ for (const item of manifest) {
   const end = endClaim && timeBounds(endClaim.mainsnak.datavalue?.value);
   if (endClaim && endClaim.mainsnak.datavalue?.value?.precision !== 11) throw new Error('Unsupported Wikidata time: dissolution requires day precision');
   const continentClaim = preferredContinents[0] ?? e.claims.P30?.[0];
+  let continent = continents[continentClaim?.mainsnak.datavalue?.value?.id];
+  if (policy.selfContinent?.entity === e.id) {
+    const self = policy.selfContinent;
+    const identityClaim = e.claims.P31?.find(c => c.id === self.statementId);
+    if (e.id !== 'Q51' || self.value !== 'Antarctica' || self.instanceOf !== 'Q5107' || typeof self.scope !== 'string' || !self.scope.trim() || continentClaim || !identityClaim || identityClaim.rank === 'deprecated' || identityClaim.mainsnak.datavalue?.value?.id !== self.instanceOf) throw new Error('Unsupported self-continent policy');
+    request(identityClaim, 'P31');
+    requests.push({ id: `${e.id}:policy:continent:${self.value}`, qid: e.id, revision: e.lastrevid, kind: 'local-policy', expected: self.value, reason: self.scope });
+    continent = self.value;
+  }
   if (continentClaim) request(continentClaim, 'P30');
   if (endClaim) request(endClaim, 'P576');
   const successorClaims = (e.claims.P1366 ?? []).filter(c => allIds.has(c.mainsnak.datavalue?.value?.id));
   successorClaims.forEach(c => request(c, 'P1366'));
-  entities.push({ id: e.id, name: e.labels.en.value, continent: continents[continentClaim?.mainsnak.datavalue?.value?.id], until: end?.after, successors: successorClaims.map(c => c.mainsnak.datavalue.value.id) });
+  entities.push({ id: e.id, name: e.labels.en.value, continent, until: end?.after, successors: successorClaims.map(c => c.mainsnak.datavalue.value.id) });
   for (const [property, namespace] of [['P297', 'iso-alpha2'], ['P298', 'iso-alpha3'], ['P299', 'iso-numeric']] as const) {
     for (const c of e.claims[property] ?? []) {
       const value = c.mainsnak.datavalue?.value;

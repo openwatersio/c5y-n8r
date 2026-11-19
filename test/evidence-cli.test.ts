@@ -300,6 +300,7 @@ test('unreferenced Wikidata additions pass trusted ingestion; forged artifacts a
     const removedStatementId = snapshot.entities.Q213.claims.P30[0].id;
     snapshot.entities.Q213.claims.P30[0].id += '-replacement';
     snapshot.entities.Q213.aliases.en.push({ value: 'Fixture Czech name' });
+    snapshot.entities.Q213.labels.zz = { value: 'ZZ' };
     for (const property of ['P297', 'P298', 'P299']) for (const claim of snapshot.entities.Q213.claims[property] ?? []) claim.references = [];
     item.revision++; item.file = `sources/wikidata/Q213-${item.revision}.json`;
     const raw = JSON.stringify(snapshot); item.sha256 = createHash('sha256').update(raw).digest('hex');
@@ -356,13 +357,16 @@ test('unreferenced Wikidata additions pass trusted ingestion; forged artifacts a
     const originalApprovals = await readFile(approvalFile, 'utf8');
     const approved = { ...JSON.parse(originalApprovals), 'local-policy-transition': approval.message.split(' ').at(-1) };
     await writeFile(join(dir, approvalFile), JSON.stringify(approved));
-    assert.equal((await run()).report.gatePassed, false);
+    const selfApproval = await run();
+    assert.ok(selfApproval.report.findings.some((f: any) => f.id === 'local-policy-declarations' && f.blocking !== false));
+    assert.ok(selfApproval.report.findings.some((f: any) => f.id === 'local-policy-approval-staging' && f.blocking !== false));
     const trusted = join(dir, 'trusted');
     await cp('sources', join(trusted, 'sources'), { recursive: true });
     await cp('data', join(trusted, 'data'), { recursive: true });
     await writeFile(join(trusted, approvalFile), JSON.stringify(approved));
+    assert.ok((await run(trusted)).report.findings.some((f: any) => f.id === 'unconsumed-approval:local-policy-transition'));
+    await writeFile(join(dir, approvalFile), '{}');
     assert.equal((await run(trusted)).report.gatePassed, true);
-    await writeFile(join(dir, approvalFile), originalApprovals);
     policy.coverage = coverage; await writeFile(policyPath, JSON.stringify(policy)); await save();
 
     await writeFile(join(dir, 'sources/evidence-reviews.json'), JSON.stringify({ schemaVersion: 99, reviews: [] }));
@@ -404,7 +408,7 @@ test('unreferenced Wikidata additions pass trusted ingestion; forged artifacts a
     assert.ok(noBase.report.findings.some((f: any) => f.id === 'provenance:Q213' && f.status === 'mismatch'));
     snapshot.entities.Q213.claims.P30[0].rank = rank; item.sha256 = createHash('sha256').update(raw).digest('hex');
     await writeFile(join(dir, item.file), raw); await writeFile(manifestPath, JSON.stringify(manifest)); await save();
-    policy.aliases.push({ entity: 'Q213', namespace: 'unofficial', value: 'ZZ', kind: 'local-policy', reason: 'Unapproved test-only local rule' });
+    policy.aliases.push({ entity: 'Q213', namespace: 'unofficial', value: 'ZZ', kind: 'label', language: 'zz', reason: 'Unapproved test-only local rule' });
     await writeFile(policyPath, JSON.stringify(policy));
     await save();
     const local = await run();
@@ -415,13 +419,15 @@ test('unreferenced Wikidata additions pass trusted ingestion; forged artifacts a
     const key = `local-policy-request:${request.id}`;
     const digest = createHash('sha256').update(canonical(request)).digest('hex');
     await writeFile(join(dir, approvalFile), JSON.stringify({ ...approved, [key]: digest }));
-    assert.equal((await run()).report.gatePassed, false);
+    assert.ok((await run()).report.findings.some((f: any) => f.id === request.id && f.blocking !== false));
     await writeFile(join(trusted, approvalFile), JSON.stringify({ ...approved, [key]: digest }));
+    assert.ok((await run(trusted)).report.findings.some((f: any) => f.id === `unconsumed-approval:${key}`));
+    await writeFile(join(dir, approvalFile), '{}');
     const approvedLocal = await run(trusted);
     assert.equal(approvedLocal.report.gatePassed, true);
     assert.ok(approvedLocal.report.findings.some((f: any) => f.id === request.id && f.advisories?.includes('approved-trusted-local-policy')));
     policy.aliases.at(-1).reason = 'Changed after approval';
     await writeFile(policyPath, JSON.stringify(policy)); await save();
-    assert.equal((await run(trusted)).report.gatePassed, false);
+    assert.ok((await run(trusted)).report.findings.some((f: any) => f.id === request.id && f.blocking !== false));
   } finally { await rm(dir, { recursive: true, force: true }); }
 });

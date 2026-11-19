@@ -1,0 +1,47 @@
+{
+  "transition": {
+    "before": {
+      "referenceDate": "2026-11-15",
+      "coverageFrom": "1974-01-01",
+      "coverageThrough": "2026-11-15",
+      "coverage": "Partial eleven-entity demonstration, 1974-01-01 through referenceDate; no historical completeness asserted.",
+      "minimumReaderVersion": "0.0.2"
+    },
+    "after": {
+      "referenceDate": "2026-11-15",
+      "coverageFrom": "1974-01-01",
+      "coverageThrough": "2026-11-15",
+      "coverage": "Slackwater candidate corpus plus historical demonstration entities; source-backed assignments remain unreviewed; no historical completeness asserted.",
+      "minimumReaderVersion": "0.0.2",
+      "fullEnglishAliasEntities": [
+        "Q43",
+        "Q213",
+        "Q33946",
+        "Q37024",
+        "Q25227",
+        "Q25279",
+        "Q26273",
+        "Q27561",
+        "Q145",
+        "Q971",
+        "Q974"
+      ],
+      "selfContinent": {
+        "entity": "Q51",
+        "value": "Antarctica",
+        "statementId": "q51$1156F414-87F1-46BB-BABA-8AAF3DA0F45C",
+        "instanceOf": "Q5107",
+        "verificationStatus": "pending",
+        "scope": "At referenceDate, display a continent entity as its own continent when its pinned P31 establishes continent identity; does not assert any P30 self-statement or historical boundaries."
+      }
+    }
+  },
+  "request": {
+    "id": "Q51:policy:continent:Antarctica",
+    "qid": "Q51",
+    "revision": 2569325779,
+    "kind": "local-policy",
+    "expected": "Antarctica",
+    "reason": "At referenceDate, display a continent entity as its own continent when its pinned P31 establishes continent identity; does not assert any P30 self-statement or historical boundaries."
+  }
+}

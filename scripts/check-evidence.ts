@@ -91,7 +91,9 @@ const preflight: Finding[] = [];
 let checkedLookups = 0;
 let unchangedArtifacts = false;
 const inheritedPolicies = new Set<string>();
+const approvedPolicies = new Set<string>();
 const unchangedAssertions = new Set<string>();
+const needsLocalApproval = (request: EvidenceRequest) => ['local-policy', 'ascii-label'].includes(request.kind) || /^(?:Q[1-9][0-9]*):policy:(?!name:)/.test(request.id);
 const assertion = ({ revision, ...value }: EvidenceRequest) => canonical(value);
 const provenanceSnapshots: { id: string; revision: number; file: string; sha256?: string }[] = [];
 if (base) {
@@ -138,22 +140,45 @@ if (base) {
     generated ??= await buildCorpus(corpus, approvedReviews);
     if (!Buffer.from(generated.bytes).equals(proposed.bytes) || generated.evidenceText !== await readCorpusFile(corpus, 'data/evidence.json')) throw new Error('Artifacts differ from trusted source build');
   }
+  const proposedApprovals = await approvals(corpus);
+  if (!unchangedArtifacts && Object.keys(proposedApprovals).some(key => /^local-policy-(?:transition$|request:|withdrawal:)/.test(key) && proposedApprovals[key] !== approvedReviews[key])) {
+    preflight.push({ id: 'local-policy-approval-staging', status: 'needs-review', link: '', message: 'Stage local policy approvals separately from runtime data changes', references: [] });
+  }
+  const usesApproval = (key: string, digest: string) => {
+    if (approvedReviews[key] !== digest) return false;
+    if (!Object.hasOwn(proposedApprovals, key)) return true;
+    preflight.push({ id: `unconsumed-approval:${key}`, status: 'needs-review', link: '', message: 'Remove the used approval in the activation PR', references: [] });
+    return false;
+  };
   const oldPolicy = await json(resolve(base), 'sources/policy.json'), newPolicy = await json(corpus, 'sources/policy.json');
-  delete oldPolicy.datasetVersion; delete newPolicy.datasetVersion;
-  delete oldPolicy.aliases; delete newPolicy.aliases;
-  if (canonical(oldPolicy) !== canonical(newPolicy)) preflight.push({ id: 'local-policy-declarations', status: 'needs-review', link: '', message: 'Local coverage, reader requirements or interpretation declarations changed; requires explicit trusted review', references: [] });
+  for (const policy of [oldPolicy, newPolicy]) {
+    delete policy.datasetVersion;
+    delete policy.aliases;
+  }
+  if (canonical(oldPolicy) !== canonical(newPolicy)) {
+    const digest = sha(canonical({ before: oldPolicy, after: newPolicy }));
+    if (!usesApproval('local-policy-transition', digest)) preflight.push({ id: 'local-policy-declarations', status: 'needs-review', link: '', message: `Local policy declarations require trusted approval for transition digest ${digest}`, references: [] });
+  }
   const oldManifest = await json(resolve(base), 'sources/manifest.json'), newManifest = await json(corpus, 'sources/manifest.json');
   provenanceSnapshots.push(...newManifest.filter((m: any) => canonical(oldManifest.find((o: any) => o.id === m.id)) !== canonical(m)));
   const oldRequests = new Map(before.requests.map(r => [r.id, r]));
   for (const request of proposed.requests) {
+    const isLocal = /^Q[1-9][0-9]*:policy:/.test(request.id) || ['local-policy', 'ascii-label'].includes(request.kind);
     const old = oldRequests.get(request.id);
+    if (needsLocalApproval(request) && !request.review && !(old && assertion(old) === assertion(request)) && usesApproval(`local-policy-request:${request.id}`, sha(canonical(request)))) approvedPolicies.add(request.id);
     if (!old) continue;
-    if ((/^Q[1-9][0-9]*:policy:/.test(request.id) || ['local-policy', 'ascii-label'].includes(request.kind)) && assertion(old) === assertion(request)) inheritedPolicies.add(request.id);
+    if (isLocal && assertion(old) === assertion(request)) inheritedPolicies.add(request.id);
     if (unchangedArtifacts && canonical(old) === canonical(request)) unchangedAssertions.add(request.id);
   }
   for (const old of before.requests) if (old.review && !proposed.requests.find(r => r.id === old.id)?.review) preflight.push({ id: `withdrawn-review:${old.id}`, status: 'needs-review', link: '', message: 'A previously approved local review was withdrawn; requires explicit trusted review', references: [] });
   const removed = before.requests.filter(r => !proposed.requests.some(n => n.id === r.id));
-  for (const r of removed) preflight.push({ id: r.id, status: 'needs-review', ...(generated && !r.review && !/^Q[1-9][0-9]*:policy:/.test(r.id) && ['statement', 'label', 'alias'].includes(r.kind) ? { blocking: false, advisories: ['upstream-assertion-removed'] } : {}), link: `https://www.wikidata.org/wiki/${r.qid}`, message: 'Imported assertion removed; protected lookup expectations and trusted rebuilding still apply', references: [] });
+  for (const r of removed) {
+    const approvedWithdrawal = generated && !r.review && (needsLocalApproval(r) || /^Q[1-9][0-9]*:policy:name:/.test(r.id)) && usesApproval(`local-policy-withdrawal:${r.id}`, sha(canonical(r)));
+    const upstreamRemoval = generated && !r.review && !/^Q[1-9][0-9]*:policy:/.test(r.id) && ['statement', 'label', 'alias'].includes(r.kind);
+    preflight.push({ id: r.id, status: 'needs-review',
+      ...(approvedWithdrawal ? { blocking: false, advisories: ['approved-trusted-local-policy-withdrawal'] } : upstreamRemoval ? { blocking: false, advisories: ['upstream-assertion-removed'] } : {}),
+      link: `https://www.wikidata.org/wiki/${r.qid}`, message: 'Assertion removed; protected lookup expectations and trusted rebuilding still apply', references: [] });
+  }
   if (before.binarySha256 !== proposed.binarySha256) {
     if (proposed.metadata.datasetVersion <= before.metadata.datasetVersion) preflight.push({ id: 'dataset-version', status: 'mismatch', link: '', message: 'Changed runtime artifacts require an increased datasetVersion', references: [] });
   }
@@ -219,6 +244,7 @@ for (const snapshot of provenanceSnapshots) {
 for (const request of requests) {
   const finding = await checkEvidence(request, fetchEntity, approvedReviews);
   if (generated && inheritedPolicies.has(request.id) && finding.status === 'needs-review') { finding.blocking = false; finding.advisories = ['inherited-trusted-local-policy']; }
+  if (generated && approvedPolicies.has(request.id) && finding.status === 'needs-review') { finding.blocking = false; finding.advisories = ['approved-trusted-local-policy']; }
   if (unchangedAssertions.has(request.id) && finding.status === 'infrastructure-error' && finding.advisories?.includes('pinned-source-unavailable')) { finding.blocking = false; finding.advisories.push('unchanged-trusted-assertion'); }
   if (unchangedArtifacts && request.review && (finding.status === 'needs-review' || (finding.status === 'infrastructure-error' && finding.advisories?.includes('review-current-source-unavailable')))) finding.blocking = false;
   findings.push(finding);

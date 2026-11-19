@@ -19,9 +19,11 @@ test('unsupported date qualifiers cannot pass a value-only match', async () => {
   const result = await checkEvidence({ ...request(), kind: 'statement', property: 'P297', statementId: 'Q1$test', expected: 'XX', qualifiers: { P580: [{ invented: 'date' }] } }, async () => entity());
   assert.equal(result.status, 'mismatch');
 });
-test('missing references and local overrides remain unverified', async () => {
+test('missing references are advisory while local policy still requires review', async () => {
   const result = await checkEvidence({ ...request(), kind: 'statement', property: 'P297', statementId: 'Q1$test', expected: 'XX' }, async () => entity());
-  assert.equal(result.status, 'needs-review'); assert.equal(passing([result]), false);
+  assert.equal(result.status, 'source-match'); assert.equal(passing([result]), false);
+  assert.equal(result.blocking, false);
+  assert.ok(result.advisories?.includes('missing-statement-references'));
   assert.equal((await checkEvidence({ ...request(), kind: 'local-policy' }, async () => entity())).status, 'needs-review');
 });
 test('source outages do not pass and upstream changes require review', async () => {
@@ -129,4 +131,50 @@ test('readiness detects changed name-statement scope and rank at the current rev
     assert.ok(result.missing.includes('current-statement-scope-or-rank'));
     assert.equal(result.status,'incomplete');
   }
+});
+
+test('current source drift and outages are advisory only after a faithful pinned match', async () => {
+  const statement = { ...request(), kind: 'statement' as const, property: 'P297', statementId: 'Q1$test', expected: 'XX' };
+  for (const change of ['value', 'qualifiers', 'outage']) {
+    const fetcher = async (_: string, revision?: number) => {
+      if (!revision && change === 'outage') throw new Error('HTTP 503 current');
+      const e = entity();
+      if (!revision && change === 'value') e.claims.P297[0].mainsnak.datavalue.value = 'YY';
+      if (!revision && change === 'qualifiers') e.claims.P297[0].qualifiers = { P580: [] };
+      return e;
+    };
+    const result = await checkEvidence(statement, fetcher);
+    assert.equal(result.blocking, false, change);
+    assert.notEqual(result.status, 'verified');
+    assert.equal((await checkEvidence({ ...statement, expected: 'ZZ' }, fetcher)).status, 'mismatch');
+  }
+  const pinnedOutage = await checkEvidence(statement, async () => { throw new Error('HTTP 503 pinned'); });
+  assert.equal(pinnedOutage.status, 'infrastructure-error');
+  assert.notEqual(pinnedOutage.blocking, false);
+  const policy = await checkEvidence({ ...request(), kind: 'local-policy' }, async () => entity());
+  assert.notEqual(policy.blocking, false);
+});
+
+test('source spellings in local code namespaces require review while translated names remain upstream imports', async () => {
+  const e = entity(); e.aliases = { en: [{ value: 'XX' }] }; e.labels.fr = { value: 'Exemple' };
+  const local = await checkEvidence({ ...request(), id: 'Q1:policy:unofficial:XX', kind: 'alias', expected: 'XX' }, async () => e);
+  assert.equal(local.status, 'needs-review');
+  assert.notEqual(local.blocking, false);
+  const translated = await checkEvidence({ ...request(), id: 'Q1:policy:name:Exemple', language: 'fr', expected: 'Exemple' }, async () => e);
+  assert.equal(translated.status, 'source-match');
+  assert.equal(translated.blocking, false);
+});
+
+test('policy markers inside alias text are source names and continent projections stay advisory', async () => {
+  const e = entity(); e.aliases = { en: [{ value: 'Foo:policy:Bar' }] };
+  assert.equal((await checkEvidence({ ...request(), id: 'Q1:alias:en:Foo:policy:Bar', kind: 'alias', expected: 'Foo:policy:Bar' }, async () => e)).status, 'source-match');
+  e.claims.P30 = [
+    { id: 'Q1$continent', rank: 'normal', mainsnak: { datavalue: { value: { id: 'Q46' } } } },
+    { id: 'Q1$other-continent', rank: 'normal', mainsnak: { datavalue: { value: { id: 'Q48' } } }, qualifiers: { P518: [] } },
+  ];
+  const result = await checkEvidence({ ...request(), kind: 'statement', property: 'P30', statementId: 'Q1$continent', expected: { id: 'Q46' }, qualifiers: {} }, async () => e);
+  assert.equal(result.status, 'source-match');
+  assert.equal(result.blocking, false);
+  assert.ok(result.advisories?.includes('single-continent-projection'));
+  assert.ok(result.advisories?.includes('qualified-continent-projection'));
 });

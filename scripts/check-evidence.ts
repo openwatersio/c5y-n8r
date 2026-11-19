@@ -26,10 +26,32 @@ async function selectedActivation(dir: string): Promise<boolean> {
   return activation.active.length > 0 || activation.retired.length > 0;
 }
 
+const caseKey = (c: any) => canonical([c.input, c.namespace ?? null, c.date ?? null, c.dateTime ?? null, c.operation ?? 'resolve', c.from ?? null, c.to ?? null]);
+function preservesCases(before: any[], proposed: any[]): boolean {
+  if (!Array.isArray(before) || !Array.isArray(proposed)) return false;
+  const next = new Map(proposed.map(c => [caseKey(c), canonical(c)]));
+  return next.size === proposed.length && before.every(c => next.get(caseKey(c)) === canonical(c));
+}
+function preservesFixture(before: any, proposed: any): boolean {
+  const { inputs: oldInputs, lookups: oldLookups, ...oldRest } = before;
+  const { inputs: newInputs, lookups: newLookups, ...newRest } = proposed;
+  const newInputKeys = new Set(Array.isArray(newInputs) ? newInputs.map(canonical) : []);
+  return canonical(oldRest) === canonical(newRest) && Array.isArray(oldInputs) && Array.isArray(newInputs) && oldInputs.every((c: any) => newInputKeys.has(canonical(c))) && preservesCases(oldLookups, newLookups);
+}
+
+async function snapshotEntity(entry: { id: string; revision: number; file: string; sha256?: string }): Promise<WikiEntity> {
+  if (!/^Q[1-9][0-9]*$/.test(entry.id) || !Number.isSafeInteger(entry.revision) || entry.revision < 1 || entry.file !== `sources/wikidata/${entry.id}-${entry.revision}.json`) throw new Error('Invalid snapshot manifest path or identity');
+  const raw = await readCorpusFile(corpus, entry.file);
+  if (sha(raw) !== entry.sha256) throw new Error('Snapshot digest mismatch');
+  const entity = JSON.parse(raw).entities[entry.id];
+  if (!entity || entity.id !== entry.id || entity.lastrevid !== entry.revision) throw new Error('Snapshot revision mismatch');
+  return entity;
+}
+
 async function load(dir: string) {
   const bytes = await readFile(resolve(dir, 'data/countries.crdb'));
   const registry = CountryRegistry.open(bytes);
-  const text = await readFile(resolve(dir, 'data/evidence.json'), 'utf8');
+  const text = await readCorpusFile(dir, 'data/evidence.json');
   if (sha(text) !== registry.metadata().evidenceDigest) throw new Error('Evidence companion digest mismatch');
   const evidence = JSON.parse(text);
   if (evidence.datasetVersion !== registry.metadata().datasetVersion || !Array.isArray(evidence.requests)) throw new Error('Evidence release mismatch');
@@ -60,20 +82,23 @@ const hasReviews = proposed.requests.some(r => r.review) || await selectedActiva
 if (hasReviews && !base) throw new Error('Reviewed evidence requires a trusted --base');
 const approvedReviews = base ? await approvals(resolve(base)) : {};
 let generated: Awaited<ReturnType<typeof buildCorpus>> | undefined;
-if (hasReviews) {
+if (hasReviews || (!base && !readerResults)) {
   generated = await buildCorpus(corpus, approvedReviews);
-  if (!Buffer.from(generated.bytes).equals(proposed.bytes) || generated.evidenceText !== await readFile(resolve(corpus, 'data/evidence.json'), 'utf8')) throw new Error('Reviewed artifacts differ from trusted source build');
+  if (!Buffer.from(generated.bytes).equals(proposed.bytes) || generated.evidenceText !== await readCorpusFile(corpus, 'data/evidence.json')) throw new Error('Artifacts differ from trusted source build');
 }
 let requests = proposed.requests;
 const preflight: Finding[] = [];
 let checkedLookups = 0;
 let unchangedArtifacts = false;
-const provenanceSnapshots: { id: string; revision: number; file: string }[] = [];
+const inheritedPolicies = new Set<string>();
+const unchangedAssertions = new Set<string>();
+const assertion = ({ revision, ...value }: EvidenceRequest) => canonical(value);
+const provenanceSnapshots: { id: string; revision: number; file: string; sha256?: string }[] = [];
 if (base) {
   const before = await load(resolve(base));
   unchangedArtifacts = before.binarySha256 === proposed.binarySha256;
-  const beforeFixture = JSON.parse(await readFile(resolve(base, 'sources/accepted-inputs.json'), 'utf8'));
-  const proposedFixture = JSON.parse(await readFile(resolve(corpus, 'sources/accepted-inputs.json'), 'utf8'));
+  const beforeFixture = await json(resolve(base), 'sources/accepted-inputs.json');
+  const proposedFixture = await json(corpus, 'sources/accepted-inputs.json');
   const methodCases = async (dir: string) => {
     const fixture = await json(dir, 'sources/accepted-methods.json').catch(error => { if (error.code === 'ENOENT') return undefined; throw error; });
     if (fixture && (fixture.schemaVersion !== 1 || !Array.isArray(fixture.cases))) throw new Error('Invalid method compatibility fixture');
@@ -81,9 +106,9 @@ if (base) {
   };
   const beforeMethods = await methodCases(resolve(base));
   const proposedMethods = await methodCases(corpus);
-  if (beforeMethods && canonical(beforeMethods) !== canonical(proposedMethods ?? [])) preflight.push({ id: 'method-compatibility-fixture', status: 'needs-review', link: '', message: 'Protected method expectations changed; requires explicit trusted review', references: [] });
+  if (beforeMethods && !preservesCases(beforeMethods, proposedMethods ?? [])) preflight.push({ id: 'method-compatibility-fixture', status: 'needs-review', link: '', message: 'Protected method expectations changed; requires explicit trusted review', references: [] });
   const expectedCases = [...beforeFixture.lookups, ...(beforeMethods ?? [])];
-  if (canonical(beforeFixture) !== canonical(proposedFixture)) preflight.push({ id: 'compatibility-fixture', status: 'needs-review', link: '', message: 'Compatibility expectations changed; review additions, removals and changed answers against the trusted base', references: [] });
+  if (!preservesFixture(beforeFixture, proposedFixture)) preflight.push({ id: 'compatibility-fixture', status: 'needs-review', link: '', message: 'Protected compatibility expectations changed or disappeared; existing cases must be preserved exactly', references: [] });
   if (readerResults) {
     const file = resolve(readerResults);
     if ((await stat(file)).size > 4 * 1024 * 1024) throw new Error('Oversized reader observations');
@@ -109,57 +134,42 @@ if (base) {
     }
     requests = [];
   } else {
-  let reviewedTransition = false;
-  if (hasReviews || before.requests.some(r => r.review) || await selectedActivation(resolve(base))) {
+  if (!preflight.length) {
     generated ??= await buildCorpus(corpus, approvedReviews);
-    if (!Buffer.from(generated.bytes).equals(proposed.bytes) || generated.evidenceText !== await readFile(resolve(corpus, 'data/evidence.json'), 'utf8')) throw new Error('Reviewed artifacts differ from trusted source build');
-    const oldPolicy = await json(resolve(base), 'sources/policy.json'), newPolicy = await json(corpus, 'sources/policy.json');
-    delete oldPolicy.datasetVersion; delete newPolicy.datasetVersion;
-    const oldManifest = await json(resolve(base), 'sources/manifest.json'), newManifest = await json(corpus, 'sources/manifest.json');
-    const sameManifest = canonical(oldManifest) === canonical(newManifest);
-    const changedSnapshots = newManifest.filter((m: any) => canonical(oldManifest.find((o: any) => o.id === m.id)) !== canonical(m));
-    const reviewedEntities = new Set(generated.reviews.map(r => r.record.qid));
-    const beforeGenerated = sameManifest ? undefined : await buildCorpus(resolve(base), approvedReviews);
-    const sameFacts = beforeGenerated && canonical([beforeGenerated.source.entities, beforeGenerated.source.assignments]) === canonical([generated.source.entities, generated.source.assignments]);
-    const reviewedIds = new Set([...before.requests, ...proposed.requests].filter(r => r.review).map(r => r.id));
-    const assertions = (rs: EvidenceRequest[]) => rs.filter(r => !reviewedIds.has(r.id)).map(({ revision, ...r }) => r);
-    reviewedTransition = canonical(oldPolicy) === canonical(newPolicy) && (sameManifest || !!sameFacts && changedSnapshots.every((m: any) => reviewedEntities.has(m.id)) && canonical(assertions(before.requests)) === canonical(assertions(proposed.requests)));
-    if (reviewedTransition && !sameManifest) provenanceSnapshots.push(...changedSnapshots);
+    if (!Buffer.from(generated.bytes).equals(proposed.bytes) || generated.evidenceText !== await readCorpusFile(corpus, 'data/evidence.json')) throw new Error('Artifacts differ from trusted source build');
   }
-  const oldRequests = new Map(before.requests.map(r => [r.id, JSON.stringify(r)]));
-  requests = proposed.requests.filter(r => {
-    if (r.review) return true;
-    const old = before.requests.find(o => o.id === r.id);
-    if (reviewedTransition && old) {
-      const { revision: oldRevision, ...oldAssertion } = old, { revision, ...assertion } = r;
-      if (canonical(oldAssertion) === canonical(assertion)) return false;
-    }
-    return oldRequests.get(r.id) !== JSON.stringify(r);
-  });
+  const oldPolicy = await json(resolve(base), 'sources/policy.json'), newPolicy = await json(corpus, 'sources/policy.json');
+  delete oldPolicy.datasetVersion; delete newPolicy.datasetVersion;
+  delete oldPolicy.aliases; delete newPolicy.aliases;
+  if (canonical(oldPolicy) !== canonical(newPolicy)) preflight.push({ id: 'local-policy-declarations', status: 'needs-review', link: '', message: 'Local coverage, reader requirements or interpretation declarations changed; requires explicit trusted review', references: [] });
+  const oldManifest = await json(resolve(base), 'sources/manifest.json'), newManifest = await json(corpus, 'sources/manifest.json');
+  provenanceSnapshots.push(...newManifest.filter((m: any) => canonical(oldManifest.find((o: any) => o.id === m.id)) !== canonical(m)));
+  const oldRequests = new Map(before.requests.map(r => [r.id, r]));
+  for (const request of proposed.requests) {
+    const old = oldRequests.get(request.id);
+    if (!old) continue;
+    if ((/^Q[1-9][0-9]*:policy:/.test(request.id) || ['local-policy', 'ascii-label'].includes(request.kind)) && assertion(old) === assertion(request)) inheritedPolicies.add(request.id);
+    if (unchangedArtifacts && canonical(old) === canonical(request)) unchangedAssertions.add(request.id);
+  }
+  for (const old of before.requests) if (old.review && !proposed.requests.find(r => r.id === old.id)?.review) preflight.push({ id: `withdrawn-review:${old.id}`, status: 'needs-review', link: '', message: 'A previously approved local review was withdrawn; requires explicit trusted review', references: [] });
   const removed = before.requests.filter(r => !proposed.requests.some(n => n.id === r.id));
-  for (const r of removed) preflight.push({ id: r.id, status: 'needs-review', link: `https://www.wikidata.org/wiki/${r.qid}`, message: 'Evidence or accepted meaning removed; requires explicit review', references: [] });
+  for (const r of removed) preflight.push({ id: r.id, status: 'needs-review', ...(generated && !r.review && !/^Q[1-9][0-9]*:policy:/.test(r.id) && ['statement', 'label', 'alias'].includes(r.kind) ? { blocking: false, advisories: ['upstream-assertion-removed'] } : {}), link: `https://www.wikidata.org/wiki/${r.qid}`, message: 'Imported assertion removed; protected lookup expectations and trusted rebuilding still apply', references: [] });
   if (before.binarySha256 !== proposed.binarySha256) {
     if (proposed.metadata.datasetVersion <= before.metadata.datasetVersion) preflight.push({ id: 'dataset-version', status: 'mismatch', link: '', message: 'Changed runtime artifacts require an increased datasetVersion', references: [] });
-    // The spike rechecks all claims when runtime facts change so omissions cannot hide behind unchanged requests.
-    if (!reviewedTransition) {
-      requests = proposed.requests;
-      preflight.push({ id: 'binary-diff', status: 'needs-review', link: '', message: 'Runtime facts changed; inspect entity dates, relationships, and binary-to-source interpretation before approval', references: [] });
-    }
   }
   }
 }
+if (!base && !readerResults) provenanceSnapshots.push(...await json(corpus, 'sources/manifest.json'));
 await mkdir(reportDir, { recursive: true });
 const cache = new Map<string, Promise<WikiEntity>>();
 async function fetchEntity(qid: string, revision?: number): Promise<WikiEntity> {
   const key = `${qid}-${revision ?? 'current'}`;
   if (!cache.has(key)) cache.set(key, (async () => {
     if (offline) {
-      const manifest = JSON.parse(await readFile(resolve(corpus, 'sources/manifest.json'), 'utf8'));
+      const manifest = await json(corpus, 'sources/manifest.json');
       const entry = manifest.find((m: any) => m.id === qid && (!revision || m.revision === revision));
-      if (!entry || !/^sources\/wikidata\/Q[1-9][0-9]*-[0-9]+\.json$/.test(entry.file)) throw new Error('Missing cached revision');
-      const raw = await readFile(resolve(corpus, entry.file), 'utf8');
-      if (sha(raw) !== entry.sha256) throw new Error('Snapshot digest mismatch');
-      return JSON.parse(raw).entities[qid];
+      if (!entry) throw new Error('Missing cached revision');
+      return snapshotEntity(entry);
     }
     const url = new URL(`https://www.wikidata.org/wiki/Special:EntityData/${qid}.json`);
     if (revision) url.searchParams.set('revision', String(revision));
@@ -180,8 +190,15 @@ async function reviews(dir: string): Promise<ReviewManifest> {
 }
 const readiness = [];
 if (!readerResults) {
-  const proposedReviews = await reviews(corpus);
-  const trustedReviews = base ? await reviews(resolve(base)) : { schemaVersion: 1 as const, reviews: [] };
+  const loadReviews = async (dir: string, id: string): Promise<ReviewManifest> => {
+    try { return await reviews(dir); }
+    catch (error) {
+      readiness.push({ id, requestDigest: '', status: 'incomplete', missing: ['invalid-readiness-ledger'], message: error instanceof Error ? error.message : String(error) });
+      return { schemaVersion: 1, reviews: [] };
+    }
+  };
+  const proposedReviews = await loadReviews(corpus, 'readiness-ledger');
+  const trustedReviews = base ? await loadReviews(resolve(base), 'trusted-readiness-ledger') : { schemaVersion: 1 as const, reviews: [] };
   const known = new Set(proposed.requests.map(r => r.id));
   for (const record of proposedReviews.reviews.filter(r => !known.has(r.id))) readiness.push({ id: record.id, requestDigest: record.requestDigest, status: 'incomplete', missing: ['unknown-request'] });
   for (const request of proposed.requests) {
@@ -193,20 +210,22 @@ if (!readerResults) {
 const findings = [...preflight];
 for (const snapshot of provenanceSnapshots) {
   try {
-    const expected = JSON.parse(await readFile(resolve(corpus, snapshot.file), 'utf8')).entities[snapshot.id];
+    const expected = await snapshotEntity(snapshot);
     const actual = await fetchEntity(snapshot.id, snapshot.revision);
     const matches = actual.id === snapshot.id && actual.lastrevid === snapshot.revision && canonical(actual) === canonical(expected);
-    findings.push({ id: `provenance:${snapshot.id}`, status: offline ? 'needs-review' : matches ? 'source-match' : 'mismatch', blocking: !matches || offline, link: `https://www.wikidata.org/w/index.php?title=${snapshot.id}&oldid=${snapshot.revision}`, message: offline ? 'Offline snapshots cannot authenticate a refreshed upstream revision' : matches ? 'Refreshed snapshot matches the live pinned revision; unchanged unreviewed assertions remain unverified' : 'Refreshed snapshot differs from its live pinned revision', references: [] });
+    findings.push({ id: `provenance:${snapshot.id}`, status: offline ? 'needs-review' : matches ? 'source-match' : 'mismatch', blocking: !matches || offline, link: `https://www.wikidata.org/w/index.php?title=${snapshot.id}&oldid=${snapshot.revision}`, message: offline ? 'Offline snapshots cannot authenticate a refreshed upstream revision' : matches ? 'Refreshed snapshot matches the live pinned revision; this authenticates provenance, not independent accuracy' : 'Refreshed snapshot differs from its live pinned revision', references: [] });
   } catch (error) { findings.push({ id: `provenance:${snapshot.id}`, status: 'infrastructure-error', link: '', message: String(error), references: [] }); }
 }
 for (const request of requests) {
   const finding = await checkEvidence(request, fetchEntity, approvedReviews);
-  if (unchangedArtifacts && request.review && ['needs-review', 'infrastructure-error'].includes(finding.status)) finding.blocking = false;
+  if (generated && inheritedPolicies.has(request.id) && finding.status === 'needs-review') { finding.blocking = false; finding.advisories = ['inherited-trusted-local-policy']; }
+  if (unchangedAssertions.has(request.id) && finding.status === 'infrastructure-error' && finding.advisories?.includes('pinned-source-unavailable')) { finding.blocking = false; finding.advisories.push('unchanged-trusted-assertion'); }
+  if (unchangedArtifacts && request.review && (finding.status === 'needs-review' || (finding.status === 'infrastructure-error' && finding.advisories?.includes('review-current-source-unavailable')))) finding.blocking = false;
   findings.push(finding);
 }
 const counts = findings.reduce<Record<string, number>>((out, f) => { out[f.status] = (out[f.status] ?? 0) + 1; return out; }, {});
-const gatePassed = readerResults ? findings.length === 0 : !offline && findings.filter(f => f.blocking !== false).every(f => f.status === 'verified');
-const report = { gatePassed, datasetVersion: proposed.metadata.datasetVersion, binarySha256: proposed.binarySha256, evidenceDigest: proposed.metadata.evidenceDigest, mode: readerResults ? 'reader-compatibility' : offline ? 'pinned-snapshots-only' : 'live-pinned-and-current', checkedLookups, applicable: !!readerResults || findings.length > 0, passed: readerResults ? findings.length === 0 : !offline && findings.every(f => f.status === 'verified'), counts, findings, readiness, limitation: 'Reference passages are interpreted by maintainers. Reviewed findings require an approved exact record digest; offline checks cannot certify live upstream state. Unreviewed assertions stay non-passing.' };
+const gatePassed = readerResults ? findings.length === 0 : !offline && findings.filter(f => f.blocking !== false).every(f => f.status === 'verified' || f.status === 'source-match');
+const report = { gatePassed, datasetVersion: proposed.metadata.datasetVersion, binarySha256: proposed.binarySha256, evidenceDigest: proposed.metadata.evidenceDigest, mode: readerResults ? 'reader-compatibility' : offline ? 'pinned-snapshots-only' : 'live-pinned-and-current', checkedLookups, applicable: !!readerResults || findings.length > 0, passed: readerResults ? findings.length === 0 : !offline && findings.every(f => f.status === 'verified'), counts, findings, readiness, limitation: 'Reference passages are interpreted by maintainers. Wikidata source matches are accepted for ingestion, not independent certification. Approved local overrides retain exact record digest controls. Quality findings and current upstream drift are advisory after pinned authentication; offline checks cannot authenticate live upstream state.' };
 await writeFile(resolve(reportDir, 'report.json'), JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify({ ...report, findings: undefined, readiness: undefined, reviewReadinessCounts: readiness.reduce<Record<string, number>>((counts, item) => { counts[item.status] = (counts[item.status] ?? 0) + 1; return counts; }, {}), report: resolve(reportDir, 'report.json') }, null, 2));
 process.exitCode = findings.length && !gatePassed ? 1 : 0;

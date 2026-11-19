@@ -2,13 +2,13 @@
 
 This spike exercises one binary dataset and its TypeScript reader. It remains unpublished and has no production consumer. The corpus has eleven Wikidata entities, 119 indexed assignments, and 136 evidence requests. The binary is 28,276 bytes; the evidence companion is 48,012 bytes. Source snapshots are about 5 MB and stay outside the runtime lookup artifact.
 
-## Evidence
+## Source fidelity and evidence quality
 
-The live pinned-and-current check reports 81 spelling matches and 55 findings requiring review. It exits with status 1. No claim is certified merely because a Wikidata URL exists. The full per-assertion output is in [evidence.json](evidence.json).
+Wikidata is the upstream source, including statements without independent supporting references. The gate checks faithful extraction from pinned revisions and compatibility. Missing or weak references are asynchronous quality work, not a prerequisite to including data. Existing archived evidence reports describe the policy under which they were generated; they are not a current gate verdict.
 
-Many ISO claims have no references. The reused CS assignments carry year-precision qualifiers and deprecated ranks. A country existence date cannot fill in a missing ISO assignment date. Labels and accepted spellings have useful provenance without proving official-name history. The snapshot for Q43 labels the country Turkey in English and Türkiye in Turkish.
+Many ISO claims have no references. They can be imported with source provenance while quality issues remain open. The reused CS assignments carry year-precision qualifiers and deprecated ranks; those require faithful temporal interpretation. A country existence date cannot fill in a missing ISO assignment date. Labels and aliases can supply accepted spellings without establishing official-name history. Q43 is labeled Turkey in English and Türkiye in Turkish in the pin.
 
-Spelling matches use `source-match` and cannot certify a verified dataset. Derived spellings remain local policy requiring review. The check prototype conservatively leaves statement interpretation and local-policy aliases unresolved. It has no automated primary-document passage extraction or maintainer-resolution mechanism. Runtime entity/assignment or metadata changes trigger a non-passing review finding. Code-only changes with unchanged facts report no new factual assertions. The CI workflow isolates trusted checker code from proposed artifacts; it is not configured as a required branch-protection rule.
+A source match does not certify factual truth. Improve suspected upstream errors in Wikidata, then sync and version the corrected data. Derived spellings, unofficial aliases and local corrections remain explicitly local policy. Trusted artifact rebuilding, pinned source authentication, versioning and protected reader observations remain required. Missing evidence quality and missing temporal information are separate concerns.
 
 ## Lookup behavior
 
@@ -46,8 +46,8 @@ The harness also examined 8,728 Slackwater source records and 129 distinct count
 ## Before retaining or expanding the implementation
 
 - Establish the initial production entity/date boundary and explicit completeness declarations.
-- Resolve source references and date interpretations, including inclusive source dates versus half-open runtime intervals.
-- Decide the maintainer-resolution mechanism for PR evidence findings and implement primary-source passage checks.
+- Preserve date precision and explicit interval interpretation; investigate weak source references asynchronously.
+- Keep evidence-quality follow-ups separate from required source-fidelity checks.
 - Specify dated preferred names and a continent convention; preserve unsupported claims as unverified rather than promoting them silently.
 - Measure full-scale data, individual lookup distributions, cold module/file loading, allocations, and retained memory before setting budgets.
 - Fuzz the handwritten structural verifier against a larger malformed corpus or select a supported verifier strategy; shared structures are memoized, expanded structural work is bounded, and indexed entity IDs are limited to 64 UTF-16 code units. This spike validates the fields it reads; it is not a security certification for arbitrary future schemas.

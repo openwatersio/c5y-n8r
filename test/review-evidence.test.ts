@@ -115,7 +115,7 @@ test('unchanged reviewed artifacts report live drift without blocking a maintena
     const manifest = JSON.parse(await readFile(join(dir, 'sources/manifest.json'), 'utf8'));
     const m = manifest.find((m: any) => m.id === 'Q43');
     const preload = join(dir, 'unchanged-drift.mjs');
-    await writeFile(preload, `import {readFileSync} from 'node:fs'; const raw=readFileSync(${JSON.stringify(join(dir, m.file))}, 'utf8'); globalThis.fetch=async input=>{ const data=JSON.parse(raw); if(!new URL(input).searchParams.has('revision')) data.entities.Q43.claims.P30[0].rank='preferred'; return new Response(JSON.stringify(data)); };`);
+    await writeFile(preload, `import {readFileSync} from 'node:fs'; const root=${JSON.stringify(dir)}; globalThis.fetch=async input=>{ const url=new URL(input), qid=url.pathname.split('/').pop().replace('.json',''); const item=JSON.parse(readFileSync(root+'/sources/manifest.json','utf8')).find(m=>m.id===qid); const data=JSON.parse(readFileSync(root+'/'+item.file,'utf8')); if(qid==='Q43'&&!url.searchParams.has('revision')) data.entities.Q43.claims.P30[0].rank='preferred'; return new Response(JSON.stringify(data)); };`);
     assert.equal(cli(dir, dir, preload).status, 0);
     const report = JSON.parse(await readFile(join(dir, 'report/report.json'), 'utf8'));
     assert.equal(report.passed, false);
@@ -124,7 +124,7 @@ test('unchanged reviewed artifacts report live drift without blocking a maintena
   });
 });
 
-test('retirement after an upstream reference addition preserves effective facts and passes the scoped gate', async () => {
+test('retirement after an upstream reference addition preserves effective facts and passes the source-fidelity gate', async () => {
   await reviewedCorpus(async (dir, r, approvals) => {
     const { cp, mkdtemp, rm } = await import('node:fs/promises');
     const { createHash } = await import('node:crypto');
@@ -147,7 +147,7 @@ test('retirement after an upstream reference addition preserves effective facts 
       await writeFile(path, JSON.stringify(policy));
       await save(dir, approvals);
       const preload = join(dir, 'adopted.mjs');
-      await writeFile(preload, `globalThis.fetch=async()=>new Response(${JSON.stringify(raw)});`);
+      await writeFile(preload, `import {readFileSync} from 'node:fs'; const root=${JSON.stringify(dir)}; globalThis.fetch=async input=>{const qid=new URL(input).pathname.split('/').pop().replace('.json',''); if(qid==='Q43')return new Response(${JSON.stringify(raw)}); const item=JSON.parse(readFileSync(root+'/sources/manifest.json','utf8')).find(m=>m.id===qid); return new Response(readFileSync(root+'/'+item.file,'utf8'));};`);
       const result = cli(dir, base, preload);
       assert.equal(result.status, 0, result.stdout + result.stderr);
       const report = JSON.parse(await readFile(join(dir, 'report/report.json'), 'utf8'));
@@ -166,7 +166,7 @@ test('retirement after an upstream reference addition preserves effective facts 
   });
 });
 
-test('trusted activation limits rechecking to reviewed differences but offline mode cannot certify live state', async () => {
+test('trusted activation retains complete quality reporting but offline mode cannot certify live state', async () => {
   await reviewedCorpus(async (dir, r, approvals) => {
     const { cp, mkdtemp, rm } = await import('node:fs/promises');
     const base = await mkdtemp(join(dir, 'base-'));
@@ -178,11 +178,10 @@ test('trusted activation limits rechecking to reviewed differences but offline m
       const result = cli(dir, base);
       assert.equal(result.status, 1);
       const report = JSON.parse(await readFile(join(dir, 'report/report.json'), 'utf8'));
-      assert.equal(report.findings.length, 1);
-      assert.equal(report.findings[0].id, r.statementId);
-      assert.equal(report.findings[0].status, 'verified');
+      assert.ok(report.findings.length > 1);
+      assert.equal(report.findings.find((f: any) => f.id === r.statementId).status, 'verified');
       assert.equal(report.passed, false);
-      assert.equal(report.findings[0].provenance.kind, 'local-review');
+      assert.equal(report.findings.find((f: any) => f.id === r.statementId).provenance.kind, 'local-review');
       const fixturePath = join(dir, 'sources/accepted-inputs.json'), originalFixture = await readFile(fixturePath, 'utf8');
       await writeFile(fixturePath, JSON.stringify({ ...JSON.parse(originalFixture), reviewNote: 'Changed fixture during activation' }));
       assert.equal(cli(dir, base).status, 1);
@@ -203,7 +202,7 @@ test('trusted activation limits rechecking to reviewed differences but offline m
   });
 });
 
-test('a reviewed transition cannot hide a forged new revision on an unrelated country', async () => {
+test('a reviewed import cannot hide a forged new revision on an unrelated country', async () => {
   await reviewedCorpus(async (dir, r, approvals) => {
     const { cp, mkdtemp, rm } = await import('node:fs/promises');
     const { createHash } = await import('node:crypto');
@@ -226,12 +225,12 @@ test('a reviewed transition cannot hide a forged new revision on an unrelated co
       await writeFile(preload, `import {readFileSync} from 'node:fs'; const raw=readFileSync(${JSON.stringify(join(dir, q43.file))}, 'utf8'); globalThis.fetch=async()=>new Response(raw);`);
       assert.equal(cli(dir, base, preload).status, 1);
       const report = JSON.parse(await readFile(join(dir, 'report/report.json'), 'utf8'));
-      assert.equal(report.findings.some((f: any) => f.id === 'binary-diff'), true);
+      assert.equal(report.findings.some((f: any) => f.id === 'provenance:Q213' && ['mismatch', 'infrastructure-error'].includes(f.status) && f.blocking !== false), true);
     } finally { await rm(base, { recursive: true, force: true }); }
   });
 });
 
-test('a scoped transition still rechecks unchanged active reviews for upstream drift', async () => {
+test('the complete quality pass rechecks unchanged active reviews for upstream drift', async () => {
   await reviewedCorpus(async (dir, r, approvals) => {
     const { cp, mkdtemp, rm } = await import('node:fs/promises');
     const base = await mkdtemp(join(dir, 'base-'));
@@ -253,14 +252,17 @@ test('a scoped transition still rechecks unchanged active reviews for upstream d
       await save(dir, approvals);
       cli(dir, base);
       const report = JSON.parse(await readFile(join(dir, 'report/report.json'), 'utf8'));
-      assert.deepEqual(new Set(report.findings.map((f: any) => f.id)), new Set([r.statementId, second.statementId]));
+      assert.ok(report.findings.some((f: any) => f.id === r.statementId));
+      assert.ok(report.findings.some((f: any) => f.id === second.statementId));
       const preload = join(dir, 'current-drift.mjs');
       await writeFile(preload, `
         import {readFileSync} from 'node:fs';
         const raw = readFileSync(${JSON.stringify(join(dir, m.file))}, 'utf8');
         globalThis.fetch = async input => {
-          const data = JSON.parse(raw), url = new URL(input);
-          if (!url.searchParams.has('revision')) data.entities.Q43.claims.P30[0].rank = 'preferred';
+          const url = new URL(input), qid=url.pathname.split('/').pop().replace('.json','');
+          const root=${JSON.stringify(dir)}, item=JSON.parse(readFileSync(root+'/sources/manifest.json','utf8')).find(m=>m.id===qid);
+          const data = JSON.parse(readFileSync(root+'/'+item.file,'utf8'));
+          if (qid==='Q43' && !url.searchParams.has('revision')) data.entities.Q43.claims.P30[0].rank = 'preferred';
           return new Response(JSON.stringify(data), {status:200});
         };
       `);
@@ -269,6 +271,38 @@ test('a scoped transition still rechecks unchanged active reviews for upstream d
       assert.equal(live.passed, false);
       assert.equal(live.findings.find((f: any) => f.id === r.statementId).status, 'needs-review');
       assert.equal(live.findings.find((f: any) => f.id === second.statementId).status, 'verified');
+    } finally { await rm(base, { recursive: true, force: true }); }
+  });
+});
+
+test('an unchanged approved corpus reports a pinned-source outage without blocking maintenance', async () => {
+  await reviewedCorpus(async (dir, _, approvals) => {
+    await save(dir, approvals);
+    const preload = join(dir, 'pinned-outage.mjs');
+    await writeFile(preload, `globalThis.fetch=async()=>{throw new Error('Pinned source unavailable');};`);
+    const result = cli(dir, dir, preload);
+    assert.equal(result.status, 0);
+    const report = JSON.parse(await readFile(join(dir, 'report/report.json'), 'utf8'));
+    assert.equal(report.gatePassed, true);
+    assert.ok(report.findings.some((f: any) => f.status === 'infrastructure-error' && f.blocking === false && f.advisories.includes('unchanged-trusted-assertion')));
+  });
+});
+
+test('withdrawing a trusted selected review requires explicit review after a valid rebuild', async () => {
+  await reviewedCorpus(async (dir, r, approvals) => {
+    const { cp, mkdtemp, rm } = await import('node:fs/promises');
+    await save(dir, approvals);
+    const base = await mkdtemp(join(dir, 'withdrawal-base-'));
+    try {
+      await cp(join(dir, 'sources'), join(base, 'sources'), { recursive: true });
+      await cp(join(dir, 'data'), join(base, 'data'), { recursive: true });
+      await writeFile(join(dir, 'sources/override-activation.json'), JSON.stringify({ active: [], retired: [] }));
+      const policyPath = join(dir, 'sources/policy.json'), policy = JSON.parse(await readFile(policyPath, 'utf8')); policy.datasetVersion++;
+      await writeFile(policyPath, JSON.stringify(policy)); await save(dir, approvals);
+      const result = cli(dir, base);
+      assert.equal(result.status, 1);
+      const report = JSON.parse(await readFile(join(dir, 'report/report.json'), 'utf8'));
+      assert.ok(report.findings.some((f: any) => f.id === `withdrawn-review:${r.statementId}` && f.status === 'needs-review' && f.blocking !== false));
     } finally { await rm(base, { recursive: true, force: true }); }
   });
 });

@@ -13,6 +13,7 @@ export interface Finding {
   link: string; message: string; references: string[];
   provenance?: { kind: 'local-review' | 'upstream-reviewed'; reviewId: string; reviewDigest: string; issue: string };
   blocking?: boolean;
+  advisories?: string[];
 }
 export type WikiEntity = { id: string; lastrevid: number; labels: Record<string, { value: string }>; aliases?: Record<string, { value: string }[]>; claims: Record<string, any[]> };
 export type FetchEntity = (qid: string, revision?: number) => Promise<WikiEntity>;
@@ -30,45 +31,59 @@ export async function checkEvidence(request: EvidenceRequest, fetchEntity: Fetch
   try {
     if (!/^Q[1-9][0-9]*$/.test(request.qid) || !Number.isSafeInteger(request.revision) || request.revision < 1 || !['statement', 'label', 'alias', 'ascii-label', 'local-policy'].includes(request.kind)) return finding('mismatch', 'Invalid evidence identity or kind');
     if (request.kind === 'local-policy') return finding('needs-review', request.reason || 'Local alias policy needs independent evidence');
-    const pinned = await fetchEntity(request.qid, request.revision);
+    let pinned: WikiEntity;
+    try { pinned = await fetchEntity(request.qid, request.revision); }
+    catch (error) { return { ...finding('infrastructure-error', error instanceof Error ? error.message : String(error)), advisories: ['pinned-source-unavailable'] }; }
     if (pinned.id !== request.qid || pinned.lastrevid !== request.revision) return finding('mismatch', 'Retrieved entity or revision differs');
-    const current = await fetchEntity(request.qid);
-    if (current.id !== request.qid) return finding('mismatch', 'Current entity differs from supplied identity');
     if (request.review) {
       const { record, state } = request.review;
       selectedReviews({ schemaVersion: 1, records: [record] }, { active: state === 'active' ? [record.id] : [], retired: state === 'retired' ? [record.id] : [] }, approvedReviews);
       if (!['active', 'retired'].includes(state) || request.kind !== 'statement' || request.qid !== record.qid || request.property !== record.property || request.statementId !== record.statementId || !sameStatementValue({ value: request.expected, qualifiers: request.qualifiers as Record<string, unknown> ?? {}, rank: effectiveValue(record).rank }, effectiveValue(record))) return finding('mismatch', 'Review does not bind the requested assertion');
       const claim = pinned.claims[record.property]?.find(c => c.id === record.statementId);
       if (state === 'active' ? !claim || pinned.lastrevid < record.revision || canonical(statementState(claim)) !== canonical(record.baseline) : reviewFinding(record, 'retired', pinned).status !== 'verified') return finding('mismatch', 'Review baseline differs from pinned assertion');
-      return { ...reviewFinding(record, state, current), id: request.id, link };
-    }
-    let value: unknown, currentValue: unknown, references: string[] = [], needsReview = false;
-    if (request.kind === 'statement') {
-      const claim = pinned.claims[request.property ?? '']?.find(c => c.id === request.statementId);
-      const live = current.claims[request.property ?? '']?.find(c => c.id === request.statementId);
-      if (!claim) return finding('mismatch', 'Statement missing at supplied revision');
-      value = claimValue(claim); currentValue = claimValue(live);
-      if (canonical(claim.qualifiers ?? {}) !== canonical(request.qualifiers ?? {})) return finding('mismatch', 'Supplied date or qualifier differs from statement');
-      if (canonical(live?.qualifiers ?? {}) !== canonical(claim.qualifiers ?? {}) || live?.rank !== claim.rank) return finding('needs-review', 'Qualifiers or rank changed upstream');
-      references = (claim.references ?? []).flatMap((ref: any) => Object.entries(ref.snaks ?? {}).flatMap(([property, snaks]) => (snaks as any[]).flatMap(s => property === 'P854' ? [s.datavalue?.value].filter(v => typeof v === 'string' && /^https?:\/\//.test(v)) : property === 'P248' && s.datavalue?.value?.id ? [`https://www.wikidata.org/wiki/${s.datavalue.value.id}`] : [])));
-      // Primary-document interpretation is deliberately unresolved in this spike.
-      needsReview = true;
-    } else {
-      const lang = request.language ?? 'en';
-      if (request.kind === 'alias') {
-        value = pinned.aliases?.[lang]?.find(a => a.value === request.expected)?.value;
-        currentValue = current.aliases?.[lang]?.find(a => a.value === request.expected)?.value;
-      } else {
-        value = pinned.labels[lang]?.value; currentValue = current.labels[lang]?.value;
-        if (request.kind === 'ascii-label') {
-          value = typeof value === 'string' ? value.normalize('NFD').replace(/\p{M}/gu, '') : value;
-          currentValue = typeof currentValue === 'string' ? currentValue.normalize('NFD').replace(/\p{M}/gu, '') : currentValue;
-        }
+      try {
+        const current = await fetchEntity(request.qid);
+        if (current.id !== request.qid) return finding('mismatch', 'Current entity differs from supplied identity');
+        return { ...reviewFinding(record, state, current), id: request.id, link };
+      } catch (error) {
+        return { ...finding('infrastructure-error', `Reviewed assertion current source unavailable: ${error instanceof Error ? error.message : String(error)}`), advisories: ['review-current-source-unavailable'] };
       }
     }
+    let value: unknown, claim: any;
+    const references: string[] = [];
+    if (request.kind === 'statement') {
+      claim = pinned.claims[request.property ?? '']?.find(c => c.id === request.statementId);
+      if (!claim) return finding('mismatch', 'Statement missing at supplied revision');
+      value = claimValue(claim);
+      if (canonical(claim.qualifiers ?? {}) !== canonical(request.qualifiers ?? {})) return finding('mismatch', 'Supplied date or qualifier differs from statement');
+      references.push(...referenceLinks(claim));
+    } else {
+      const lang = request.language ?? 'en';
+      value = request.kind === 'alias' ? pinned.aliases?.[lang]?.find(a => a.value === request.expected)?.value : pinned.labels[lang]?.value;
+      if (request.kind === 'ascii-label' && typeof value === 'string') value = value.normalize('NFD').replace(/\p{M}/gu, '');
+    }
     if (value === undefined || canonical(value) !== canonical(request.expected)) return finding('mismatch', 'Proposed value not found in supplied source');
-    if (canonical(value) !== canonical(currentValue)) return finding('needs-review', 'Value changed or disappeared upstream', references);
-    return finding(needsReview || request.kind === 'ascii-label' ? 'needs-review' : 'source-match', request.kind === 'statement' ? 'Statement found; primary references, rank, or date interpretation require review' : request.kind === 'ascii-label' ? 'Derived spelling is local policy and requires review' : 'Spelling matches Wikidata; independent source verification remains required', references);
+    if (request.kind === 'ascii-label' || (/^Q[1-9][0-9]*:policy:/.test(request.id) && !/^Q[1-9][0-9]*:policy:name:/.test(request.id))) return finding('needs-review', 'Local matching declaration requires explicit trusted review', references);
+    const advisories = request.kind === 'statement' && !references.length ? ['missing-statement-references'] : [];
+    if (request.kind === 'statement' && request.property === 'P30') {
+      if ((pinned.claims.P30?.length ?? 0) > 1) advisories.push('single-continent-projection');
+      if ((pinned.claims.P30 ?? []).some(c => Object.keys(c.qualifiers ?? {}).length > 0)) advisories.push('qualified-continent-projection');
+    }
+    // Current upstream health does not invalidate an already authenticated pinned import.
+    try {
+      const current = await fetchEntity(request.qid);
+      if (current.id !== request.qid) throw new Error('Current entity differs from supplied identity');
+      const lang = request.language ?? 'en';
+      const live = request.kind === 'statement' ? current.claims[request.property ?? '']?.find(c => c.id === request.statementId) : undefined;
+      const currentValue = request.kind === 'statement' ? claimValue(live) : request.kind === 'alias' ? current.aliases?.[lang]?.find(a => a.value === request.expected)?.value : current.labels[lang]?.value;
+      if (canonical(value) !== canonical(currentValue) || (claim && canonical(statementState(live)) !== canonical(statementState(claim)))) {
+        return { ...finding('needs-review', 'Pinned Wikidata assertion matches; current upstream value, scope, rank or references changed', references), blocking: false, advisories: [...advisories, 'upstream-drift'] };
+      }
+    } catch (error) {
+      return { ...finding('infrastructure-error', `Pinned Wikidata assertion matches; current source unavailable: ${error instanceof Error ? error.message : String(error)}`, references), blocking: false, advisories: [...advisories, 'current-source-unavailable'] };
+    }
+    return { ...finding('source-match', 'Assertion matches pinned and current Wikidata; independent certification is not required for ingestion', references), blocking: false, advisories };
+
   } catch (error) { return finding('infrastructure-error', error instanceof Error ? error.message : String(error)); }
 }
 

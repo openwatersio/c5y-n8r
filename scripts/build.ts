@@ -28,9 +28,8 @@ if (process.argv.includes('--audit-slackwater')) {
       verificationStatus: 'pending', revision: item?.revision, permanentLink: item?.permanentLink, snapshotSha256: item?.sha256,
       nameEvidence: result.candidates.filter(c => c.id === candidateEntity).flatMap(c => c.evidence), codeClaims,
       blockers: [...(!candidateEntity ? ['No source-backed candidate mapping; discover and review the entity before fetching'] : !item ? ['Mapped entity snapshot missing; run source:fetch before auditing its claims'] : []), ...(result.selection === 'ambiguous' ? ['Source spelling has competing country meanings; provide reviewed context'] : candidateEntity && result.preferred?.id === candidateEntity ? [] : ['Exact spelling absent from admitted source labels and aliases']),
-        ...(hasCode ? [] : ['No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives']),
-        'Name evidence requires cited statement or independently reviewed name source',
-        'Authoritative source plus three independent corroborating Wikidata-listed sources have not been reviewed'],
+        ...(hasCode ? [] : ['No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives'])],
+      qualityFlags: ['Independent evidence research is pending; it is advisory once functional source coverage is established'],
     });
   }
   const matched = required.filter(r => r.functionalStatus === 'source-backed-unreviewed');

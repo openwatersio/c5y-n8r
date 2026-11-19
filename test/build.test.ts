@@ -146,6 +146,12 @@ test('the source audit reports unmapped and unfetched inputs without replacing r
     assert.equal(audit.required.find((r: any)=>r.input==='Unfetched country').functionalStatus,'missing-source-snapshot');
     assert.equal(audit.required.find((r: any)=>r.input==='Congo').functionalStatus,'ambiguous-source-name');
     assert.equal(audit.summary.verifiedInputs,0);
+    const sourced = audit.required.filter((r: any) => r.functionalStatus === 'source-backed-unreviewed');
+    assert.ok(sourced.length > 0);
+    for (const row of sourced) {
+      assert.deepEqual(row.blockers, []);
+      assert.ok(row.qualityFlags.length > 0);
+    }
     await assert.rejects(readFile(join(dir,'data/countries.crdb')));
   } finally {await rm(dir,{recursive:true,force:true});}
 });

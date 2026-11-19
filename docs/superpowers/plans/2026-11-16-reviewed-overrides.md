@@ -1,5 +1,7 @@
 # Reviewed overrides implementation plan
 
+Scope: this document describes reviewed local overrides and their original rollout. Ordinary Wikidata imports follow the source-fidelity and asynchronous quality policy in [CONTRIBUTING.md](../../../CONTRIBUTING.md); independent certification is not an admission requirement. Archived reports retain their historical verdicts.
+
 > Implement inline with executing-plans. Use test-driven-development and one final independent review.
 
 **Goal:** Permit reviewed local statement corrections and evidence while retaining pinned Wikidata provenance.
@@ -24,6 +26,10 @@ PR fields cannot authenticate themselves; approved record contents cannot change
 
 - Design approved by maintainer in chat. Existing isolated worktree reused.
 - Ruling: ship Turkey inactive in the initial branch because approval must first reach the trusted base; activation in that same PR would violate the approved trust model. Cost: one follow-up activation change after merge.
+
+### Historical rollout record
+
+The results and rulings below record the original overlay implementation. The current source-fidelity gate is described in CONTRIBUTING and the updated design; it replaces the former scoped-transition admission rules.
 
 - Baseline: 58 tests passing before implementation.
 - Review validation, effective source generation and trusted evidence integration implemented with failing tests followed by passing tests.

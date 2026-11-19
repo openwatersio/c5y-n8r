@@ -7,6 +7,8 @@ import { spawnSync } from 'node:child_process';
 import { Builder, ByteBuffer } from 'flatbuffers';
 import { Registry } from '../src/generated/country-spike.js';
 import { createHash } from 'node:crypto';
+import { buildCorpus } from '../src/source.ts';
+import { observeLookup } from '../src/compatibility.ts';
 import { requestDigest, type EvidenceReview, type EvidenceRequest } from '../src/evidence.ts';
 
 function observeReader(entry: string, output: string, cases = 'sources/accepted-inputs.json') {
@@ -19,7 +21,7 @@ test('coverage-only changes cannot bypass PR evidence review', async () => {
   const dir = await mkdtemp(join(tmpdir(), 'country-evidence-test-'));
   try {
     await mkdir(join(dir, 'data'));
-    await mkdir(join(dir, 'sources'));
+    await cp('sources', join(dir, 'sources'), { recursive: true });
     await cp('sources/accepted-inputs.json', join(dir, 'sources/accepted-inputs.json'));
     await cp('sources/accepted-methods.json', join(dir, 'sources/accepted-methods.json'));
     const bytes = await readFile('data/countries.crdb');
@@ -32,11 +34,7 @@ test('coverage-only changes cannot bypass PR evidence review', async () => {
     assert.equal(result.status, 1, result.stdout + result.stderr);
     const report = JSON.parse(await readFile(join(dir, 'report/report.json'), 'utf8'));
     assert.equal(report.applicable, true);
-    assert.equal(report.datasetVersion, 2);
-    assert.match(report.binarySha256, /^[a-f0-9]{64}$/);
-    assert.match(report.evidenceDigest, /^[a-f0-9]{64}$/);
-    assert.equal(report.findings.some((f: any) => f.id === 'dataset-version' && f.status === 'mismatch'), true);
-    assert.equal(report.findings.some((f: any) => f.id === 'binary-diff' && f.status === 'needs-review'), true);
+    assert.match(report.findings[0].message, /differ from trusted source build/);
   } finally { await rm(dir, { recursive: true, force: true }); }
 });
 
@@ -61,15 +59,28 @@ test('fixture-only changes cannot pass the trusted evidence comparison', async (
   const dir = await mkdtemp(join(tmpdir(), 'country-fixture-test-'));
   try {
     await cp('data', join(dir, 'data'), { recursive: true });
-    await mkdir(join(dir, 'sources'));
+    await cp('sources', join(dir, 'sources'), { recursive: true });
     const fixture = JSON.parse(await readFile('sources/accepted-inputs.json', 'utf8'));
     fixture.lookups = fixture.lookups.filter((c: any) => !(c.input === 'CS' && c.namespace === 'iso-alpha2' && !c.date));
     await writeFile(join(dir, 'sources/accepted-inputs.json'), JSON.stringify(fixture));
     await cp('sources/accepted-methods.json', join(dir, 'sources/accepted-methods.json'));
-    const result = spawnSync(process.execPath, ['--import', 'tsx', 'scripts/check-evidence.ts', '--corpus', dir, '--base', '.', '--output', join(dir, 'report')], { encoding: 'utf8' });
+    const result = spawnSync(process.execPath, ['--import', 'tsx', 'scripts/check-evidence.ts', '--offline', '--corpus', dir, '--base', '.', '--output', join(dir, 'report')], { encoding: 'utf8' });
     assert.equal(result.status, 1, result.stdout + result.stderr);
     const report = JSON.parse(await readFile(join(dir, 'report/report.json'), 'utf8'));
     assert.equal(report.findings.some((f: any) => f.id === 'compatibility-fixture' && f.status === 'needs-review'), true);
+    await writeFile(join(dir, 'sources/manifest.json'), JSON.stringify([{ id: 'Q999', revision: 1, file: '/dev/zero', sha256: '0'.repeat(64) }]));
+    const unsafe = spawnSync(process.execPath, ['--import', 'tsx', 'scripts/check-evidence.ts', '--offline', '--corpus', dir, '--base', '.', '--output', join(dir, 'unsafe')], { encoding: 'utf8', timeout: 10_000 });
+    assert.equal(unsafe.status, 1, unsafe.stdout + unsafe.stderr);
+    const rejected = JSON.parse(await readFile(join(dir, 'unsafe/report.json'), 'utf8'));
+    assert.ok(rejected.findings.some((f: any) => f.id === 'provenance:Q999' && /Invalid snapshot manifest path/.test(f.message)));
+    const fixturePath = join(dir, 'sources/accepted-inputs.json'), target = join(dir, 'private-fixture-target');
+    await writeFile(target, 'synthetic-private-fixture-marker'); await rm(fixturePath); await symlink(target, fixturePath);
+    const symlinked = spawnSync(process.execPath, ['--import', 'tsx', 'scripts/check-evidence.ts', '--offline', '--corpus', dir, '--base', '.', '--output', join(dir, 'symlinked')], { encoding: 'utf8' });
+    assert.equal(symlinked.status, 1);
+    assert.match(symlinked.stdout + symlinked.stderr, /Invalid.*corpus file/);
+    assert.equal((symlinked.stdout + symlinked.stderr).includes('synthetic-private-fixture-marker'), false);
+
+
   } finally { await rm(dir, { recursive: true, force: true }); }
 });
 
@@ -205,7 +216,7 @@ test('ledger-only readiness updates inspect unchanged requests without changing 
   const dir = await mkdtemp(join(tmpdir(), 'country-readiness-ledger-'));
   try {
     await cp('data', join(dir, 'data'), { recursive: true });
-    await mkdir(join(dir, 'sources/wikidata'), { recursive: true });
+    await cp('sources', join(dir, 'sources'), { recursive: true });
     await cp('sources/accepted-inputs.json', join(dir, 'sources/accepted-inputs.json'));
     await cp('sources/accepted-methods.json', join(dir, 'sources/accepted-methods.json'));
     const evidence = JSON.parse(await readFile('data/evidence.json', 'utf8'));
@@ -220,14 +231,9 @@ test('ledger-only readiness updates inspect unchanged requests without changing 
       sources: [0, 1, 2, 3].map(i => ({ url: `https://publisher${i}.example/test-document`, publisher: `Test publisher ${i}`, role: i === 0 ? 'authority' : 'corroboration', passage: `Fixture name: ${request.expected}`, location: 'Fixture table', retrieved: '2026-01-01' })),
       reviewer: 'test fixture only', issue: 'https://example.com/test-issue', permalink: 'https://example.com/test-review', reviewedAt: '2026-01-01', independenceExplanation: 'Synthetic fixture; no actual source review is claimed',
     };
-    snapshot.entities[request.qid].claims.P1448 ??= [];
-    snapshot.entities[request.qid].claims.P1448.push({ id: record.statement.id, mainsnak: { datavalue: { value: { text: request.expected, language: request.language ?? 'en' } } }, references: record.sources.map(source => ({ snaks: { P854: [{ datavalue: { value: source.url } }] } })) });
-    const raw = JSON.stringify(snapshot);
-    await writeFile(join(dir, entry.file), raw);
-    await writeFile(join(dir, 'sources/manifest.json'), JSON.stringify([{ ...entry, sha256: createHash('sha256').update(raw).digest('hex') }]));
     const run = async (name: string) => {
       const result = spawnSync(process.execPath, ['--import', 'tsx', 'scripts/check-evidence.ts', '--offline', '--corpus', dir, '--base', '.', '--output', join(dir, name)], { encoding: 'utf8' });
-      assert.equal(result.status, 0, result.stdout + result.stderr);
+      assert.equal(result.status, 1, result.stdout + result.stderr);
       return JSON.parse(await readFile(join(dir, name, 'report.json'), 'utf8'));
     };
     const before = await run('before');
@@ -238,7 +244,8 @@ test('ledger-only readiness updates inspect unchanged requests without changing 
     assert.equal(after.readiness.length, evidence.requests.filter((r: EvidenceRequest) => !r.review).length + 1);
     const readiness = after.readiness.find((r: any) => r.id === request.id);
     assert.equal(readiness.status, 'incomplete');
-    assert.deepEqual(readiness.missing, ['live-current-source-reference-check', 'trusted-maintainer-attestation']);
+    assert.ok(readiness.missing.includes('live-current-source-reference-check'));
+    assert.ok(readiness.missing.includes('trusted-maintainer-attestation'));
     assert.deepEqual(after.readiness.find((r: any) => r.id === 'orphan-test-record').missing, ['unknown-request']);
   } finally { await rm(dir, { recursive: true, force: true }); }
 });
@@ -277,4 +284,118 @@ test('a proposed method fixture cannot remove a protected expectation', async ()
     const report=JSON.parse(await readFile(join(dir,'report/report.json'),'utf8'));
     assert.ok(report.findings.some((f: any)=>f.id==='method-compatibility-fixture'));
   } finally {await rm(dir,{recursive:true,force:true});}
+});
+
+test('unreferenced Wikidata additions pass trusted ingestion; forged artifacts and new local policy block', async () => {
+  const dir = await mkdtemp(join(tmpdir(), 'country-upstream-ingestion-'));
+  try {
+    await cp('sources', join(dir, 'sources'), { recursive: true });
+    await cp('data', join(dir, 'data'), { recursive: true });
+    const manifestPath = join(dir, 'sources/manifest.json');
+    const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
+    const item = manifest.find((m: any) => m.id === 'Q213');
+    const snapshot = JSON.parse(await readFile(join(dir, item.file), 'utf8'));
+    snapshot.entities.Q213.lastrevid++;
+    const removedStatementId = snapshot.entities.Q213.claims.P30[0].id;
+    snapshot.entities.Q213.claims.P30[0].id += '-replacement';
+    snapshot.entities.Q213.aliases.en.push({ value: 'Fixture Czech name' });
+    for (const property of ['P297', 'P298', 'P299']) for (const claim of snapshot.entities.Q213.claims[property] ?? []) claim.references = [];
+    item.revision++; item.file = `sources/wikidata/Q213-${item.revision}.json`;
+    const raw = JSON.stringify(snapshot); item.sha256 = createHash('sha256').update(raw).digest('hex');
+    await writeFile(join(dir, item.file), raw);
+    for (const qid of ['Q43', 'Q145']) {
+      const refresh = manifest.find((m: any) => m.id === qid);
+      const body = JSON.parse(await readFile(join(dir, refresh.file), 'utf8')); body.entities[qid].lastrevid++;
+      refresh.revision++; refresh.file = `sources/wikidata/${qid}-${refresh.revision}.json`;
+      const refreshed = JSON.stringify(body); refresh.sha256 = createHash('sha256').update(refreshed).digest('hex');
+      await writeFile(join(dir, refresh.file), refreshed);
+    }
+    await writeFile(manifestPath, JSON.stringify(manifest));
+    const policyPath = join(dir, 'sources/policy.json'), policy = JSON.parse(await readFile(policyPath, 'utf8')); policy.datasetVersion++;
+    await writeFile(policyPath, JSON.stringify(policy));
+    const save = async () => {
+      const expanded = await buildCorpus(dir, {}, { allowNewInputs: true });
+      for (const assignment of expanded.addedInputs) {
+        expanded.accepted.inputs.push({ entity: assignment.entity, namespace: assignment.namespace, value: assignment.value });
+        for (const namespace of [assignment.namespace, undefined]) expanded.accepted.lookups.push(observeLookup(expanded.registry, { input: assignment.value, namespace }));
+      }
+      await writeFile(join(dir, 'sources/accepted-inputs.json'), JSON.stringify(expanded.accepted));
+      const built = await buildCorpus(dir, {});
+      await writeFile(join(dir, 'data/countries.crdb'), built.bytes);
+      await writeFile(join(dir, 'data/evidence.json'), built.evidenceText);
+      return built;
+    };
+    const built = await save();
+    const preload = join(dir, 'wikidata-fixture.mjs');
+    await writeFile(preload, `import {readFileSync} from 'node:fs'; const root=${JSON.stringify(dir)}; globalThis.fetch=async input=>{const url=new URL(input), qid=url.pathname.split('/').pop().replace('.json',''); const manifest=JSON.parse(readFileSync(root+'/sources/manifest.json','utf8')); const entry=manifest.find(m=>m.id===qid); return new Response(qid==='Q213'?${JSON.stringify(raw)}:readFileSync(root+'/'+entry.file,'utf8'));};`);
+    const run = async (withBase = true) => {
+      const result = spawnSync(process.execPath, ['--import', 'tsx', '--import', preload, 'scripts/check-evidence.ts', ...(withBase ? ['--base', '.'] : []), '--corpus', dir, '--output', join(dir, 'report')], { encoding: 'utf8' });
+      return { result, report: JSON.parse(await readFile(join(dir, 'report/report.json'), 'utf8')) };
+    };
+    const good = await run();
+    assert.equal(good.result.status, 0, good.result.stdout + good.result.stderr);
+    assert.equal(good.report.gatePassed, true);
+    assert.equal(good.report.passed, false);
+    assert.ok(good.report.findings.some((f: any) => f.status === 'source-match' && f.advisories?.includes('missing-statement-references')));
+    assert.ok(good.report.findings.some((f: any) => f.advisories?.includes('inherited-trusted-local-policy')));
+    for (const id of ['Q43:policy:name:Turkiye', 'Q145:policy:unofficial:UK']) assert.equal(good.report.findings.find((f: any) => f.id === id).blocking, false);
+    assert.ok(good.report.findings.some((f: any) => f.id === removedStatementId && f.blocking === false && f.advisories.includes('upstream-assertion-removed')));
+    policy.datasetVersion--; await writeFile(policyPath, JSON.stringify(policy)); await save();
+    const unbumped = await run();
+    assert.equal(unbumped.result.status, 1);
+    assert.ok(unbumped.report.findings.some((f: any) => f.id === 'dataset-version' && f.status === 'mismatch'));
+    policy.datasetVersion++; await writeFile(policyPath, JSON.stringify(policy)); await save();
+    const coverage = policy.coverage; policy.coverage += ' (unreviewed declaration change)';
+    await writeFile(policyPath, JSON.stringify(policy)); await save();
+    const declaration = await run();
+    assert.equal(declaration.result.status, 1);
+    assert.ok(declaration.report.findings.some((f: any) => f.id === 'local-policy-declarations' && f.blocking !== false));
+    policy.coverage = coverage; await writeFile(policyPath, JSON.stringify(policy)); await save();
+
+    await writeFile(join(dir, 'sources/evidence-reviews.json'), JSON.stringify({ schemaVersion: 99, reviews: [] }));
+    const quality = await run();
+    assert.equal(quality.result.status, 0, quality.result.stdout + quality.result.stderr);
+    assert.equal(quality.report.gatePassed, true);
+    assert.ok(quality.report.readiness.some((r: any) => r.missing.includes('invalid-readiness-ledger')));
+    assert.ok(quality.report.readiness.some((r: any) => r.missing.includes('review-record')));
+    await rm(join(dir, 'sources/evidence-reviews.json'));
+    const fixturePath = join(dir, 'sources/accepted-inputs.json'), validFixture = await readFile(fixturePath, 'utf8');
+    const forgedFixture = JSON.parse(validFixture); forgedFixture.lookups.at(-1).result.selection = 'invented';
+    await writeFile(fixturePath, JSON.stringify(forgedFixture));
+    const invented = await run();
+    assert.equal(invented.result.status, 1);
+    assert.match(invented.report.findings[0].message, /Compatibility answer changed/);
+    await writeFile(fixturePath, validFixture);
+    for (const mutate of [(f: any) => f.inputs.shift(), (f: any) => f.lookups.shift(), (f: any) => { f.lookups[0].result.selection = 'invented'; }]) {
+      const fixture = JSON.parse(validFixture); mutate(fixture);
+      await writeFile(fixturePath, JSON.stringify(fixture));
+      const changed = await run();
+      assert.equal(changed.result.status, 1);
+      assert.ok(changed.report.findings.some((f: any) => f.id === 'compatibility-fixture'));
+    }
+    await writeFile(fixturePath, validFixture);
+
+    const body = Registry.getRootAsRegistry(new ByteBuffer(built.bytes)).unpack(); body.entities[0].continent = 'Invented';
+    const builder = new Builder(); builder.finish(body.pack(builder), 'CRDB');
+    await writeFile(join(dir, 'data/countries.crdb'), builder.asUint8Array());
+    const forged = await run();
+    assert.equal(forged.result.status, 1);
+    assert.match(forged.report.findings[0].message, /trusted source build/);
+    await writeFile(join(dir, 'data/countries.crdb'), built.bytes);
+    const rank = snapshot.entities.Q213.claims.P30[0].rank;
+    snapshot.entities.Q213.claims.P30[0].rank = 'preferred';
+    const forgedSource = JSON.stringify(snapshot); item.sha256 = createHash('sha256').update(forgedSource).digest('hex');
+    await writeFile(join(dir, item.file), forgedSource); await writeFile(manifestPath, JSON.stringify(manifest)); await save();
+    const noBase = await run(false);
+    assert.equal(noBase.result.status, 1);
+    assert.ok(noBase.report.findings.some((f: any) => f.id === 'provenance:Q213' && f.status === 'mismatch'));
+    snapshot.entities.Q213.claims.P30[0].rank = rank; item.sha256 = createHash('sha256').update(raw).digest('hex');
+    await writeFile(join(dir, item.file), raw); await writeFile(manifestPath, JSON.stringify(manifest)); await save();
+    policy.aliases.push({ entity: 'Q213', namespace: 'unofficial', value: 'ZZ', kind: 'local-policy', reason: 'Unapproved test-only local rule' });
+    await writeFile(policyPath, JSON.stringify(policy));
+    await save();
+    const local = await run();
+    assert.equal(local.result.status, 1, local.result.stdout + local.result.stderr);
+    assert.ok(local.report.findings.some((f: any) => f.id.endsWith(':ZZ') && f.status === 'needs-review' && f.blocking !== false));
+  } finally { await rm(dir, { recursive: true, force: true }); }
 });

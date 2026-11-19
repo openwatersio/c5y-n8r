@@ -1,3 +1,4 @@
+import { createHash } from 'node:crypto';
 import { reviewFinding, statementState, effectiveValue, sameStatementValue, selectedReviews, type AppliedReview } from './overrides.ts';
 
 export interface EvidenceRequest {
@@ -72,3 +73,86 @@ export async function checkEvidence(request: EvidenceRequest, fetchEntity: Fetch
 }
 
 export function passing(findings: Finding[]): boolean { return findings.length > 0 && findings.every(f => f.status === 'verified'); }
+
+// Review records describe work to inspect; they never change the evidence verdict.
+export interface EvidenceReview {
+  id: string;
+  requestDigest: string;
+  statement: { property: string; id: string; expected: unknown };
+  sources: { url: string; publisher: string; role: 'authority' | 'corroboration'; passage: string; location: string; retrieved: string }[];
+  reviewer: string;
+  issue: string;
+  permalink: string;
+  reviewedAt: string;
+  independenceExplanation: string;
+}
+export interface ReviewManifest { schemaVersion: 1; reviews: EvidenceReview[] }
+export function requestDigest(request: EvidenceRequest): string {
+  return createHash('sha256').update(canonical(request)).digest('hex');
+}
+export function parseReviewManifest(value: unknown): ReviewManifest {
+  const manifest = value as ReviewManifest;
+  if (!manifest || manifest.schemaVersion !== 1 || !Array.isArray(manifest.reviews)) throw new Error('Invalid evidence review manifest');
+  const ids = new Set<string>();
+  for (const review of manifest.reviews) {
+    if (!review || typeof review.id !== 'string' || !review.id || ids.has(review.id)) throw new Error('Missing or duplicate evidence review ID');
+    ids.add(review.id);
+  }
+  return manifest;
+}
+const nonempty = (value: unknown): value is string => typeof value === 'string' && value.trim().length > 0;
+const webLink = (value: unknown): value is string => {
+  try { return typeof value === 'string' && ['https:', 'http:'].includes(new URL(value).protocol); } catch { return false; }
+};
+const date = (value: unknown) => typeof value === 'string' && /^\d{4}-\d{2}-\d{2}$/.test(value) && !Number.isNaN(Date.parse(value)) && new Date(value).toISOString().slice(0, 10) === value;
+const sourceUrl = (value: unknown): string => {
+  if (!webLink(value)) return '';
+  const url = new URL(value); url.hash = ''; return url.href;
+};
+const nameProperties = new Set(['P1448', 'P1449', 'P2561', 'P1705', 'P1813']);
+function referenceLinks(claim: any): string[] {
+  return (claim?.references ?? []).flatMap((ref: any) => Object.entries(ref.snaks ?? {}).flatMap(([property, snaks]) => (snaks as any[]).flatMap(s => property === 'P854' && webLink(s.datavalue?.value) ? [s.datavalue.value] : property === 'P248' && s.datavalue?.value?.id ? [`https://www.wikidata.org/wiki/${s.datavalue.value.id}`] : [])));
+}
+export async function reviewReadiness(request: EvidenceRequest, review: EvidenceReview | undefined, trusted: EvidenceReview | undefined, fetchEntity: FetchEntity, context: { offline?: boolean } = {}) {
+  const missing: string[] = context.offline ? ['live-current-source-reference-check'] : [];
+  const result = () => ({ id: request.id, requestDigest: requestDigest(request), status: missing.length ? 'incomplete' : 'ready-for-human-review', missing });
+  if (request.review) { missing.push('unsupported-reviewed-override-request'); return result(); }
+  if (request.kind === 'ascii-label' || request.kind === 'local-policy') { missing.push('unsupported-derived-name-policy'); return result(); }
+  if (!review) {
+    missing.push('review-record', 'source-passages', 'independent-publisher-review', 'referenced-name-or-value-statement', 'trusted-maintainer-attestation');
+    return result();
+  }
+  if (review.id !== request.id || review.requestDigest !== requestDigest(request)) missing.push('stale-or-mismatched-request');
+  if (!trusted || canonical(review) !== canonical(trusted)) missing.push('trusted-maintainer-attestation');
+  if (![review.reviewer, review.independenceExplanation].every(nonempty) || !webLink(review.issue) || !webLink(review.permalink) || !date(review.reviewedAt)) missing.push('review-provenance');
+  const sources = Array.isArray(review.sources) ? review.sources : [];
+  if (sources.length < 4 || sources.some(s => !s || !webLink(s.url) || !nonempty(s.passage) || !nonempty(s.location) || !date(s.retrieved))) missing.push('source-passages');
+  const urls = sources.map(s => sourceUrl(s?.url));
+  const publishers = sources.map(s => typeof s?.publisher === 'string' ? s.publisher.trim().toLowerCase() : '');
+  if (sources.filter(s => s?.role === 'authority').length !== 1 || sources.filter(s => s?.role === 'corroboration').length < 3 || publishers.some(p => !p) || new Set(urls).size !== sources.length || new Set(publishers).size !== sources.length || !nonempty(review.independenceExplanation)) missing.push('independent-publisher-review');
+  const pointer = review.statement;
+  if (!pointer || ((request.kind === 'label' || request.kind === 'alias') && !nameProperties.has(pointer.property)) || !/^P[1-9][0-9]*$/.test(pointer.property) || !nonempty(pointer.id) || canonical(pointer.expected) !== canonical(request.expected) || (request.kind === 'statement' && (pointer.id !== request.statementId || pointer.property !== request.property))) {
+    missing.push('referenced-name-or-value-statement');
+    return result();
+  }
+  try {
+    let pinnedClaim: any;
+    for (const revision of context.offline ? [request.revision] : [request.revision, undefined]) {
+      const entity = await fetchEntity(request.qid, revision);
+      const claim = entity.claims[pointer.property]?.find(c => c.id === pointer.id);
+      if (revision !== undefined) pinnedClaim = claim;
+      if (revision === undefined && claim && pinnedClaim && !sameStatementValue(statementState(claim), statementState(pinnedClaim))) missing.push('current-statement-scope-or-rank');
+      if (request.kind === 'statement' && canonical(claim?.qualifiers ?? {}) !== canonical(request.qualifiers ?? {})) missing.push(revision === undefined ? 'current-statement-scope' : 'pinned-statement-scope');
+      const links = referenceLinks(claim).map(sourceUrl);
+      // Monolingual name statements carry text; labels and aliases themselves cannot carry references.
+      const value = claimValue(claim);
+      const nameRequest = request.kind === 'label' || request.kind === 'alias';
+      const monolingual = value && typeof value === 'object' && typeof value.text === 'string' && value.language === (request.language ?? 'en');
+      const comparable = nameRequest && monolingual ? value.text : value;
+      if (entity.id !== request.qid || (revision !== undefined && entity.lastrevid !== revision) || !claim || (nameRequest && !monolingual) || claim.rank === 'deprecated' || canonical(comparable) !== canonical(pointer.expected) || (value && typeof value === 'object' && 'text' in value && value.language !== (request.language ?? 'en')) || !sources.length || sources.some(s => !links.includes(sourceUrl(s?.url)))) {
+        missing.push(revision === undefined ? 'current-statement-references' : 'pinned-statement-references');
+      }
+    }
+  } catch { missing.push('statement-reference-infrastructure'); }
+  return result();
+}

@@ -1,0 +1,28 @@
+name: Prepare distribution
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci --ignore-scripts
+      - run: npm run check
+      - run: npm run build
+      - run: git diff --exit-code -- data/
+      - run: npm run distribution
+      - run: node -e "if (JSON.parse(require('node:fs').readFileSync('reports/local/distribution/distribution.json')).dirty) throw Error('Distribution requires a clean checkout')"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: country-distribution-${{ github.sha }}
+          path: reports/local/distribution/
+          if-no-files-found: error

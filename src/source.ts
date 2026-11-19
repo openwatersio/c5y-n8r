@@ -17,7 +17,7 @@ export async function readCorpusFile(corpus: string, path: string): Promise<stri
   return readFile(file, 'utf8');
 }
 
-export async function buildCorpus(corpus: string, trustedApprovals?: Record<string, string>) {
+export async function buildCorpus(corpus: string, trustedApprovals?: Record<string, string>, options: { allowNewInputs?: boolean } = {}) {
 const read = (path: string) => readCorpusFile(corpus, path);
 const optional = async (path: string, fallback: unknown) => JSON.parse(await read(path).catch(error => { if (error.code === 'ENOENT') return JSON.stringify(fallback); throw error; }));
 const reviews: ReviewBundle = await optional('sources/reviewed-overrides.json', emptyReviews);
@@ -29,6 +29,8 @@ const manifestText = await read('sources/manifest.json');
 const manifest = JSON.parse(manifestText);
 const policy = JSON.parse(await read('sources/policy.json'));
 const digest = (data: string | Uint8Array) => createHash('sha256').update(data).digest('hex');
+const requiredInventory = await optional('sources/slackwater-required.json', { required: [] });
+if (!Array.isArray(requiredInventory.required) || (policy.fullEnglishAliasEntities !== undefined && (!Array.isArray(policy.fullEnglishAliasEntities) || policy.fullEnglishAliasEntities.some((id: unknown) => typeof id !== 'string' || !/^Q[1-9][0-9]*$/.test(id))))) throw new Error('Invalid source alias scope or required inventory');
 const requests: EvidenceRequest[] = [];
 const assignments: SourceAssignment[] = [];
 const entities: SourceData['entities'] = [];
@@ -72,11 +74,14 @@ for (const item of manifest) {
     return claim.id;
   };
   if ((e.claims.P576?.length ?? 0) > 1) throw new Error('Unsupported Wikidata time: multiple dissolution claims');
-  if (['P576', 'P1366', 'P30'].some(property => e.claims[property]?.some(c => c.rank === 'deprecated'))) throw new Error('Unsupported deprecated entity claim');
+  const preferredContinents = (e.claims.P30 ?? []).filter(c => c.rank === 'preferred');
+  if (preferredContinents.length > 1) throw new Error('Unsupported multiple preferred continent claims');
+  if (['P576', 'P1366'].some(property => e.claims[property]?.some(c => c.rank === 'deprecated')) ||
+      (!preferredContinents.length && e.claims.P30?.some(c => c.rank === 'deprecated'))) throw new Error('Unsupported deprecated entity claim');
   const endClaim = e.claims.P576?.[0];
   const end = endClaim && timeBounds(endClaim.mainsnak.datavalue?.value);
   if (endClaim && endClaim.mainsnak.datavalue?.value?.precision !== 11) throw new Error('Unsupported Wikidata time: dissolution requires day precision');
-  const continentClaim = e.claims.P30?.[0];
+  const continentClaim = preferredContinents[0] ?? e.claims.P30?.[0];
   if (continentClaim) request(continentClaim, 'P30');
   if (endClaim) request(endClaim, 'P576');
   const successorClaims = (e.claims.P1366 ?? []).filter(c => allIds.has(c.mainsnak.datavalue?.value?.id));
@@ -94,7 +99,7 @@ for (const item of manifest) {
   }
   const names = new Map<string, EvidenceRequest>();
   names.set(e.labels.en.value, { id: `${e.id}:label:en`, qid: e.id, revision: e.lastrevid, kind: 'label', language: 'en', expected: e.labels.en.value });
-  for (const a of e.aliases?.en ?? []) if (!names.has(a.value)) names.set(a.value, { id: `${e.id}:alias:en:${a.value}`, qid: e.id, revision: e.lastrevid, kind: 'alias', language: 'en', expected: a.value });
+  for (const a of e.aliases?.en ?? []) if (!names.has(a.value) && (policy.fullEnglishAliasEntities === undefined || policy.fullEnglishAliasEntities.includes(e.id) || requiredInventory.required.some((r: any) => r.candidateEntity === e.id && r.input === a.value))) names.set(a.value, { id: `${e.id}:alias:en:${a.value}`, qid: e.id, revision: e.lastrevid, kind: 'alias', language: 'en', expected: a.value });
   for (const [value, r] of names) { requests.push(r); assignments.push({ entity: e.id, namespace: 'name', value, status: r.kind, temporalReviewed: false, evidence: [r.id] }); }
   for (const extra of policy.aliases.filter((a: any) => a.entity === e.id)) {
     const label = e.labels[extra.language]?.value;
@@ -109,9 +114,10 @@ if (selected.some(r => !consumed.has(r.record.id))) throw new Error('Active revi
 const accepted = JSON.parse(await read('sources/accepted-inputs.json'));
 if (!accepted.inputs?.length || !accepted.lookups?.length) throw new Error('Empty compatibility fixture');
 for (const input of accepted.inputs) for (const namespace of [input.namespace, undefined]) {
-  if (!accepted.lookups.some((lookup: any) => lookup.input === input.value && lookup.namespace === namespace && lookup.date === undefined)) throw new Error(`Missing compatibility lookup: ${input.value} ${namespace ?? 'default'}`);
+  if (!accepted.lookups.some((lookup: any) => lookup.input === input.value && lookup.namespace === namespace && lookup.operation === undefined && lookup.date === undefined && lookup.dateTime === undefined)) throw new Error(`Missing compatibility lookup: ${input.value} ${namespace ?? 'default'}`);
 }
-for (const assignment of assignments) if (!accepted.inputs.some((input: any) => input.entity === assignment.entity && input.namespace === assignment.namespace && input.value === assignment.value)) throw new Error(`New input requires compatibility fixture: ${assignment.value}`);
+const addedInputs = assignments.filter(assignment => !accepted.inputs.some((input: any) => input.entity === assignment.entity && input.namespace === assignment.namespace && input.value === assignment.value));
+for (const assignment of assignments) if (!options.allowNewInputs && !accepted.inputs.some((input: any) => input.entity === assignment.entity && input.namespace === assignment.namespace && input.value === assignment.value)) throw new Error(`New input requires compatibility fixture: ${assignment.value}`);
 for (const input of accepted.inputs) if (!assignments.some(a => a.entity === input.entity && a.namespace === input.namespace && a.value === input.value)) throw new Error(`Accepted input missing: ${input.entity} ${input.namespace} ${input.value}`);
 
 const evidenceText = JSON.stringify({ datasetVersion: policy.datasetVersion, snapshotManifestDigest: digest(manifestText), requests }, null, 2) + '\n';
@@ -121,5 +127,11 @@ const registry = CountryRegistry.open(bytes);
 for (const expected of accepted.lookups) {
   if (canonical(observeLookup(registry, expected).result) !== canonical(expected.result)) throw new Error(`Compatibility answer changed: ${expected.input} ${expected.date ?? 'reference date'}`);
 }
-return { bytes, evidenceText, source, release: { ...source.metadata, sha256: digest(bytes) }, reviews: selected };
+const methods = await optional('sources/accepted-methods.json', { schemaVersion: 1, cases: [] });
+if (methods.schemaVersion !== 1 || !Array.isArray(methods.cases)) throw new Error('Invalid method compatibility fixture');
+for (const expected of methods.cases) {
+  if (!['convert', 'assignments'].includes(expected.operation) || typeof expected.input !== 'string' || !expected.result) throw new Error('Invalid method compatibility case');
+  if (canonical(observeLookup(registry, expected).result) !== canonical(expected.result)) throw new Error(`Method compatibility answer changed: ${expected.operation} ${expected.input} ${expected.date ?? 'reference date'}`);
+}
+return { bytes, evidenceText, source, registry, accepted, addedInputs, release: { ...source.metadata, sha256: digest(bytes) }, reviews: selected };
 }

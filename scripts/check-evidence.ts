@@ -5,7 +5,7 @@ import { createHash } from 'node:crypto';
 import { ByteBuffer } from 'flatbuffers';
 import { Registry } from '../src/generated/country-spike.js';
 import { CountryRegistry, CompatibilityError } from '../src/index.ts';
-import { canonical, checkEvidence, type EvidenceRequest, type WikiEntity, type Finding } from '../src/evidence.ts';
+import { canonical, checkEvidence, parseReviewManifest, reviewReadiness, type ReviewManifest, type EvidenceRequest, type WikiEntity, type Finding } from '../src/evidence.ts';
 import { buildCorpus, readCorpusFile } from '../src/source.ts';
 
 const args = process.argv.slice(2);
@@ -74,14 +74,23 @@ if (base) {
   unchangedArtifacts = before.binarySha256 === proposed.binarySha256;
   const beforeFixture = JSON.parse(await readFile(resolve(base, 'sources/accepted-inputs.json'), 'utf8'));
   const proposedFixture = JSON.parse(await readFile(resolve(corpus, 'sources/accepted-inputs.json'), 'utf8'));
+  const methodCases = async (dir: string) => {
+    const fixture = await json(dir, 'sources/accepted-methods.json').catch(error => { if (error.code === 'ENOENT') return undefined; throw error; });
+    if (fixture && (fixture.schemaVersion !== 1 || !Array.isArray(fixture.cases))) throw new Error('Invalid method compatibility fixture');
+    return fixture?.cases;
+  };
+  const beforeMethods = await methodCases(resolve(base));
+  const proposedMethods = await methodCases(corpus);
+  if (beforeMethods && canonical(beforeMethods) !== canonical(proposedMethods ?? [])) preflight.push({ id: 'method-compatibility-fixture', status: 'needs-review', link: '', message: 'Protected method expectations changed; requires explicit trusted review', references: [] });
+  const expectedCases = [...beforeFixture.lookups, ...(beforeMethods ?? [])];
   if (canonical(beforeFixture) !== canonical(proposedFixture)) preflight.push({ id: 'compatibility-fixture', status: 'needs-review', link: '', message: 'Compatibility expectations changed; review additions, removals and changed answers against the trusted base', references: [] });
   if (readerResults) {
     const file = resolve(readerResults);
     if ((await stat(file)).size > 4 * 1024 * 1024) throw new Error('Oversized reader observations');
     const observations = JSON.parse(await readFile(file, 'utf8'));
     if (!observations || observations.schemaVersion !== 2 || Object.keys(observations).sort().join(',') !== 'cases,schemaVersion' || !Array.isArray(observations.cases)) throw new Error('Invalid reader observations');
-    if (!Array.isArray(beforeFixture.lookups) || !beforeFixture.lookups.length || observations.cases.length !== beforeFixture.lookups.length) throw new Error('Missing reader observation cases');
-    const key = (c: any) => canonical([c.input, c.namespace ?? null, c.date ?? null, c.dateTime ?? null]);
+    if (!Array.isArray(beforeFixture.lookups) || !beforeFixture.lookups.length || observations.cases.length !== expectedCases.length) throw new Error('Missing reader observation cases');
+    const key = (c: any) => canonical([c.input, c.namespace ?? null, c.date ?? null, c.dateTime ?? null, c.operation ?? 'resolve', c.from ?? null, c.to ?? null]);
     const observed = new Map<string, any>();
     for (const result of observations.cases) {
       if (!result || typeof result.input !== 'string' || result.input.length > 1024 || !result.result || typeof result.result !== 'object') throw new Error('Invalid reader observation case');
@@ -89,7 +98,7 @@ if (base) {
       if (observed.has(id)) throw new Error('Duplicate reader observation case');
       observed.set(id, result);
     }
-    for (const expected of beforeFixture.lookups) {
+    for (const expected of expectedCases) {
       const result = observed.get(key(expected));
       if (!result) throw new Error('Missing trusted reader observation');
       checkedLookups++;
@@ -165,6 +174,22 @@ async function fetchEntity(qid: string, revision?: number): Promise<WikiEntity> 
   })());
   return cache.get(key)!;
 }
+async function reviews(dir: string): Promise<ReviewManifest> {
+  try { return parseReviewManifest(await json(dir, 'sources/evidence-reviews.json')); }
+  catch (error) { if ((error as NodeJS.ErrnoException).code === 'ENOENT') return { schemaVersion: 1, reviews: [] }; throw error; }
+}
+const readiness = [];
+if (!readerResults) {
+  const proposedReviews = await reviews(corpus);
+  const trustedReviews = base ? await reviews(resolve(base)) : { schemaVersion: 1 as const, reviews: [] };
+  const known = new Set(proposed.requests.map(r => r.id));
+  for (const record of proposedReviews.reviews.filter(r => !known.has(r.id))) readiness.push({ id: record.id, requestDigest: record.requestDigest, status: 'incomplete', missing: ['unknown-request'] });
+  for (const request of proposed.requests) {
+    const record = proposedReviews.reviews.find(r => r.id === request.id);
+    if (request.review && !record) continue;
+    readiness.push(await reviewReadiness(request, record, trustedReviews.reviews.find(r => r.id === request.id), fetchEntity, { offline }));
+  }
+}
 const findings = [...preflight];
 for (const snapshot of provenanceSnapshots) {
   try {
@@ -181,9 +206,9 @@ for (const request of requests) {
 }
 const counts = findings.reduce<Record<string, number>>((out, f) => { out[f.status] = (out[f.status] ?? 0) + 1; return out; }, {});
 const gatePassed = readerResults ? findings.length === 0 : !offline && findings.filter(f => f.blocking !== false).every(f => f.status === 'verified');
-const report = { gatePassed, datasetVersion: proposed.metadata.datasetVersion, binarySha256: proposed.binarySha256, evidenceDigest: proposed.metadata.evidenceDigest, mode: readerResults ? 'reader-compatibility' : offline ? 'pinned-snapshots-only' : 'live-pinned-and-current', checkedLookups, applicable: !!readerResults || findings.length > 0, passed: readerResults ? findings.length === 0 : !offline && findings.every(f => f.status === 'verified'), counts, findings, limitation: 'Reference passages are interpreted by maintainers. Reviewed findings require an approved exact record digest; offline checks cannot certify live upstream state. Unreviewed assertions stay non-passing.' };
+const report = { gatePassed, datasetVersion: proposed.metadata.datasetVersion, binarySha256: proposed.binarySha256, evidenceDigest: proposed.metadata.evidenceDigest, mode: readerResults ? 'reader-compatibility' : offline ? 'pinned-snapshots-only' : 'live-pinned-and-current', checkedLookups, applicable: !!readerResults || findings.length > 0, passed: readerResults ? findings.length === 0 : !offline && findings.every(f => f.status === 'verified'), counts, findings, readiness, limitation: 'Reference passages are interpreted by maintainers. Reviewed findings require an approved exact record digest; offline checks cannot certify live upstream state. Unreviewed assertions stay non-passing.' };
 await writeFile(resolve(reportDir, 'report.json'), JSON.stringify(report, null, 2) + '\n');
-console.log(JSON.stringify({ ...report, findings: undefined, report: resolve(reportDir, 'report.json') }, null, 2));
+console.log(JSON.stringify({ ...report, findings: undefined, readiness: undefined, reviewReadinessCounts: readiness.reduce<Record<string, number>>((counts, item) => { counts[item.status] = (counts[item.status] ?? 0) + 1; return counts; }, {}), report: resolve(reportDir, 'report.json') }, null, 2));
 process.exitCode = findings.length && !gatePassed ? 1 : 0;
 
 } catch (error) {

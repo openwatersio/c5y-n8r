@@ -73,6 +73,11 @@ test('a factual correction is derived from the effective source and cannot silen
     };
     update(fixture);
     await writeFile(path, JSON.stringify(fixture));
+    await assert.rejects(buildCorpus(dir, { [r.id]: reviewDigest(r) }), /Method compatibility answer changed/);
+    const methodPath=join(dir,'sources/accepted-methods.json');
+    const methods=JSON.parse(await readFile(methodPath,'utf8'));
+    update(methods);
+    await writeFile(methodPath,JSON.stringify(methods));
     const corrected = await buildCorpus(dir, { [r.id]: reviewDigest(r) });
     assert.equal(CountryRegistry.open(corrected.bytes).resolve('Turkey').preferred?.continent, 'Europe');
     const evidence = JSON.parse(corrected.evidenceText).requests.find((q: any) => q.id === r.statementId);

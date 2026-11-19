@@ -1,3 +1,4 @@
+import { canonical } from '../src/evidence.ts';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { cp, mkdtemp, mkdir, readFile, writeFile, rm, symlink, access } from 'node:fs/promises';
@@ -299,6 +300,7 @@ test('unreferenced Wikidata additions pass trusted ingestion; forged artifacts a
     const removedStatementId = snapshot.entities.Q213.claims.P30[0].id;
     snapshot.entities.Q213.claims.P30[0].id += '-replacement';
     snapshot.entities.Q213.aliases.en.push({ value: 'Fixture Czech name' });
+    snapshot.entities.Q213.labels.zz = { value: 'ZZ' };
     for (const property of ['P297', 'P298', 'P299']) for (const claim of snapshot.entities.Q213.claims[property] ?? []) claim.references = [];
     item.revision++; item.file = `sources/wikidata/Q213-${item.revision}.json`;
     const raw = JSON.stringify(snapshot); item.sha256 = createHash('sha256').update(raw).digest('hex');
@@ -328,8 +330,8 @@ test('unreferenced Wikidata additions pass trusted ingestion; forged artifacts a
     const built = await save();
     const preload = join(dir, 'wikidata-fixture.mjs');
     await writeFile(preload, `import {readFileSync} from 'node:fs'; const root=${JSON.stringify(dir)}; globalThis.fetch=async input=>{const url=new URL(input), qid=url.pathname.split('/').pop().replace('.json',''); const manifest=JSON.parse(readFileSync(root+'/sources/manifest.json','utf8')); const entry=manifest.find(m=>m.id===qid); return new Response(qid==='Q213'?${JSON.stringify(raw)}:readFileSync(root+'/'+entry.file,'utf8'));};`);
-    const run = async (withBase = true) => {
-      const result = spawnSync(process.execPath, ['--import', 'tsx', '--import', preload, 'scripts/check-evidence.ts', ...(withBase ? ['--base', '.'] : []), '--corpus', dir, '--output', join(dir, 'report')], { encoding: 'utf8' });
+    const run = async (withBase: boolean | string = true) => {
+      const result = spawnSync(process.execPath, ['--import', 'tsx', '--import', preload, 'scripts/check-evidence.ts', ...(withBase ? ['--base', typeof withBase === 'string' ? withBase : '.'] : []), '--corpus', dir, '--output', join(dir, 'report')], { encoding: 'utf8' });
       return { result, report: JSON.parse(await readFile(join(dir, 'report/report.json'), 'utf8')) };
     };
     const good = await run();
@@ -350,6 +352,21 @@ test('unreferenced Wikidata additions pass trusted ingestion; forged artifacts a
     const declaration = await run();
     assert.equal(declaration.result.status, 1);
     assert.ok(declaration.report.findings.some((f: any) => f.id === 'local-policy-declarations' && f.blocking !== false));
+    const approval = declaration.report.findings.find((f: any) => f.id === 'local-policy-declarations');
+    const approvalFile = 'sources/review-approvals.json';
+    const originalApprovals = await readFile(approvalFile, 'utf8');
+    const approved = { ...JSON.parse(originalApprovals), 'local-policy-transition': approval.message.split(' ').at(-1) };
+    await writeFile(join(dir, approvalFile), JSON.stringify(approved));
+    const selfApproval = await run();
+    assert.ok(selfApproval.report.findings.some((f: any) => f.id === 'local-policy-declarations' && f.blocking !== false));
+    assert.ok(selfApproval.report.findings.some((f: any) => f.id === 'local-policy-approval-staging' && f.blocking !== false));
+    const trusted = join(dir, 'trusted');
+    await cp('sources', join(trusted, 'sources'), { recursive: true });
+    await cp('data', join(trusted, 'data'), { recursive: true });
+    await writeFile(join(trusted, approvalFile), JSON.stringify(approved));
+    assert.ok((await run(trusted)).report.findings.some((f: any) => f.id === 'unconsumed-approval:local-policy-transition'));
+    await writeFile(join(dir, approvalFile), '{}');
+    assert.equal((await run(trusted)).report.gatePassed, true);
     policy.coverage = coverage; await writeFile(policyPath, JSON.stringify(policy)); await save();
 
     await writeFile(join(dir, 'sources/evidence-reviews.json'), JSON.stringify({ schemaVersion: 99, reviews: [] }));
@@ -391,11 +408,26 @@ test('unreferenced Wikidata additions pass trusted ingestion; forged artifacts a
     assert.ok(noBase.report.findings.some((f: any) => f.id === 'provenance:Q213' && f.status === 'mismatch'));
     snapshot.entities.Q213.claims.P30[0].rank = rank; item.sha256 = createHash('sha256').update(raw).digest('hex');
     await writeFile(join(dir, item.file), raw); await writeFile(manifestPath, JSON.stringify(manifest)); await save();
-    policy.aliases.push({ entity: 'Q213', namespace: 'unofficial', value: 'ZZ', kind: 'local-policy', reason: 'Unapproved test-only local rule' });
+    policy.aliases.push({ entity: 'Q213', namespace: 'unofficial', value: 'ZZ', kind: 'label', language: 'zz', reason: 'Unapproved test-only local rule' });
     await writeFile(policyPath, JSON.stringify(policy));
     await save();
     const local = await run();
     assert.equal(local.result.status, 1, local.result.stdout + local.result.stderr);
     assert.ok(local.report.findings.some((f: any) => f.id.endsWith(':ZZ') && f.status === 'needs-review' && f.blocking !== false));
+    const { requests } = JSON.parse(await readFile(join(dir, 'data/evidence.json'), 'utf8'));
+    const request = requests.find((r: any) => r.id.endsWith(':ZZ'));
+    const key = `local-policy-request:${request.id}`;
+    const digest = createHash('sha256').update(canonical(request)).digest('hex');
+    await writeFile(join(dir, approvalFile), JSON.stringify({ ...approved, [key]: digest }));
+    assert.ok((await run()).report.findings.some((f: any) => f.id === request.id && f.blocking !== false));
+    await writeFile(join(trusted, approvalFile), JSON.stringify({ ...approved, [key]: digest }));
+    assert.ok((await run(trusted)).report.findings.some((f: any) => f.id === `unconsumed-approval:${key}`));
+    await writeFile(join(dir, approvalFile), '{}');
+    const approvedLocal = await run(trusted);
+    assert.equal(approvedLocal.report.gatePassed, true);
+    assert.ok(approvedLocal.report.findings.some((f: any) => f.id === request.id && f.advisories?.includes('approved-trusted-local-policy')));
+    policy.aliases.at(-1).reason = 'Changed after approval';
+    await writeFile(policyPath, JSON.stringify(policy)); await save();
+    assert.ok((await run(trusted)).report.findings.some((f: any) => f.id === request.id && f.blocking !== false));
   } finally { await rm(dir, { recursive: true, force: true }); }
 });

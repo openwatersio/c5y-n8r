@@ -83,6 +83,67 @@ test('missing bounds cannot outrank a known historical assignment', () => {
   assert.equal(result.candidates.find(c => c.id === 'B')?.applicability, 'uncertain');
 });
 
+test('a tentative code on another entity cannot displace a retired assignment', () => {
+  const data = fixture();
+  data.assignments[1].from = '1990-01-01';
+  delete data.assignments[1].until;
+  data.assignments[1].temporalReviewed = false;
+  const result = CountryRegistry.open(compile(data)).resolve('ZZ', { namespace: 'iso-alpha2' });
+  assert.equal(result.preferred, undefined);
+  assert.equal(result.selection, 'ambiguous');
+});
+
+test('tentative starts must reach the final possible retired day', () => {
+  for (const [from, preferred] of [['1989-12-30', undefined], ['1989-12-31', 'BB'], ['1990-01-01', 'BB'], ['1990-01-02', 'BB']] as const) {
+    const data = fixture();
+    data.entities = [data.entities[0]!];
+    data.assignments = [data.assignments[0]!, { entity: 'A', namespace: 'iso-alpha2', value: 'BB', status: 'iso-code', from, temporalReviewed: false, evidence: ['synthetic'] }];
+    const result = CountryRegistry.open(compile(data)).assignments('A', { namespace: 'iso-alpha2' });
+    assert.equal(result.preferred?.value, preferred, from);
+    assert.equal(result.temporalAmbiguity, true);
+  }
+});
+
+test('a current code can be selected over a retired code on the same entity without hiding uncertainty', () => {
+  const result = registry.convert('MMR', { from: 'iso-alpha3', to: 'iso-alpha2' });
+  assert.equal(result.source.preferred?.id, 'Q836');
+  assert.equal(result.target.preferred?.value, 'MM');
+  assert.equal(result.target.preferred?.applicability, 'uncertain');
+  assert.equal(result.target.preferred?.tentative, true);
+  assert.equal(result.target.temporalAmbiguity, true);
+  assert.ok(result.target.candidates.some(c => c.value === 'BU' && c.applicability === 'retired'));
+  assert.equal(registry.assignments('Q836', { namespace: 'iso-alpha3' }).preferred?.value, 'MMR');
+  assert.equal(registry.convert('MMR', { from: 'iso-alpha3', to: 'iso-alpha2', date: '1989-06-01' }).target.preferred, undefined);
+  const historical = registry.convert('BU', { from: 'iso-alpha2', to: 'iso-alpha3' });
+  assert.equal(historical.source.preferred?.applicability, 'retired');
+  assert.equal(historical.target.preferred?.value, 'MMR');
+  assert.equal(historical.target.preferred?.tentative, true);
+});
+
+test('a missing end cannot promote an earlier or undated code over known same-entity history', () => {
+  for (const from of [undefined, '1975-01-01']) {
+    const data = fixture();
+    data.entities = [data.entities[0]!];
+    data.assignments = [data.assignments[0]!, { entity: 'A', namespace: 'iso-alpha2', value: 'BB', status: 'iso-code', ...(from ? { from } : {}), temporalReviewed: false, evidence: ['synthetic'] }];
+    const result = CountryRegistry.open(compile(data)).assignments('A', { namespace: 'iso-alpha2' });
+    assert.equal(result.preferred?.value, undefined);
+    assert.equal(result.selection, 'ambiguous');
+  }
+});
+
+test('competing tentative or imprecise codes on one entity remain ambiguous', () => {
+  for (const other of [{ from: '1995-01-01' }, { from: '2026-01-01', fromLatest: '2026-12-31' }]) {
+    const data = fixture();
+    data.entities = [data.entities[0]!];
+    data.assignments = [data.assignments[0]!,
+      { entity: 'A', namespace: 'iso-alpha2', value: 'BB', status: 'iso-code', from: '1990-01-01', temporalReviewed: false, evidence: ['synthetic'] },
+      { entity: 'A', namespace: 'iso-alpha2', value: 'CC', status: 'iso-code', ...other, temporalReviewed: false, evidence: ['synthetic'] }];
+    const result = CountryRegistry.open(compile(data)).assignments('A', { namespace: 'iso-alpha2' });
+    assert.equal(result.preferred?.value, undefined);
+    assert.equal(result.selection, 'ambiguous');
+  }
+});
+
 test('invalid dates and non-ASCII codes cannot silently become assignments', () => {
   assert.throws(() => registry.resolve('TR', { date: '2025-02-29' }));
   assert.throws(() => registry.resolve('TR', { date: new Date(NaN) }));

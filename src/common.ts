@@ -1,7 +1,7 @@
 export const MAX_ENTITY_ID_LENGTH = 64;
 export const MIN_DAY = -2147483648;
 export const MAX_DAY = 2147483647;
-export const READER_VERSION = '0.0.3';
+export const READER_VERSION = '0.0.4';
 export const FORMAT_VERSION = 2;
 export type Namespace = 'iso-alpha2' | 'iso-alpha3' | 'iso-numeric' | 'name' | 'unofficial';
 export const NAMESPACES: Namespace[] = ['iso-alpha2', 'iso-alpha3', 'iso-numeric', 'name', 'unofficial'];

@@ -1,8 +1,8 @@
 {
   "sourceCounts": {
     "entities": 136,
-    "assignments": 622,
-    "evidence": 765
+    "assignments": 623,
+    "evidence": 766
   },
   "inventoryRevision": "f9c3d42c066efe87e606f8c09673fb70cff2b2cf",
   "snapshotManifestDigest": "bed739b2f4fae5ec546e3f4e11364a84871a3778919df01c9773b3d0b1550bd2",
@@ -10,9 +10,9 @@
   "summary": {
     "inputs": 129,
     "records": 8728,
-    "sourceBackedInputs": 126,
+    "sourceBackedInputs": 127,
     "metadataIncompleteInputs": 0,
-    "sourceBackedRecords": 8695,
+    "sourceBackedRecords": 8699,
     "verifiedInputs": 0
   },
   "required": [
@@ -1827,7 +1827,7 @@
       "input": "Myanmar (Burma)",
       "records": 4,
       "candidateEntity": "Q836",
-      "functionalStatus": "missing-source-spelling",
+      "functionalStatus": "source-backed-unreviewed",
       "continent": "Asia",
       "continentSelection": "single-source-statement",
       "metadataStatus": "source-backed-unreviewed",
@@ -1835,7 +1835,9 @@
       "revision": 2568775107,
       "permanentLink": "https://www.wikidata.org/w/index.php?title=Q836&oldid=2568775107",
       "snapshotSha256": "9958669a013240f631fc13e6c7945d77dd6f6c444296d497bc1ef30b9b13b740",
-      "nameEvidence": [],
+      "nameEvidence": [
+        "Q836:policy:name:Myanmar (Burma)"
+      ],
       "codeClaims": [
         {
           "statementId": "q836$29EB0A84-6B64-4E4D-AAE1-88D570C9109A",
@@ -1850,10 +1852,7 @@
           "references": []
         }
       ],
-      "blockers": [
-        "Exact spelling absent from admitted source labels and aliases",
-        "No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives"
-      ],
+      "blockers": [],
       "qualityFlags": [
         "Independent evidence research is pending; it is advisory once functional source coverage is established"
       ]

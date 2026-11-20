@@ -1,5 +1,5 @@
 {
-  "datasetVersion": 3,
+  "datasetVersion": 4,
   "referenceDate": "2026-11-15",
   "coverageFrom": "1974-01-01",
   "coverageThrough": "2026-11-15",
@@ -53,9 +53,17 @@
       "namespace": "name",
       "language": "pt",
       "kind": "label"
+    },
+    {
+      "entity": "Q836",
+      "value": "Myanmar (Burma)",
+      "namespace": "name",
+      "language": "en",
+      "kind": "local-policy",
+      "reason": "Retain the exact English compatibility name used by stored Slackwater records. The UK PCGN country-name list uses Myanmar (Burma): https://www.gov.uk/government/publications/country-names/country-names-the-permanent-committee-on-geographical-names-for-british-official-use . Research and provider MMR provenance: https://github.com/openwatersio/c5y-n8r/issues/149 . This is an explicit local name alias, not a Wikidata alias or a rule for stripping parentheses."
     }
   ],
-  "minimumReaderVersion": "0.0.2",
+  "minimumReaderVersion": "0.0.4",
   "fullEnglishAliasEntities": [
     "Q43",
     "Q213",

@@ -12,7 +12,7 @@ const fixture = (): SourceData => ({ metadata: { datasetVersion: 1, formatVersio
 
 test('reads versions from loaded bytes and distinguishes freshness from compatibility', async () => {
   const m = registry.metadata();
-  assert.equal(m.datasetVersion, 3);
+  assert.equal(m.datasetVersion, 4);
   assert.equal((await registry.compareRelease()).freshness, 'unknown');
   assert.equal((await registry.compareRelease({ ...m, datasetVersion: m.datasetVersion + 1 })).freshness, 'outdated');
   assert.equal((await registry.compareRelease({ ...m, datasetVersion: m.datasetVersion })).freshness, 'current');

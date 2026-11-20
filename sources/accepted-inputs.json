@@ -3111,6 +3111,11 @@
       "entity": "Q29999",
       "namespace": "name",
       "value": "Netherlands"
+    },
+    {
+      "entity": "Q836",
+      "namespace": "name",
+      "value": "Myanmar (Burma)"
     }
   ],
   "lookups": [
@@ -84105,6 +84110,93 @@
             "retiredAtDay": 2147483647,
             "evidence": [
               "Q29999:alias:en:Netherlands"
+            ],
+            "successors": [],
+            "applicability": "active",
+            "tentative": false
+          }
+        ],
+        "selection": "latest",
+        "temporalAmbiguity": false,
+        "coverage": "partial",
+        "evidenceStatus": "unreviewed-spike"
+      }
+    },
+    {
+      "input": "Myanmar (Burma)",
+      "namespace": "name",
+      "result": {
+        "preferred": {
+          "id": "Q836",
+          "name": "Myanmar",
+          "continent": "Asia",
+          "namespace": "name",
+          "value": "Myanmar (Burma)",
+          "matchedBy": "policy-local-policy",
+          "temporalReviewed": false,
+          "retiredAtDay": 2147483647,
+          "evidence": [
+            "Q836:policy:name:Myanmar (Burma)"
+          ],
+          "successors": [],
+          "applicability": "active",
+          "tentative": false
+        },
+        "candidates": [
+          {
+            "id": "Q836",
+            "name": "Myanmar",
+            "continent": "Asia",
+            "namespace": "name",
+            "value": "Myanmar (Burma)",
+            "matchedBy": "policy-local-policy",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "Q836:policy:name:Myanmar (Burma)"
+            ],
+            "successors": [],
+            "applicability": "active",
+            "tentative": false
+          }
+        ],
+        "selection": "latest",
+        "temporalAmbiguity": false,
+        "coverage": "partial",
+        "evidenceStatus": "unreviewed-spike"
+      }
+    },
+    {
+      "input": "Myanmar (Burma)",
+      "result": {
+        "preferred": {
+          "id": "Q836",
+          "name": "Myanmar",
+          "continent": "Asia",
+          "namespace": "name",
+          "value": "Myanmar (Burma)",
+          "matchedBy": "policy-local-policy",
+          "temporalReviewed": false,
+          "retiredAtDay": 2147483647,
+          "evidence": [
+            "Q836:policy:name:Myanmar (Burma)"
+          ],
+          "successors": [],
+          "applicability": "active",
+          "tentative": false
+        },
+        "candidates": [
+          {
+            "id": "Q836",
+            "name": "Myanmar",
+            "continent": "Asia",
+            "namespace": "name",
+            "value": "Myanmar (Burma)",
+            "matchedBy": "policy-local-policy",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "Q836:policy:name:Myanmar (Burma)"
             ],
             "successors": [],
             "applicability": "active",

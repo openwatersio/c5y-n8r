@@ -1061,6 +1061,619 @@
         "coverage": "partial",
         "evidenceStatus": "unreviewed-spike"
       }
+    },
+    {
+      "operation": "convert",
+      "from": "name",
+      "to": "iso-alpha2",
+      "input": "Myanmar (Burma)",
+      "result": {
+        "source": {
+          "preferred": {
+            "id": "Q836",
+            "name": "Myanmar",
+            "continent": "Asia",
+            "namespace": "name",
+            "value": "Myanmar (Burma)",
+            "matchedBy": "policy-local-policy",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "Q836:policy:name:Myanmar (Burma)"
+            ],
+            "successors": [],
+            "applicability": "active",
+            "tentative": false
+          },
+          "candidates": [
+            {
+              "id": "Q836",
+              "name": "Myanmar",
+              "continent": "Asia",
+              "namespace": "name",
+              "value": "Myanmar (Burma)",
+              "matchedBy": "policy-local-policy",
+              "temporalReviewed": false,
+              "retiredAtDay": 2147483647,
+              "evidence": [
+                "Q836:policy:name:Myanmar (Burma)"
+              ],
+              "successors": [],
+              "applicability": "active",
+              "tentative": false
+            }
+          ],
+          "selection": "latest",
+          "temporalAmbiguity": false,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        },
+        "target": {
+          "preferred": {
+            "id": "Q836",
+            "name": "Myanmar",
+            "continent": "Asia",
+            "namespace": "iso-alpha2",
+            "value": "MM",
+            "matchedBy": "iso-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "q836$29EB0A84-6B64-4E4D-AAE1-88D570C9109A"
+            ],
+            "successors": [],
+            "applicability": "uncertain",
+            "tentative": true
+          },
+          "candidates": [
+            {
+              "id": "Q836",
+              "name": "Myanmar",
+              "continent": "Asia",
+              "namespace": "iso-alpha2",
+              "value": "BU",
+              "matchedBy": "historical-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 7305,
+              "evidence": [
+                "Q836$157f71ad-4138-145d-87b0-3f5df312297c"
+              ],
+              "successors": [],
+              "applicability": "retired",
+              "tentative": false
+            },
+            {
+              "id": "Q836",
+              "name": "Myanmar",
+              "continent": "Asia",
+              "namespace": "iso-alpha2",
+              "value": "MM",
+              "matchedBy": "iso-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 2147483647,
+              "evidence": [
+                "q836$29EB0A84-6B64-4E4D-AAE1-88D570C9109A"
+              ],
+              "successors": [],
+              "applicability": "uncertain",
+              "tentative": true
+            }
+          ],
+          "selection": "latest",
+          "temporalAmbiguity": true,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        }
+      }
+    },
+    {
+      "operation": "convert",
+      "from": "iso-alpha3",
+      "to": "iso-alpha2",
+      "input": "MMR",
+      "result": {
+        "source": {
+          "preferred": {
+            "id": "Q836",
+            "name": "Myanmar",
+            "continent": "Asia",
+            "namespace": "iso-alpha3",
+            "value": "MMR",
+            "matchedBy": "iso-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "q836$EB62395B-BAE8-4A79-A0A4-6F0F730405EF"
+            ],
+            "successors": [],
+            "applicability": "uncertain",
+            "tentative": true
+          },
+          "candidates": [
+            {
+              "id": "Q836",
+              "name": "Myanmar",
+              "continent": "Asia",
+              "namespace": "iso-alpha3",
+              "value": "MMR",
+              "matchedBy": "iso-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 2147483647,
+              "evidence": [
+                "q836$EB62395B-BAE8-4A79-A0A4-6F0F730405EF"
+              ],
+              "successors": [],
+              "applicability": "uncertain",
+              "tentative": true
+            }
+          ],
+          "selection": "latest",
+          "temporalAmbiguity": true,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        },
+        "target": {
+          "preferred": {
+            "id": "Q836",
+            "name": "Myanmar",
+            "continent": "Asia",
+            "namespace": "iso-alpha2",
+            "value": "MM",
+            "matchedBy": "iso-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "q836$29EB0A84-6B64-4E4D-AAE1-88D570C9109A"
+            ],
+            "successors": [],
+            "applicability": "uncertain",
+            "tentative": true
+          },
+          "candidates": [
+            {
+              "id": "Q836",
+              "name": "Myanmar",
+              "continent": "Asia",
+              "namespace": "iso-alpha2",
+              "value": "BU",
+              "matchedBy": "historical-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 7305,
+              "evidence": [
+                "Q836$157f71ad-4138-145d-87b0-3f5df312297c"
+              ],
+              "successors": [],
+              "applicability": "retired",
+              "tentative": false
+            },
+            {
+              "id": "Q836",
+              "name": "Myanmar",
+              "continent": "Asia",
+              "namespace": "iso-alpha2",
+              "value": "MM",
+              "matchedBy": "iso-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 2147483647,
+              "evidence": [
+                "q836$29EB0A84-6B64-4E4D-AAE1-88D570C9109A"
+              ],
+              "successors": [],
+              "applicability": "uncertain",
+              "tentative": true
+            }
+          ],
+          "selection": "latest",
+          "temporalAmbiguity": true,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        }
+      }
+    },
+    {
+      "operation": "convert",
+      "from": "iso-alpha3",
+      "to": "iso-alpha2",
+      "input": "BUR",
+      "result": {
+        "source": {
+          "preferred": {
+            "id": "Q836",
+            "name": "Myanmar",
+            "continent": "Asia",
+            "namespace": "iso-alpha3",
+            "value": "BUR",
+            "matchedBy": "historical-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 7305,
+            "evidence": [
+              "Q836$0e62bd09-4236-4d40-0f20-b0aa1aa1ef43"
+            ],
+            "successors": [],
+            "applicability": "retired",
+            "tentative": false
+          },
+          "candidates": [
+            {
+              "id": "Q836",
+              "name": "Myanmar",
+              "continent": "Asia",
+              "namespace": "iso-alpha3",
+              "value": "BUR",
+              "matchedBy": "historical-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 7305,
+              "evidence": [
+                "Q836$0e62bd09-4236-4d40-0f20-b0aa1aa1ef43"
+              ],
+              "successors": [],
+              "applicability": "retired",
+              "tentative": false
+            }
+          ],
+          "selection": "latest",
+          "temporalAmbiguity": false,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        },
+        "target": {
+          "preferred": {
+            "id": "Q836",
+            "name": "Myanmar",
+            "continent": "Asia",
+            "namespace": "iso-alpha2",
+            "value": "MM",
+            "matchedBy": "iso-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "q836$29EB0A84-6B64-4E4D-AAE1-88D570C9109A"
+            ],
+            "successors": [],
+            "applicability": "uncertain",
+            "tentative": true
+          },
+          "candidates": [
+            {
+              "id": "Q836",
+              "name": "Myanmar",
+              "continent": "Asia",
+              "namespace": "iso-alpha2",
+              "value": "BU",
+              "matchedBy": "historical-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 7305,
+              "evidence": [
+                "Q836$157f71ad-4138-145d-87b0-3f5df312297c"
+              ],
+              "successors": [],
+              "applicability": "retired",
+              "tentative": false
+            },
+            {
+              "id": "Q836",
+              "name": "Myanmar",
+              "continent": "Asia",
+              "namespace": "iso-alpha2",
+              "value": "MM",
+              "matchedBy": "iso-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 2147483647,
+              "evidence": [
+                "q836$29EB0A84-6B64-4E4D-AAE1-88D570C9109A"
+              ],
+              "successors": [],
+              "applicability": "uncertain",
+              "tentative": true
+            }
+          ],
+          "selection": "latest",
+          "temporalAmbiguity": true,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        }
+      }
+    },
+    {
+      "operation": "convert",
+      "from": "iso-alpha2",
+      "to": "iso-alpha3",
+      "input": "BU",
+      "result": {
+        "source": {
+          "preferred": {
+            "id": "Q836",
+            "name": "Myanmar",
+            "continent": "Asia",
+            "namespace": "iso-alpha2",
+            "value": "BU",
+            "matchedBy": "historical-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 7305,
+            "evidence": [
+              "Q836$157f71ad-4138-145d-87b0-3f5df312297c"
+            ],
+            "successors": [],
+            "applicability": "retired",
+            "tentative": false
+          },
+          "candidates": [
+            {
+              "id": "Q836",
+              "name": "Myanmar",
+              "continent": "Asia",
+              "namespace": "iso-alpha2",
+              "value": "BU",
+              "matchedBy": "historical-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 7305,
+              "evidence": [
+                "Q836$157f71ad-4138-145d-87b0-3f5df312297c"
+              ],
+              "successors": [],
+              "applicability": "retired",
+              "tentative": false
+            }
+          ],
+          "selection": "latest",
+          "temporalAmbiguity": false,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        },
+        "target": {
+          "preferred": {
+            "id": "Q836",
+            "name": "Myanmar",
+            "continent": "Asia",
+            "namespace": "iso-alpha3",
+            "value": "MMR",
+            "matchedBy": "iso-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "q836$EB62395B-BAE8-4A79-A0A4-6F0F730405EF"
+            ],
+            "successors": [],
+            "applicability": "uncertain",
+            "tentative": true
+          },
+          "candidates": [
+            {
+              "id": "Q836",
+              "name": "Myanmar",
+              "continent": "Asia",
+              "namespace": "iso-alpha3",
+              "value": "BUR",
+              "matchedBy": "historical-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 7305,
+              "evidence": [
+                "Q836$0e62bd09-4236-4d40-0f20-b0aa1aa1ef43"
+              ],
+              "successors": [],
+              "applicability": "retired",
+              "tentative": false
+            },
+            {
+              "id": "Q836",
+              "name": "Myanmar",
+              "continent": "Asia",
+              "namespace": "iso-alpha3",
+              "value": "MMR",
+              "matchedBy": "iso-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 2147483647,
+              "evidence": [
+                "q836$EB62395B-BAE8-4A79-A0A4-6F0F730405EF"
+              ],
+              "successors": [],
+              "applicability": "uncertain",
+              "tentative": true
+            }
+          ],
+          "selection": "latest",
+          "temporalAmbiguity": true,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        }
+      }
+    },
+    {
+      "operation": "assignments",
+      "input": "Q836",
+      "namespace": "iso-alpha2",
+      "result": {
+        "preferred": {
+          "id": "Q836",
+          "name": "Myanmar",
+          "continent": "Asia",
+          "namespace": "iso-alpha2",
+          "value": "MM",
+          "matchedBy": "iso-code",
+          "temporalReviewed": false,
+          "retiredAtDay": 2147483647,
+          "evidence": [
+            "q836$29EB0A84-6B64-4E4D-AAE1-88D570C9109A"
+          ],
+          "successors": [],
+          "applicability": "uncertain",
+          "tentative": true
+        },
+        "candidates": [
+          {
+            "id": "Q836",
+            "name": "Myanmar",
+            "continent": "Asia",
+            "namespace": "iso-alpha2",
+            "value": "BU",
+            "matchedBy": "historical-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 7305,
+            "evidence": [
+              "Q836$157f71ad-4138-145d-87b0-3f5df312297c"
+            ],
+            "successors": [],
+            "applicability": "retired",
+            "tentative": false
+          },
+          {
+            "id": "Q836",
+            "name": "Myanmar",
+            "continent": "Asia",
+            "namespace": "iso-alpha2",
+            "value": "MM",
+            "matchedBy": "iso-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "q836$29EB0A84-6B64-4E4D-AAE1-88D570C9109A"
+            ],
+            "successors": [],
+            "applicability": "uncertain",
+            "tentative": true
+          }
+        ],
+        "selection": "latest",
+        "temporalAmbiguity": true,
+        "coverage": "partial",
+        "evidenceStatus": "unreviewed-spike"
+      }
+    },
+    {
+      "operation": "assignments",
+      "input": "Q836",
+      "namespace": "iso-alpha3",
+      "result": {
+        "preferred": {
+          "id": "Q836",
+          "name": "Myanmar",
+          "continent": "Asia",
+          "namespace": "iso-alpha3",
+          "value": "MMR",
+          "matchedBy": "iso-code",
+          "temporalReviewed": false,
+          "retiredAtDay": 2147483647,
+          "evidence": [
+            "q836$EB62395B-BAE8-4A79-A0A4-6F0F730405EF"
+          ],
+          "successors": [],
+          "applicability": "uncertain",
+          "tentative": true
+        },
+        "candidates": [
+          {
+            "id": "Q836",
+            "name": "Myanmar",
+            "continent": "Asia",
+            "namespace": "iso-alpha3",
+            "value": "BUR",
+            "matchedBy": "historical-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 7305,
+            "evidence": [
+              "Q836$0e62bd09-4236-4d40-0f20-b0aa1aa1ef43"
+            ],
+            "successors": [],
+            "applicability": "retired",
+            "tentative": false
+          },
+          {
+            "id": "Q836",
+            "name": "Myanmar",
+            "continent": "Asia",
+            "namespace": "iso-alpha3",
+            "value": "MMR",
+            "matchedBy": "iso-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "q836$EB62395B-BAE8-4A79-A0A4-6F0F730405EF"
+            ],
+            "successors": [],
+            "applicability": "uncertain",
+            "tentative": true
+          }
+        ],
+        "selection": "latest",
+        "temporalAmbiguity": true,
+        "coverage": "partial",
+        "evidenceStatus": "unreviewed-spike"
+      }
+    },
+    {
+      "operation": "convert",
+      "from": "name",
+      "to": "iso-alpha2",
+      "input": "Myanmar (Burma)",
+      "date": "1989-06-01",
+      "result": {
+        "source": {
+          "preferred": null,
+          "candidates": [
+            {
+              "id": "Q836",
+              "name": "Myanmar",
+              "continent": "Asia",
+              "namespace": "name",
+              "value": "Myanmar (Burma)",
+              "matchedBy": "policy-local-policy",
+              "temporalReviewed": false,
+              "retiredAtDay": 2147483647,
+              "evidence": [
+                "Q836:policy:name:Myanmar (Burma)"
+              ],
+              "successors": [],
+              "applicability": "uncertain",
+              "tentative": false
+            }
+          ],
+          "selection": "uncertain",
+          "temporalAmbiguity": true,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        },
+        "target": {
+          "preferred": null,
+          "candidates": [
+            {
+              "id": "Q836",
+              "name": "Myanmar",
+              "continent": "Asia",
+              "namespace": "iso-alpha2",
+              "value": "BU",
+              "matchedBy": "historical-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 7305,
+              "evidence": [
+                "Q836$157f71ad-4138-145d-87b0-3f5df312297c"
+              ],
+              "successors": [],
+              "applicability": "uncertain",
+              "tentative": false
+            },
+            {
+              "id": "Q836",
+              "name": "Myanmar",
+              "continent": "Asia",
+              "namespace": "iso-alpha2",
+              "value": "MM",
+              "matchedBy": "iso-code",
+              "temporalReviewed": false,
+              "retiredAtDay": 2147483647,
+              "evidence": [
+                "q836$29EB0A84-6B64-4E4D-AAE1-88D570C9109A"
+              ],
+              "successors": [],
+              "applicability": "uncertain",
+              "tentative": false
+            }
+          ],
+          "selection": "uncertain",
+          "temporalAmbiguity": true,
+          "coverage": "partial",
+          "evidenceStatus": "unreviewed-spike"
+        }
+      }
     }
   ]
 }

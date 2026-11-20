@@ -1,0 +1,72 @@
+{
+  "issue": "https://github.com/openwatersio/c5y-n8r/issues/149",
+  "source": "https://www.gov.uk/government/publications/country-names/country-names-the-permanent-committee-on-geographical-names-for-british-official-use",
+  "scope": "Exact name alias for Q836. Preserve unknown temporal applicability; do not reinterpret the name as historic BU/BUR codes. TICON import uses its original MMR code.",
+  "request": {
+    "id": "Q836:policy:name:Myanmar (Burma)",
+    "qid": "Q836",
+    "revision": 2568775107,
+    "kind": "local-policy",
+    "language": "en",
+    "expected": "Myanmar (Burma)",
+    "reason": "Retain the exact English compatibility name used by stored Slackwater records. The UK PCGN country-name list uses Myanmar (Burma): https://www.gov.uk/government/publications/country-names/country-names-the-permanent-committee-on-geographical-names-for-british-official-use . Research and provider MMR provenance: https://github.com/openwatersio/c5y-n8r/issues/149 . This is an explicit local name alias, not a Wikidata alias or a rule for stripping parentheses."
+  },
+  "transition": {
+    "before": {
+      "referenceDate": "2026-11-15",
+      "coverageFrom": "1974-01-01",
+      "coverageThrough": "2026-11-15",
+      "coverage": "Slackwater candidate corpus plus historical demonstration entities; source-backed assignments remain unreviewed; no historical completeness asserted.",
+      "minimumReaderVersion": "0.0.2",
+      "fullEnglishAliasEntities": [
+        "Q43",
+        "Q213",
+        "Q33946",
+        "Q37024",
+        "Q25227",
+        "Q25279",
+        "Q26273",
+        "Q27561",
+        "Q145",
+        "Q971",
+        "Q974"
+      ],
+      "selfContinent": {
+        "entity": "Q51",
+        "value": "Antarctica",
+        "statementId": "q51$1156F414-87F1-46BB-BABA-8AAF3DA0F45C",
+        "instanceOf": "Q5107",
+        "verificationStatus": "pending",
+        "scope": "At referenceDate, display a continent entity as its own continent when its pinned P31 establishes continent identity; does not assert any P30 self-statement or historical boundaries."
+      }
+    },
+    "after": {
+      "referenceDate": "2026-11-15",
+      "coverageFrom": "1974-01-01",
+      "coverageThrough": "2026-11-15",
+      "coverage": "Slackwater candidate corpus plus historical demonstration entities; source-backed assignments remain unreviewed; no historical completeness asserted.",
+      "minimumReaderVersion": "0.0.4",
+      "fullEnglishAliasEntities": [
+        "Q43",
+        "Q213",
+        "Q33946",
+        "Q37024",
+        "Q25227",
+        "Q25279",
+        "Q26273",
+        "Q27561",
+        "Q145",
+        "Q971",
+        "Q974"
+      ],
+      "selfContinent": {
+        "entity": "Q51",
+        "value": "Antarctica",
+        "statementId": "q51$1156F414-87F1-46BB-BABA-8AAF3DA0F45C",
+        "instanceOf": "Q5107",
+        "verificationStatus": "pending",
+        "scope": "At referenceDate, display a continent entity as its own continent when its pinned P31 establishes continent identity; does not assert any P30 self-statement or historical boundaries."
+      }
+    }
+  }
+}

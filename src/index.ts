@@ -194,11 +194,20 @@ export class CountryRegistry {
     });
     let eligible = candidates.filter(c => c.applicability === 'active');
     if (options.date === undefined && !eligible.length && candidates.length) {
+      const tentative = candidates.filter(c => c.applicability === 'uncertain' && c.tentative);
       const retired = candidates.filter(c => c.applicability === 'retired');
       const ended = retired.map(c => c.retiredAtDay);
       const latestEnd = ended.length ? Math.max(...ended) : MIN_DAY;
-      eligible = retired.filter((_, i) => ended[i] === latestEnd);
-      if (!eligible.length) eligible = candidates.filter(c => c.applicability === 'uncertain' && c.tentative);
+      const followsHistory = candidates.every((c, i) => {
+        if (c.applicability !== 'uncertain' || !c.tentative) return true;
+        const assignment = this.root.assignments(indexes[i])!;
+        return assignment.fromDay() !== MIN_DAY && assignment.fromLatestDay() >= latestEnd - 1;
+      });
+      if (tentative.length && followsHistory && new Set(candidates.map(c => c.id)).size === 1) eligible = tentative;
+      else {
+        eligible = retired.filter((_, i) => ended[i] === latestEnd);
+        if (!eligible.length) eligible = tentative;
+      }
     }
     const ids = new Set(eligible.map(identity));
     const uncertainOther = candidates.some(c => c.applicability === 'uncertain' && !ids.has(identity(c)));

@@ -1086,5 +1086,13 @@
     "sha256": "60bca42bcccc40eb220d3e983b60422e829e5062f3183ff641eb757a2de8d11c",
     "retrievedAt": "2026-11-18T16:09:29.941Z",
     "permanentLink": "https://www.wikidata.org/w/index.php?title=Q29999&oldid=2563993960"
+  },
+  {
+    "id": "Q192184",
+    "revision": 2558478385,
+    "file": "sources/wikidata/Q192184-2558478385.json",
+    "sha256": "68d975902e88c3dcbd0a52b5abbda4b43f801b28aedb5d363a1838da3ad1aefc",
+    "retrievedAt": "2026-11-20T20:41:54.458Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q192184&oldid=2558478385"
   }
 ]

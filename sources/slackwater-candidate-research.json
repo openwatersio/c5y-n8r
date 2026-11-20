@@ -17,13 +17,14 @@
     {
       "id": "Q192184",
       "revision": 2558478385,
-      "file": "sources/research/Q192184-2558478385.json",
+      "file": "sources/wikidata/Q192184-2558478385.json",
       "sha256": "68d975902e88c3dcbd0a52b5abbda4b43f801b28aedb5d363a1838da3ad1aefc",
       "retrievedAt": "2026-11-18T15:14:08.837525Z",
       "permanentLink": "https://www.wikidata.org/w/index.php?title=Q192184&oldid=2558478385",
-      "status": "research-only-not-admitted",
+      "status": "admitted-unreviewed-territory-for-code-lookup",
       "requiredSpelling": "Saint Helena",
-      "finding": "SH normal P297 has no references. English labels and aliases lack Saint Helena; exact et label exists but island versus territory scope still needs explicit policy and source review."
+      "finding": "Faithfully import the territory label and SH/SHN/654 claims. Saint Helena remains the distinct island Q34497, without an ISO country assignment. The three researched TICON records provide SHN directly; use that provider identity in the consumer diagnostic, not a worldwide island-name alias. Missing references remain advisory quality work; research: https://github.com/openwatersio/c5y-n8r/issues/150 .",
+      "admittedAt": "2026-11-20T20:41:54.458Z"
     }
   ],
   "providerContext": [

@@ -3116,6 +3116,26 @@
       "entity": "Q836",
       "namespace": "name",
       "value": "Myanmar (Burma)"
+    },
+    {
+      "entity": "Q192184",
+      "namespace": "iso-alpha2",
+      "value": "SH"
+    },
+    {
+      "entity": "Q192184",
+      "namespace": "iso-alpha3",
+      "value": "SHN"
+    },
+    {
+      "entity": "Q192184",
+      "namespace": "iso-numeric",
+      "value": "654"
+    },
+    {
+      "entity": "Q192184",
+      "namespace": "name",
+      "value": "Saint Helena, Ascension and Tristan da Cunha"
     }
   ],
   "lookups": [
@@ -84197,6 +84217,354 @@
             "retiredAtDay": 2147483647,
             "evidence": [
               "Q836:policy:name:Myanmar (Burma)"
+            ],
+            "successors": [],
+            "applicability": "active",
+            "tentative": false
+          }
+        ],
+        "selection": "latest",
+        "temporalAmbiguity": false,
+        "coverage": "partial",
+        "evidenceStatus": "unreviewed-spike"
+      }
+    },
+    {
+      "input": "SH",
+      "namespace": "iso-alpha2",
+      "result": {
+        "preferred": {
+          "id": "Q192184",
+          "name": "Saint Helena, Ascension and Tristan da Cunha",
+          "continent": "Africa",
+          "namespace": "iso-alpha2",
+          "value": "SH",
+          "matchedBy": "iso-code",
+          "temporalReviewed": false,
+          "retiredAtDay": 2147483647,
+          "evidence": [
+            "q192184$AB4C97F1-9729-4D34-808F-4034D42CF7F2"
+          ],
+          "successors": [],
+          "applicability": "uncertain",
+          "tentative": true
+        },
+        "candidates": [
+          {
+            "id": "Q192184",
+            "name": "Saint Helena, Ascension and Tristan da Cunha",
+            "continent": "Africa",
+            "namespace": "iso-alpha2",
+            "value": "SH",
+            "matchedBy": "iso-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "q192184$AB4C97F1-9729-4D34-808F-4034D42CF7F2"
+            ],
+            "successors": [],
+            "applicability": "uncertain",
+            "tentative": true
+          }
+        ],
+        "selection": "latest",
+        "temporalAmbiguity": true,
+        "coverage": "partial",
+        "evidenceStatus": "unreviewed-spike"
+      }
+    },
+    {
+      "input": "SH",
+      "result": {
+        "preferred": {
+          "id": "Q192184",
+          "name": "Saint Helena, Ascension and Tristan da Cunha",
+          "continent": "Africa",
+          "namespace": "iso-alpha2",
+          "value": "SH",
+          "matchedBy": "iso-code",
+          "temporalReviewed": false,
+          "retiredAtDay": 2147483647,
+          "evidence": [
+            "q192184$AB4C97F1-9729-4D34-808F-4034D42CF7F2"
+          ],
+          "successors": [],
+          "applicability": "uncertain",
+          "tentative": true
+        },
+        "candidates": [
+          {
+            "id": "Q192184",
+            "name": "Saint Helena, Ascension and Tristan da Cunha",
+            "continent": "Africa",
+            "namespace": "iso-alpha2",
+            "value": "SH",
+            "matchedBy": "iso-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "q192184$AB4C97F1-9729-4D34-808F-4034D42CF7F2"
+            ],
+            "successors": [],
+            "applicability": "uncertain",
+            "tentative": true
+          }
+        ],
+        "selection": "latest",
+        "temporalAmbiguity": true,
+        "coverage": "partial",
+        "evidenceStatus": "unreviewed-spike"
+      }
+    },
+    {
+      "input": "SHN",
+      "namespace": "iso-alpha3",
+      "result": {
+        "preferred": {
+          "id": "Q192184",
+          "name": "Saint Helena, Ascension and Tristan da Cunha",
+          "continent": "Africa",
+          "namespace": "iso-alpha3",
+          "value": "SHN",
+          "matchedBy": "iso-code",
+          "temporalReviewed": false,
+          "retiredAtDay": 2147483647,
+          "evidence": [
+            "q192184$9CC14E0F-0B9F-4DCD-A770-6602DDC24615"
+          ],
+          "successors": [],
+          "applicability": "uncertain",
+          "tentative": true
+        },
+        "candidates": [
+          {
+            "id": "Q192184",
+            "name": "Saint Helena, Ascension and Tristan da Cunha",
+            "continent": "Africa",
+            "namespace": "iso-alpha3",
+            "value": "SHN",
+            "matchedBy": "iso-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "q192184$9CC14E0F-0B9F-4DCD-A770-6602DDC24615"
+            ],
+            "successors": [],
+            "applicability": "uncertain",
+            "tentative": true
+          }
+        ],
+        "selection": "latest",
+        "temporalAmbiguity": true,
+        "coverage": "partial",
+        "evidenceStatus": "unreviewed-spike"
+      }
+    },
+    {
+      "input": "SHN",
+      "result": {
+        "preferred": {
+          "id": "Q192184",
+          "name": "Saint Helena, Ascension and Tristan da Cunha",
+          "continent": "Africa",
+          "namespace": "iso-alpha3",
+          "value": "SHN",
+          "matchedBy": "iso-code",
+          "temporalReviewed": false,
+          "retiredAtDay": 2147483647,
+          "evidence": [
+            "q192184$9CC14E0F-0B9F-4DCD-A770-6602DDC24615"
+          ],
+          "successors": [],
+          "applicability": "uncertain",
+          "tentative": true
+        },
+        "candidates": [
+          {
+            "id": "Q192184",
+            "name": "Saint Helena, Ascension and Tristan da Cunha",
+            "continent": "Africa",
+            "namespace": "iso-alpha3",
+            "value": "SHN",
+            "matchedBy": "iso-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "q192184$9CC14E0F-0B9F-4DCD-A770-6602DDC24615"
+            ],
+            "successors": [],
+            "applicability": "uncertain",
+            "tentative": true
+          }
+        ],
+        "selection": "latest",
+        "temporalAmbiguity": true,
+        "coverage": "partial",
+        "evidenceStatus": "unreviewed-spike"
+      }
+    },
+    {
+      "input": "654",
+      "namespace": "iso-numeric",
+      "result": {
+        "preferred": {
+          "id": "Q192184",
+          "name": "Saint Helena, Ascension and Tristan da Cunha",
+          "continent": "Africa",
+          "namespace": "iso-numeric",
+          "value": "654",
+          "matchedBy": "iso-code",
+          "temporalReviewed": false,
+          "retiredAtDay": 2147483647,
+          "evidence": [
+            "q192184$5A289A0C-C111-43E0-B26D-086A0EFC63CB"
+          ],
+          "successors": [],
+          "applicability": "uncertain",
+          "tentative": true
+        },
+        "candidates": [
+          {
+            "id": "Q192184",
+            "name": "Saint Helena, Ascension and Tristan da Cunha",
+            "continent": "Africa",
+            "namespace": "iso-numeric",
+            "value": "654",
+            "matchedBy": "iso-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "q192184$5A289A0C-C111-43E0-B26D-086A0EFC63CB"
+            ],
+            "successors": [],
+            "applicability": "uncertain",
+            "tentative": true
+          }
+        ],
+        "selection": "latest",
+        "temporalAmbiguity": true,
+        "coverage": "partial",
+        "evidenceStatus": "unreviewed-spike"
+      }
+    },
+    {
+      "input": "654",
+      "result": {
+        "preferred": {
+          "id": "Q192184",
+          "name": "Saint Helena, Ascension and Tristan da Cunha",
+          "continent": "Africa",
+          "namespace": "iso-numeric",
+          "value": "654",
+          "matchedBy": "iso-code",
+          "temporalReviewed": false,
+          "retiredAtDay": 2147483647,
+          "evidence": [
+            "q192184$5A289A0C-C111-43E0-B26D-086A0EFC63CB"
+          ],
+          "successors": [],
+          "applicability": "uncertain",
+          "tentative": true
+        },
+        "candidates": [
+          {
+            "id": "Q192184",
+            "name": "Saint Helena, Ascension and Tristan da Cunha",
+            "continent": "Africa",
+            "namespace": "iso-numeric",
+            "value": "654",
+            "matchedBy": "iso-code",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "q192184$5A289A0C-C111-43E0-B26D-086A0EFC63CB"
+            ],
+            "successors": [],
+            "applicability": "uncertain",
+            "tentative": true
+          }
+        ],
+        "selection": "latest",
+        "temporalAmbiguity": true,
+        "coverage": "partial",
+        "evidenceStatus": "unreviewed-spike"
+      }
+    },
+    {
+      "input": "Saint Helena, Ascension and Tristan da Cunha",
+      "namespace": "name",
+      "result": {
+        "preferred": {
+          "id": "Q192184",
+          "name": "Saint Helena, Ascension and Tristan da Cunha",
+          "continent": "Africa",
+          "namespace": "name",
+          "value": "Saint Helena, Ascension and Tristan da Cunha",
+          "matchedBy": "label",
+          "temporalReviewed": false,
+          "retiredAtDay": 2147483647,
+          "evidence": [
+            "Q192184:label:en"
+          ],
+          "successors": [],
+          "applicability": "active",
+          "tentative": false
+        },
+        "candidates": [
+          {
+            "id": "Q192184",
+            "name": "Saint Helena, Ascension and Tristan da Cunha",
+            "continent": "Africa",
+            "namespace": "name",
+            "value": "Saint Helena, Ascension and Tristan da Cunha",
+            "matchedBy": "label",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "Q192184:label:en"
+            ],
+            "successors": [],
+            "applicability": "active",
+            "tentative": false
+          }
+        ],
+        "selection": "latest",
+        "temporalAmbiguity": false,
+        "coverage": "partial",
+        "evidenceStatus": "unreviewed-spike"
+      }
+    },
+    {
+      "input": "Saint Helena, Ascension and Tristan da Cunha",
+      "result": {
+        "preferred": {
+          "id": "Q192184",
+          "name": "Saint Helena, Ascension and Tristan da Cunha",
+          "continent": "Africa",
+          "namespace": "name",
+          "value": "Saint Helena, Ascension and Tristan da Cunha",
+          "matchedBy": "label",
+          "temporalReviewed": false,
+          "retiredAtDay": 2147483647,
+          "evidence": [
+            "Q192184:label:en"
+          ],
+          "successors": [],
+          "applicability": "active",
+          "tentative": false
+        },
+        "candidates": [
+          {
+            "id": "Q192184",
+            "name": "Saint Helena, Ascension and Tristan da Cunha",
+            "continent": "Africa",
+            "namespace": "name",
+            "value": "Saint Helena, Ascension and Tristan da Cunha",
+            "matchedBy": "label",
+            "temporalReviewed": false,
+            "retiredAtDay": 2147483647,
+            "evidence": [
+              "Q192184:label:en"
             ],
             "successors": [],
             "applicability": "active",

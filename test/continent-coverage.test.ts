@@ -59,7 +59,7 @@ test('candidate evidence has exact issue tracking and research pointers bind rea
   const tracker = JSON.parse(await readFile('sources/evidence-review-issues.json', 'utf8'));
   assert.equal(tracker.candidateEvidenceSha256, digest(raw));
   assert.deepEqual(Object.keys(tracker.evidenceIssues).sort(), JSON.parse(raw.toString()).requests.map((r: any) => r.id).sort());
-  assert.equal(tracker.totalEvidenceItems, 766);
+  assert.equal(tracker.totalEvidenceItems, 771);
   const research = JSON.parse(await readFile('sources/slackwater-candidate-research.json', 'utf8'));
   const manifest = JSON.parse(await readFile('sources/manifest.json', 'utf8'));
   for (const item of research.proposals) {

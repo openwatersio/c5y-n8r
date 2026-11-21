@@ -1,11 +1,11 @@
 {
   "sourceCounts": {
-    "entities": 136,
-    "assignments": 623,
-    "evidence": 766
+    "entities": 137,
+    "assignments": 627,
+    "evidence": 771
   },
   "inventoryRevision": "f9c3d42c066efe87e606f8c09673fb70cff2b2cf",
-  "snapshotManifestDigest": "bed739b2f4fae5ec546e3f4e11364a84871a3778919df01c9773b3d0b1550bd2",
+  "snapshotManifestDigest": "9e71684e450424aa8bbe916430e8fb8528d00d4955b28ae67551d7ff99d4ad8d",
   "verificationStatus": "pending",
   "summary": {
     "inputs": 129,

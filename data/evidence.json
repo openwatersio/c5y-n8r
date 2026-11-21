@@ -1,6 +1,6 @@
 {
-  "datasetVersion": 4,
-  "snapshotManifestDigest": "bed739b2f4fae5ec546e3f4e11364a84871a3778919df01c9773b3d0b1550bd2",
+  "datasetVersion": 5,
+  "snapshotManifestDigest": "9e71684e450424aa8bbe916430e8fb8528d00d4955b28ae67551d7ff99d4ad8d",
   "requests": [
     {
       "id": "q43$05DBEBB8-5D18-40BB-9A4C-409073AA44F5",
@@ -8844,6 +8844,58 @@
       "kind": "alias",
       "language": "en",
       "expected": "Netherlands"
+    },
+    {
+      "id": "q192184$a69ae96b-42d7-bd25-2628-4a03381f97ac",
+      "qid": "Q192184",
+      "revision": 2558478385,
+      "kind": "statement",
+      "property": "P30",
+      "statementId": "q192184$a69ae96b-42d7-bd25-2628-4a03381f97ac",
+      "expected": {
+        "entity-type": "item",
+        "numeric-id": 15,
+        "id": "Q15"
+      },
+      "qualifiers": {}
+    },
+    {
+      "id": "q192184$AB4C97F1-9729-4D34-808F-4034D42CF7F2",
+      "qid": "Q192184",
+      "revision": 2558478385,
+      "kind": "statement",
+      "property": "P297",
+      "statementId": "q192184$AB4C97F1-9729-4D34-808F-4034D42CF7F2",
+      "expected": "SH",
+      "qualifiers": {}
+    },
+    {
+      "id": "q192184$9CC14E0F-0B9F-4DCD-A770-6602DDC24615",
+      "qid": "Q192184",
+      "revision": 2558478385,
+      "kind": "statement",
+      "property": "P298",
+      "statementId": "q192184$9CC14E0F-0B9F-4DCD-A770-6602DDC24615",
+      "expected": "SHN",
+      "qualifiers": {}
+    },
+    {
+      "id": "q192184$5A289A0C-C111-43E0-B26D-086A0EFC63CB",
+      "qid": "Q192184",
+      "revision": 2558478385,
+      "kind": "statement",
+      "property": "P299",
+      "statementId": "q192184$5A289A0C-C111-43E0-B26D-086A0EFC63CB",
+      "expected": "654",
+      "qualifiers": {}
+    },
+    {
+      "id": "Q192184:label:en",
+      "qid": "Q192184",
+      "revision": 2558478385,
+      "kind": "label",
+      "language": "en",
+      "expected": "Saint Helena, Ascension and Tristan da Cunha"
     }
   ]
 }

@@ -1,3 +1,4 @@
+import { CountryRegistry } from '../src/index.ts';
 import { canonical } from '../src/evidence.ts';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
@@ -330,8 +331,15 @@ test('unreferenced Wikidata additions pass trusted ingestion; forged artifacts a
     const built = await save();
     const preload = join(dir, 'wikidata-fixture.mjs');
     await writeFile(preload, `import {readFileSync} from 'node:fs'; const root=${JSON.stringify(dir)}; globalThis.fetch=async input=>{const url=new URL(input), qid=url.pathname.split('/').pop().replace('.json',''); const manifest=JSON.parse(readFileSync(root+'/sources/manifest.json','utf8')); const entry=manifest.find(m=>m.id===qid); return new Response(qid==='Q213'?${JSON.stringify(raw)}:readFileSync(root+'/'+entry.file,'utf8'));};`);
-    const run = async (withBase: boolean | string = true) => {
-      const result = spawnSync(process.execPath, ['--import', 'tsx', '--import', preload, 'scripts/check-evidence.ts', ...(withBase ? ['--base', typeof withBase === 'string' ? withBase : '.'] : []), '--corpus', dir, '--output', join(dir, 'report')], { encoding: 'utf8' });
+    const run = async (withBase: boolean | string = true, reader = false) => {
+      const observations = join(dir, 'reader-results.json');
+      if (reader) {
+        const registry = CountryRegistry.open(await readFile(join(dir, 'data/countries.crdb')));
+        const fixture = JSON.parse(await readFile('sources/accepted-inputs.json','utf8'));
+        const methods = JSON.parse(await readFile('sources/accepted-methods.json','utf8'));
+        await writeFile(observations,JSON.stringify({schemaVersion:2,cases:[...fixture.lookups,...methods.cases].map(c=>observeLookup(registry,c))}));
+      }
+      const result = spawnSync(process.execPath, ['--import', 'tsx', '--import', preload, 'scripts/check-evidence.ts', ...(withBase ? ['--base', typeof withBase === 'string' ? withBase : '.'] : []), '--corpus', dir, ...(reader ? ['--reader-results', observations] : []), '--output', join(dir, 'report')], { encoding: 'utf8' });
       return { result, report: JSON.parse(await readFile(join(dir, 'report/report.json'), 'utf8')) };
     };
     const good = await run();
@@ -342,6 +350,9 @@ test('unreferenced Wikidata additions pass trusted ingestion; forged artifacts a
     assert.ok(good.report.findings.some((f: any) => f.advisories?.includes('inherited-trusted-local-policy')));
     for (const id of ['Q43:policy:name:Turkiye', 'Q145:policy:unofficial:UK']) assert.equal(good.report.findings.find((f: any) => f.id === id).blocking, false);
     assert.ok(good.report.findings.some((f: any) => f.id === removedStatementId && f.blocking === false && f.advisories.includes('upstream-assertion-removed')));
+    const readerGood = await run(true, true);
+    assert.equal(readerGood.result.status,0,readerGood.result.stdout+readerGood.result.stderr);
+    assert.ok(readerGood.report.findings.some((f:any)=>f.id===removedStatementId&&f.blocking===false));
     policy.datasetVersion--; await writeFile(policyPath, JSON.stringify(policy)); await save();
     const unbumped = await run();
     assert.equal(unbumped.result.status, 1);
@@ -414,6 +425,9 @@ test('unreferenced Wikidata additions pass trusted ingestion; forged artifacts a
     const local = await run();
     assert.equal(local.result.status, 1, local.result.stdout + local.result.stderr);
     assert.ok(local.report.findings.some((f: any) => f.id.endsWith(':ZZ') && f.status === 'needs-review' && f.blocking !== false));
+    const readerLocal = await run(true, true);
+    assert.equal(readerLocal.result.status,1,readerLocal.result.stdout+readerLocal.result.stderr);
+    assert.ok(readerLocal.report.findings.some((f:any)=>f.id.endsWith(':ZZ')&&f.status==='needs-review'&&f.blocking!==false));
     const { requests } = JSON.parse(await readFile(join(dir, 'data/evidence.json'), 'utf8'));
     const request = requests.find((r: any) => r.id.endsWith(':ZZ'));
     const key = `local-policy-request:${request.id}`;
@@ -426,6 +440,7 @@ test('unreferenced Wikidata additions pass trusted ingestion; forged artifacts a
     const approvedLocal = await run(trusted);
     assert.equal(approvedLocal.report.gatePassed, true);
     assert.ok(approvedLocal.report.findings.some((f: any) => f.id === request.id && f.advisories?.includes('approved-trusted-local-policy')));
+    assert.equal((await run(trusted, true)).report.gatePassed, true);
     policy.aliases.at(-1).reason = 'Changed after approval';
     await writeFile(policyPath, JSON.stringify(policy)); await save();
     assert.ok((await run(trusted)).report.findings.some((f: any) => f.id === request.id && f.blocking !== false));

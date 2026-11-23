@@ -1,3 +1,5 @@
+import { readCorpusBytes } from '../src/corpus-files.ts';
+import { observeLookup } from '../src/compatibility.ts';
 import { READER_VERSION } from '../src/common.ts';
 import { readFile, mkdir, writeFile, stat } from 'node:fs/promises';
 import { resolve } from 'node:path';
@@ -27,16 +29,17 @@ async function selectedActivation(dir: string): Promise<boolean> {
 }
 
 const caseKey = (c: any) => canonical([c.input, c.namespace ?? null, c.date ?? null, c.dateTime ?? null, c.operation ?? 'resolve', c.from ?? null, c.to ?? null]);
-function preservesCases(before: any[], proposed: any[]): boolean {
+function preservesCases(before: any[], proposed: any[], correction = false): boolean {
+  const protectedCase = (c: any) => { const {result, ...query} = c; return canonical(correction ? query : c); };
   if (!Array.isArray(before) || !Array.isArray(proposed)) return false;
-  const next = new Map(proposed.map(c => [caseKey(c), canonical(c)]));
-  return next.size === proposed.length && before.every(c => next.get(caseKey(c)) === canonical(c));
+  const next = new Map(proposed.map(c => [caseKey(c), protectedCase(c)]));
+  return next.size === proposed.length && before.every(c => next.get(caseKey(c)) === protectedCase(c));
 }
-function preservesFixture(before: any, proposed: any): boolean {
+function preservesFixture(before: any, proposed: any, correction = false): boolean {
   const { inputs: oldInputs, lookups: oldLookups, ...oldRest } = before;
   const { inputs: newInputs, lookups: newLookups, ...newRest } = proposed;
   const newInputKeys = new Set(Array.isArray(newInputs) ? newInputs.map(canonical) : []);
-  return canonical(oldRest) === canonical(newRest) && Array.isArray(oldInputs) && Array.isArray(newInputs) && oldInputs.every((c: any) => newInputKeys.has(canonical(c))) && preservesCases(oldLookups, newLookups);
+  return canonical(oldRest) === canonical(newRest) && Array.isArray(oldInputs) && Array.isArray(newInputs) && oldInputs.every((c: any) => newInputKeys.has(canonical(c))) && preservesCases(oldLookups, newLookups, correction);
 }
 
 async function snapshotEntity(entry: { id: string; revision: number; file: string; sha256?: string }): Promise<WikiEntity> {
@@ -49,7 +52,7 @@ async function snapshotEntity(entry: { id: string; revision: number; file: strin
 }
 
 async function load(dir: string) {
-  const bytes = await readFile(resolve(dir, 'data/countries.crdb'));
+  const bytes = await readCorpusBytes(dir, 'data/countries.crdb', 32 * 1024 * 1024);
   const registry = CountryRegistry.open(bytes);
   const text = await readCorpusFile(dir, 'data/evidence.json');
   if (sha(text) !== registry.metadata().evidenceDigest) throw new Error('Evidence companion digest mismatch');
@@ -71,7 +74,7 @@ async function load(dir: string) {
     facts.push(JSON.stringify([qid, a.unpack()]));
   }
   for (let i = 0; i < root.entitiesLength(); i++) facts.push(JSON.stringify(root.entities(i)!.unpack()));
-  return { requests, facts, metadata: registry.metadata(), binarySha256: sha(bytes), bytes };
+  return { requests, facts, metadata: registry.metadata(), binarySha256: sha(bytes), bytes, registry };
 }
 
 try {
@@ -89,6 +92,8 @@ if (hasReviews || (!base && !readerResults)) {
 let requests = proposed.requests;
 const preflight: Finding[] = [];
 let checkedLookups = 0;
+let temporalCorrections: Awaited<ReturnType<typeof buildCorpus>>['temporalCorrections'] = [];
+let correctionRejection = '';
 let unchangedArtifacts = false;
 const inheritedPolicies = new Set<string>();
 const approvedPolicies = new Set<string>();
@@ -106,11 +111,26 @@ if (base) {
     if (fixture && (fixture.schemaVersion !== 1 || !Array.isArray(fixture.cases))) throw new Error('Invalid method compatibility fixture');
     return fixture?.cases;
   };
+  const oldRequestsById = new Map(before.requests.map(r => [r.id,r]));
+  const dates = (r: EvidenceRequest) => { const qualifiers = r.qualifiers as Record<string, unknown> | undefined; return canonical([qualifiers?.P580 ?? null,qualifiers?.P582 ?? null]); };
+  const changedDates = proposed.requests.some(r => ['P297','P298','P299'].includes(r.property ?? '') && oldRequestsById.has(r.id) && dates(oldRequestsById.get(r.id)!) !== dates(r));
+  if (!unchangedArtifacts && changedDates && proposed.metadata.datasetVersion > before.metadata.datasetVersion) {
+    try {
+      const candidate = await buildCorpus(corpus, approvedReviews, { temporalBase: resolve(base) });
+      temporalCorrections = candidate.temporalCorrections;
+      generated = await buildCorpus(corpus, approvedReviews);
+      if (!Buffer.from(generated.bytes).equals(proposed.bytes) || generated.evidenceText !== await readCorpusFile(corpus, 'data/evidence.json')) throw new Error('Artifacts differ from trusted source build');
+    } catch (error) {
+      temporalCorrections = [];
+      correctionRejection = error instanceof Error ? error.message : String(error);
+    }
+  }
+  const correction = temporalCorrections.length > 0;
   const beforeMethods = await methodCases(resolve(base));
   const proposedMethods = await methodCases(corpus);
-  if (beforeMethods && !preservesCases(beforeMethods, proposedMethods ?? [])) preflight.push({ id: 'method-compatibility-fixture', status: 'needs-review', link: '', message: 'Protected method expectations changed; requires explicit trusted review', references: [] });
+  if (beforeMethods && !preservesCases(beforeMethods, proposedMethods ?? [], correction)) preflight.push({ id: 'method-compatibility-fixture', status: 'needs-review', link: '', message: `Protected method expectations changed; date correction rejected: ${correctionRejection || 'no eligible versioned date correction'}`, references: [] });
   const expectedCases = [...beforeFixture.lookups, ...(beforeMethods ?? [])];
-  if (!preservesFixture(beforeFixture, proposedFixture)) preflight.push({ id: 'compatibility-fixture', status: 'needs-review', link: '', message: 'Protected compatibility expectations changed or disappeared; existing cases must be preserved exactly', references: [] });
+  if (!preservesFixture(beforeFixture, proposedFixture, correction)) preflight.push({ id: 'compatibility-fixture', status: 'needs-review', link: '', message: `Protected compatibility expectations changed or disappeared; date correction rejected: ${correctionRejection || 'no eligible versioned date correction'}`, references: [] });
   if (readerResults) {
     const file = resolve(readerResults);
     if ((await stat(file)).size > 4 * 1024 * 1024) throw new Error('Oversized reader observations');
@@ -129,64 +149,68 @@ if (base) {
       const result = observed.get(key(expected));
       if (!result) throw new Error('Missing trusted reader observation');
       checkedLookups++;
-      if (canonical(result.result) !== canonical(expected.result)) {
+      if (canonical(result.result) !== canonical(correction ? observeLookup(proposed.registry, expected).result : expected.result)) {
         const finding = { id: 'reader-lookup', status: 'mismatch' as const, link: '', message: 'Observed reader result violates the trusted lookup expectation', references: [], input: expected.input, namespace: expected.namespace, date: expected.date };
         preflight.push(finding);
       }
     }
     requests = [];
-  } else {
-  if (!preflight.length) {
-    generated ??= await buildCorpus(corpus, approvedReviews);
-    if (!Buffer.from(generated.bytes).equals(proposed.bytes) || generated.evidenceText !== await readCorpusFile(corpus, 'data/evidence.json')) throw new Error('Artifacts differ from trusted source build');
   }
-  const proposedApprovals = await approvals(corpus);
-  if (!unchangedArtifacts && Object.keys(proposedApprovals).some(key => /^local-policy-(?:transition$|request:|withdrawal:)/.test(key) && proposedApprovals[key] !== approvedReviews[key])) {
-    preflight.push({ id: 'local-policy-approval-staging', status: 'needs-review', link: '', message: 'Stage local policy approvals separately from runtime data changes', references: [] });
-  }
-  const usesApproval = (key: string, digest: string) => {
-    if (approvedReviews[key] !== digest) return false;
-    if (!Object.hasOwn(proposedApprovals, key)) return true;
-    preflight.push({ id: `unconsumed-approval:${key}`, status: 'needs-review', link: '', message: 'Remove the used approval in the activation PR', references: [] });
-    return false;
-  };
-  const oldPolicy = await json(resolve(base), 'sources/policy.json'), newPolicy = await json(corpus, 'sources/policy.json');
-  for (const policy of [oldPolicy, newPolicy]) {
-    delete policy.datasetVersion;
-    delete policy.aliases;
-  }
-  if (canonical(oldPolicy) !== canonical(newPolicy)) {
-    const digest = sha(canonical({ before: oldPolicy, after: newPolicy }));
-    if (!usesApproval('local-policy-transition', digest)) preflight.push({ id: 'local-policy-declarations', status: 'needs-review', link: '', message: `Local policy declarations require trusted approval for transition digest ${digest}`, references: [] });
-  }
-  const oldManifest = await json(resolve(base), 'sources/manifest.json'), newManifest = await json(corpus, 'sources/manifest.json');
-  provenanceSnapshots.push(...newManifest.filter((m: any) => canonical(oldManifest.find((o: any) => o.id === m.id)) !== canonical(m)));
-  const oldRequests = new Map(before.requests.map(r => [r.id, r]));
-  for (const request of proposed.requests) {
-    const isLocal = /^Q[1-9][0-9]*:policy:/.test(request.id) || ['local-policy', 'ascii-label'].includes(request.kind);
-    const old = oldRequests.get(request.id);
-    if (needsLocalApproval(request) && !request.review && !(old && assertion(old) === assertion(request)) && usesApproval(`local-policy-request:${request.id}`, sha(canonical(request)))) approvedPolicies.add(request.id);
-    if (!old) continue;
-    if (isLocal && assertion(old) === assertion(request)) inheritedPolicies.add(request.id);
-    if (unchangedArtifacts && canonical(old) === canonical(request)) unchangedAssertions.add(request.id);
-  }
-  for (const old of before.requests) if (old.review && !proposed.requests.find(r => r.id === old.id)?.review) preflight.push({ id: `withdrawn-review:${old.id}`, status: 'needs-review', link: '', message: 'A previously approved local review was withdrawn; requires explicit trusted review', references: [] });
-  const removed = before.requests.filter(r => !proposed.requests.some(n => n.id === r.id));
-  for (const r of removed) {
-    const approvedWithdrawal = generated && !r.review && (needsLocalApproval(r) || /^Q[1-9][0-9]*:policy:name:/.test(r.id)) && usesApproval(`local-policy-withdrawal:${r.id}`, sha(canonical(r)));
-    const upstreamRemoval = generated && !r.review && !/^Q[1-9][0-9]*:policy:/.test(r.id) && ['statement', 'label', 'alias'].includes(r.kind);
-    preflight.push({ id: r.id, status: 'needs-review',
-      ...(approvedWithdrawal ? { blocking: false, advisories: ['approved-trusted-local-policy-withdrawal'] } : upstreamRemoval ? { blocking: false, advisories: ['upstream-assertion-removed'] } : {}),
-      link: `https://www.wikidata.org/wiki/${r.qid}`, message: 'Assertion removed; protected lookup expectations and trusted rebuilding still apply', references: [] });
-  }
-  if (before.binarySha256 !== proposed.binarySha256) {
-    if (proposed.metadata.datasetVersion <= before.metadata.datasetVersion) preflight.push({ id: 'dataset-version', status: 'mismatch', link: '', message: 'Changed runtime artifacts require an increased datasetVersion', references: [] });
-  }
+  if (!readerResults || !preflight.length) {
+    if (!preflight.length) {
+      generated ??= await buildCorpus(corpus, approvedReviews);
+      if (!Buffer.from(generated.bytes).equals(proposed.bytes) || generated.evidenceText !== await readCorpusFile(corpus, 'data/evidence.json')) throw new Error('Artifacts differ from trusted source build');
+    }
+    const proposedApprovals = await approvals(corpus);
+    if (!unchangedArtifacts && Object.keys(proposedApprovals).some(key => /^local-policy-(?:transition$|request:|withdrawal:)/.test(key) && proposedApprovals[key] !== approvedReviews[key])) {
+      preflight.push({ id: 'local-policy-approval-staging', status: 'needs-review', link: '', message: 'Stage local policy approvals separately from runtime data changes', references: [] });
+    }
+    const usesApproval = (key: string, digest: string) => {
+      if (approvedReviews[key] !== digest) return false;
+      if (!Object.hasOwn(proposedApprovals, key)) return true;
+      preflight.push({ id: `unconsumed-approval:${key}`, status: 'needs-review', link: '', message: 'Remove the used approval in the activation PR', references: [] });
+      return false;
+    };
+    const oldPolicy = await json(resolve(base), 'sources/policy.json'), newPolicy = await json(corpus, 'sources/policy.json');
+    for (const policy of [oldPolicy, newPolicy]) {
+      delete policy.datasetVersion;
+      delete policy.aliases;
+    }
+    if (canonical(oldPolicy) !== canonical(newPolicy)) {
+      const digest = sha(canonical({ before: oldPolicy, after: newPolicy }));
+      if (!usesApproval('local-policy-transition', digest)) preflight.push({ id: 'local-policy-declarations', status: 'needs-review', link: '', message: `Local policy declarations require trusted approval for transition digest ${digest}`, references: [] });
+    }
+    const oldManifest = await json(resolve(base), 'sources/manifest.json'), newManifest = await json(corpus, 'sources/manifest.json');
+    provenanceSnapshots.push(...newManifest.filter((m: any) => canonical(oldManifest.find((o: any) => o.id === m.id)) !== canonical(m)));
+    const oldRequests = new Map(before.requests.map(r => [r.id, r]));
+    for (const request of proposed.requests) {
+      const isLocal = /^Q[1-9][0-9]*:policy:/.test(request.id) || ['local-policy', 'ascii-label'].includes(request.kind);
+      const old = oldRequests.get(request.id);
+      if (readerResults && isLocal && !request.review && (!old || assertion(old) !== assertion(request))) requests.push(request);
+      if (needsLocalApproval(request) && !request.review && !(old && assertion(old) === assertion(request)) && usesApproval(`local-policy-request:${request.id}`, sha(canonical(request)))) approvedPolicies.add(request.id);
+      if (!old) continue;
+      if (isLocal && assertion(old) === assertion(request)) inheritedPolicies.add(request.id);
+      if (unchangedArtifacts && canonical(old) === canonical(request)) unchangedAssertions.add(request.id);
+    }
+    for (const old of before.requests) if (old.review && !proposed.requests.find(r => r.id === old.id)?.review) preflight.push({ id: `withdrawn-review:${old.id}`, status: 'needs-review', link: '', message: 'A previously approved local review was withdrawn; requires explicit trusted review', references: [] });
+    const removed = before.requests.filter(r => !proposed.requests.some(n => n.id === r.id));
+    for (const r of removed) {
+      const approvedWithdrawal = generated && !r.review && (needsLocalApproval(r) || /^Q[1-9][0-9]*:policy:name:/.test(r.id)) && usesApproval(`local-policy-withdrawal:${r.id}`, sha(canonical(r)));
+      const upstreamRemoval = generated && !r.review && !/^Q[1-9][0-9]*:policy:/.test(r.id) && ['statement', 'label', 'alias'].includes(r.kind);
+      preflight.push({ id: r.id, status: 'needs-review',
+        ...(approvedWithdrawal ? { blocking: false, advisories: ['approved-trusted-local-policy-withdrawal'] } : upstreamRemoval ? { blocking: false, advisories: ['upstream-assertion-removed'] } : {}),
+        link: `https://www.wikidata.org/wiki/${r.qid}`, message: 'Assertion removed; protected lookup expectations and trusted rebuilding still apply', references: [] });
+    }
+    if (before.binarySha256 !== proposed.binarySha256) {
+      if (proposed.metadata.datasetVersion <= before.metadata.datasetVersion) preflight.push({ id: 'dataset-version', status: 'mismatch', link: '', message: 'Changed runtime artifacts require an increased datasetVersion', references: [] });
+    }
   }
 }
 if (!base && !readerResults) provenanceSnapshots.push(...await json(corpus, 'sources/manifest.json'));
 await mkdir(reportDir, { recursive: true });
 const cache = new Map<string, Promise<WikiEntity>>();
+const authenticationBudgetMs = Math.min(600_000, Math.max(90_000, Math.ceil(provenanceSnapshots.length / 8) * 30_000 + requests.length * 60_000));
+const readerDeadline = readerResults ? AbortSignal.timeout(authenticationBudgetMs) : undefined;
 async function fetchEntity(qid: string, revision?: number): Promise<WikiEntity> {
   const key = `${qid}-${revision ?? 'current'}`;
   if (!cache.has(key)) cache.set(key, (async () => {
@@ -198,7 +222,7 @@ async function fetchEntity(qid: string, revision?: number): Promise<WikiEntity> 
     }
     const url = new URL(`https://www.wikidata.org/wiki/Special:EntityData/${qid}.json`);
     if (revision) url.searchParams.set('revision', String(revision));
-    const response = await fetch(url, { headers: { 'User-Agent': `OpenWatersCountryRegistrySpike/${READER_VERSION} (https://github.com/openwatersio/c5y-n8r)` }, signal: AbortSignal.timeout(30_000) });
+    const response = await fetch(url, { headers: { 'User-Agent': `OpenWatersCountryRegistrySpike/${READER_VERSION} (https://github.com/openwatersio/c5y-n8r)` }, signal: readerDeadline ? AbortSignal.any([readerDeadline, AbortSignal.timeout(30_000)]) : AbortSignal.timeout(30_000) });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const raw = await response.text();
     if (raw.length > 4 * 1024 * 1024) throw new Error('Oversized Wikidata response');
@@ -233,14 +257,21 @@ if (!readerResults) {
   }
 }
 const findings = [...preflight];
-for (const snapshot of provenanceSnapshots) {
+async function authenticateSnapshot(snapshot: typeof provenanceSnapshots[number]) {
+  const results: Finding[] = [];
   try {
     const expected = await snapshotEntity(snapshot);
     const actual = await fetchEntity(snapshot.id, snapshot.revision);
     const matches = actual.id === snapshot.id && actual.lastrevid === snapshot.revision && canonical(actual) === canonical(expected);
-    findings.push({ id: `provenance:${snapshot.id}`, status: offline ? 'needs-review' : matches ? 'source-match' : 'mismatch', blocking: !matches || offline, link: `https://www.wikidata.org/w/index.php?title=${snapshot.id}&oldid=${snapshot.revision}`, message: offline ? 'Offline snapshots cannot authenticate a refreshed upstream revision' : matches ? 'Refreshed snapshot matches the live pinned revision; this authenticates provenance, not independent accuracy' : 'Refreshed snapshot differs from its live pinned revision', references: [] });
-  } catch (error) { findings.push({ id: `provenance:${snapshot.id}`, status: 'infrastructure-error', link: '', message: String(error), references: [] }); }
+    results.push({ id: `provenance:${snapshot.id}`, status: offline ? 'needs-review' : matches ? 'source-match' : 'mismatch', blocking: !matches || offline, link: `https://www.wikidata.org/w/index.php?title=${snapshot.id}&oldid=${snapshot.revision}`, message: offline ? 'Offline snapshots cannot authenticate a refreshed upstream revision' : matches ? 'Refreshed snapshot matches the live pinned revision; this authenticates provenance, not independent accuracy' : 'Refreshed snapshot differs from its live pinned revision', references: [] });
+  } catch (error) { results.push({ id: `provenance:${snapshot.id}`, status: 'infrastructure-error', link: '', message: String(error), references: [] }); }
+  return results;
 }
+for (let i = 0; i < provenanceSnapshots.length; i += 8) {
+  const batch = await Promise.all(provenanceSnapshots.slice(i, i + 8).map(authenticateSnapshot));
+  findings.push(...batch.flat());
+}
+
 for (const request of requests) {
   const finding = await checkEvidence(request, fetchEntity, approvedReviews);
   if (generated && inheritedPolicies.has(request.id) && finding.status === 'needs-review') { finding.blocking = false; finding.advisories = ['inherited-trusted-local-policy']; }
@@ -250,8 +281,9 @@ for (const request of requests) {
   findings.push(finding);
 }
 const counts = findings.reduce<Record<string, number>>((out, f) => { out[f.status] = (out[f.status] ?? 0) + 1; return out; }, {});
-const gatePassed = readerResults ? findings.length === 0 : !offline && findings.filter(f => f.blocking !== false).every(f => f.status === 'verified' || f.status === 'source-match');
-const report = { gatePassed, datasetVersion: proposed.metadata.datasetVersion, binarySha256: proposed.binarySha256, evidenceDigest: proposed.metadata.evidenceDigest, mode: readerResults ? 'reader-compatibility' : offline ? 'pinned-snapshots-only' : 'live-pinned-and-current', checkedLookups, applicable: !!readerResults || findings.length > 0, passed: readerResults ? findings.length === 0 : !offline && findings.every(f => f.status === 'verified'), counts, findings, readiness, limitation: 'Reference passages are interpreted by maintainers. Wikidata source matches are accepted for ingestion, not independent certification. Approved local overrides retain exact record digest controls. Quality findings and current upstream drift are advisory after pinned authentication; offline checks cannot authenticate live upstream state.' };
+const acceptable = findings.filter(f => f.blocking !== false).every(f => f.status === 'verified' || f.status === 'source-match');
+const gatePassed = readerResults ? acceptable && (!temporalCorrections.length || !offline) : !offline && acceptable;
+const report = { gatePassed, authenticationBudgetMs: readerResults ? authenticationBudgetMs : undefined, temporalCorrections, datasetVersion: proposed.metadata.datasetVersion, binarySha256: proposed.binarySha256, evidenceDigest: proposed.metadata.evidenceDigest, mode: readerResults ? 'reader-compatibility' : offline ? 'pinned-snapshots-only' : 'live-pinned-and-current', checkedLookups, applicable: !!readerResults || findings.length > 0, passed: readerResults ? gatePassed : !offline && findings.every(f => f.status === 'verified'), counts, findings, readiness, limitation: 'Reference passages are interpreted by maintainers. Wikidata source matches are accepted for ingestion, not independent certification. Approved local overrides retain exact record digest controls. Quality findings and current upstream drift are advisory after pinned authentication; offline checks cannot authenticate live upstream state.' };
 await writeFile(resolve(reportDir, 'report.json'), JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify({ ...report, findings: undefined, readiness: undefined, reviewReadinessCounts: readiness.reduce<Record<string, number>>((counts, item) => { counts[item.status] = (counts[item.status] ?? 0) + 1; return counts; }, {}), report: resolve(reportDir, 'report.json') }, null, 2));
 process.exitCode = findings.length && !gatePassed ? 1 : 0;

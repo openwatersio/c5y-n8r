@@ -1,23 +1,18 @@
+import { validateTemporalCorrection } from './temporal-corrections.ts';
+import { temporalLookupCases } from './temporal-compatibility.ts';
 import { observeLookup } from './compatibility.ts';
 import { canonical } from './evidence.ts';
-import { isAbsolute, relative, resolve, sep } from 'node:path';
 import { applyReviews, selectedReviews, emptyReviews, emptyActivation, type ReviewBundle, type Activation } from './overrides.ts';
-import { readFile, lstat, realpath } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { CountryRegistry } from './index.ts';
 import { compile, type SourceData, type SourceAssignment } from './compile.ts';
 import { day, FORMAT_VERSION } from './common.ts';
 import type { EvidenceRequest, WikiEntity } from './evidence.ts';
 
-export async function readCorpusFile(corpus: string, path: string): Promise<string> {
-  const root = await realpath(corpus), file = resolve(root, path), info = await lstat(file);
-  if (!info.isFile() || info.size > 4 * 1024 * 1024) throw new Error(`Invalid or oversized corpus file: ${path}`);
-  const location = relative(root, await realpath(file));
-  if (location === '..' || location.startsWith(`..${sep}`) || isAbsolute(location)) throw new Error(`Invalid corpus file outside source directory: ${path}`);
-  return readFile(file, 'utf8');
-}
+export { readCorpusFile } from './corpus-files.ts';
+import { readCorpusFile } from './corpus-files.ts';
 
-export async function buildCorpus(corpus: string, trustedApprovals?: Record<string, string>, options: { allowNewInputs?: boolean } = {}) {
+export async function buildCorpus(corpus: string, trustedApprovals?: Record<string, string>, options: { allowNewInputs?: boolean; temporalBase?: string } = {}) {
 const read = (path: string) => readCorpusFile(corpus, path);
 const optional = async (path: string, fallback: unknown) => JSON.parse(await read(path).catch(error => { if (error.code === 'ENOENT') return JSON.stringify(fallback); throw error; }));
 const reviews: ReviewBundle = await optional('sources/reviewed-overrides.json', emptyReviews);
@@ -58,6 +53,12 @@ function qualifierTime(claim: any, property: string) {
   const snaks = claim.qualifiers?.[property];
   if (!snaks) return undefined;
   if (snaks.length !== 1) throw new Error('Unsupported Wikidata time qualifiers');
+  // An unknown start keeps temporal uncertainty; an unknown end cannot imply an active code.
+  if (property === 'P580' && snaks[0]?.snaktype === 'somevalue') {
+    if (snaks[0].datavalue !== undefined) throw new Error('Unsupported Wikidata time value on unknown start');
+    return undefined;
+  }
+  if (snaks[0]?.snaktype !== undefined && snaks[0].snaktype !== 'value') throw new Error('Unsupported Wikidata time snak');
   return timeBounds(snaks[0]?.datavalue?.value);
 }
 
@@ -80,6 +81,7 @@ for (const item of manifest) {
   if (['P576', 'P1366'].some(property => e.claims[property]?.some(c => c.rank === 'deprecated')) ||
       (!preferredContinents.length && e.claims.P30?.some(c => c.rank === 'deprecated'))) throw new Error('Unsupported deprecated entity claim');
   const endClaim = e.claims.P576?.[0];
+  if (endClaim?.mainsnak.snaktype !== undefined && endClaim.mainsnak.snaktype !== 'value') throw new Error('Unsupported Wikidata time snak');
   const end = endClaim && timeBounds(endClaim.mainsnak.datavalue?.value);
   if (endClaim && endClaim.mainsnak.datavalue?.value?.precision !== 11) throw new Error('Unsupported Wikidata time: dissolution requires day precision');
   const continentClaim = preferredContinents[0] ?? e.claims.P30?.[0];
@@ -101,6 +103,7 @@ for (const item of manifest) {
     for (const c of e.claims[property] ?? []) {
       const value = c.mainsnak.datavalue?.value;
       if (typeof value !== 'string') continue;
+      if (['P1319', 'P1326', 'P8555', 'P8554', 'P12506'].some(bound => c.qualifiers?.[bound] !== undefined)) throw new Error('Unsupported Wikidata time bounds');
       const start = qualifierTime(c, 'P580');
       const finish = qualifierTime(c, 'P582');
       // This deprecation reason retains past values: https://www.wikidata.org/wiki/Q110770329.
@@ -134,14 +137,20 @@ const evidenceText = JSON.stringify({ datasetVersion: policy.datasetVersion, sna
 const source: SourceData = { metadata: { datasetVersion: policy.datasetVersion, formatVersion: FORMAT_VERSION, minimumReaderVersion: policy.minimumReaderVersion, referenceDate: policy.referenceDate, builtAt: manifest.map((m: any) => m.retrievedAt).sort().at(-1), evidenceDigest: digest(evidenceText), corpus: policy.coverage, coverageFrom: policy.coverageFrom, coverageThrough: policy.coverageThrough }, entities, assignments };
 const bytes = compile(source);
 const registry = CountryRegistry.open(bytes);
-for (const expected of accepted.lookups) {
+const temporalCorrections = options.temporalBase ? await validateTemporalCorrection(corpus, options.temporalBase, { source, evidenceText }) : [];
+for (const expected of options.temporalBase ? [] : accepted.lookups) {
   if (canonical(observeLookup(registry, expected).result) !== canonical(expected.result)) throw new Error(`Compatibility answer changed: ${expected.input} ${expected.date ?? 'reference date'}`);
 }
 const methods = await optional('sources/accepted-methods.json', { schemaVersion: 1, cases: [] });
 if (methods.schemaVersion !== 1 || !Array.isArray(methods.cases)) throw new Error('Invalid method compatibility fixture');
 for (const expected of methods.cases) {
   if (!['convert', 'assignments'].includes(expected.operation) || typeof expected.input !== 'string' || !expected.result) throw new Error('Invalid method compatibility case');
-  if (canonical(observeLookup(registry, expected).result) !== canonical(expected.result)) throw new Error(`Method compatibility answer changed: ${expected.operation} ${expected.input} ${expected.date ?? 'reference date'}`);
+  if (!options.temporalBase && canonical(observeLookup(registry, expected).result) !== canonical(expected.result)) throw new Error(`Method compatibility answer changed: ${expected.operation} ${expected.input} ${expected.date ?? 'reference date'}`);
 }
-return { bytes, evidenceText, source, registry, accepted, addedInputs, release: { ...source.metadata, sha256: digest(bytes) }, reviews: selected };
+if (!options.allowNewInputs && !options.temporalBase) for (const lookup of temporalLookupCases(assignments)) {
+  if (!accepted.lookups.some((existing: any) => existing.input === lookup.input && existing.namespace === lookup.namespace && existing.date === lookup.date && existing.operation === undefined && existing.dateTime === undefined)) {
+    throw new Error(`Missing dated compatibility lookup: ${lookup.input} ${lookup.namespace ?? 'default'} ${lookup.date}; run npm run build -- --extend-accepted-inputs`);
+  }
+}
+return { bytes, evidenceText, source, registry, accepted, addedInputs, temporalCorrections, release: { ...source.metadata, sha256: digest(bytes) }, reviews: selected };
 }

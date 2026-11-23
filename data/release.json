@@ -1,12 +1,12 @@
 {
-  "datasetVersion": 5,
+  "datasetVersion": 6,
   "formatVersion": 2,
   "minimumReaderVersion": "0.0.4",
   "referenceDate": "2026-11-15",
-  "builtAt": "2026-11-20T20:41:54.458Z",
-  "evidenceDigest": "5622eb6b7b1c1b1cfdf5082b6fab1c7c737da35dc9e10209849b4ea7a9b65e98",
+  "builtAt": "2026-11-22T17:13:59.844Z",
+  "evidenceDigest": "614584d8b57fe52516435c3d86835ca6989179e99e4edb254bbfd6682b526e0f",
   "corpus": "Slackwater candidate corpus plus historical demonstration entities; source-backed assignments remain unreviewed; no historical completeness asserted.",
   "coverageFrom": "1974-01-01",
   "coverageThrough": "2026-11-15",
-  "sha256": "fc60bcfc24aa46fbc080334a564c14d611b1fff250297cdf019cf92251b465c2"
+  "sha256": "f6463287e8b5ba1218543b154014acf00b8469819b5a64391fba9867f758517a"
 }

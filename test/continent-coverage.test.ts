@@ -24,9 +24,9 @@ test('preferred Oceania references resolve through pinned taxonomy without addin
   }
   assert(!built.source.entities.some(e => ['Q55643', 'Q538'].includes(e.id)));
   const audit = JSON.parse(await readFile('sources/slackwater-source-audit.json', 'utf8'));
-  assert.equal(audit.summary.sourceBackedInputs, 127);
-  assert.equal(audit.summary.metadataIncompleteInputs, 0);
-  assert(audit.required.filter((r: any) => r.functionalStatus === 'source-backed-unreviewed').every((r: any) => r.continent && r.metadataStatus === 'source-backed-unreviewed'));
+  assert.equal(audit.summary.sourceBackedInputs, 155);
+  assert.equal(audit.summary.metadataIncompleteInputs, 1);
+  assert.deepEqual(audit.required.filter((r: any) => r.metadataStatus === 'missing-continent').map((r: any) => r.candidateEntity), ['Q5689']);
 });
 
 test('Antarctica self-continent policy retains its actual P31 evidence and rejects lost source support', async () => {
@@ -59,7 +59,7 @@ test('candidate evidence has exact issue tracking and research pointers bind rea
   const tracker = JSON.parse(await readFile('sources/evidence-review-issues.json', 'utf8'));
   assert.equal(tracker.candidateEvidenceSha256, digest(raw));
   assert.deepEqual(Object.keys(tracker.evidenceIssues).sort(), JSON.parse(raw.toString()).requests.map((r: any) => r.id).sort());
-  assert.equal(tracker.totalEvidenceItems, 771);
+  assert.equal(tracker.totalEvidenceItems, 911);
   const research = JSON.parse(await readFile('sources/slackwater-candidate-research.json', 'utf8'));
   const manifest = JSON.parse(await readFile('sources/manifest.json', 'utf8'));
   for (const item of research.proposals) {

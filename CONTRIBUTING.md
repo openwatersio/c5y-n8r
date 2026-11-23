@@ -8,6 +8,8 @@ Acceptance requires the intended Wikidata entity, immutable revision and digest,
 
 We undertake asynchronous research for facts whose upstream evidence is missing or weak. Suspected errors and changes since the pinned revision are also quality follow-up work. Shipping source-backed data does not wait for that research to finish. Keep automatically detected gaps in reports and record researched weaknesses in issue follow-ups, investigate asynchronously, improve Wikidata, then refresh the affected entities and release a new dataset version. An incomplete quality review does not exclude an otherwise source-backed value. Selecting additional genuine upstream spellings through the consumer inventory or language-name list is ordinary ingestion, not a claim of complete geographic or temporal coverage. Do not erase findings or label unreviewed data independently verified to get a passing build.
 
+Refreshing a source does not authorize changing a protected answer. The implemented correction command covers ISO date bounds only. Country names, identities and continent metadata—including Åland’s missing continent and multi-continent selection—require a separately reviewed non-temporal correction path before their changed answers can ship; that path is not implemented. Track these corrections in their quality issue, including #283, while retaining the admitted source values.
+
 Missing historical dates remain unknown. Trusting a current code claim does not establish its introduction date, and a country existence date cannot supply a code assignment date. Preserve temporal uncertainty, competing identities, historical candidates and deprecated claims according to their explicit interpretation rules.
 
 ## Investigate and improve Wikidata

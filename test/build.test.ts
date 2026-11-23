@@ -152,7 +152,7 @@ test('the source audit reports unmapped and unfetched inputs without replacing r
     const sourced = audit.required.filter((r: any) => r.functionalStatus === 'source-backed-unreviewed');
     assert.ok(sourced.length > 0);
     for (const row of sourced) {
-      assert.deepEqual(row.blockers, []);
+      assert.deepEqual(row.blockers, row.candidateEntity === 'Q5689' ? ['No admitted continent classification for candidate entity'] : []);
       assert.ok(row.qualityFlags.length > 0);
     }
     await assert.rejects(readFile(join(dir,'data/countries.crdb')));

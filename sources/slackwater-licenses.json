@@ -155,5 +155,21 @@
     "TICON README general CC BY description does not override the 674 record-level CC BY-NC entries.",
     "All upstream record transformations in credits describe Slackwater processing; this repository only extracts country strings and counts.",
     "The runtime country registry derives from Wikidata CC0, independently of this consumer compatibility inventory."
+  ],
+  "additionalInventories": [
+    {
+      "provider": "GeoNames",
+      "revision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "path": "metadata/places.json",
+      "sha256": "c1adbaaaa64bab68e696614904c173584f629c55bb7a0a9406033c6026d3888f",
+      "license": "CC BY 4.0",
+      "attribution": "GeoNames, https://www.geonames.org/",
+      "terms": "https://download.geonames.org/export/dump/readme.txt",
+      "derivedArtifacts": [
+        "sources/slackwater-required.json",
+        "sources/slackwater-source-audit.json"
+      ],
+      "transformations": "Distinct ISO alpha-2 country identifiers only; no coordinates, populations or place names."
+    }
   ]
 }

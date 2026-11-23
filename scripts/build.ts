@@ -17,11 +17,15 @@ if (process.argv.includes('--audit-slackwater')) {
   const manifest = JSON.parse(manifestText);
   const required = [];
   for (const input of inventory.required) {
-    const result = registry.resolve(input.input, { namespace: 'name' });
+    const namespace = input.consumerNamespace ?? 'name';
+    if (!['name', 'iso-alpha2'].includes(namespace)) throw new Error('Unsupported consumer inventory namespace');
+    if (input.consumerNamespace && input.consumerPath !== inventory.geocoderInventory.path) throw new Error('Unknown geocoder inventory path');
+    const value = namespace === 'iso-alpha2' ? input.baselineAlpha2 : input.input;
+    const result = registry.resolve(value, { namespace });
     const candidateEntity = input.candidateEntity ?? result.preferred?.id;
     const item = manifest.find((m: any) => m.id === candidateEntity);
     const entity = item ? JSON.parse(await readCorpusFile('.', item.file)).entities[item.id] : undefined;
-    const conversion = registry.convert(input.input, { from: 'name', to: 'iso-alpha2' });
+    const conversion = registry.convert(value, { from: namespace, to: 'iso-alpha2' });
     const currentCode = conversion.target.preferred;
     const hasCode = currentCode !== undefined && currentCode.id === candidateEntity && !['retired', 'outside-date', 'deprecated'].includes(currentCode.applicability);
     const continent = source.entities.find(e => e.id === candidateEntity)?.continent;
@@ -32,11 +36,12 @@ if (process.argv.includes('--audit-slackwater')) {
       references: (claim.references ?? []).map((reference: any) => ({ hash: reference.hash, snaks: reference.snaks })),
     }));
     required.push({ input: input.input, records: input.records, candidateEntity,
-      functionalStatus: !candidateEntity ? 'missing-source-mapping' : !item ? 'missing-source-snapshot' : result.selection === 'ambiguous' ? 'ambiguous-source-name' : result.preferred?.id !== candidateEntity ? 'missing-source-spelling' : hasCode ? 'source-backed-unreviewed' : 'missing-current-iso-code',
+      ...(input.consumerNamespace ? { consumerNamespace: namespace, consumerValue: value, consumerPath: input.consumerPath, inventoryRevision: inventory.geocoderInventory.revision } : {}),
+      functionalStatus: !candidateEntity ? 'missing-source-mapping' : !item ? 'missing-source-snapshot' : result.selection === 'ambiguous' ? namespace === 'name' ? 'ambiguous-source-name' : 'ambiguous-source-code' : result.preferred?.id !== candidateEntity ? namespace === 'name' ? 'missing-source-spelling' : 'missing-source-code' : hasCode ? 'source-backed-unreviewed' : 'missing-current-iso-code',
       continent, continentSelection, metadataStatus: continent ? 'source-backed-unreviewed' : 'missing-continent',
       verificationStatus: 'pending', revision: item?.revision, permanentLink: item?.permanentLink, snapshotSha256: item?.sha256,
-      nameEvidence: result.candidates.filter(c => c.id === candidateEntity).flatMap(c => c.evidence), codeClaims,
-      blockers: [...(!candidateEntity ? ['No source-backed candidate mapping; discover and review the entity before fetching'] : !item ? ['Mapped entity snapshot missing; run source:fetch before auditing its claims'] : []), ...(result.selection === 'ambiguous' ? ['Source spelling has competing country meanings; provide reviewed context'] : candidateEntity && result.preferred?.id === candidateEntity ? [] : ['Exact spelling absent from admitted source labels and aliases']),
+      [namespace === 'name' ? 'nameEvidence' : 'codeEvidence']: result.candidates.filter(c => c.id === candidateEntity).flatMap(c => c.evidence), codeClaims,
+      blockers: [...(!candidateEntity ? ['No source-backed candidate mapping; discover and review the entity before fetching'] : !item ? ['Mapped entity snapshot missing; run source:fetch before auditing its claims'] : []), ...(result.selection === 'ambiguous' ? [namespace === 'name' ? 'Source spelling has competing country meanings; provide reviewed context' : 'Source code has competing country meanings; provide reviewed context'] : candidateEntity && result.preferred?.id === candidateEntity ? [] : [namespace === 'name' ? 'Exact spelling absent from admitted source labels and aliases' : 'Code absent from admitted source assignments']),
         ...(hasCode ? [] : ['No unambiguous usable alpha-2 assignment for the selected entity; review geographic scope and temporal alternatives']),
         ...(continent ? [] : ['No admitted continent classification for candidate entity'])],
       qualityFlags: ['Independent evidence research is pending; it is advisory once functional source coverage is established'],

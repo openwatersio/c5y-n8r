@@ -57,6 +57,8 @@ jobs:
       - run: npm run check
       - run: npm run build
       - run: git diff --exit-code -- data/
+      - name: Authenticate pinned Slackwater geocoder inventory
+        run: node scripts/check-geocoder-inventory.mjs
   wikidata-evidence:
     needs: merge-inputs
     if: github.event_name == 'pull_request'

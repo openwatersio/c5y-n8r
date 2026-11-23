@@ -5,11 +5,49 @@ on:
 permissions:
   contents: read
 jobs:
+  merge-inputs:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    outputs:
+      base: ${{ steps.refs.outputs.base }}
+      head: ${{ steps.refs.outputs.head }}
+      merge: ${{ steps.refs.outputs.merge }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.sha }}
+          fetch-depth: 2
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Record immutable merge inputs
+        id: refs
+        env:
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          node --input-type=module <<'NODE'
+          import {execFileSync} from 'node:child_process';
+          import {appendFileSync,writeFileSync} from 'node:fs';
+          const git=args=>execFileSync('git',args,{encoding:'utf8'}).trim();
+          const mergeSha=git(['rev-parse','HEAD']);
+          const parents=git(['show','--no-patch','--format=%P',mergeSha]).split(/\s+/);
+          if (mergeSha!==process.env.GITHUB_SHA || parents.length!==2 || parents[1]!==process.env.PR_HEAD_SHA) throw Error('Unexpected merge inputs');
+          const [baseSha,headSha]=parents;
+          appendFileSync(process.env.GITHUB_OUTPUT,`base=${baseSha}\nhead=${headSha}\nmerge=${mergeSha}\n`);
+          writeFileSync('reader-binding.json',JSON.stringify({schemaVersion:1,mergeSha,baseSha,headSha})+'\n');
+          NODE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reader-binding
+          path: reader-binding.json
+          if-no-files-found: error
   build-and-test:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: ${{ github.sha }}
           persist-credentials: false
       - uses: actions/setup-node@v4
         with:
@@ -20,17 +58,18 @@ jobs:
       - run: npm run build
       - run: git diff --exit-code -- data/
   wikidata-evidence:
+    needs: merge-inputs
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.base.sha }}
+          ref: ${{ needs.merge-inputs.outputs.base }}
           path: trusted
           persist-credentials: false
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.sha }}
+          ref: ${{ needs.merge-inputs.outputs.merge }}
           path: proposed
           persist-credentials: false
       - uses: actions/setup-node@v4
@@ -48,18 +87,19 @@ jobs:
           path: evidence-report/
 
   reader-observations:
+    needs: merge-inputs
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.base.sha }}
+          ref: ${{ needs.merge-inputs.outputs.base }}
           path: harness
           persist-credentials: false
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.sha }}
+          ref: ${{ needs.merge-inputs.outputs.merge }}
           path: proposed
           persist-credentials: false
       - uses: actions/setup-node@v4
@@ -81,10 +121,10 @@ jobs:
           if-no-files-found: error
 
   reader-compatibility:
-    needs: reader-observations
+    needs: [merge-inputs, reader-observations]
     if: ${{ always() && github.event_name == 'pull_request' }}
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 15
     steps:
       - name: Require successful observation producer
         env:
@@ -92,8 +132,13 @@ jobs:
         run: test "$PRODUCER_RESULT" = success
       - uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.base.sha }}
+          ref: ${{ needs.merge-inputs.outputs.base }}
           path: trusted
+          persist-credentials: false
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.merge-inputs.outputs.merge }}
+          path: proposed
           persist-credentials: false
       - uses: actions/download-artifact@v4
         with:
@@ -105,7 +150,7 @@ jobs:
       - run: npm ci --ignore-scripts
         working-directory: trusted
       - name: Judge observations without executing proposed code
-        run: npm run evidence -- --corpus . --base . --reader-results ../observations/reader-results.json --offline --output ../compatibility-report
+        run: npm run evidence -- --corpus ../proposed --base . --reader-results ../observations/reader-results.json --output ../compatibility-report
         working-directory: trusted
       - name: Require executed compatibility comparisons
         run: node -e "const r=require('./compatibility-report/report.json'); if(r.mode !== 'reader-compatibility' || r.passed !== true || !(r.checkedLookups > 0)) throw Error('Trusted checker did not approve reader observations')"

@@ -6,18 +6,21 @@ import { tmpdir } from 'node:os';
 import { join, resolve } from 'node:path';
 import { createHash } from 'node:crypto';
 import { CountryRegistry } from '../src/index.ts';
+import { Registry } from '../src/generated/country-spike.ts';
+import { ByteBuffer } from 'flatbuffers';
+import { MIN_DAY } from '../src/common.ts';
 import { spawnSync } from 'node:child_process';
 
-async function changedBuild(change: (entity: any, policy: any, fixture: any) => void, args: string[] = []) {
+async function changedBuild(change: (entity: any, policy: any, fixture: any) => void, args: string[] = [], entityId = 'Q43', startingFixture?: any) {
   const dir = await mkdtemp(join(tmpdir(), 'country-build-test-'));
   try {
     await cp('sources', join(dir, 'sources'), { recursive: true });
     const manifest = JSON.parse(await readFile(join(dir, 'sources/manifest.json'), 'utf8'));
-    const entry = manifest.find((m: any) => m.id === 'Q43');
+    const entry = manifest.find((m: any) => m.id === entityId);
     const snapshot = JSON.parse(await readFile(join(dir, entry.file), 'utf8'));
     const policy = JSON.parse(await readFile(join(dir, 'sources/policy.json'), 'utf8'));
-    const fixture = JSON.parse(await readFile(join(dir, 'sources/accepted-inputs.json'), 'utf8'));
-    change(snapshot.entities.Q43, policy, fixture);
+    const fixture = startingFixture ?? JSON.parse(await readFile(join(dir, 'sources/accepted-inputs.json'), 'utf8'));
+    change(snapshot.entities[entityId], policy, fixture);
     await writeFile(join(dir, 'sources/accepted-inputs.json'), JSON.stringify(fixture));
     const text = JSON.stringify(snapshot);
     entry.sha256 = createHash('sha256').update(text).digest('hex');
@@ -25,7 +28,7 @@ async function changedBuild(change: (entity: any, policy: any, fixture: any) => 
     await writeFile(join(dir, 'sources/manifest.json'), JSON.stringify(manifest));
     await writeFile(join(dir, 'sources/policy.json'), JSON.stringify(policy));
     const result = spawnSync(process.execPath, ['--import', import.meta.resolve('tsx'), resolve('scripts/build.ts'), ...args], { cwd: dir, encoding: 'utf8' });
-    return { ...result, fixture: JSON.parse(await readFile(join(dir, 'sources/accepted-inputs.json'), 'utf8')), bytes: result.status === 0 && !args.length ? await readFile(join(dir, 'data/countries.crdb')) : undefined };
+    return { ...result, fixture: JSON.parse(await readFile(join(dir, 'sources/accepted-inputs.json'), 'utf8')), bytes: result.status === 0 && !args.length ? await readFile(join(dir, 'data/countries.crdb')) : undefined, evidence: result.status === 0 && !args.length ? JSON.parse(await readFile(join(dir, 'data/evidence.json'), 'utf8')) : undefined };
   } finally { await rm(dir, { recursive: true, force: true }); }
 }
 
@@ -176,4 +179,109 @@ test('the committed source audit reproduces the current snapshots and policy', a
     assert.equal(run.status,0,run.stdout+run.stderr);
     assert.deepEqual(JSON.parse(await readFile(join(dir,'sources/slackwater-source-audit.json'),'utf8')),JSON.parse(await readFile('sources/slackwater-source-audit.json','utf8')));
   } finally {await rm(dir,{recursive:true,force:true});}
+});
+
+
+test('an explicitly unknown ISO start date retains temporal uncertainty', async () => {
+  const result = await changedBuild(e => { e.claims.P297[0].qualifiers = { P580: [{ snaktype: 'somevalue', property: 'P580', datatype: 'time' }] }; });
+  assert.equal(result.status, 0, result.stdout + result.stderr);
+  assert.deepEqual(result.evidence.requests.find((r: any) => r.qid === 'Q43' && r.property === 'P297').qualifiers.P580, [{ snaktype: 'somevalue', property: 'P580', datatype: 'time' }]);
+  const registry = CountryRegistry.open(result.bytes as Uint8Array);
+  const current = registry.resolve('TR', { namespace: 'iso-alpha2' });
+  assert.equal(current.preferred?.id, 'Q43');
+  assert.equal(current.preferred?.applicability, 'uncertain');
+  assert.equal(current.preferred?.temporalReviewed, false);
+  assert.equal(current.temporalAmbiguity, true);
+  const absent = await changedBuild(e => { e.claims.P297[0].qualifiers = { P580: [{ snaktype: 'novalue', property: 'P580', datatype: 'time' }] }; });
+  assert.notEqual(absent.status, 0);
+  assert.match(absent.stderr, /Unsupported Wikidata time/);
+});
+
+
+test('an unknown start does not bypass multiple qualifier rejection', async () => {
+  const result = await changedBuild(e => { e.claims.P297[0].qualifiers = { P580: [{ snaktype: 'somevalue' }, { snaktype: 'somevalue' }] }; });
+  assert.notEqual(result.status, 0);
+  assert.match(result.stderr, /Unsupported Wikidata time qualifiers/);
+});
+
+
+test('an unknown start with a known end cannot invent a certain interval', async () => {
+  const result = await changedBuild(e => { e.claims.P297[0].qualifiers = { ...e.claims.P297[0].qualifiers, P580: [{ snaktype: 'somevalue', property: 'P580', datatype: 'time' }] }; }, [], 'Q25227');
+  assert.equal(result.status, 0, result.stdout + result.stderr);
+  const bytes = result.bytes as Uint8Array;
+  const root = Registry.getRootAsRegistry(new ByteBuffer(bytes));
+  const assignment = Array.from({length: root.assignmentsLength()}, (_, i) => root.assignments(i)!).find(a => a.namespace() === 'iso-alpha2' && a.value() === 'AN')!;
+  assert.equal(assignment.fromDay(), MIN_DAY);
+  assert.equal(assignment.fromLatestDay(), MIN_DAY);
+  const answer = CountryRegistry.open(bytes).resolve('AN', { namespace: 'iso-alpha2', date: '2005-01-01' });
+  assert.equal(answer.preferred, undefined);
+  assert.equal(answer.selection, 'uncertain');
+});
+
+test('unknown starts reject unsupported companion bounds and contradictory date values', async () => {
+  for (const property of ['P1319', 'P1326', 'P8555', 'P8554', 'P12506']) {
+    const result = await changedBuild(e => { e.claims.P297[0].qualifiers = { P580: [{ snaktype: 'somevalue' }], [property]: [{ datavalue: { value: { time: ['P8554', 'P12506'].includes(property) ? '+2010-01-01T00:00:00Z' : '+2030-01-01T00:00:00Z', precision: 11, calendarmodel: 'http://www.wikidata.org/entity/Q1985727' } } }] }; });
+    assert.notEqual(result.status, 0, property);
+    assert.match(result.stderr, /Unsupported Wikidata time/);
+  }
+  const malformed = await changedBuild(e => { e.claims.P297[0].qualifiers = { P580: [{ snaktype: 'somevalue', datavalue: { value: { time: '+1980-01-01T00:00:00Z', precision: 11, calendarmodel: 'http://www.wikidata.org/entity/Q1985727' } } }] }; });
+  assert.notEqual(malformed.status, 0);
+  assert.match(malformed.stderr, /Unsupported Wikidata time/);
+});
+
+
+test('a newly supplied known start requires dated compatibility coverage', async () => {
+  const result = await changedBuild(e => { e.claims.P297[0].qualifiers = { P580: [{ snaktype: 'value', datavalue: { value: { time: '+1995-01-01T00:00:00Z', precision: 11, calendarmodel: 'http://www.wikidata.org/entity/Q1985727' } } }] }; }, [], 'Q17');
+  assert.notEqual(result.status, 0);
+  assert.match(result.stderr, /Missing dated compatibility lookup/);
+});
+
+test('extension pins new starts on existing inputs and detects loss of the date', async () => {
+  const knownStart = (e: any) => { e.claims.P297[0].qualifiers = { P580: [{ snaktype: 'value', datavalue: { value: { time: '+1995-01-01T00:00:00Z', precision: 11, calendarmodel: 'http://www.wikidata.org/entity/Q1985727' } } }] }; };
+  const extended = await changedBuild(knownStart, ['--extend-accepted-inputs'], 'Q17');
+  assert.equal(extended.status, 0, extended.stdout + extended.stderr);
+  for (const namespace of ['iso-alpha2', undefined]) {
+    for (const date of ['1994-12-31', '1995-01-01', '1995-01-02']) {
+      assert(extended.fixture.lookups.some((c: any) => c.input === 'JP' && c.namespace === namespace && c.date === date), `${namespace} ${date}`);
+    }
+  }
+  const repeated = await changedBuild(knownStart, ['--extend-accepted-inputs'], 'Q17', structuredClone(extended.fixture));
+  assert.equal(repeated.status, 0, repeated.stdout + repeated.stderr);
+  assert.deepEqual(repeated.fixture, extended.fixture);
+  const lost = await changedBuild(e => { e.claims.P297[0].qualifiers = { P580: [{ snaktype: 'somevalue' }] }; }, [], 'Q17', structuredClone(extended.fixture));
+  assert.notEqual(lost.status, 0);
+  assert.match(lost.stderr, /Compatibility answer changed: JP 1994-12-31/);
+});
+
+
+test('malformed temporal snaks cannot hide a value behind an unknown or absent marker', async () => {
+  for (const property of ['P580', 'P582', 'P576']) {
+    const result = await changedBuild(e => {
+      const snak = { snaktype: property === 'P580' ? 'novalue' : 'somevalue', datavalue: { value: { time: '+2099-01-01T00:00:00Z', precision: 11, calendarmodel: 'http://www.wikidata.org/entity/Q1985727' } } };
+      if (property === 'P576') e.claims.P576 = [{ mainsnak: snak }];
+      else e.claims.P297[0].qualifiers = { [property]: [snak] };
+    });
+    assert.notEqual(result.status, 0);
+    assert.match(result.stderr, /Unsupported Wikidata time/);
+  }
+});
+
+test('normal builds reject a missing first-day observation for an existing precise start', async () => {
+  const result = await changedBuild((_entity, _policy, fixture) => {
+    fixture.lookups = fixture.lookups.filter((c: any) => !(c.input === 'BL' && c.date === '2007-09-21'));
+  });
+  assert.notEqual(result.status, 0);
+  assert.match(result.stderr, /Missing dated compatibility lookup: BL/);
+});
+
+
+test('unsupported ISO end bounds are rejected even without an unknown start', async () => {
+  for (const start of ['absent', 'known']) for (const property of ['P8554', 'P12506']) {
+    const result = await changedBuild(e => {
+      const time = { snaktype: 'value', datavalue: { value: { time: '+1900-01-01T00:00:00Z', precision: 11, calendarmodel: 'http://www.wikidata.org/entity/Q1985727' } } };
+      e.claims.P297[0].qualifiers = { [property]: [time], ...(start === 'known' ? { P580: [time] } : {}) };
+    });
+    assert.notEqual(result.status, 0);
+    assert.match(result.stderr, /Unsupported Wikidata time bounds/);
+  }
 });

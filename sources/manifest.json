@@ -1094,5 +1094,229 @@
     "sha256": "68d975902e88c3dcbd0a52b5abbda4b43f801b28aedb5d363a1838da3ad1aefc",
     "retrievedAt": "2026-11-20T20:41:54.458Z",
     "permanentLink": "https://www.wikidata.org/w/index.php?title=Q192184&oldid=2558478385"
+  },
+  {
+    "id": "Q222",
+    "revision": 2572921253,
+    "file": "sources/wikidata/Q222-2572921253.json",
+    "sha256": "fd7100f95b086a4fb87463e773115027f1490ad681f40b6b0d949336aa8143c3",
+    "retrievedAt": "2026-11-22T17:13:52.328Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q222&oldid=2572921253"
+  },
+  {
+    "id": "Q5689",
+    "revision": 2573097247,
+    "file": "sources/wikidata/Q5689-2573097247.json",
+    "sha256": "853091b04f909ae7f446a9c1ce87412f4ccdab6a7b8a43cce31e1dedd9d01dc7",
+    "retrievedAt": "2026-11-22T17:13:52.575Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q5689&oldid=2573097247"
+  },
+  {
+    "id": "Q921",
+    "revision": 2572932380,
+    "file": "sources/wikidata/Q921-2572932380.json",
+    "sha256": "ebb4fccb8873c5d8e6c125d8c270c405d29fbe5da60202fbb334b90675e62d6f",
+    "retrievedAt": "2026-11-22T17:13:53.011Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q921&oldid=2572932380"
+  },
+  {
+    "id": "Q36004",
+    "revision": 2568798614,
+    "file": "sources/wikidata/Q36004-2568798614.json",
+    "sha256": "c672de87d946b937b9bd728380137ebcbae19c59aff500b264dc5d10b6178aa4",
+    "retrievedAt": "2026-11-22T17:13:53.202Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q36004&oldid=2568798614"
+  },
+  {
+    "id": "Q31063",
+    "revision": 2568798768,
+    "file": "sources/wikidata/Q31063-2568798768.json",
+    "sha256": "6678ab764037b6b47dfbc02b13356235aab9a30554942d0030272c916a6c0668",
+    "retrievedAt": "2026-11-22T17:13:53.341Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q31063&oldid=2568798768"
+  },
+  {
+    "id": "Q9648",
+    "revision": 2572939239,
+    "file": "sources/wikidata/Q9648-2572939239.json",
+    "sha256": "5c1ab90d1ab4340ca5d458c9b1f10f972d29656dcf28b026eebc8ba5f30bcbf9",
+    "retrievedAt": "2026-11-22T17:13:53.525Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q9648&oldid=2572939239"
+  },
+  {
+    "id": "Q3769",
+    "revision": 2571921685,
+    "file": "sources/wikidata/Q3769-2571921685.json",
+    "sha256": "9151893990b23d2e437aaa5d51bc3a0912fbfa491d220f5f1f927bf49e721925",
+    "retrievedAt": "2026-11-22T17:13:53.799Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q3769&oldid=2571921685"
+  },
+  {
+    "id": "Q25230",
+    "revision": 2569926201,
+    "file": "sources/wikidata/Q25230-2569926201.json",
+    "sha256": "48b8f4047f85233028e9ec7390033ae2a5c0b1f1f847a1b8187a2df3d45018c6",
+    "retrievedAt": "2026-11-22T17:13:54.081Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q25230&oldid=2569926201"
+  },
+  {
+    "id": "Q1410",
+    "revision": 2572806622,
+    "file": "sources/wikidata/Q1410-2572806622.json",
+    "sha256": "94d15635e7b7aafa2ffdbdedf9dde419e67322f2dfd3d1a3d2b5f7f62fbea3f9",
+    "retrievedAt": "2026-11-22T17:13:54.410Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q1410&oldid=2572806622"
+  },
+  {
+    "id": "Q983",
+    "revision": 2569305250,
+    "file": "sources/wikidata/Q983-2569305250.json",
+    "sha256": "465df6fd074d9804eab0042218b34139ad80a936a2b0c841897de434aba6b50c",
+    "retrievedAt": "2026-11-22T17:13:54.610Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q983&oldid=2569305250"
+  },
+  {
+    "id": "Q35086",
+    "revision": 2568796115,
+    "file": "sources/wikidata/Q35086-2568796115.json",
+    "sha256": "0dcbb65e87087131dd0964f599bfd13af5176652285290899e94648174fa6df5",
+    "retrievedAt": "2026-11-22T17:13:54.813Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q35086&oldid=2568796115"
+  },
+  {
+    "id": "Q9676",
+    "revision": 2569927486,
+    "file": "sources/wikidata/Q9676-2569927486.json",
+    "sha256": "f9c030910d8a160487dc2914d0668c81c660d4cdafbf79af61dbce2a1fcd4748",
+    "retrievedAt": "2026-11-22T17:13:55.097Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q9676&oldid=2569927486"
+  },
+  {
+    "id": "Q785",
+    "revision": 2564321625,
+    "file": "sources/wikidata/Q785-2564321625.json",
+    "sha256": "f46e97e808758ebc8c03b65c583df7e4fc26c9722bdaedb1bdc25176d8de9ebc",
+    "retrievedAt": "2026-11-22T17:13:55.302Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q785&oldid=2564321625"
+  },
+  {
+    "id": "Q884",
+    "revision": 2572872118,
+    "file": "sources/wikidata/Q884-2572872118.json",
+    "sha256": "de7aa5d41ce8da97da8b00d9758e29c1368a90ca0ae3bc5fd34b5b9a1873c5b5",
+    "retrievedAt": "2026-11-22T17:13:55.832Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q884&oldid=2572872118"
+  },
+  {
+    "id": "Q1028",
+    "revision": 2571892034,
+    "file": "sources/wikidata/Q1028-2571892034.json",
+    "sha256": "ddd584860d020644410d00d71098384f4b7e7a45393a0538f1b3654d87b7dfc7",
+    "retrievedAt": "2026-11-22T17:13:56.129Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q1028&oldid=2571892034"
+  },
+  {
+    "id": "Q235",
+    "revision": 2572923373,
+    "file": "sources/wikidata/Q235-2572923373.json",
+    "sha256": "0573b5be9c3396b66b8c24e52096c1beaea1e84a0d02d853f4e7226e1b11b558",
+    "retrievedAt": "2026-11-22T17:13:56.459Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q235&oldid=2572923373"
+  },
+  {
+    "id": "Q126125",
+    "revision": 2571854277,
+    "file": "sources/wikidata/Q126125-2571854277.json",
+    "sha256": "601808bfb1db90df3442aaa6d8af60e95a2e2bb16ea1558abf7ea6431220dcb7",
+    "retrievedAt": "2026-11-22T17:13:56.737Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q126125&oldid=2571854277"
+  },
+  {
+    "id": "Q14773",
+    "revision": 2572658147,
+    "file": "sources/wikidata/Q14773-2572658147.json",
+    "sha256": "839d3fdbfb2ea426a50c8a938dc916472a08acfa477af78c6b32a61c1b17df31",
+    "retrievedAt": "2026-11-22T17:13:57.068Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q14773&oldid=2572658147"
+  },
+  {
+    "id": "Q17054",
+    "revision": 2573442813,
+    "file": "sources/wikidata/Q17054-2573442813.json",
+    "sha256": "f70bde1eeeea6ff35e2e799b20d2eae600d74504b8fc2bca15cf5ff5b30756b0",
+    "retrievedAt": "2026-11-22T17:13:57.361Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q17054&oldid=2573442813"
+  },
+  {
+    "id": "Q33788",
+    "revision": 2568808335,
+    "file": "sources/wikidata/Q33788-2568808335.json",
+    "sha256": "bac720feac5c326335f40ed6845976ec92feaafcceb41ff1539a1f69b12100fb",
+    "retrievedAt": "2026-11-22T17:13:57.757Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q33788&oldid=2568808335"
+  },
+  {
+    "id": "Q31057",
+    "revision": 2568716413,
+    "file": "sources/wikidata/Q31057-2568716413.json",
+    "sha256": "cc3dc4d13f222b87ecc7e940cbae20b5657c6fca7482c706d8a6835fe6607b98",
+    "retrievedAt": "2026-11-22T17:13:58.130Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q31057&oldid=2568716413"
+  },
+  {
+    "id": "Q34617",
+    "revision": 2568808554,
+    "file": "sources/wikidata/Q34617-2568808554.json",
+    "sha256": "ea75c83b16c1e9eca1f2661e740c20b6fb65994ee60677b4bd60352cccaf2eea",
+    "retrievedAt": "2026-11-22T17:13:58.368Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q34617&oldid=2568808554"
+  },
+  {
+    "id": "Q17070",
+    "revision": 2571891721,
+    "file": "sources/wikidata/Q17070-2571891721.json",
+    "sha256": "e9531d9615d77db543c0ebd121bf539ce4d01209ac7a8c7fd6fff5bea7ef441a",
+    "retrievedAt": "2026-11-22T17:13:58.650Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q17070&oldid=2571891721"
+  },
+  {
+    "id": "Q730",
+    "revision": 2572179636,
+    "file": "sources/wikidata/Q730-2572179636.json",
+    "sha256": "2bcaae99d061a1ab909274ba0fc99bd6c185e25e32acceab34f6b4d5db0da8ce",
+    "retrievedAt": "2026-11-22T17:13:58.937Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q730&oldid=2572179636"
+  },
+  {
+    "id": "Q129003",
+    "revision": 2558488716,
+    "file": "sources/wikidata/Q129003-2558488716.json",
+    "sha256": "6ee789773ed64f6a8fcbc849498beb97e78a00779426f7324d975f42c5a13810",
+    "retrievedAt": "2026-11-22T17:13:59.144Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q129003&oldid=2558488716"
+  },
+  {
+    "id": "Q25305",
+    "revision": 2568773727,
+    "file": "sources/wikidata/Q25305-2568773727.json",
+    "sha256": "b1df4122e748e9c5a43d5d20b960ab6f65455ec0239e7b8f79b7450ef56202ef",
+    "retrievedAt": "2026-11-22T17:13:59.375Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q25305&oldid=2568773727"
+  },
+  {
+    "id": "Q35555",
+    "revision": 2568776355,
+    "file": "sources/wikidata/Q35555-2568776355.json",
+    "sha256": "f0cd2ea2edef1f22fdfc6dc14df29c8450a4ee66cb914505167b4dd4c3862110",
+    "retrievedAt": "2026-11-22T17:13:59.532Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q35555&oldid=2568776355"
+  },
+  {
+    "id": "Q17063",
+    "revision": 2572005444,
+    "file": "sources/wikidata/Q17063-2572005444.json",
+    "sha256": "1447ddaa7cf568c02b35792d4f0c617b1ebd85e59ca6f3a54b890f571f494c08",
+    "retrievedAt": "2026-11-22T17:13:59.844Z",
+    "permanentLink": "https://www.wikidata.org/w/index.php?title=Q17063&oldid=2572005444"
   }
 ]

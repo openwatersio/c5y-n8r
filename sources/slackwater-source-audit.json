@@ -1,17 +1,17 @@
 {
   "sourceCounts": {
-    "entities": 137,
-    "assignments": 627,
-    "evidence": 771
+    "entities": 165,
+    "assignments": 740,
+    "evidence": 911
   },
   "inventoryRevision": "f9c3d42c066efe87e606f8c09673fb70cff2b2cf",
-  "snapshotManifestDigest": "9e71684e450424aa8bbe916430e8fb8528d00d4955b28ae67551d7ff99d4ad8d",
+  "snapshotManifestDigest": "36b97231ea2e67aa7ccede60b141e404073f734b1e3485b5b620a0285e1c05c6",
   "verificationStatus": "pending",
   "summary": {
-    "inputs": 129,
+    "inputs": 157,
     "records": 8728,
-    "sourceBackedInputs": 127,
-    "metadataIncompleteInputs": 0,
+    "sourceBackedInputs": 155,
+    "metadataIncompleteInputs": 1,
     "sourceBackedRecords": 8699,
     "verifiedInputs": 0
   },
@@ -4008,6 +4008,1051 @@
         {
           "statementId": "q1030$206822F6-736C-48F2-8587-FF5B18D3113D",
           "value": "NA",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "Albania",
+      "records": 0,
+      "candidateEntity": "Q222",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "AL",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2572921253,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q222&oldid=2572921253",
+      "snapshotSha256": "fd7100f95b086a4fb87463e773115027f1490ad681f40b6b0d949336aa8143c3",
+      "nameEvidence": [
+        "q222$F6A79186-68A0-4E77-9535-A5796B7BFF48"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q222$F6A79186-68A0-4E77-9535-A5796B7BFF48",
+          "value": "AL",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "Åland",
+      "records": 0,
+      "candidateEntity": "Q5689",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "AX",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continentSelection": "missing",
+      "metadataStatus": "missing-continent",
+      "verificationStatus": "pending",
+      "revision": 2573097247,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q5689&oldid=2573097247",
+      "snapshotSha256": "853091b04f909ae7f446a9c1ce87412f4ccdab6a7b8a43cce31e1dedd9d01dc7",
+      "nameEvidence": [
+        "q5689$50CAAE7A-71C5-4FF4-8992-C256B3908B17"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q5689$50CAAE7A-71C5-4FF4-8992-C256B3908B17",
+          "value": "AX",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [
+        "No admitted continent classification for candidate entity"
+      ],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "Brunei",
+      "records": 0,
+      "candidateEntity": "Q921",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "BN",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2572932380,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q921&oldid=2572932380",
+      "snapshotSha256": "ebb4fccb8873c5d8e6c125d8c270c405d29fbe5da60202fbb334b90675e62d6f",
+      "nameEvidence": [
+        "q921$5527BD23-E358-4FFE-84A0-E8303319A13A"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q921$5527BD23-E358-4FFE-84A0-E8303319A13A",
+          "value": "BN",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "9400ee2c3394aabb0675fde2be71011280043ce2",
+              "snaks": {
+                "P854": [
+                  {
+                    "snaktype": "value",
+                    "property": "P854",
+                    "hash": "c4b785b96bd87e73739343806ba6e07d426cd2be",
+                    "datavalue": {
+                      "value": "https://www.ISO.org/obp/ui/#iso:code:3166:BN",
+                      "type": "string"
+                    },
+                    "datatype": "url"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "b3e6b7396de7d65a050128df070e673b3902f872",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2024-09-22T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "Cocos (Keeling) Islands",
+      "records": 0,
+      "candidateEntity": "Q36004",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "CC",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2568798614,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q36004&oldid=2568798614",
+      "snapshotSha256": "c672de87d946b937b9bd728380137ebcbae19c59aff500b264dc5d10b6178aa4",
+      "nameEvidence": [
+        "q36004$93425A4E-5CCE-49BB-B9AD-44E6A462A20D"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q36004$93425A4E-5CCE-49BB-B9AD-44E6A462A20D",
+          "value": "CC",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "Christmas Island",
+      "records": 0,
+      "candidateEntity": "Q31063",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "CX",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2568798768,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q31063&oldid=2568798768",
+      "snapshotSha256": "6678ab764037b6b47dfbc02b13356235aab9a30554942d0030272c916a6c0668",
+      "nameEvidence": [
+        "q31063$8D4D69AE-CD52-459D-A188-01305BC876D3"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q31063$8D4D69AE-CD52-459D-A188-01305BC876D3",
+          "value": "CX",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "Falkland Islands",
+      "records": 0,
+      "candidateEntity": "Q9648",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "FK",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "South America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2572939239,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q9648&oldid=2572939239",
+      "snapshotSha256": "5c1ab90d1ab4340ca5d458c9b1f10f972d29656dcf28b026eebc8ba5f30bcbf9",
+      "nameEvidence": [
+        "q9648$33A46A6B-6068-4E18-AB39-581EC7AA9C33"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q9648$33A46A6B-6068-4E18-AB39-581EC7AA9C33",
+          "value": "FK",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "French Guiana",
+      "records": 0,
+      "candidateEntity": "Q3769",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "GF",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "South America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2571921685,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q3769&oldid=2571921685",
+      "snapshotSha256": "9151893990b23d2e437aaa5d51bc3a0912fbfa491d220f5f1f927bf49e721925",
+      "nameEvidence": [
+        "q3769$D025DE34-36A3-4648-8F4A-606E9C48D97E"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q3769$D025DE34-36A3-4648-8F4A-606E9C48D97E",
+          "value": "GF",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "Guernsey",
+      "records": 0,
+      "candidateEntity": "Q25230",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "GG",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2569926201,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q25230&oldid=2569926201",
+      "snapshotSha256": "48b8f4047f85233028e9ec7390033ae2a5c0b1f1f847a1b8187a2df3d45018c6",
+      "nameEvidence": [
+        "q25230$3A624741-725E-4FD8-BD0D-F23EC6FF5FC3"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q25230$3A624741-725E-4FD8-BD0D-F23EC6FF5FC3",
+          "value": "GG",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "Gibraltar",
+      "records": 0,
+      "candidateEntity": "Q1410",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "GI",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2572806622,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q1410&oldid=2572806622",
+      "snapshotSha256": "94d15635e7b7aafa2ffdbdedf9dde419e67322f2dfd3d1a3d2b5f7f62fbea3f9",
+      "nameEvidence": [
+        "q1410$A158C5BB-777D-4F4C-B050-89AF224EAA68"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q1410$A158C5BB-777D-4F4C-B050-89AF224EAA68",
+          "value": "GI",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "Equatorial Guinea",
+      "records": 0,
+      "candidateEntity": "Q983",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "GQ",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2569305250,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q983&oldid=2569305250",
+      "snapshotSha256": "465df6fd074d9804eab0042218b34139ad80a936a2b0c841897de434aba6b50c",
+      "nameEvidence": [
+        "q983$44E5C7A5-BDAE-4FCF-9979-3EEF9E171BCD"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q983$44E5C7A5-BDAE-4FCF-9979-3EEF9E171BCD",
+          "value": "GQ",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "South Georgia and the South Sandwich Islands",
+      "records": 0,
+      "candidateEntity": "Q35086",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "GS",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "South America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2568796115,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q35086&oldid=2568796115",
+      "snapshotSha256": "0dcbb65e87087131dd0964f599bfd13af5176652285290899e94648174fa6df5",
+      "nameEvidence": [
+        "q35086$AA89458A-4AAE-4745-85CA-4E07352E7DE8"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q35086$AA89458A-4AAE-4745-85CA-4E07352E7DE8",
+          "value": "GS",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "Isle of Man",
+      "records": 0,
+      "candidateEntity": "Q9676",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "IM",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2569927486,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q9676&oldid=2569927486",
+      "snapshotSha256": "f9c030910d8a160487dc2914d0668c81c660d4cdafbf79af61dbce2a1fcd4748",
+      "nameEvidence": [
+        "q9676$A06A2226-A854-46D6-8E07-B4F43734BA77"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q9676$A06A2226-A854-46D6-8E07-B4F43734BA77",
+          "value": "IM",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "Jersey",
+      "records": 0,
+      "candidateEntity": "Q785",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "JE",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2564321625,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q785&oldid=2564321625",
+      "snapshotSha256": "f46e97e808758ebc8c03b65c583df7e4fc26c9722bdaedb1bdc25176d8de9ebc",
+      "nameEvidence": [
+        "q785$44C5AE71-1251-450A-932C-274589A5D29A"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q785$44C5AE71-1251-450A-932C-274589A5D29A",
+          "value": "JE",
+          "rank": "normal",
+          "references": [
+            {
+              "hash": "28740a091fa7e8f1b026fccacbfb11121bf72e1f",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "125a07bb54b9b89b2b07f9072d0b627074c98e4a",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 81661634,
+                        "id": "Q81661634"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P6778": [
+                  {
+                    "snaktype": "value",
+                    "property": "P6778",
+                    "hash": "2d4d32d90ed004620f3502dfa4115cd6c23c4db1",
+                    "datavalue": {
+                      "value": "00001551",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "8abd18afbbb1050bad649a7b297519505c14710a",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-03-25T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              }
+            },
+            {
+              "hash": "a05773b4154cc43c30e69c0a497e2b1d1a267536",
+              "snaks": {
+                "P248": [
+                  {
+                    "snaktype": "value",
+                    "property": "P248",
+                    "hash": "aef483621a96b07e31a23323d782d6fdfb1dc159",
+                    "datavalue": {
+                      "value": {
+                        "entity-type": "item",
+                        "numeric-id": 1520117,
+                        "id": "Q1520117"
+                      },
+                      "type": "wikibase-entityid"
+                    },
+                    "datatype": "wikibase-item"
+                  }
+                ],
+                "P1667": [
+                  {
+                    "snaktype": "value",
+                    "property": "P1667",
+                    "hash": "b5aa59552b1f9b048b124cfc440930ed2fa1eb35",
+                    "datavalue": {
+                      "value": "7005238",
+                      "type": "string"
+                    },
+                    "datatype": "external-id"
+                  }
+                ],
+                "P813": [
+                  {
+                    "snaktype": "value",
+                    "property": "P813",
+                    "hash": "8abd18afbbb1050bad649a7b297519505c14710a",
+                    "datavalue": {
+                      "value": {
+                        "time": "+2022-03-25T00:00:00Z",
+                        "timezone": 0,
+                        "before": 0,
+                        "after": 0,
+                        "precision": 11,
+                        "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                      },
+                      "type": "time"
+                    },
+                    "datatype": "time"
+                  }
+                ]
+              }
+            }
+          ]
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "South Korea",
+      "records": 0,
+      "candidateEntity": "Q884",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "KR",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2572872118,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q884&oldid=2572872118",
+      "snapshotSha256": "de7aa5d41ce8da97da8b00d9758e29c1368a90ca0ae3bc5fd34b5b9a1873c5b5",
+      "nameEvidence": [
+        "q884$598EE372-1117-4CF3-9F37-083E4B8B3ACF"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q884$598EE372-1117-4CF3-9F37-083E4B8B3ACF",
+          "value": "KR",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "Morocco",
+      "records": 0,
+      "candidateEntity": "Q1028",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "MA",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2571892034,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q1028&oldid=2571892034",
+      "snapshotSha256": "ddd584860d020644410d00d71098384f4b7e7a45393a0538f1b3654d87b7dfc7",
+      "nameEvidence": [
+        "q1028$75CD3F6D-DE4A-4655-B014-AE6ED5E9A7C0"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q1028$75CD3F6D-DE4A-4655-B014-AE6ED5E9A7C0",
+          "value": "MA",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "Monaco",
+      "records": 0,
+      "candidateEntity": "Q235",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "MC",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Europe",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2572923373,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q235&oldid=2572923373",
+      "snapshotSha256": "0573b5be9c3396b66b8c24e52096c1beaea1e84a0d02d853f4e7226e1b11b558",
+      "nameEvidence": [
+        "q235$5A2C4D5B-1D78-4354-966E-8C71170C2580"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q235$5A2C4D5B-1D78-4354-966E-8C71170C2580",
+          "value": "MC",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "Saint-Martin",
+      "records": 0,
+      "candidateEntity": "Q126125",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "MF",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2571854277,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q126125&oldid=2571854277",
+      "snapshotSha256": "601808bfb1db90df3442aaa6d8af60e95a2e2bb16ea1558abf7ea6431220dcb7",
+      "nameEvidence": [
+        "q126125$86AEEBB1-F219-486E-85C0-FC5F1A92F411"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q126125$86AEEBB1-F219-486E-85C0-FC5F1A92F411",
+          "value": "MF",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "Macau",
+      "records": 0,
+      "candidateEntity": "Q14773",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "MO",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Asia",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2572658147,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q14773&oldid=2572658147",
+      "snapshotSha256": "839d3fdbfb2ea426a50c8a938dc916472a08acfa477af78c6b32a61c1b17df31",
+      "nameEvidence": [
+        "q14773$179C099B-8A60-4F2F-9779-DD4C83B4DEE9"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q14773$179C099B-8A60-4F2F-9779-DD4C83B4DEE9",
+          "value": "MO",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "Martinique",
+      "records": 0,
+      "candidateEntity": "Q17054",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "MQ",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2573442813,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q17054&oldid=2573442813",
+      "snapshotSha256": "f70bde1eeeea6ff35e2e799b20d2eae600d74504b8fc2bca15cf5ff5b30756b0",
+      "nameEvidence": [
+        "q17054$E9B123F0-5BE1-4A24-96BC-7E65ABF7D5F9"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q17054$E9B123F0-5BE1-4A24-96BC-7E65ABF7D5F9",
+          "value": "MQ",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "New Caledonia",
+      "records": 0,
+      "candidateEntity": "Q33788",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "NC",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2568808335,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q33788&oldid=2568808335",
+      "snapshotSha256": "bac720feac5c326335f40ed6845976ec92feaafcceb41ff1539a1f69b12100fb",
+      "nameEvidence": [
+        "q33788$6AB83044-D785-4D42-A876-9C1D43419822"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q33788$6AB83044-D785-4D42-A876-9C1D43419822",
+          "value": "NC",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "Norfolk Island",
+      "records": 0,
+      "candidateEntity": "Q31057",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "NF",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "preferred-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2568716413,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q31057&oldid=2568716413",
+      "snapshotSha256": "cc3dc4d13f222b87ecc7e940cbae20b5657c6fca7482c706d8a6835fe6607b98",
+      "nameEvidence": [
+        "q31057$2709ED6B-9450-49AE-99DB-CED6A004E2DC"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q31057$2709ED6B-9450-49AE-99DB-CED6A004E2DC",
+          "value": "NF",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "Saint Pierre and Miquelon",
+      "records": 0,
+      "candidateEntity": "Q34617",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "PM",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2568808554,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q34617&oldid=2568808554",
+      "snapshotSha256": "ea75c83b16c1e9eca1f2661e740c20b6fb65994ee60677b4bd60352cccaf2eea",
+      "nameEvidence": [
+        "q34617$12B6CCC3-D4C8-4D54-BDDB-C5EA90CD0FA1"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q34617$12B6CCC3-D4C8-4D54-BDDB-C5EA90CD0FA1",
+          "value": "PM",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "Réunion",
+      "records": 0,
+      "candidateEntity": "Q17070",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "RE",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2571891721,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q17070&oldid=2571891721",
+      "snapshotSha256": "e9531d9615d77db543c0ebd121bf539ce4d01209ac7a8c7fd6fff5bea7ef441a",
+      "nameEvidence": [
+        "q17070$121D14C0-4207-4D12-8C86-D8585B50AEC1"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q17070$121D14C0-4207-4D12-8C86-D8585B50AEC1",
+          "value": "RE",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "Suriname",
+      "records": 0,
+      "candidateEntity": "Q730",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "SR",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "South America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2572179636,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q730&oldid=2572179636",
+      "snapshotSha256": "2bcaae99d061a1ab909274ba0fc99bd6c185e25e32acceab34f6b4d5db0da8ce",
+      "nameEvidence": [
+        "q730$05A9152B-FE6F-44E9-AF2C-3814274D1579"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q730$05A9152B-FE6F-44E9-AF2C-3814274D1579",
+          "value": "SR",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "French Southern and Antarctic Lands",
+      "records": 0,
+      "candidateEntity": "Q129003",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "TF",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "first-source-statement-unreviewed",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2558488716,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q129003&oldid=2558488716",
+      "snapshotSha256": "6ee789773ed64f6a8fcbc849498beb97e78a00779426f7324d975f42c5a13810",
+      "nameEvidence": [
+        "q129003$C104D043-F098-41C6-9AFF-2AF8FE44FA18"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q129003$C104D043-F098-41C6-9AFF-2AF8FE44FA18",
+          "value": "TF",
+          "rank": "preferred",
+          "references": []
+        },
+        {
+          "statementId": "Q129003$a4c60b9c-4d25-d527-7aa1-f1d275f8c317",
+          "value": "FQ",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "British Virgin Islands",
+      "records": 0,
+      "candidateEntity": "Q25305",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "VG",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "North America",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2568773727,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q25305&oldid=2568773727",
+      "snapshotSha256": "b1df4122e748e9c5a43d5d20b960ab6f65455ec0239e7b8f79b7450ef56202ef",
+      "nameEvidence": [
+        "q25305$F7ACAC9C-5686-4B8A-9629-D4DE56C39CCE"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q25305$F7ACAC9C-5686-4B8A-9629-D4DE56C39CCE",
+          "value": "VG",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "Wallis and Futuna",
+      "records": 0,
+      "candidateEntity": "Q35555",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "WF",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Oceania",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2568776355,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q35555&oldid=2568776355",
+      "snapshotSha256": "f0cd2ea2edef1f22fdfc6dc14df29c8450a4ee66cb914505167b4dd4c3862110",
+      "nameEvidence": [
+        "q35555$A2B7AEFC-2B65-43CB-9AB2-9FEC5CFC17E8"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q35555$A2B7AEFC-2B65-43CB-9AB2-9FEC5CFC17E8",
+          "value": "WF",
+          "rank": "normal",
+          "references": []
+        }
+      ],
+      "blockers": [],
+      "qualityFlags": [
+        "Independent evidence research is pending; it is advisory once functional source coverage is established"
+      ]
+    },
+    {
+      "input": "Mayotte",
+      "records": 0,
+      "candidateEntity": "Q17063",
+      "consumerNamespace": "iso-alpha2",
+      "consumerValue": "YT",
+      "consumerPath": "metadata/places.json",
+      "inventoryRevision": "521cc39658da0dd9aa9ded1cae9b9e1dada1a5f5",
+      "functionalStatus": "source-backed-unreviewed",
+      "continent": "Africa",
+      "continentSelection": "single-source-statement",
+      "metadataStatus": "source-backed-unreviewed",
+      "verificationStatus": "pending",
+      "revision": 2572005444,
+      "permanentLink": "https://www.wikidata.org/w/index.php?title=Q17063&oldid=2572005444",
+      "snapshotSha256": "1447ddaa7cf568c02b35792d4f0c617b1ebd85e59ca6f3a54b890f571f494c08",
+      "nameEvidence": [
+        "q17063$26575B70-5E95-49DE-B53D-F62988783AA4"
+      ],
+      "codeClaims": [
+        {
+          "statementId": "q17063$26575B70-5E95-49DE-B53D-F62988783AA4",
+          "value": "YT",
           "rank": "normal",
           "references": []
         }

@@ -17,11 +17,13 @@ if (process.argv.includes('--audit-slackwater')) {
   const manifest = JSON.parse(manifestText);
   const required = [];
   for (const input of inventory.required) {
-    const result = registry.resolve(input.input, { namespace: 'name' });
+    const namespace = input.consumerNamespace ?? 'name';
+    const value = namespace === 'iso-alpha2' ? input.baselineAlpha2 : input.input;
+    const result = registry.resolve(value, { namespace });
     const candidateEntity = input.candidateEntity ?? result.preferred?.id;
     const item = manifest.find((m: any) => m.id === candidateEntity);
     const entity = item ? JSON.parse(await readCorpusFile('.', item.file)).entities[item.id] : undefined;
-    const conversion = registry.convert(input.input, { from: 'name', to: 'iso-alpha2' });
+    const conversion = registry.convert(value, { from: namespace, to: 'iso-alpha2' });
     const currentCode = conversion.target.preferred;
     const hasCode = currentCode !== undefined && currentCode.id === candidateEntity && !['retired', 'outside-date', 'deprecated'].includes(currentCode.applicability);
     const continent = source.entities.find(e => e.id === candidateEntity)?.continent;
@@ -32,6 +34,7 @@ if (process.argv.includes('--audit-slackwater')) {
       references: (claim.references ?? []).map((reference: any) => ({ hash: reference.hash, snaks: reference.snaks })),
     }));
     required.push({ input: input.input, records: input.records, candidateEntity,
+      ...(input.consumerNamespace ? { consumerNamespace: namespace, consumerValue: value, consumerPath: input.consumerPath, inventoryRevision: inventory.geocoderInventory.revision } : {}),
       functionalStatus: !candidateEntity ? 'missing-source-mapping' : !item ? 'missing-source-snapshot' : result.selection === 'ambiguous' ? 'ambiguous-source-name' : result.preferred?.id !== candidateEntity ? 'missing-source-spelling' : hasCode ? 'source-backed-unreviewed' : 'missing-current-iso-code',
       continent, continentSelection, metadataStatus: continent ? 'source-backed-unreviewed' : 'missing-continent',
       verificationStatus: 'pending', revision: item?.revision, permanentLink: item?.permanentLink, snapshotSha256: item?.sha256,

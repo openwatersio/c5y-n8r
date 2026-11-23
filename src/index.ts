@@ -18,6 +18,7 @@ export class Candidate {
   constructor(private readonly registry: Registry, private readonly assignment: Assignment, readonly applicability: 'active' | 'retired' | 'outside-date' | 'uncertain' | 'deprecated', readonly tentative = false) {}
   get id() { return this.entity.id()!; }
   get name() { return this.entity.name()!; }
+  /** Empty when no continent classification is admitted for this entity. */
   get continent() { return this.entity.continent()!; }
   get namespace() { return this.assignment.namespace()!; }
   get value() { return this.assignment.value()!; }

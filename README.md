@@ -170,3 +170,7 @@ The territory Q192184 supplies the faithfully imported SH/SHN/654 claims and Eng
 Continent answers are compatibility-pinned too. Resolving Åland’s missing continent (#283), or changing the first-source selection for a multi-continent entity such as TF, requires a separately reviewed non-temporal correction path; the temporal refresh command cannot ship those changes.
 
 `node scripts/check-geocoder-inventory.mjs` authenticates the complete 157-code geocoder inventory against the SHA-256 of Slackwater’s immutable places snapshot. CI runs this separately from the offline lookup tests.
+
+The source audit’s top-level `inventoryRevision` identifies the station inventory. Geocoder rows carry their separate places-file revision. The network inventory check is ordinary proposed-branch CI, not a trusted policy verdict: maintainers review changes to its source pin and checker.
+
+`Candidate.continent === ""` means no continent classification is admitted for that entity. The audit’s 157 required input rows and the places file’s 157 distinct ISO codes are different sets: the audit covers station spellings and the 28 additional geocoder identities, while the separate code coverage check includes existing identities such as SX. Its totals are not a complete per-code geocoder evidence audit.

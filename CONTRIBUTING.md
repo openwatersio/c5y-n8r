@@ -2,6 +2,8 @@
 
 c5y-n8r provides fast library access to country information from pinned Wikidata snapshots and explicitly reviewed local contributions. Wikidata is the upstream source: information it lists can be included without independent certification by this project. Our first goal is usable, traceable coverage of the country inputs required by Slackwater.
 
+Every change follows the org-wide [rigor rules](https://github.com/openwatersio/.github/blob/main/docs/agents/rigor.md). The first of them: when something fails or looks wrong, find the cause and fix it there instead of working around it.
+
 ## Admit upstream data and track its quality
 
 Acceptance requires the intended Wikidata entity, immutable revision and digest, faithful handling of values, ranks and qualifiers, reproducible artifacts, and preserved lookup compatibility. It does not require a primary source, a reference count, or a completed independent review for every upstream statement, label or alias. A source match establishes provenance, not factual certification. Upstream errors can appear in our dataset.

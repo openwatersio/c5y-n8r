@@ -13,12 +13,12 @@ jobs:
       head: ${{ steps.refs.outputs.head }}
       merge: ${{ steps.refs.outputs.merge }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.4.0
         with:
           ref: ${{ github.sha }}
           fetch-depth: 2
           persist-credentials: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4.4.0
         with:
           node-version: '24'
       - name: Record immutable merge inputs
@@ -37,7 +37,7 @@ jobs:
           appendFileSync(process.env.GITHUB_OUTPUT,`base=${baseSha}\nhead=${headSha}\nmerge=${mergeSha}\n`);
           writeFileSync('reader-binding.json',JSON.stringify({schemaVersion:1,mergeSha,baseSha,headSha})+'\n');
           NODE
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4.6.2
         with:
           name: reader-binding
           path: reader-binding.json
@@ -45,11 +45,11 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.4.0
         with:
           ref: ${{ github.sha }}
           persist-credentials: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4.4.0
         with:
           node-version: '24'
           cache: npm
@@ -64,17 +64,17 @@ jobs:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.4.0
         with:
           ref: ${{ needs.merge-inputs.outputs.base }}
           path: trusted
           persist-credentials: false
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.4.0
         with:
           ref: ${{ needs.merge-inputs.outputs.merge }}
           path: proposed
           persist-credentials: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4.4.0
         with:
           node-version: '24'
       - run: npm ci --ignore-scripts
@@ -82,7 +82,7 @@ jobs:
       - name: Find evidence for proposed assertions
         run: npm run evidence -- --corpus ../proposed --base . --output ../evidence-report
         working-directory: trusted
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4.6.2
         if: always()
         with:
           name: wikidata-evidence
@@ -94,17 +94,17 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.4.0
         with:
           ref: ${{ needs.merge-inputs.outputs.base }}
           path: harness
           persist-credentials: false
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.4.0
         with:
           ref: ${{ needs.merge-inputs.outputs.merge }}
           path: proposed
           persist-credentials: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4.4.0
         with:
           node-version: '24'
       - run: npm ci --ignore-scripts
@@ -116,7 +116,7 @@ jobs:
       - name: Record untrusted reader observations
         run: node --import tsx scripts/observe-reader.ts --reader ../proposed/dist/index.js --corpus ../proposed --cases sources/accepted-inputs.json --output ../reader-results.json
         working-directory: harness
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4.6.2
         with:
           name: reader-observations
           path: reader-results.json
@@ -132,21 +132,21 @@ jobs:
         env:
           PRODUCER_RESULT: ${{ needs.reader-observations.result }}
         run: test "$PRODUCER_RESULT" = success
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.4.0
         with:
           ref: ${{ needs.merge-inputs.outputs.base }}
           path: trusted
           persist-credentials: false
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.4.0
         with:
           ref: ${{ needs.merge-inputs.outputs.merge }}
           path: proposed
           persist-credentials: false
-      - uses: actions/download-artifact@v4
+      - uses: actions/download-artifact@v4.3.0
         with:
           name: reader-observations
           path: observations
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4.4.0
         with:
           node-version: '24'
       - run: npm ci --ignore-scripts
@@ -156,7 +156,7 @@ jobs:
         working-directory: trusted
       - name: Require executed compatibility comparisons
         run: node -e "const r=require('./compatibility-report/report.json'); if(r.mode !== 'reader-compatibility' || r.passed !== true || !(r.checkedLookups > 0)) throw Error('Trusted checker did not approve reader observations')"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4.6.2
         if: always()
         with:
           name: reader-compatibility

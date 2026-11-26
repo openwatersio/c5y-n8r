@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.4.0
         with:
           persist-credentials: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4.4.0
         with:
           node-version: '24'
           cache: npm
@@ -21,7 +21,7 @@ jobs:
       - run: git diff --exit-code -- data/
       - run: npm run distribution
       - run: node -e "if (JSON.parse(require('node:fs').readFileSync('reports/local/distribution/distribution.json')).dirty) throw Error('Distribution requires a clean checkout')"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v4.6.2
         with:
           name: country-distribution-${{ github.sha }}
           path: reports/local/distribution/

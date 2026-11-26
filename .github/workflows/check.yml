@@ -18,7 +18,7 @@ jobs:
           ref: ${{ github.sha }}
           fetch-depth: 2
           persist-credentials: false
-      - uses: actions/setup-node@v4.4.0
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version: '24'
       - name: Record immutable merge inputs
@@ -49,7 +49,7 @@ jobs:
         with:
           ref: ${{ github.sha }}
           persist-credentials: false
-      - uses: actions/setup-node@v4.4.0
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version: '24'
           cache: npm
@@ -74,7 +74,7 @@ jobs:
           ref: ${{ needs.merge-inputs.outputs.merge }}
           path: proposed
           persist-credentials: false
-      - uses: actions/setup-node@v4.4.0
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version: '24'
       - run: npm ci --ignore-scripts
@@ -104,7 +104,7 @@ jobs:
           ref: ${{ needs.merge-inputs.outputs.merge }}
           path: proposed
           persist-credentials: false
-      - uses: actions/setup-node@v4.4.0
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version: '24'
       - run: npm ci --ignore-scripts
@@ -146,7 +146,7 @@ jobs:
         with:
           name: reader-observations
           path: observations
-      - uses: actions/setup-node@v4.4.0
+      - uses: actions/setup-node@v7.1.0
         with:
           node-version: '24'
       - run: npm ci --ignore-scripts

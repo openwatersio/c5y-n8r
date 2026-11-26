@@ -37,7 +37,7 @@ jobs:
           appendFileSync(process.env.GITHUB_OUTPUT,`base=${baseSha}\nhead=${headSha}\nmerge=${mergeSha}\n`);
           writeFileSync('reader-binding.json',JSON.stringify({schemaVersion:1,mergeSha,baseSha,headSha})+'\n');
           NODE
-      - uses: actions/upload-artifact@v4.6.2
+      - uses: actions/upload-artifact@v7.0.2
         with:
           name: reader-binding
           path: reader-binding.json
@@ -82,7 +82,7 @@ jobs:
       - name: Find evidence for proposed assertions
         run: npm run evidence -- --corpus ../proposed --base . --output ../evidence-report
         working-directory: trusted
-      - uses: actions/upload-artifact@v4.6.2
+      - uses: actions/upload-artifact@v7.0.2
         if: always()
         with:
           name: wikidata-evidence
@@ -116,7 +116,7 @@ jobs:
       - name: Record untrusted reader observations
         run: node --import tsx scripts/observe-reader.ts --reader ../proposed/dist/index.js --corpus ../proposed --cases sources/accepted-inputs.json --output ../reader-results.json
         working-directory: harness
-      - uses: actions/upload-artifact@v4.6.2
+      - uses: actions/upload-artifact@v7.0.2
         with:
           name: reader-observations
           path: reader-results.json
@@ -156,7 +156,7 @@ jobs:
         working-directory: trusted
       - name: Require executed compatibility comparisons
         run: node -e "const r=require('./compatibility-report/report.json'); if(r.mode !== 'reader-compatibility' || r.passed !== true || !(r.checkedLookups > 0)) throw Error('Trusted checker did not approve reader observations')"
-      - uses: actions/upload-artifact@v4.6.2
+      - uses: actions/upload-artifact@v7.0.2
         if: always()
         with:
           name: reader-compatibility

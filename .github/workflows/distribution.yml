@@ -21,7 +21,7 @@ jobs:
       - run: git diff --exit-code -- data/
       - run: npm run distribution
       - run: node -e "if (JSON.parse(require('node:fs').readFileSync('reports/local/distribution/distribution.json')).dirty) throw Error('Distribution requires a clean checkout')"
-      - uses: actions/upload-artifact@v4.6.2
+      - uses: actions/upload-artifact@v7.0.2
         with:
           name: country-distribution-${{ github.sha }}
           path: reports/local/distribution/

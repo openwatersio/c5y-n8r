@@ -26,7 +26,7 @@ jobs:
       - uses: actions/setup-node@v4.4.0
         with:
           node-version: 24
-      - uses: actions/github-script@v7.1.0
+      - uses: actions/github-script@v9.0.0
         with:
           script: |
             const { gate } = await import(`${process.env.GITHUB_WORKSPACE}/scripts/policy-gate.mjs`);

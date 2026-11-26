@@ -13,7 +13,7 @@ jobs:
       head: ${{ steps.refs.outputs.head }}
       merge: ${{ steps.refs.outputs.merge }}
     steps:
-      - uses: actions/checkout@v4.4.0
+      - uses: actions/checkout@v7.0.1
         with:
           ref: ${{ github.sha }}
           fetch-depth: 2
@@ -45,7 +45,7 @@ jobs:
   build-and-test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.4.0
+      - uses: actions/checkout@v7.0.1
         with:
           ref: ${{ github.sha }}
           persist-credentials: false
@@ -64,12 +64,12 @@ jobs:
     if: github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.4.0
+      - uses: actions/checkout@v7.0.1
         with:
           ref: ${{ needs.merge-inputs.outputs.base }}
           path: trusted
           persist-credentials: false
-      - uses: actions/checkout@v4.4.0
+      - uses: actions/checkout@v7.0.1
         with:
           ref: ${{ needs.merge-inputs.outputs.merge }}
           path: proposed
@@ -94,12 +94,12 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - uses: actions/checkout@v4.4.0
+      - uses: actions/checkout@v7.0.1
         with:
           ref: ${{ needs.merge-inputs.outputs.base }}
           path: harness
           persist-credentials: false
-      - uses: actions/checkout@v4.4.0
+      - uses: actions/checkout@v7.0.1
         with:
           ref: ${{ needs.merge-inputs.outputs.merge }}
           path: proposed
@@ -132,12 +132,12 @@ jobs:
         env:
           PRODUCER_RESULT: ${{ needs.reader-observations.result }}
         run: test "$PRODUCER_RESULT" = success
-      - uses: actions/checkout@v4.4.0
+      - uses: actions/checkout@v7.0.1
         with:
           ref: ${{ needs.merge-inputs.outputs.base }}
           path: trusted
           persist-credentials: false
-      - uses: actions/checkout@v4.4.0
+      - uses: actions/checkout@v7.0.1
         with:
           ref: ${{ needs.merge-inputs.outputs.merge }}
           path: proposed

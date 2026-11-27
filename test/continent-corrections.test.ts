@@ -197,4 +197,3 @@ test('unchanged admitted continent alternatives survive another source correctio
     const checked=await checker(f);assert.equal(checked.status,0,checked.stdout+checked.stderr);
   } finally {await rm(f.root,{recursive:true,force:true});}
 });
-

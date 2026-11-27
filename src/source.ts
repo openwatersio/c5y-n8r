@@ -1,3 +1,5 @@
+import { CONTINENTS } from './continent-values.ts';
+import { validateContinentCorrection } from './continent-corrections.ts';
 import { validateTemporalCorrection } from './temporal-corrections.ts';
 import { temporalLookupCases } from './temporal-compatibility.ts';
 import { observeLookup } from './compatibility.ts';
@@ -12,7 +14,7 @@ import type { EvidenceRequest, WikiEntity } from './evidence.ts';
 export { readCorpusFile } from './corpus-files.ts';
 import { readCorpusFile } from './corpus-files.ts';
 
-export async function buildCorpus(corpus: string, trustedApprovals?: Record<string, string>, options: { allowNewInputs?: boolean; temporalBase?: string } = {}) {
+export async function buildCorpus(corpus: string, trustedApprovals?: Record<string, string>, options: { allowNewInputs?: boolean; temporalBase?: string; continentBase?: string } = {}) {
 const read = (path: string) => readCorpusFile(corpus, path);
 const optional = async (path: string, fallback: unknown) => JSON.parse(await read(path).catch(error => { if (error.code === 'ENOENT') return JSON.stringify(fallback); throw error; }));
 const reviews: ReviewBundle = await optional('sources/reviewed-overrides.json', emptyReviews);
@@ -30,7 +32,7 @@ const requests: EvidenceRequest[] = [];
 const assignments: SourceAssignment[] = [];
 const entities: SourceData['entities'] = [];
 const allIds = new Set<string>(manifest.map((m: any) => m.id));
-const continents: Record<string, string> = { Q15: 'Africa', Q46: 'Europe', Q48: 'Asia', Q49: 'North America', Q18: 'South America', Q538: 'Oceania', Q55643: 'Oceania', Q51: 'Antarctica' };
+
 
 function timeBounds(value: any): { first: string; after: string } | undefined {
   if (!value || value.calendarmodel !== 'http://www.wikidata.org/entity/Q1985727' || value.before || value.after || value.timezone) throw new Error('Unsupported Wikidata time');
@@ -85,7 +87,7 @@ for (const item of manifest) {
   const end = endClaim && timeBounds(endClaim.mainsnak.datavalue?.value);
   if (endClaim && endClaim.mainsnak.datavalue?.value?.precision !== 11) throw new Error('Unsupported Wikidata time: dissolution requires day precision');
   const continentClaim = preferredContinents[0] ?? e.claims.P30?.[0];
-  let continent = continents[continentClaim?.mainsnak.datavalue?.value?.id];
+  let continent = CONTINENTS[continentClaim?.mainsnak.datavalue?.value?.id];
   if (policy.selfContinent?.entity === e.id) {
     const self = policy.selfContinent;
     const identityClaim = e.claims.P31?.find(c => c.id === self.statementId);
@@ -137,20 +139,23 @@ const evidenceText = JSON.stringify({ datasetVersion: policy.datasetVersion, sna
 const source: SourceData = { metadata: { datasetVersion: policy.datasetVersion, formatVersion: FORMAT_VERSION, minimumReaderVersion: policy.minimumReaderVersion, referenceDate: policy.referenceDate, builtAt: manifest.map((m: any) => m.retrievedAt).sort().at(-1), evidenceDigest: digest(evidenceText), corpus: policy.coverage, coverageFrom: policy.coverageFrom, coverageThrough: policy.coverageThrough }, entities, assignments };
 const bytes = compile(source);
 const registry = CountryRegistry.open(bytes);
+if (options.temporalBase && options.continentBase) throw new Error('Choose one source correction mode');
+const continentCorrections = options.continentBase ? await validateContinentCorrection(corpus, options.continentBase, { source, evidenceText, registry }) : [];
+const refreshing = options.temporalBase || options.continentBase;
 const temporalCorrections = options.temporalBase ? await validateTemporalCorrection(corpus, options.temporalBase, { source, evidenceText }) : [];
-for (const expected of options.temporalBase ? [] : accepted.lookups) {
+for (const expected of refreshing ? [] : accepted.lookups) {
   if (canonical(observeLookup(registry, expected).result) !== canonical(expected.result)) throw new Error(`Compatibility answer changed: ${expected.input} ${expected.date ?? 'reference date'}`);
 }
 const methods = await optional('sources/accepted-methods.json', { schemaVersion: 1, cases: [] });
 if (methods.schemaVersion !== 1 || !Array.isArray(methods.cases)) throw new Error('Invalid method compatibility fixture');
 for (const expected of methods.cases) {
   if (!['convert', 'assignments'].includes(expected.operation) || typeof expected.input !== 'string' || !expected.result) throw new Error('Invalid method compatibility case');
-  if (!options.temporalBase && canonical(observeLookup(registry, expected).result) !== canonical(expected.result)) throw new Error(`Method compatibility answer changed: ${expected.operation} ${expected.input} ${expected.date ?? 'reference date'}`);
+  if (!refreshing && canonical(observeLookup(registry, expected).result) !== canonical(expected.result)) throw new Error(`Method compatibility answer changed: ${expected.operation} ${expected.input} ${expected.date ?? 'reference date'}`);
 }
-if (!options.allowNewInputs && !options.temporalBase) for (const lookup of temporalLookupCases(assignments)) {
+if (!options.allowNewInputs && !refreshing) for (const lookup of temporalLookupCases(assignments)) {
   if (!accepted.lookups.some((existing: any) => existing.input === lookup.input && existing.namespace === lookup.namespace && existing.date === lookup.date && existing.operation === undefined && existing.dateTime === undefined)) {
     throw new Error(`Missing dated compatibility lookup: ${lookup.input} ${lookup.namespace ?? 'default'} ${lookup.date}; run npm run build -- --extend-accepted-inputs`);
   }
 }
-return { bytes, evidenceText, source, registry, accepted, addedInputs, temporalCorrections, release: { ...source.metadata, sha256: digest(bytes) }, reviews: selected };
+return { bytes, evidenceText, source, registry, accepted, addedInputs, temporalCorrections, continentCorrections, release: { ...source.metadata, sha256: digest(bytes) }, reviews: selected };
 }

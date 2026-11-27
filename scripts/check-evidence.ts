@@ -92,6 +92,7 @@ if (hasReviews || (!base && !readerResults)) {
 let requests = proposed.requests;
 const preflight: Finding[] = [];
 let checkedLookups = 0;
+let continentCorrections: Awaited<ReturnType<typeof buildCorpus>>['continentCorrections'] = [];
 let temporalCorrections: Awaited<ReturnType<typeof buildCorpus>>['temporalCorrections'] = [];
 let correctionRejection = '';
 let unchangedArtifacts = false;
@@ -114,23 +115,28 @@ if (base) {
   const oldRequestsById = new Map(before.requests.map(r => [r.id,r]));
   const dates = (r: EvidenceRequest) => { const qualifiers = r.qualifiers as Record<string, unknown> | undefined; return canonical([qualifiers?.P580 ?? null,qualifiers?.P582 ?? null]); };
   const changedDates = proposed.requests.some(r => ['P297','P298','P299'].includes(r.property ?? '') && oldRequestsById.has(r.id) && dates(oldRequestsById.get(r.id)!) !== dates(r));
-  if (!unchangedArtifacts && changedDates && proposed.metadata.datasetVersion > before.metadata.datasetVersion) {
+  const existingEntities = new Set(before.requests.map(r => r.qid));
+  const continentRequests = (requests: EvidenceRequest[]) => requests.filter(r => r.property === 'P30' && existingEntities.has(r.qid)).map(assertion);
+  const changedContinents = canonical(continentRequests(before.requests)) !== canonical(continentRequests(proposed.requests));
+  if (!unchangedArtifacts && (changedDates || changedContinents) && proposed.metadata.datasetVersion > before.metadata.datasetVersion) {
     try {
-      const candidate = await buildCorpus(corpus, approvedReviews, { temporalBase: resolve(base) });
+      const candidate = await buildCorpus(corpus, approvedReviews, changedDates ? { temporalBase: resolve(base) } : { continentBase: resolve(base) });
       temporalCorrections = candidate.temporalCorrections;
+      continentCorrections = candidate.continentCorrections;
       generated = await buildCorpus(corpus, approvedReviews);
       if (!Buffer.from(generated.bytes).equals(proposed.bytes) || generated.evidenceText !== await readCorpusFile(corpus, 'data/evidence.json')) throw new Error('Artifacts differ from trusted source build');
     } catch (error) {
       temporalCorrections = [];
+      continentCorrections = [];
       correctionRejection = error instanceof Error ? error.message : String(error);
     }
   }
-  const correction = temporalCorrections.length > 0;
+  const correction = temporalCorrections.length > 0 || continentCorrections.length > 0;
   const beforeMethods = await methodCases(resolve(base));
   const proposedMethods = await methodCases(corpus);
-  if (beforeMethods && !preservesCases(beforeMethods, proposedMethods ?? [], correction)) preflight.push({ id: 'method-compatibility-fixture', status: 'needs-review', link: '', message: `Protected method expectations changed; date correction rejected: ${correctionRejection || 'no eligible versioned date correction'}`, references: [] });
+  if (beforeMethods && !preservesCases(beforeMethods, proposedMethods ?? [], correction)) preflight.push({ id: 'method-compatibility-fixture', status: 'needs-review', link: '', message: `Protected method expectations changed; source correction rejected: ${correctionRejection || 'no eligible versioned source correction'}`, references: [] });
   const expectedCases = [...beforeFixture.lookups, ...(beforeMethods ?? [])];
-  if (!preservesFixture(beforeFixture, proposedFixture, correction)) preflight.push({ id: 'compatibility-fixture', status: 'needs-review', link: '', message: `Protected compatibility expectations changed or disappeared; date correction rejected: ${correctionRejection || 'no eligible versioned date correction'}`, references: [] });
+  if (!preservesFixture(beforeFixture, proposedFixture, correction)) preflight.push({ id: 'compatibility-fixture', status: 'needs-review', link: '', message: `Protected compatibility expectations changed or disappeared; source correction rejected: ${correctionRejection || 'no eligible versioned source correction'}`, references: [] });
   if (readerResults) {
     const file = resolve(readerResults);
     if ((await stat(file)).size > 4 * 1024 * 1024) throw new Error('Oversized reader observations');
@@ -282,8 +288,8 @@ for (const request of requests) {
 }
 const counts = findings.reduce<Record<string, number>>((out, f) => { out[f.status] = (out[f.status] ?? 0) + 1; return out; }, {});
 const acceptable = findings.filter(f => f.blocking !== false).every(f => f.status === 'verified' || f.status === 'source-match');
-const gatePassed = readerResults ? acceptable && (!temporalCorrections.length || !offline) : !offline && acceptable;
-const report = { gatePassed, authenticationBudgetMs: readerResults ? authenticationBudgetMs : undefined, temporalCorrections, datasetVersion: proposed.metadata.datasetVersion, binarySha256: proposed.binarySha256, evidenceDigest: proposed.metadata.evidenceDigest, mode: readerResults ? 'reader-compatibility' : offline ? 'pinned-snapshots-only' : 'live-pinned-and-current', checkedLookups, applicable: !!readerResults || findings.length > 0, passed: readerResults ? gatePassed : !offline && findings.every(f => f.status === 'verified'), counts, findings, readiness, limitation: 'Reference passages are interpreted by maintainers. Wikidata source matches are accepted for ingestion, not independent certification. Approved local overrides retain exact record digest controls. Quality findings and current upstream drift are advisory after pinned authentication; offline checks cannot authenticate live upstream state.' };
+const gatePassed = readerResults ? acceptable && (!(temporalCorrections.length || continentCorrections.length) || !offline) : !offline && acceptable;
+const report = { gatePassed, authenticationBudgetMs: readerResults ? authenticationBudgetMs : undefined, temporalCorrections, continentCorrections, datasetVersion: proposed.metadata.datasetVersion, binarySha256: proposed.binarySha256, evidenceDigest: proposed.metadata.evidenceDigest, mode: readerResults ? 'reader-compatibility' : offline ? 'pinned-snapshots-only' : 'live-pinned-and-current', checkedLookups, applicable: !!readerResults || findings.length > 0, passed: readerResults ? gatePassed : !offline && findings.every(f => f.status === 'verified'), counts, findings, readiness, limitation: 'Reference passages are interpreted by maintainers. Wikidata source matches are accepted for ingestion, not independent certification. Approved local overrides retain exact record digest controls. Quality findings and current upstream drift are advisory after pinned authentication; offline checks cannot authenticate live upstream state.' };
 await writeFile(resolve(reportDir, 'report.json'), JSON.stringify(report, null, 2) + '\n');
 console.log(JSON.stringify({ ...report, findings: undefined, readiness: undefined, reviewReadinessCounts: readiness.reduce<Record<string, number>>((counts, item) => { counts[item.status] = (counts[item.status] ?? 0) + 1; return counts; }, {}), report: resolve(reportDir, 'report.json') }, null, 2));
 process.exitCode = findings.length && !gatePassed ? 1 : 0;

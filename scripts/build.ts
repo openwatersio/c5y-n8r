@@ -4,13 +4,18 @@ import { observeLookup } from '../src/compatibility.ts';
 import { createHash } from 'node:crypto';
 import { buildCorpus, readCorpusFile } from '../src/source.ts';
 
+const refreshContinent = process.argv.includes('--refresh-continent-lookups');
 const refreshTemporal = process.argv.includes('--refresh-temporal-lookups');
+if (refreshTemporal && refreshContinent) throw new Error('Choose one source correction mode');
 const baseIndex = process.argv.indexOf('--base');
+const continentBase = refreshContinent && baseIndex >= 0 ? process.argv[baseIndex + 1] : undefined;
+if (refreshContinent && (!continentBase || process.argv.includes('--extend-accepted-inputs') || process.argv.includes('--audit-slackwater'))) throw new Error('Continent refresh requires --base and an exclusive maintenance mode');
+const refreshing = refreshTemporal || refreshContinent;
 const temporalBase = refreshTemporal && baseIndex >= 0 ? process.argv[baseIndex + 1] : undefined;
 if (refreshTemporal && (!temporalBase || process.argv.includes('--extend-accepted-inputs') || process.argv.includes('--audit-slackwater'))) throw new Error('Temporal refresh requires --base and an exclusive maintenance mode');
 const extendInputs = process.argv.includes('--extend-accepted-inputs');
 if (extendInputs && process.argv.includes('--audit-slackwater')) throw new Error('Choose one source maintenance mode');
-const { bytes, evidenceText, source, release, registry, accepted, addedInputs } = await buildCorpus('.', undefined, { allowNewInputs: extendInputs, temporalBase });
+const { bytes, evidenceText, source, release, registry, accepted, addedInputs } = await buildCorpus('.', undefined, { allowNewInputs: extendInputs, temporalBase, continentBase });
 if (process.argv.includes('--audit-slackwater')) {
   const inventory = JSON.parse(await readCorpusFile('.', 'sources/slackwater-required.json'));
   const manifestText = await readCorpusFile('.', 'sources/manifest.json');
@@ -56,13 +61,13 @@ if (process.argv.includes('--audit-slackwater')) {
   console.log(JSON.stringify({ ...report.summary, ...report.sourceCounts }));
   process.exit(0);
 }
-if (refreshTemporal) {
+if (refreshing) {
   accepted.lookups = accepted.lookups.map((c: any) => ({ ...c, result: observeLookup(registry, c).result }));
   const methods = JSON.parse(await readCorpusFile('.', 'sources/accepted-methods.json'));
   methods.cases = methods.cases.map((c: any) => ({ ...c, result: observeLookup(registry, c).result }));
   await writeFile('sources/accepted-methods.json', JSON.stringify(methods, null, 2) + '\n');
 }
-if (extendInputs || refreshTemporal) {
+if (extendInputs || refreshing) {
   for (const assignment of addedInputs) {
     accepted.inputs.push({ entity: assignment.entity, namespace: assignment.namespace, value: assignment.value });
     for (const namespace of [assignment.namespace, undefined]) {
@@ -78,7 +83,7 @@ if (extendInputs || refreshTemporal) {
   }
   await writeFile('sources/accepted-inputs.json', JSON.stringify(accepted, null, 2) + '\n');
   console.log(JSON.stringify({ addedInputs: addedInputs.length, preservedLookups: accepted.lookups.length }));
-  if (!refreshTemporal) process.exit(0);
+  if (!refreshing) process.exit(0);
 }
 
 await mkdir('data', { recursive: true });
